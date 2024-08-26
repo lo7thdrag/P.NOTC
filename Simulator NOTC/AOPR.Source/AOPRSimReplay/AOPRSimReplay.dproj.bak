@@ -1,0 +1,284 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{F25220B9-A455-4FFD-B41A-B4164101E953}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>AOPRSimReplay.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_DcuOutput>..\..\AOPR.comp\</DCC_DcuOutput>
+			<DCC_IMPLICIT_STRING_CAST_LOSS>false</DCC_IMPLICIT_STRING_CAST_LOSS>
+			<DCC_CONSTRUCTING_ABSTRACT>false</DCC_CONSTRUCTING_ABSTRACT>
+			<DCC_WIDECHAR_REDUCED>false</DCC_WIDECHAR_REDUCED>
+			<DCC_SYMBOL_DEPRECATED>false</DCC_SYMBOL_DEPRECATED>
+			<DCC_UNIT_DEPRECATED>false</DCC_UNIT_DEPRECATED>
+			<DCC_TYPEINFO_IMPLICITLY_ADDED>false</DCC_TYPEINFO_IMPLICITLY_ADDED>
+			<DCC_SYMBOL_PLATFORM>false</DCC_SYMBOL_PLATFORM>
+			<DCC_IMPLICIT_STRING_CAST>false</DCC_IMPLICIT_STRING_CAST>
+			<DCC_Define>SERVER;$(DCC_Define)</DCC_Define>
+			<DCC_BplOutput>..\trash\</DCC_BplOutput>
+			<DCC_ExeOutput>..\..\AOPR.bin</DCC_ExeOutput>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_DependencyCheckOutputName>C:\AOPR.bin\AOPRSimReplay.exe</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Platform>x86</DCC_Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="AOPRSimReplay.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="..\SimFramework\LibNets\NetComponent\uTCPDatatype.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\tttData.pas"/>
+			<DCCReference Include="..\LibTTT\netTTT\uGameData_TTT.pas"/>
+			<DCCReference Include="..\LibTTT\libNetSession\uNetSessionData.pas"/>
+			<DCCReference Include="..\SimFramework\LibNets\NetComponent\uNetBaseSocket.pas"/>
+			<DCCReference Include="..\SimFramework\LibNets\NetComponent\uPacketRegister.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\Counter\uThreadTimer.pas"/>
+			<DCCReference Include="..\LibTTT\uLibSettingTTT.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\Base64\uCodecBase64.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\uIniFilesProcs.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\Counter\uVirtualTime.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\newClassASTT.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAssetObject.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBRainfall.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBScenario.pas"/>
+			<DCCReference Include="..\LibTTT\uSimManager.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3UnitContainer.pas"/>
+			<DCCReference Include="..\SimFramework\LibSims\SimSystem\uBaseSimCenter.pas"/>
+			<DCCReference Include="..\SimFramework\LibSims\SimSystem\uBaseSimObjects.pas"/>
+			<DCCReference Include="..\SimFramework\LibSims\SimSystem\uSimContainers.pas"/>
+			<DCCReference Include="..\SimFramework\LibSims\SimSystem\uSimObjects.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBGame_Defaults.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uDataModuleTTT.pas">
+				<Form>dmTTT</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_AccousticDecoy.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Bomb.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Chaff.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_ChaffLauncher.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Countermeasure.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Cubicle.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_DefensiveJammer.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Deploy.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_EO.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_ESM.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_FCR.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Fitted.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_FittedWeapon.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_FloatingDecoy.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_GameDefaults.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_GameEnvironment.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Geo.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Gun.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_InfraredDecoy.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_MotionCharacteristics.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Radar.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Reference_Point.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Runtime_Platform_Library.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Satellite.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Scripted.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Sensor.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Sonar.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Sonobuoy.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Vehicle.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Weapon.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBNote_Storage.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBBlind_Zone.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBCloud_Effect.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBCubicles.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBDefault_Var.pas"/>
+			<DCCReference Include="..\LibTTT\uT3SimManager.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\CoordSystem\uDataTypes.pas"/>
+			<DCCReference Include="..\LibTTT\libVisual\uObjectVisuals.pas"/>
+			<DCCReference Include="..\LibTTT\libVisual\uSimVisuals.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\CoordSystem\uCoordConvertor.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\CoordSystem\uBaseCoordSystem.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\StringUtils\uStringFunc.pas"/>
+			<DCCReference Include="..\LibTTT\uCalculationEnvi.pas"/>
+			<DCCReference Include="..\LibTTT\uMapXHandler.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAssets_SubAreaEnviroDefinition.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBFormation.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBPattern.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBLink.pas"/>
+			<DCCReference Include="..\LibTTT\forms\ufProgress.pas">
+				<Form>frmProgress</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Unit.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Listener.pas"/>
+			<DCCReference Include="..\LibTTT\uT3EventManager.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Torpedo.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Missile.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Vehicle.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Gun.pas"/>
+			<DCCReference Include="..\LibTTT\uT3Common.pas"/>
+			<DCCReference Include="..\LibTTT\libObjects\uWeaponWaypoint.pas"/>
+			<DCCReference Include="..\LibTTT\libObjects\uWaypoint.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\Counter\uSteppers.pas"/>
+			<DCCReference Include="..\LibTTT\libObjects\uDynamicOverlay.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3DetectedTrack.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3OtherSensor.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Weapon.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Bomb.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3CounterMeasure.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3DataLink.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Mine.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3MissileDetail.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3MissileEnvironment.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Radar.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Sensor.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Sonar.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3SonarCD.pas"/>
+			<DCCReference Include="..\SimFramework\LibSims\SimsObjects\u2DMover.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Visual.pas"/>
+			<DCCReference Include="..\LibTTT\uGameSetting.pas"/>
+			<DCCReference Include="..\LibTTT\uScriptCommon.pas"/>
+			<DCCReference Include="..\LibTTT\forms\ufDBSetting.pas">
+				<Form>frmDBSetting</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\uMapXData.pas"/>
+			<DCCReference Include="ufrmLog.pas">
+				<Form>frmReplay</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libVisual\uCompassVisual.pas"/>
+			<DCCReference Include="..\LibTTT\libNetSession\uT3GroupList.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\XMLReader\GmXml.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\XMLReader\GmXMLInterface.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3Sonobuoy.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3HybridOnVehicle.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3HybridMissile.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3DogBox.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3DefensiveJammer.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3RadarNoiseJammer.pas"/>
+			<DCCReference Include="..\LibTTT\libUnit\uT3DatalinkManager.pas"/>
+			<DCCReference Include="..\LibTTT\uTMapTouch2.pas"/>
+			<DCCReference Include="..\LibTTT\libVisual\uFilter.pas"/>
+			<DCCReference Include="..\LibTTT\uFormationManager.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Logistic.pas"/>
+			<DCCReference Include="..\LibTTT\libVisual\uVectorVisual.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uDrawLogisticTemplate.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uDrawStrategi.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uFormula.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uMainDynamicShape.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uMainLogisticTemplate.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uMainOverlay.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uMainPlottingShape.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uMainStaticShape.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uMainStrategi.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uRecord.pas"/>
+			<DCCReference Include="..\AOPRReplay\uCommonLogReplay.pas"/>
+			<DCCReference Include="..\AOPRReplay\uGamePlayType.pas"/>
+			<DCCReference Include="..\AOPRReplay\uNewReplay.pas"/>
+			<DCCReference Include="..\AOPRReplay\uRecorder.pas"/>
+			<DCCReference Include="..\AOPRReplay\uSnapshotData.pas"/>
+			<DCCReference Include="..\AOPRReplay\uSnapshotUtils.pas"/>
+			<DCCReference Include="..\AOPRReplay\uSRRFunction.pas"/>
+			<DCCReference Include="..\AOPRSimClient.src\formClient\frames\ufmMapWindow.pas">
+				<Form>fmMapWindow</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="uReplayDataType.pas"/>
+			<DCCReference Include="uScriptSimReplay.pas"/>
+			<DCCReference Include="uT3ReplayClient.pas"/>
+			<DCCReference Include="uT3ReplayEventManager.pas"/>
+			<DCCReference Include="uT3ReplayManager.pas"/>
+			<DCCReference Include="frmReplay\ufMainDisplay.pas">
+				<Form>frmMainDIsplay</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Embark_Library.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uEventSummary.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_FontTaktis.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uPlottingRecord.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uBrigadePersonel.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Capability.pas"/>
+			<DCCReference Include="..\AOPRDBEditor.src\uBaseShape.pas"/>
+			<DCCReference Include="..\LibTTT\libGDIP\GdiPlus.pas"/>
+			<DCCReference Include="..\LibTTT\libGDIP\GDIPAPI.pas"/>
+			<DCCReference Include="..\LibTTT\libGDIP\GDIPOBJ.pas"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">AOPRSimReplay.dpr</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\FlatStyle_D7.bpl">FlatStyle</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k140.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp140.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+				<ModelSupport>False</ModelSupport>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

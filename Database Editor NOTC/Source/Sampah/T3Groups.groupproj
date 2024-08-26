@@ -1,0 +1,60 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{CDAB0AC9-29D8-4F0E-9AFE-07204AAE1D94}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="tttSimServer.src\tttSimServer.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="tttSimClient.src\tttSimClient.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="tttDBEditor.src\PDBEditor.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="tttSimServer">
+			<MSBuild Projects="tttSimServer.src\tttSimServer.dproj"/>
+		</Target>
+		<Target Name="tttSimServer:Clean">
+			<MSBuild Targets="Clean" Projects="tttSimServer.src\tttSimServer.dproj"/>
+		</Target>
+		<Target Name="tttSimServer:Make">
+			<MSBuild Targets="Make" Projects="tttSimServer.src\tttSimServer.dproj"/>
+		</Target>
+		<Target Name="tttSimClient">
+			<MSBuild Projects="tttSimClient.src\tttSimClient.dproj"/>
+		</Target>
+		<Target Name="tttSimClient:Clean">
+			<MSBuild Targets="Clean" Projects="tttSimClient.src\tttSimClient.dproj"/>
+		</Target>
+		<Target Name="tttSimClient:Make">
+			<MSBuild Targets="Make" Projects="tttSimClient.src\tttSimClient.dproj"/>
+		</Target>
+		<Target Name="PDBEditor">
+			<MSBuild Projects="tttDBEditor.src\PDBEditor.dproj"/>
+		</Target>
+		<Target Name="PDBEditor:Clean">
+			<MSBuild Targets="Clean" Projects="tttDBEditor.src\PDBEditor.dproj"/>
+		</Target>
+		<Target Name="PDBEditor:Make">
+			<MSBuild Targets="Make" Projects="tttDBEditor.src\PDBEditor.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="tttSimServer;tttSimClient;PDBEditor"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="tttSimServer:Clean;tttSimClient:Clean;PDBEditor:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="tttSimServer:Make;tttSimClient:Make;PDBEditor:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

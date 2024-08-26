@@ -1,0 +1,410 @@
+inherited fmOwnShip: TfmOwnShip
+  Width = 317
+  Height = 351
+  ExplicitWidth = 317
+  ExplicitHeight = 351
+  object ScrollBox4: TScrollBox
+    Left = 0
+    Top = 0
+    Width = 317
+    Height = 351
+    Align = alClient
+    BorderStyle = bsNone
+    TabOrder = 0
+    object lbOwnShipPosition1: TLabel
+      Left = 154
+      Top = 51
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object Label22: TLabel
+      Left = 17
+      Top = 71
+      Width = 70
+      Height = 13
+      Caption = 'Order Heading'
+    end
+    object lbOrderHeading: TLabel
+      Left = 154
+      Top = 71
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object lbActualHeading: TLabel
+      Left = 154
+      Top = 94
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object Label23: TLabel
+      Left = 17
+      Top = 94
+      Width = 72
+      Height = 13
+      Caption = 'Actual Heading'
+    end
+    object lbActualCourse: TLabel
+      Left = 154
+      Top = 117
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object Label25: TLabel
+      Left = 17
+      Top = 117
+      Width = 67
+      Height = 13
+      Caption = 'Actual Course'
+    end
+    object Label26: TLabel
+      Left = 229
+      Top = 117
+      Width = 48
+      Height = 13
+      Caption = 'degrees T'
+    end
+    object Label27: TLabel
+      Left = 17
+      Top = 140
+      Width = 111
+      Height = 13
+      Caption = 'Ordered Ground Speed'
+    end
+    object lbOwnShipOrderGround: TLabel
+      Left = 154
+      Top = 140
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object Label28: TLabel
+      Left = 94
+      Top = 140
+      Width = 3
+      Height = 13
+    end
+    object lbOrderedAltitude: TLabel
+      Left = 154
+      Top = 186
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object lbOwnShipActualground: TLabel
+      Left = 154
+      Top = 163
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object Label29: TLabel
+      Left = 17
+      Top = 232
+      Width = 73
+      Height = 13
+      Caption = 'Guidance Mode'
+    end
+    object lbGuidance: TLabel
+      Left = 154
+      Top = 232
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object lbFuel: TLabel
+      Left = 154
+      Top = 255
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object Label46: TLabel
+      Left = 17
+      Top = 255
+      Width = 20
+      Height = 13
+      Caption = 'Fuel'
+    end
+    object lbOwnShipPosition2: TLabel
+      Left = 248
+      Top = 51
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object Label30: TLabel
+      Left = 229
+      Top = 71
+      Width = 48
+      Height = 13
+      Caption = 'degrees T'
+    end
+    object Label31: TLabel
+      Left = 229
+      Top = 94
+      Width = 48
+      Height = 13
+      Caption = 'degrees T'
+    end
+    object Label32: TLabel
+      Left = 229
+      Top = 140
+      Width = 26
+      Height = 13
+      Caption = 'knots'
+    end
+    object Label33: TLabel
+      Left = 229
+      Top = 163
+      Width = 26
+      Height = 13
+      Caption = 'knots'
+    end
+    object lbActualAltitude: TLabel
+      Left = 154
+      Top = 209
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object Label34: TLabel
+      Left = 229
+      Top = 186
+      Width = 28
+      Height = 13
+      Caption = 'meter'
+    end
+    object Label37: TLabel
+      Left = 229
+      Top = 209
+      Width = 28
+      Height = 13
+      Caption = 'meter'
+    end
+    object lbName: TLabel
+      Left = 154
+      Top = 3
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object lbClass: TLabel
+      Left = 154
+      Top = 26
+      Width = 12
+      Height = 13
+      Caption = '---'
+    end
+    object StaticText16: TStaticText
+      Left = 17
+      Top = 49
+      Width = 41
+      Height = 17
+      Caption = 'Position'
+      TabOrder = 0
+    end
+    object StaticText21: TStaticText
+      Left = 17
+      Top = 163
+      Width = 105
+      Height = 17
+      Caption = 'Actual Ground Speed'
+      TabOrder = 1
+    end
+    object StaticText22: TStaticText
+      Left = 17
+      Top = 186
+      Width = 84
+      Height = 17
+      Caption = 'Ordered Altitude'
+      TabOrder = 2
+    end
+    object StaticText23: TStaticText
+      Left = 17
+      Top = 209
+      Width = 74
+      Height = 17
+      Caption = 'Actual Altitude'
+      TabOrder = 3
+    end
+    object StaticText58: TStaticText
+      Left = 143
+      Top = 49
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 4
+    end
+    object StaticText64: TStaticText
+      Left = 143
+      Top = 71
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 5
+    end
+    object StaticText65: TStaticText
+      Left = 143
+      Top = 94
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 6
+    end
+    object StaticText66: TStaticText
+      Left = 143
+      Top = 117
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 7
+    end
+    object StaticText68: TStaticText
+      Left = 143
+      Top = 140
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 8
+    end
+    object StaticText69: TStaticText
+      Left = 143
+      Top = 186
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 9
+    end
+    object StaticText72: TStaticText
+      Left = 143
+      Top = 163
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 10
+    end
+    object StaticText73: TStaticText
+      Left = 143
+      Top = 232
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 11
+    end
+    object StaticText74: TStaticText
+      Left = 143
+      Top = 255
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 12
+    end
+    object StaticText70: TStaticText
+      Left = 143
+      Top = 209
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 13
+    end
+    object btnLaunch: TButton
+      Left = 17
+      Top = 289
+      Width = 89
+      Height = 25
+      Caption = 'Launch Platform'
+      Enabled = False
+      TabOrder = 14
+      OnClick = btnLaunchClick
+    end
+    object lb1: TStaticText
+      Left = 17
+      Top = 3
+      Width = 31
+      Height = 17
+      Caption = 'Name'
+      TabOrder = 15
+    end
+    object lb2: TStaticText
+      Left = 143
+      Top = 3
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 16
+    end
+    object lb4: TStaticText
+      Left = 17
+      Top = 26
+      Width = 29
+      Height = 17
+      Caption = 'Class'
+      TabOrder = 17
+    end
+    object lb5: TStaticText
+      Left = 143
+      Top = 26
+      Width = 8
+      Height = 17
+      Caption = ':'
+      TabOrder = 18
+    end
+    object btnLandPlatform: TButton
+      Left = 209
+      Top = 289
+      Width = 89
+      Height = 25
+      Caption = 'Land Platform'
+      TabOrder = 19
+      OnClick = btnLandPlatformClick
+    end
+    object pnlInfoDepth: TPanel
+      Left = 7
+      Top = 185
+      Width = 130
+      Height = 40
+      BevelOuter = bvNone
+      ParentBackground = False
+      TabOrder = 20
+      Visible = False
+      object StaticText1: TStaticText
+        Left = 10
+        Top = 24
+        Width = 66
+        Height = 17
+        Caption = 'Actual Depth'
+        TabOrder = 0
+      end
+      object StaticText2: TStaticText
+        Left = 10
+        Top = 1
+        Width = 76
+        Height = 17
+        Caption = 'Ordered Depth'
+        TabOrder = 1
+      end
+    end
+    object btnRangeLanding: TButton
+      Left = 209
+      Top = 320
+      Width = 89
+      Height = 25
+      Caption = 'Show Range'
+      TabOrder = 21
+      OnClick = btnRangeLandingClick
+    end
+    object btnReturntobase: TButton
+      Left = 17
+      Top = 289
+      Width = 89
+      Height = 25
+      Caption = 'Return To Base'
+      TabOrder = 22
+      OnClick = btnReturntobaseClick
+    end
+  end
+end

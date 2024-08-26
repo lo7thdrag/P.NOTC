@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.dcu
+/AOPR.Source/AOPRSimServer.src/LibServer/__history
+/AOPR.Source/AOPRSimServer.src/__history
+/AOPR.Source/AOPRSupportMap/__history
+/AOPR.Source/LibTTT/libUnit/__history
+/AOPR.Source/LibTTT/__history
+/AOPR.Source/SimFramework/LibBaseUtils/CoordSystem/__history

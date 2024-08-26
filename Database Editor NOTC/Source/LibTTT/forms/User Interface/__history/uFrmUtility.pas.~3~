@@ -1,0 +1,1112 @@
+unit uFrmUtility;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls;
+
+type
+  TfrmUtility = class(TForm)
+    ImgBackground: TImage;
+    ImgLogoSensor: TImage;
+    ImgLogoWeapon: TImage;
+    ImgLogoOther: TImage;
+    ImgSensor: TImage;
+    ImgWeapon: TImage;
+    ImgOther: TImage;
+    ImgLogoPlatform: TImage;
+    ImgPlatform: TImage;
+    ImgHome: TImage;
+    Timer1: TTimer;
+    pnlMain: TPanel;
+    ImgAir: TImage;
+    ImgAmphibious: TImage;
+    ImgBase: TImage;
+    ImgBomb: TImage;
+    ImgEOD: TImage;
+    ImgESM: TImage;
+    ImgGun: TImage;
+    ImgLand: TImage;
+    ImgMAD: TImage;
+    ImgMine: TImage;
+    ImgMissile: TImage;
+    ImgOverlay: TImage;
+    ImgPersonel: TImage;
+    ImgRadar: TImage;
+    ImgRPL: TImage;
+    ImgSonar: TImage;
+    ImgSonobuoy: TImage;
+    ImgSubSurface: TImage;
+    ImgSurface: TImage;
+    ImgTorpedo: TImage;
+    ImgWaypoint: TImage;
+    ImgAcousticDecoy: TImage;
+    ImgAirBubble: TImage;
+    ImgChaff: TImage;
+    ImgFloatingDecoy: TImage;
+    ImgInfraredDecoy: TImage;
+    ImgRadarNoiseJammer: TImage;
+    ImgSelfDefensiveJammer: TImage;
+    ImgTowedJammer: TImage;
+    ImgLogoCountermeasures: TImage;
+    ImgCountermeasures: TImage;
+    imgImgGameArea: TImage;
+
+    procedure FormShow(Sender: TObject);
+
+    procedure ImgHomeClick(Sender: TObject);
+    procedure ImgPlatformClick(Sender: TObject);
+    procedure ImgSensorClick(Sender: TObject);
+    procedure ImgWeaponClick(Sender: TObject);
+    procedure ImgOtherClick(Sender: TObject);
+
+    procedure ImgRadarClick(Sender: TObject);
+    procedure ImgMissileClick(Sender: TObject);
+    procedure ImgOverlayClick(Sender: TObject);
+
+    procedure Timer1Timer(Sender: TObject);
+
+    {$REGION ' Mouse Enter & Mouse Leave Procedure '}
+
+    procedure IconMenuMouseEnter(Sender: TObject);
+    procedure IconMenuMouseLeave(Sender: TObject);
+
+    procedure IconMouseEnter(Sender: TObject);
+    procedure IconMouseLeave(Sender: TObject);
+
+    procedure IconLoad;
+
+    procedure ImgBaseClick(Sender: TObject);
+    procedure ImgGunClick(Sender: TObject);
+    procedure ImgSurfaceClick(Sender: TObject);
+    procedure ImgSubSurfaceClick(Sender: TObject);
+    procedure ImgLandClick(Sender: TObject);
+    procedure ImgAirClick(Sender: TObject);
+    procedure ImgAmphibiousClick(Sender: TObject);
+    procedure ImgPersonelClick(Sender: TObject);
+    procedure ImgSonarClick(Sender: TObject);
+    procedure ImgSonobuoyClick(Sender: TObject);
+    procedure ImgESMClick(Sender: TObject);
+    procedure ImgTorpedoClick(Sender: TObject);
+    procedure ImgEODClick(Sender: TObject);
+    procedure ImgMADClick(Sender: TObject);
+    procedure ImgMineClick(Sender: TObject);
+    procedure ImgBombClick(Sender: TObject);
+    procedure ImgRPLClick(Sender: TObject);
+    procedure ImgLogisticClick(Sender: TObject);
+    procedure ImgTransportClick(Sender: TObject);
+    procedure ImgWaypointClick(Sender: TObject);
+    procedure ImgCountermeasuresClick(Sender: TObject);
+    procedure ImgAcousticDecoyClick(Sender: TObject);
+    procedure ImgAirBubbleClick(Sender: TObject);
+    procedure ImgChaffClick(Sender: TObject);
+    procedure ImgFloatingDecoyClick(Sender: TObject);
+    procedure ImgInfraredDecoyClick(Sender: TObject);
+    procedure ImgRadarNoiseJammerClick(Sender: TObject);
+    procedure ImgSelfDefensiveJammerClick(Sender: TObject);
+    procedure ImgTowedJammerClick(Sender: TObject);
+    procedure imgImgGameAreaClick(Sender: TObject);
+    {$ENDREGION}
+
+  private
+    iconName : string;
+    filePath, imgChoice : string;
+
+    isStateCollaps : Boolean;
+    pnlActive : Integer;
+
+    procedure InitiateButton();
+    procedure SetVisibleButton();
+    procedure CollapseButton();
+    procedure UnCollapseButton();
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmUtility: TfrmUtility;
+
+implementation
+
+{$R *.dfm}
+
+uses
+  uFrmSurfaceView, uFrmSubSurfaceView, uFrmAmphibiousView, uFrmAirView, uFrmLandView,uFrmPersonelView,
+  uFrmRadarView, uFrmSonarView, uFrmSonobuoyView, uFrmESMView, uFrmEODView, uFrmMADView,
+  uFrmMissileView, uFrmTorpedoView, uFrmMineView, uFrmBombView, ufrmGunView,
+  ufrmAvailableRuntimePlatformLibrary, ufrmAvailableOverlay, ufrmAvailableLogistic, ufrmAvailableTransport,ufrmAvailableBase, ufrmAvailableWaypoint,
+  ufrmAvailableAcousticDecoyView, ufrmAvailableAirBubbleView, ufrmAvailableChaffView, ufrmAvailableFloatingDecoyView,
+  ufrmAvailableInfraredDecoyView, ufrmAvailableRadarNoiseJammerView, ufrmAvailableSelfDefensiveJammerView,
+  ufrmAvailableTowedJammerDecoyView, ufrmAvailableGameArea;
+
+{$Region ' Form Handle '}
+procedure TfrmUtility.FormShow(Sender: TObject);
+begin
+  self.BorderStyle := bsNone;
+  self.Width := 1300;//1485;
+  self.Height := 700;//800;
+
+  InitiateButton();
+  isStateCollaps := True;
+end;
+{$ENDREGION}
+
+{$Region ' Button Handle '}
+
+procedure TfrmUtility.ImgHomeClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmUtility.imgImgGameAreaClick(Sender: TObject);
+begin
+frmAvailableGameArea := TfrmAvailableGameArea.Create(Self);
+  try
+    frmAvailableGameArea.ShowModal;
+  finally
+    frmAvailableGameArea.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgPlatformClick(Sender: TObject);
+begin
+  Timer1.Enabled := True;
+  pnlActive := 0;
+end;
+
+procedure TfrmUtility.ImgSensorClick(Sender: TObject);
+begin
+  Timer1.Enabled := True;
+  pnlActive := 1;
+end;
+
+procedure TfrmUtility.ImgWeaponClick(Sender: TObject);
+begin
+  Timer1.Enabled := True;
+  pnlActive := 2;
+end;
+
+procedure TfrmUtility.ImgOtherClick(Sender: TObject);
+begin
+  Timer1.Enabled := True;
+  pnlActive := 3;
+end;
+
+procedure TfrmUtility.ImgCountermeasuresClick(Sender: TObject);
+begin
+  Timer1.Enabled := True;
+  pnlActive := 4;
+end;
+
+procedure TfrmUtility.ImgSurfaceClick(Sender: TObject);
+begin
+   frmSurfaceView := TfrmSurfaceView.Create(Self);
+  try
+    frmSurfaceView.ShowModal;
+  finally
+    frmSurfaceView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgSubSurfaceClick(Sender: TObject);
+begin
+  frmSubSurfaceView := TfrmSubSurfaceView.Create(Self);
+  try
+    frmSubSurfaceView.ShowModal;
+  finally
+    frmSubSurfaceView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgAirClick(Sender: TObject);
+begin
+  frmAirView := TfrmAirView.Create(Self);
+  try
+    frmAirView.ShowModal;
+  finally
+    frmAirView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgAmphibiousClick(Sender: TObject);
+begin
+  frmAmphibiousView := TfrmAmphibiousView.Create(Self);
+  try
+    frmAmphibiousView.ShowModal;
+  finally
+    frmAmphibiousView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgLandClick(Sender: TObject);
+begin
+  frmLandView := TfrmLandView.Create(Self);
+  try
+    frmLandView.ShowModal;
+  finally
+    frmLandView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgPersonelClick(Sender: TObject);
+begin
+  frmPersonelView := TfrmPersonelView.Create(Self);
+  try
+    frmPersonelView.ShowModal;
+  finally
+    frmPersonelView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgRadarClick(Sender: TObject);
+begin
+  frmRadarView := TfrmRadarView.Create(Self);
+  try
+    frmRadarView.ShowModal;
+  finally
+    frmRadarView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgSonarClick(Sender: TObject);
+begin
+  frmSonarView := TfrmSonarView.Create(Self);
+  try
+    frmSonarView.ShowModal;
+  finally
+    frmSonarView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgEODClick(Sender: TObject);
+begin
+  frmEODView := TfrmEODView.Create(Self);
+  try
+    frmEODView.ShowModal;
+  finally
+    frmEODView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgESMClick(Sender: TObject);
+begin
+  frmESMView := TfrmESMView.Create(Self);
+  try
+    frmESMView.ShowModal;
+  finally
+    frmESMView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgSonobuoyClick(Sender: TObject);
+begin
+  frmSonobuoyView := TfrmSonobuoyView.Create(Self);
+  try
+    frmSonobuoyView.ShowModal;
+  finally
+    frmSonobuoyView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgMADClick(Sender: TObject);
+begin
+  frmMADView := TfrmMADView.Create(Self);
+  try
+    frmMADView.ShowModal;
+  finally
+    frmMADView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgMissileClick(Sender: TObject);
+begin
+  frmMissileView := TfrmMissileView.Create(Self);
+  try
+    frmMissileView.ShowModal;
+  finally
+    frmMissileView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgTorpedoClick(Sender: TObject);
+begin
+  frmTorpedoView := TfrmTorpedoView.Create(Self);
+  try
+    frmTorpedoView.ShowModal;
+  finally
+    frmTorpedoView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgMineClick(Sender: TObject);
+begin
+  frmMineView := TfrmMineView.Create(Self);
+  try
+    frmMineView.ShowModal;
+  finally
+    frmMineView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgBombClick(Sender: TObject);
+begin
+  frmBombView := TfrmBombView.Create(Self);
+  try
+    frmBombView.ShowModal;
+  finally
+    frmBombView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgGunClick(Sender: TObject);
+begin
+  frmGunView := TfrmGunView.Create(Self);
+  try
+    frmGunView.ShowModal;
+  finally
+    frmGunView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgRPLClick(Sender: TObject);
+begin
+  frmAvailableRuntimePlatformLibrary := TfrmAvailableRuntimePlatformLibrary.Create(Self);
+  try
+    frmAvailableRuntimePlatformLibrary.ShowModal;
+  finally
+    frmAvailableRuntimePlatformLibrary.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgOverlayClick(Sender: TObject);
+begin
+  frmAvailableOverlay := TfrmAvailableOverlay.Create(Self);
+  try
+    frmAvailableOverlay.ShowModal;
+  finally
+    frmAvailableOverlay.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgBaseClick(Sender: TObject);
+begin
+  frmAvailableBase := TfrmAvailableBase.Create(Self);
+  try
+    frmAvailableBase.ShowModal;
+  finally
+    frmAvailableBase.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgLogisticClick(Sender: TObject);
+begin
+  frmAvailableLogistic := TfrmAvailableLogistic.Create(Self);
+  try
+    frmAvailableLogistic.ShowModal;
+  finally
+    frmAvailableLogistic.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgTransportClick(Sender: TObject);
+begin
+  frmAvailableTransport := TfrmAvailableTransport.Create(Self);
+  try
+    frmAvailableTransport.ShowModal;
+  finally
+    frmAvailableTransport.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgWaypointClick(Sender: TObject);
+begin
+  frmAvailableWaypoint := TfrmAvailableWaypoint.Create(Self);
+  try
+    frmAvailableWaypoint.ShowModal;
+  finally
+    frmAvailableWaypoint.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgAcousticDecoyClick(Sender: TObject);
+begin
+  frmAvailableAcousticDecoyView := TfrmAvailableAcousticDecoyView.Create(Self);
+  try
+    frmAvailableAcousticDecoyView.ShowModal;
+  finally
+    frmAvailableAcousticDecoyView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgAirBubbleClick(Sender: TObject);
+begin
+  frmAvailableAirBubbleView := TfrmAvailableAirBubbleView.Create(Self);
+  try
+    frmAvailableAirBubbleView.ShowModal;
+  finally
+    frmAvailableAirBubbleView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgChaffClick(Sender: TObject);
+begin
+  frmAvailableChaffView := TfrmAvailableChaffView.Create(Self);
+  try
+    frmAvailableChaffView.ShowModal;
+  finally
+    frmAvailableChaffView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgFloatingDecoyClick(Sender: TObject);
+begin
+  frmAvailableFloatingDecoyView := TfrmAvailableFloatingDecoyView.Create(Self);
+  try
+    frmAvailableFloatingDecoyView.ShowModal;
+  finally
+    frmAvailableFloatingDecoyView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgInfraredDecoyClick(Sender: TObject);
+begin
+  frmAvailableInfraredDecoyView := TfrmAvailableInfraredDecoyView.Create(Self);
+  try
+    frmAvailableInfraredDecoyView.ShowModal;
+  finally
+    frmAvailableInfraredDecoyView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgRadarNoiseJammerClick(Sender: TObject);
+begin
+  frmAvailableRadarNoiseJammerView := TfrmAvailableRadarNoiseJammerView.Create(Self);
+  try
+    frmAvailableRadarNoiseJammerView.ShowModal;
+  finally
+    frmAvailableRadarNoiseJammerView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgSelfDefensiveJammerClick(Sender: TObject);
+begin
+  frmAvailableSelfDefensiveJammerView := TfrmAvailableSelfDefensiveJammerView.Create(Self);
+  try
+    frmAvailableSelfDefensiveJammerView.ShowModal;
+  finally
+    frmAvailableSelfDefensiveJammerView.Free;
+  end;
+end;
+
+procedure TfrmUtility.ImgTowedJammerClick(Sender: TObject);
+begin
+  frmAvailableTowedJammerDecoyView := TfrmAvailableTowedJammerDecoyView.Create(Self);
+  try
+    frmAvailableTowedJammerDecoyView.ShowModal;
+  finally
+    frmAvailableTowedJammerDecoyView.Free;
+  end;
+end;
+
+{$ENDREGION}
+
+{$Region ' Button Hover Handle '}
+
+procedure TfrmUtility.IconMenuMouseEnter(Sender: TObject);
+begin
+  iconName := TImage(sender).Name;
+  filePath := 'data\Image DBEditor\Interface\';
+  imgChoice := '_Select.PNG';
+
+  IconLoad;
+end;
+
+procedure TfrmUtility.IconMenuMouseLeave(Sender: TObject);
+begin
+  iconName := TImage(sender).Name;
+  filePath := 'data\Image DBEditor\Interface\';
+  imgChoice := '_Normal.PNG';
+
+  IconLoad;
+end;
+
+procedure TfrmUtility.IconMouseEnter(Sender: TObject);
+begin
+  iconName := TImage(sender).Name;
+  filePath := 'data\Image DBEditor\Interface\'+iconName+'_Select.PNG';
+
+  IconLoad;
+end;
+
+procedure TfrmUtility.IconMouseLeave(Sender: TObject);
+begin
+  iconName := TImage(sender).Name;
+  filePath := 'data\Image DBEditor\Interface\' +iconName+'_Normal.PNG';
+
+  IconLoad;
+end;
+
+procedure TfrmUtility.IconLoad;
+begin
+  if iconName = 'ImgSurface' then
+    ImgSurface.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgSubSurface' then
+    ImgSubSurface.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgAir' then
+    ImgAir.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgAmphibious' then
+    ImgAmphibious.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgLand' then
+    ImgLand.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgPersonel' then
+    ImgPersonel.Picture.LoadFromFile(filePath)
+
+  else if iconName = 'ImgRadar' then
+    ImgRadar.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgSonar' then
+    ImgSonar.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgSonobuoy' then
+    ImgSonobuoy.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgESM' then
+    ImgESM.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgEOD' then
+    ImgEOD.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgMAD' then
+    ImgMAD.Picture.LoadFromFile(filePath)
+
+  else if iconName = 'ImgMissile' then
+    ImgMissile.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgTorpedo' then
+    ImgTorpedo.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgMine' then
+    ImgMine.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgBomb' then
+    ImgBomb.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgGun' then
+    ImgGun.Picture.LoadFromFile(filePath)
+
+  else if iconName = 'ImgRPL' then
+    ImgRPL.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgOverlay' then
+    ImgOverlay.Picture.LoadFromFile(filePath)
+//  else if iconName = 'ImgLogistic' then
+//    ImgLogistic.Picture.LoadFromFile(filePath)
+//  else if iconName = 'ImgTransport' then
+//    ImgTransport.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgBase' then
+    ImgBase.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgWaypoint' then
+    ImgWaypoint.Picture.LoadFromFile(filePath)
+
+  else if iconName = 'ImgAcousticDecoy' then
+    ImgAcousticDecoy.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgAirBubble' then
+    ImgAirBubble.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgChaff' then
+    ImgChaff.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgFloatingDecoy' then
+    ImgFloatingDecoy.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgInfraredDecoy' then
+    ImgInfraredDecoy.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgRadarNoiseJammer' then
+    ImgRadarNoiseJammer.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgSelfDefensiveJammer' then
+    ImgSelfDefensiveJammer.Picture.LoadFromFile(filePath)
+  else if iconName = 'ImgTowedJammer' then
+    ImgTowedJammer.Picture.LoadFromFile(filePath)
+
+  else if (iconName = 'ImgPlatform') or (iconName = 'ImgLogoPlatform') then
+  begin
+    ImgPlatform.Picture.LoadFromFile(filePath + 'ImgPlatform' + imgChoice);
+    ImgLogoPlatform.Picture.LoadFromFile(filePath + 'ImgLogoPlatform' + imgChoice);
+  end
+  else if (iconName = 'ImgSensor') or  (iconName = 'ImgLogoSensor') then
+  begin
+    ImgSensor.Picture.LoadFromFile(filePath + 'ImgSensor' + imgChoice);
+    ImgLogoSensor.Picture.LoadFromFile(filePath + 'ImgLogoSensor' + imgChoice);
+  end
+  else if (iconName = 'ImgWeapon') or  (iconName = 'ImgLogoWeapon') then
+  begin
+    ImgWeapon.Picture.LoadFromFile(filePath + 'ImgWeapon' + imgChoice);
+    ImgLogoWeapon.Picture.LoadFromFile(filePath + 'ImgLogoWeapon' + imgChoice);
+  end
+  else if (iconName = 'ImgCountermeasures') or  (iconName = 'ImgLogoCountermeasures') then
+  begin
+    ImgCountermeasures.Picture.LoadFromFile(filePath + 'ImgCountermeasures' + imgChoice);
+    ImgLogoCountermeasures.Picture.LoadFromFile(filePath + 'ImgLogoCountermeasures' + imgChoice);
+  end
+  else if (iconName = 'ImgOther') or  (iconName = 'ImgLogoOther') then
+  begin
+    ImgOther.Picture.LoadFromFile(filePath + 'ImgOther' + imgChoice);
+    ImgLogoOther.Picture.LoadFromFile(filePath + 'ImgLogoOther' + imgChoice);
+  end;
+end;
+
+procedure TfrmUtility.Timer1Timer(Sender: TObject);
+begin
+  if not Timer1.Enabled then
+    Exit;
+
+  if isStateCollaps then
+    UnCollapseButton
+  else
+    CollapseButton;
+end;
+
+procedure TfrmUtility.InitiateButton;
+begin
+
+  {$REGION ' Platform Section '}
+  ImgSurface.Height := 0;
+  ImgSurface.Width := 0;
+
+  ImgSubSurface.Height := 0;
+  ImgSubSurface.Width := 0;
+
+  ImgLand.Height := 0;
+  ImgLand.Width := 0;
+
+  ImgAir.Height := 0;
+  ImgAir.Width := 0;
+
+  ImgAmphibious.Height := 0;
+  ImgAmphibious.Width := 0;
+
+  ImgPersonel.Height := 0;
+  ImgPersonel.Width := 0;
+  {$ENDREGION}
+
+  {$REGION ' Sensor Section '}
+  ImgRadar.Height := 0;
+  ImgRadar.Width := 0;
+
+  ImgSonar.Height := 0;
+  ImgSonar.Width := 0;
+
+  ImgSonobuoy.Height := 0;
+  ImgSonobuoy.Width := 0;
+
+  ImgESM.Height := 0;
+  ImgESM.Width := 0;
+
+  ImgEOD.Height := 0;
+  ImgEOD.Width := 0;
+
+  ImgMAD.Height := 0;
+  ImgMAD.Width := 0;
+  {$ENDREGION}
+
+  {$REGION ' Weapon Section '}
+  ImgGun.Height := 0;
+  ImgGun.Width := 0;
+
+  ImgTorpedo.Height := 0;
+  ImgTorpedo.Width := 0;
+
+  ImgMissile.Height := 0;
+  ImgMissile.Width := 0;
+
+  ImgBomb.Height := 0;
+  ImgBomb.Width := 0;
+
+  ImgMine.Height := 0;
+  ImgMine.Width := 0;
+  {$ENDREGION}
+
+  {$REGION ' Countermeasure Section '}
+  ImgAcousticDecoy.Height := 0;
+  ImgAcousticDecoy.Width := 0;
+
+  ImgAirBubble.Height := 0;
+  ImgAirBubble.Width := 0;
+
+  ImgChaff.Height := 0;
+  ImgChaff.Width := 0;
+
+  ImgFloatingDecoy.Height := 0;
+  ImgFloatingDecoy.Width := 0;
+
+  ImgInfraredDecoy.Height := 0;
+  ImgInfraredDecoy.Width := 0;
+
+  ImgRadarNoiseJammer.Height := 0;
+  ImgRadarNoiseJammer.Width := 0;
+
+  ImgSelfDefensiveJammer.Height := 0;
+  ImgSelfDefensiveJammer.Width := 0;
+
+  ImgTowedJammer.Height := 0;
+  ImgTowedJammer.Width := 0;
+  {$ENDREGION}
+
+  {$REGION ' Other Section '}
+  ImgRPL.Height := 0;
+  ImgRPL.Width := 0;
+
+  ImgOverlay.Height := 0;
+  ImgOverlay.Width := 0;
+
+//  ImgLogistic.Height := 0;
+//  ImgLogistic.Width := 0;
+//
+//  ImgTransport.Height := 0;
+//  ImgTransport.Width := 0;
+
+  ImgBase.Height := 0;
+  ImgBase.Width := 0;
+
+  ImgWaypoint.Height := 0;
+  ImgWaypoint.Width := 0;
+
+  imgImgGameArea.Height := 0;
+  imgImgGameArea.Width := 0;
+  {$ENDREGION}
+
+end;
+
+procedure TfrmUtility.UnCollapseButton;
+begin
+
+  if ImgRadar.Height > 0 then
+  begin
+
+    {$REGION ' Platform Section '}
+    ImgSurface.Height := ImgSurface.Height - 2;
+    ImgSurface.Width := ImgSurface.Width - 2;
+
+    ImgSubSurface.Height := ImgSubSurface.Height - 2;
+    ImgSubSurface.Width := ImgSubSurface.Width - 2;
+
+    ImgLand.Height := ImgLand.Height - 2;
+    ImgLand.Width := ImgLand.Width - 2;
+
+    ImgAir.Height := ImgAir.Height - 2;
+    ImgAir.Width := ImgAir.Width - 2;
+
+    ImgAmphibious.Height := ImgAmphibious.Height - 2;
+    ImgAmphibious.Width := ImgAmphibious.Width - 2;
+
+    ImgPersonel.Height := ImgPersonel.Height - 2;
+    ImgPersonel.Width := ImgPersonel.Width - 2;
+    {$ENDREGION}
+
+    {$REGION ' Sensor Section '}
+    ImgRadar.Height := ImgRadar.Height - 2;
+    ImgRadar.Width := ImgRadar.Width - 2;
+
+    ImgSonar.Height := ImgSonar.Height - 2;
+    ImgSonar.Width := ImgSonar.Width - 2;
+
+    ImgSonobuoy.Height := ImgSonobuoy.Height - 2;
+    ImgSonobuoy.Width := ImgSonobuoy.Width - 2;
+
+    ImgESM.Height := ImgESM.Width - 2;
+    ImgESM.Width := ImgESM.Width - 2;
+
+    ImgEOD.Height := ImgEOD.Width - 2;
+    ImgEOD.Width := ImgEOD.Width - 2;
+
+    ImgMAD.Height := ImgEOD.Width - 2;
+    ImgMAD.Width := ImgEOD.Width - 2;
+    {$ENDREGION}
+
+    {$REGION ' Weapon Section '}
+    ImgMissile.Height := ImgMissile.Height - 2;
+    ImgMissile.Width := ImgMissile.Width - 2;
+
+    ImgTorpedo.Height := ImgTorpedo.Height - 2;
+    ImgTorpedo.Width := ImgTorpedo.Width - 2;
+
+    ImgMine.Height := ImgMine.Height - 2;
+    ImgMine.Width := ImgMine.Width - 2;
+
+    ImgBomb.Height := ImgBomb.Height - 2;
+    ImgBomb.Width := ImgBomb.Width - 2;
+
+    ImgGun.Height := ImgGun.Height - 2;
+    ImgGun.Width := ImgGun.Width - 2;
+    {$ENDREGION}
+
+    {$REGION ' Countermeasure Section '}
+    ImgAcousticDecoy.Height := ImgAcousticDecoy.Height - 2;
+    ImgAcousticDecoy.Width := ImgAcousticDecoy.Width - 2;
+
+    ImgAirBubble.Height := ImgAirBubble.Height - 2;
+    ImgAirBubble.Width := ImgAirBubble.Width - 2;
+
+    ImgChaff.Height := ImgChaff.Height - 2;
+    ImgChaff.Width := ImgChaff.Width - 2;
+
+    ImgFloatingDecoy.Height := ImgFloatingDecoy.Height - 2;
+    ImgFloatingDecoy.Width := ImgFloatingDecoy.Width - 2;
+
+    ImgInfraredDecoy.Height := ImgInfraredDecoy.Height - 2;
+    ImgInfraredDecoy.Width := ImgInfraredDecoy.Width - 2;
+
+    ImgRadarNoiseJammer.Height := ImgRadarNoiseJammer.Height - 2;
+    ImgRadarNoiseJammer.Width := ImgRadarNoiseJammer.Width - 2;
+
+    ImgSelfDefensiveJammer.Height := ImgSelfDefensiveJammer.Height - 2;
+    ImgSelfDefensiveJammer.Width := ImgSelfDefensiveJammer.Width - 2;
+
+    ImgTowedJammer.Height := ImgTowedJammer.Height - 2;
+    ImgTowedJammer.Width := ImgTowedJammer.Width - 2;
+    {$ENDREGION}
+
+    {$REGION ' Other Section '}
+    ImgRPL.Height := ImgRPL.Height - 2;
+    ImgRPL.Width := ImgRPL.Width - 2;
+
+    ImgOverlay.Height := ImgOverlay.Height - 2;
+    ImgOverlay.Width := ImgOverlay.Width - 2;
+
+//    ImgLogistic.Height := ImgLogistic.Height - 2;
+//    ImgLogistic.Width := ImgLogistic.Width - 2;
+//
+//    ImgTransport.Height := ImgTransport.Height - 2;
+//    ImgTransport.Width := ImgTransport.Width - 2;
+
+    ImgBase.Height := ImgBase.Height - 2;
+    ImgBase.Width := ImgBase.Width - 2;
+
+    ImgWaypoint.Height := ImgWaypoint.Height - 2;
+    ImgWaypoint.Width := ImgWaypoint.Width - 2;
+
+    imgImgGameArea.Height := imgImgGameArea.Height - 2;
+    imgImgGameArea.Width := imgImgGameArea.Width - 2;
+    {$ENDREGION}
+
+  end
+  else
+  begin
+    SetVisibleButton;
+    isStateCollaps := false;
+  end;
+end;
+
+procedure TfrmUtility.CollapseButton;
+begin
+
+  if ImgRadar.Height < 120 then
+  begin
+
+    {$REGION ' Platform Section '}
+    ImgSurface.Height := ImgSurface.Height + 2;
+    ImgSurface.Width := ImgSurface.Width + 2;
+
+    ImgSubSurface.Height := ImgSubSurface.Height + 2;
+    ImgSubSurface.Width := ImgSubSurface.Width + 2;
+
+    ImgLand.Height := ImgLand.Height + 2;
+    ImgLand.Width := ImgLand.Width + 2;
+
+    ImgAir.Height := ImgAir.Height + 2;
+    ImgAir.Width := ImgAir.Width + 2;
+
+    ImgAmphibious.Height := ImgAmphibious.Height + 2;
+    ImgAmphibious.Width := ImgAmphibious.Width + 2;
+
+    ImgPersonel.Height := ImgPersonel.Height + 2;
+    ImgPersonel.Width := ImgPersonel.Width + 2;
+    {$ENDREGION}
+
+    {$REGION ' Sensor Section '}
+    ImgRadar.Height := ImgRadar.Height + 2;
+    ImgRadar.Width := ImgRadar.Width + 2;
+
+    ImgSonar.Height := ImgSonar.Height + 2;
+    ImgSonar.Width := ImgSonar.Width + 2;
+
+    ImgSonobuoy.Height := ImgSonobuoy.Height + 2;
+    ImgSonobuoy.Width := ImgSonobuoy.Width + 2;
+
+    ImgESM.Height := ImgESM.Width + 2;
+    ImgESM.Width := ImgESM.Width + 2;
+
+    ImgEOD.Height := ImgEOD.Width + 2;
+    ImgEOD.Width := ImgEOD.Width + 2;
+
+    ImgMAD.Height := ImgEOD.Width + 2;
+    ImgMAD.Width := ImgEOD.Width + 2;
+    {$ENDREGION}
+
+    {$REGION ' Weapon Section '}
+    ImgMissile.Height := ImgMissile.Height + 2;
+    ImgMissile.Width := ImgMissile.Width + 2;
+
+    ImgTorpedo.Height := ImgTorpedo.Height + 2;
+    ImgTorpedo.Width := ImgTorpedo.Width + 2;
+
+    ImgMine.Height := ImgMine.Height + 2;
+    ImgMine.Width := ImgMine.Width + 2;
+
+    ImgBomb.Height := ImgBomb.Height + 2;
+    ImgBomb.Width := ImgBomb.Width + 2;
+
+    ImgGun.Height := ImgGun.Height + 2;
+    ImgGun.Width := ImgGun.Width + 2;
+    {$ENDREGION}
+
+    {$REGION ' Countermeasure Section '}
+    ImgAcousticDecoy.Height := ImgAcousticDecoy.Height + 2;
+    ImgAcousticDecoy.Width := ImgAcousticDecoy.Width + 2;
+
+    ImgAirBubble.Height := ImgAirBubble.Height + 2;
+    ImgAirBubble.Width := ImgAirBubble.Width + 2;
+
+    ImgChaff.Height := ImgChaff.Height + 2;
+    ImgChaff.Width := ImgChaff.Width + 2;
+
+    ImgFloatingDecoy.Height := ImgFloatingDecoy.Height + 2;
+    ImgFloatingDecoy.Width := ImgFloatingDecoy.Width + 2;
+
+    ImgInfraredDecoy.Height := ImgInfraredDecoy.Height + 2;
+    ImgInfraredDecoy.Width := ImgInfraredDecoy.Width + 2;
+
+    ImgRadarNoiseJammer.Height := ImgRadarNoiseJammer.Height + 2;
+    ImgRadarNoiseJammer.Width := ImgRadarNoiseJammer.Width + 2;
+
+    ImgSelfDefensiveJammer.Height := ImgSelfDefensiveJammer.Height + 2;
+    ImgSelfDefensiveJammer.Width := ImgSelfDefensiveJammer.Width + 2;
+
+    ImgTowedJammer.Height := ImgTowedJammer.Height + 2;
+    ImgTowedJammer.Width := ImgTowedJammer.Width + 2;
+    {$ENDREGION}
+
+    {$REGION ' Other Section '}
+    ImgRPL.Height := ImgRPL.Height + 2;
+    ImgRPL.Width := ImgRPL.Width + 2;
+
+    ImgOverlay.Height := ImgOverlay.Height + 2;
+    ImgOverlay.Width := ImgOverlay.Width + 2;
+
+//    ImgLogistic.Height := ImgLogistic.Height + 2;
+//    ImgLogistic.Width := ImgLogistic.Width + 2;
+//
+//    ImgTransport.Height := ImgTransport.Height + 2;
+//    ImgTransport.Width := ImgTransport.Width + 2;
+
+    ImgBase.Height := ImgBase.Height + 2;
+    ImgBase.Width := ImgBase.Width + 2;
+
+    ImgWaypoint.Height := ImgWaypoint.Height + 2;
+    ImgWaypoint.Width := ImgWaypoint.Width + 2;
+    imgImgGameArea.Height := imgImgGameArea.Height + 2;
+    imgImgGameArea.Width := imgImgGameArea.Width + 2;
+    {$ENDREGION}
+
+  end
+  else
+  begin
+    isStateCollaps := True;
+    Timer1.Enabled := false;
+  end;
+end;
+
+procedure TfrmUtility.SetVisibleButton;
+begin
+  {$REGION ' Platform Section '}
+  ImgSurface.Visible := False;
+  ImgSubSurface.Visible := False;
+  ImgLand.Visible := False;
+  ImgAir.Visible := False;
+  ImgAmphibious.Visible := False;
+  ImgPersonel.Visible := False;
+  {$ENDREGION}
+
+  {$REGION ' Sensor Section '}
+  ImgRadar.Visible := False;
+  ImgSonar.Visible := False;
+  ImgSonobuoy.Visible := False;
+  ImgESM.Visible := False;
+  ImgEOD.Visible := False;
+  ImgMAD.Visible := False;
+  {$ENDREGION}
+
+  {$REGION ' Weapon Section '}
+  ImgGun.Visible := False;
+  ImgTorpedo.Visible := False;
+  ImgMissile.Visible := False;
+  ImgBomb.Visible := False;
+  ImgMine.Visible := False;
+  {$ENDREGION}
+
+  {$REGION ' Countermeasure Section '}
+  ImgAcousticDecoy.Visible := False;
+  ImgAirBubble.Visible := False;
+  ImgChaff.Visible := False;
+  ImgFloatingDecoy.Visible := False;
+  ImgInfraredDecoy.Visible := False;
+  ImgRadarNoiseJammer.Visible := False;
+  ImgSelfDefensiveJammer.Visible := False;
+  ImgTowedJammer.Visible := False;
+  {$ENDREGION}
+
+  {$REGION ' Other Section '}
+  ImgRPL.Visible := False;
+  ImgOverlay.Visible := False;
+//  ImgLogistic.Visible := False;
+//  ImgTransport.Visible := False;
+  ImgBase.Visible := False;
+  ImgWaypoint.Visible := False;
+  imgImgGameArea.Visible := False;
+  {$ENDREGION}
+
+  case pnlActive of
+    0:
+    begin
+      ImgSurface.Visible := True;
+      ImgSubSurface.Visible := True;
+  //    ImgLand.Visible := True;
+      ImgAir.Visible := True;
+//      ImgAmphibious.Visible := True;
+    //  ImgPersonel.Visible := True;
+    end;
+    1:
+    begin
+      ImgRadar.Visible := True;
+      ImgSonar.Visible := True;
+      ImgSonobuoy.Visible := True;
+      ImgESM.Visible := True;
+      ImgEOD.Visible := True;
+      ImgMAD.Visible := True;
+    end;
+    2:
+    begin
+      ImgMissile.Visible := True;
+      ImgTorpedo.Visible := True;
+      ImgMine.Visible := True;
+      ImgBomb.Visible := True;
+      ImgGun.Visible := True;
+    end;
+    3:
+    begin
+      ImgRPL.Visible := True;
+      ImgOverlay.Visible := True;
+//      ImgLogistic.Visible := True;
+//      ImgTransport.Visible := True;
+      ImgBase.Visible := True;
+      ImgWaypoint.Visible := True;
+      imgImgGameArea.Visible := True;
+    end;
+    4:
+    begin
+      ImgAcousticDecoy.Visible := True;
+      ImgAirBubble.Visible := True;
+      ImgChaff.Visible := True;
+      ImgFloatingDecoy.Visible := True;
+      ImgInfraredDecoy.Visible := True;
+      ImgRadarNoiseJammer.Visible := True;
+      ImgSelfDefensiveJammer.Visible := True;
+      ImgTowedJammer.Visible := True;
+
+    end;
+  end;
+end;
+
+{$ENDREGION}
+
+end.

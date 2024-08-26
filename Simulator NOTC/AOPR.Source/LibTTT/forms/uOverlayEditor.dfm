@@ -1,0 +1,4988 @@
+object OverlayEditorForm: TOverlayEditorForm
+  Left = 0
+  Top = 0
+  Caption = 'Test Overlay'
+  ClientHeight = 746
+  ClientWidth = 1351
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  WindowState = wsMaximized
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel4: TPanel
+    Left = 390
+    Top = 0
+    Width = 961
+    Height = 746
+    Align = alRight
+    TabOrder = 0
+    object Map1: TMap
+      Left = 1
+      Top = 1
+      Width = 959
+      Height = 744
+      ParentColor = False
+      Align = alClient
+      TabOrder = 0
+      OnMouseUp = Map1MouseUp
+      OnMouseMove = Map1MouseMove
+      OnMouseDown = Map1MouseDown
+      OnMapViewChanged = Map1MapViewChanged
+      OnDrawUserLayer = Map1DrawUserLayer
+      ExplicitTop = 0
+      ControlData = {
+        8A1A06001E630000E54C0000010000000F0000FF0D47656F44696374696F6E61
+        727905456D70747900E8030000000000000000000002000E001E000000000000
+        0000000000000000000000000000000000000000000600010000000000500001
+        010000640000000001F4010000050000800C000000000000000000000000FFFF
+        FF000100000000000000000000000000000000000000000000000352E30B918F
+        CE119DE300AA004BB8510100000090013CBA090005417269616C000352E30B91
+        8FCE119DE300AA004BB8510100000090015C790C0005417269616C0000000000
+        00000000000000000000000000000000000000000000000000000000000000FF
+        FFFF000000000000000001370000000000FFFFFF000000000000000352E30B91
+        8FCE119DE300AA004BB851010000009001DC7C010005417269616C000352E30B
+        918FCE119DE300AA004BB851010200009001A42C02000B4D61702053796D626F
+        6C730000000000000001000100FFFFFF000200FFFFFF00000000000001000000
+        01000118010000A80225000100000068E522001C000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000002
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        8076C000000000008056C0000000000080764000000000008056400100000018
+        010000A80225000100000078E522001C00000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000200000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000F2A6857C0000000024
+        000000F8A6857C64E52200000000000000000002000000000000000000000000
+        000088B3400000000000408F400001000001}
+    end
+  end
+  object Panel5: TPanel
+    Left = 0
+    Top = 0
+    Width = 390
+    Height = 746
+    Align = alLeft
+    TabOrder = 1
+    object Panel1: TPanel
+      Left = 1
+      Top = 1
+      Width = 388
+      Height = 33
+      Align = alTop
+      TabOrder = 0
+      object ToolBar1: TToolBar
+        Left = 1
+        Top = 1
+        Width = 386
+        Height = 29
+        ButtonHeight = 25
+        ButtonWidth = 25
+        Caption = 'ToolBar1'
+        Images = ImageList1
+        TabOrder = 0
+        object ToolButton1: TToolButton
+          Left = 0
+          Top = 0
+          Hint = 'Select Point'
+          Caption = 'ToolButton1'
+          ImageIndex = 31
+          OnClick = ToolButton1Click
+        end
+        object ToolButton2: TToolButton
+          Left = 25
+          Top = 0
+          Hint = 'Add Point'
+          Caption = 'ToolButton2'
+          ImageIndex = 32
+          OnClick = ToolButton2Click
+        end
+        object ToolButton3: TToolButton
+          Left = 50
+          Top = 0
+          Width = 8
+          Caption = 'ToolButton3'
+          ImageIndex = 7
+          Style = tbsSeparator
+        end
+        object ToolButton6: TToolButton
+          Left = 58
+          Top = 0
+          Hint = 'Delete Point'
+          Caption = 'ToolButton6'
+          ImageIndex = 26
+          OnClick = ToolButton6Click
+        end
+        object ToolButton9: TToolButton
+          Left = 83
+          Top = 0
+          Width = 8
+          Caption = 'ToolButton9'
+          ImageIndex = 6
+          Style = tbsSeparator
+        end
+        object toolbtnDecreaseScale: TToolButton
+          Left = 91
+          Top = 0
+          Hint = 'Decrease Scale'
+          Caption = 'toolbtnDecreaseScale'
+          ImageIndex = 1
+          OnClick = toolbtnDecreaseScaleClick
+        end
+        object cbSetScale: TComboBox
+          Left = 116
+          Top = 0
+          Width = 72
+          Height = 21
+          Hint = 'Map Scales'
+          TabOrder = 0
+          Items.Strings = (
+            '1'
+            '2'
+            '4'
+            '8'
+            '16'
+            '32'
+            '64'
+            '128'
+            '256'
+            '512'
+            '1024')
+        end
+        object toolbtnIncreaseScale: TToolButton
+          Left = 188
+          Top = 0
+          Hint = 'Increase Scale'
+          Caption = 'toolbtnIncreaseScale'
+          ImageIndex = 2
+          OnClick = toolbtnIncreaseScaleClick
+        end
+        object ToolButton12: TToolButton
+          Left = 213
+          Top = 0
+          Width = 8
+          Caption = 'ToolButton12'
+          ImageIndex = 8
+          Style = tbsSeparator
+        end
+        object ToolButton13: TToolButton
+          Left = 221
+          Top = 0
+          Hint = 'Zoom In / Out'
+          Caption = 'ToolButton13'
+          ImageIndex = 3
+          OnClick = ToolButton13Click
+        end
+        object ToolButton14: TToolButton
+          Left = 246
+          Top = 0
+          Hint = 'move tool'
+          Caption = 'ToolButton14'
+          ImageIndex = 6
+          OnClick = ToolButton14Click
+        end
+        object ToolButton4: TToolButton
+          Left = 271
+          Top = 0
+          Caption = 'ToolButton4'
+          ImageIndex = 5
+          OnClick = ToolButton4Click
+        end
+      end
+    end
+    object Panel2: TPanel
+      Left = 1
+      Top = 34
+      Width = 388
+      Height = 636
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 1
+      object gbSector: TGroupBox
+        Left = 9
+        Top = 326
+        Width = 376
+        Height = 265
+        Caption = 'Sector'
+        TabOrder = 4
+        object Label3: TLabel
+          Left = 19
+          Top = 111
+          Width = 58
+          Height = 13
+          Caption = 'Start Angle:'
+        end
+        object Label4: TLabel
+          Left = 19
+          Top = 138
+          Width = 52
+          Height = 13
+          Caption = 'End Angle:'
+        end
+        object Label5: TLabel
+          Left = 19
+          Top = 164
+          Width = 65
+          Height = 13
+          Caption = 'Inner Radius:'
+        end
+        object Label6: TLabel
+          Left = 19
+          Top = 192
+          Width = 67
+          Height = 13
+          Caption = 'Outer Radius:'
+        end
+        object Label8: TLabel
+          Left = 290
+          Top = 111
+          Width = 45
+          Height = 13
+          Caption = 'degreesT'
+        end
+        object Label9: TLabel
+          Left = 290
+          Top = 138
+          Width = 45
+          Height = 13
+          Caption = 'degreesT'
+        end
+        object Label10: TLabel
+          Left = 290
+          Top = 164
+          Width = 14
+          Height = 13
+          Caption = 'nm'
+        end
+        object Label11: TLabel
+          Left = 290
+          Top = 192
+          Width = 14
+          Height = 13
+          Caption = 'nm'
+        end
+        object gbCenterPointSector: TGroupBox
+          Left = 3
+          Top = 20
+          Width = 370
+          Height = 82
+          Caption = 'Center Point'
+          TabOrder = 0
+          object Label1: TLabel
+            Left = 16
+            Top = 24
+            Width = 106
+            Height = 13
+            Caption = 'Bearing From Center :'
+          end
+          object Label2: TLabel
+            Left = 16
+            Top = 51
+            Width = 111
+            Height = 13
+            Caption = 'Distance From Center :'
+          end
+          object Label7: TLabel
+            Left = 287
+            Top = 24
+            Width = 45
+            Height = 13
+            Caption = 'degreesT'
+          end
+          object Label12: TLabel
+            Left = 287
+            Top = 51
+            Width = 14
+            Height = 13
+            Caption = 'nm'
+          end
+          object edtBearingFromCenterSector: TEdit
+            Left = 160
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 0
+          end
+          object edtDistanceFromCenterSector: TEdit
+            Left = 160
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 1
+          end
+        end
+        object edtStartAngleSector: TEdit
+          Left = 163
+          Top = 108
+          Width = 121
+          Height = 21
+          TabOrder = 1
+        end
+        object edtEndAngleSector: TEdit
+          Left = 163
+          Top = 135
+          Width = 121
+          Height = 21
+          TabOrder = 2
+        end
+        object edtInnerRadius: TEdit
+          Left = 163
+          Top = 161
+          Width = 121
+          Height = 21
+          TabOrder = 3
+        end
+        object edtOuterRadius: TEdit
+          Left = 163
+          Top = 189
+          Width = 121
+          Height = 21
+          TabOrder = 4
+        end
+      end
+      object gbEllipse: TGroupBox
+        Left = 9
+        Top = 326
+        Width = 375
+        Height = 265
+        Caption = 'Ellipse'
+        TabOrder = 11
+        object Label51: TLabel
+          Left = 19
+          Top = 111
+          Width = 57
+          Height = 13
+          Caption = 'Major Axis :'
+        end
+        object Label52: TLabel
+          Left = 290
+          Top = 111
+          Width = 14
+          Height = 13
+          Caption = 'nm'
+        end
+        object Label57: TLabel
+          Left = 18
+          Top = 138
+          Width = 56
+          Height = 13
+          Caption = 'Minor Axis :'
+        end
+        object Label58: TLabel
+          Left = 290
+          Top = 137
+          Width = 14
+          Height = 13
+          Caption = 'nm'
+        end
+        object GroupBox9: TGroupBox
+          Left = 3
+          Top = 20
+          Width = 370
+          Height = 82
+          Caption = 'Center Point'
+          TabOrder = 0
+          object Label53: TLabel
+            Left = 16
+            Top = 24
+            Width = 106
+            Height = 13
+            Caption = 'Bearing From Center :'
+          end
+          object Label54: TLabel
+            Left = 16
+            Top = 51
+            Width = 111
+            Height = 13
+            Caption = 'Distance From Center :'
+          end
+          object Label55: TLabel
+            Left = 287
+            Top = 24
+            Width = 45
+            Height = 13
+            Caption = 'degreesT'
+          end
+          object Label56: TLabel
+            Left = 287
+            Top = 51
+            Width = 14
+            Height = 13
+            Caption = 'nm'
+          end
+          object edtEllipseBearing: TEdit
+            Left = 160
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 0
+          end
+          object edtEllipseDistance: TEdit
+            Left = 160
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 1
+          end
+        end
+        object edtMajorAxis: TEdit
+          Left = 163
+          Top = 110
+          Width = 121
+          Height = 21
+          TabOrder = 1
+        end
+        object edtMinorAxis: TEdit
+          Left = 163
+          Top = 135
+          Width = 121
+          Height = 21
+          TabOrder = 2
+        end
+      end
+      object gbRectangle: TGroupBox
+        Left = 9
+        Top = 326
+        Width = 376
+        Height = 265
+        Caption = 'Rectangle'
+        TabOrder = 9
+        object GroupBox6: TGroupBox
+          Left = 3
+          Top = 20
+          Width = 370
+          Height = 82
+          Caption = 'Start Point'
+          TabOrder = 0
+          object Label41: TLabel
+            Left = 16
+            Top = 24
+            Width = 44
+            Height = 13
+            Caption = 'Position :'
+          end
+          object Label42: TLabel
+            Left = 16
+            Top = 51
+            Width = 26
+            Height = 13
+            Caption = 'Grid :'
+          end
+          object edtRectStartPosLat: TEdit
+            Left = 104
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 0
+          end
+          object edtRectStartGridLat: TEdit
+            Left = 104
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 1
+          end
+          object edtRectStartPosLong: TEdit
+            Left = 231
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 2
+          end
+          object edtRectStartGridLong: TEdit
+            Left = 231
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 3
+          end
+        end
+        object GroupBox7: TGroupBox
+          Left = 3
+          Top = 108
+          Width = 370
+          Height = 82
+          Caption = 'End Point'
+          TabOrder = 1
+          object Label43: TLabel
+            Left = 16
+            Top = 24
+            Width = 44
+            Height = 13
+            Caption = 'Position :'
+          end
+          object Label44: TLabel
+            Left = 16
+            Top = 51
+            Width = 26
+            Height = 13
+            Caption = 'Grid :'
+          end
+          object edtRectEndPosLat: TEdit
+            Left = 104
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 0
+          end
+          object edtRectEndGridLat: TEdit
+            Left = 104
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 1
+          end
+          object edtRectEndPosLong: TEdit
+            Left = 231
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 2
+          end
+          object edtRectEndGridLong: TEdit
+            Left = 231
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 3
+          end
+        end
+      end
+      object gbLine: TGroupBox
+        Left = 9
+        Top = 326
+        Width = 376
+        Height = 265
+        Caption = 'Line'
+        TabOrder = 6
+        object gbStartPoint: TGroupBox
+          Left = 3
+          Top = 20
+          Width = 370
+          Height = 82
+          Caption = 'Start Point'
+          TabOrder = 0
+          object Label16: TLabel
+            Left = 16
+            Top = 24
+            Width = 44
+            Height = 13
+            Caption = 'Position :'
+          end
+          object Label18: TLabel
+            Left = 16
+            Top = 51
+            Width = 26
+            Height = 13
+            Caption = 'Grid :'
+          end
+          object edtStartPosLat: TEdit
+            Left = 104
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 0
+          end
+          object edtStartGridLat: TEdit
+            Left = 104
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 1
+          end
+          object edtStartPosLong: TEdit
+            Left = 231
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 2
+          end
+          object edtStartGridLong: TEdit
+            Left = 231
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 3
+          end
+        end
+        object gbEndPoint: TGroupBox
+          Left = 3
+          Top = 108
+          Width = 370
+          Height = 82
+          Caption = 'End Point'
+          TabOrder = 1
+          object Label14: TLabel
+            Left = 16
+            Top = 24
+            Width = 44
+            Height = 13
+            Caption = 'Position :'
+          end
+          object Label15: TLabel
+            Left = 16
+            Top = 51
+            Width = 26
+            Height = 13
+            Caption = 'Grid :'
+          end
+          object edtEndPosLat: TEdit
+            Left = 104
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 0
+          end
+          object edtEndGridLat: TEdit
+            Left = 104
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 1
+          end
+          object edtEndPosLong: TEdit
+            Left = 231
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 2
+          end
+          object edtEndGridLong: TEdit
+            Left = 231
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 3
+          end
+        end
+      end
+      object gbText: TGroupBox
+        Left = 9
+        Top = 326
+        Width = 376
+        Height = 265
+        Caption = 'Text'
+        TabOrder = 3
+        object btnTextSize3: TSpeedButton
+          Left = 213
+          Top = 174
+          Width = 36
+          Height = 36
+          Caption = 'A'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          OnClick = btnTextSize3Click
+        end
+        object btnTextSize1: TSpeedButton
+          Left = 139
+          Top = 174
+          Width = 36
+          Height = 36
+          Caption = 'A'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -36
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          OnClick = btnTextSize1Click
+        end
+        object btnTextSize2: TSpeedButton
+          Left = 176
+          Top = 174
+          Width = 36
+          Height = 36
+          Caption = 'A'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -23
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          OnClick = btnTextSize2Click
+        end
+        object Label49: TLabel
+          Left = 12
+          Top = 119
+          Width = 29
+          Height = 13
+          Caption = 'Text :'
+        end
+        object Label50: TLabel
+          Left = 12
+          Top = 183
+          Width = 26
+          Height = 13
+          Caption = 'Size :'
+        end
+        object GroupBox3: TGroupBox
+          Left = 3
+          Top = 20
+          Width = 370
+          Height = 82
+          Caption = 'Start Point'
+          TabOrder = 0
+          object Label47: TLabel
+            Left = 16
+            Top = 24
+            Width = 44
+            Height = 13
+            Caption = 'Position :'
+          end
+          object Label48: TLabel
+            Left = 16
+            Top = 51
+            Width = 26
+            Height = 13
+            Caption = 'Grid :'
+          end
+          object edtTextPosLAt: TEdit
+            Left = 104
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 0
+          end
+          object edtTextGridLat: TEdit
+            Left = 104
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 1
+          end
+          object edtTextPosLong: TEdit
+            Left = 231
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 2
+          end
+          object edtTextGridLong: TEdit
+            Left = 231
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 3
+          end
+        end
+        object edtText: TEdit
+          Left = 12
+          Top = 138
+          Width = 343
+          Height = 21
+          TabOrder = 1
+        end
+      end
+      object grbDrawingTool: TGroupBox
+        Left = 10
+        Top = 135
+        Width = 375
+        Height = 74
+        Caption = 'Drawing Tool'
+        TabOrder = 1
+        object bntDraw1: TSpeedButton
+          Left = 12
+          Top = 24
+          Width = 36
+          Height = 36
+          Glyph.Data = {
+            D60E0000424DD60E0000000000003600000028000000240000001A0000000100
+            200000000000A00E0000C40E0000C40E00000000000000000000F2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFECECECFFEAEAEAFFE6E6E6FFE3E3E3FFE3E3E3FFE6E6
+            E6FFEBEBEBFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFECECECFFEAEAEAFFE6E6
+            E6FFE1E1E1FFDEDEDEFFE1E1E1FFE6E6E6FFEBEBEBFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFECECECFFEAEAEAFFE6E6E6FFE1E1E1FFD6D6D6FF000000FFE4E4E4FFE8E8
+            E8FFECECECFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFECECECFFEAEAEAFFE6E6E6FFE1E1E1FFD6D6
+            D6FF000000FF636363FFE7E7E7FFEBEBEBFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFECECECFFEAEA
+            EAFFE6E6E6FFE1E1E1FFD6D6D6FF000000FF636363FFE7E7E7FFEBEBEBFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFECECECFFEAEAEAFFE6E6E6FFE1E1E1FFD6D6D6FF000000FF6363
+            63FFE7E7E7FFEBEBEBFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFECECECFFEAEAEAFFE6E6E6FFE1E1
+            E1FFD6D6D6FF000000FF636363FFE7E7E7FFEBEBEBFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFECEC
+            ECFFEAEAEAFFE6E6E6FFE1E1E1FFD6D6D6FF000000FF636363FFE7E7E7FFEBEB
+            EBFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFECECECFFEAEAEAFFE6E6E6FFE1E1E1FFD6D6D6FF0000
+            00FF636363FFE7E7E7FFEBEBEBFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFECECECFFEAEAEAFFE6E6
+            E6FFE1E1E1FFD6D6D6FF000000FF636363FFE7E7E7FFEBEBEBFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFECECECFFEAEAEAFFE6E6E6FFE1E1E1FFD6D6D6FF000000FF636363FFE7E7
+            E7FFEBEBEBFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFECECECFFE7E7E7FFE3E3E3FFD7D7
+            D7FF000000FF636363FFE7E7E7FFEBEBEBFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEBEBEBFFE6E6E6FFDADADAFF000000FF636363FFE7E7E7FFEBEBEBFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEBEBEBFFE0E0E0FF000000FF6464
+            64FFE8E8E8FFEBEBEBFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFE7E7E7FF000000FF656565FFEAEAEAFFEBEBEBFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFA8A8A8FFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFF2F2F2FFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFF2F2F2FFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDED
+            EDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFFEDEDEDFF}
+          OnClick = bntDraw1Click
+        end
+        object btnDraw2: TSpeedButton
+          Left = 46
+          Top = 24
+          Width = 36
+          Height = 36
+          Glyph.Data = {
+            EA090000424DEA0900000000000036000000280000001E0000001B0000000100
+            180000000000B4090000C40E0000C40E00000000000000000000EEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEE0000ECECECECECECEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEE0000ECECECECECECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEE0000ECECECECECECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            0000ECECECECECECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000ECEC
+            ECECECECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000ECECECECECEC
+            ECECECECECECECECECECECECECECECECECECF5F5F5E9E9E9E5E5E5EDEDEDF2F2
+            F2EEEEEEEAEAEAECECECE3E3E3F1F1F1E8E8E8E2E2E2F6F6F6ECECECEEEEEEF0
+            F0F0EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000ECECECECECECECECECEC
+            ECECECECECECECECECECECECECECF5F5F5E9E9E9E5E5E5EDEDEDF2F2F2EEEEEE
+            EAEAEAECECECE3E3E3F1F1F1E8E8E8E2E2E2F6F6F6ECECECEEEEEEF0F0F0EEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000ECECECECECECECECECECECECECEC
+            ECECECECECECECECECECF5F5F5E9E9E9E5E5E5EDEDEDF2F2F2EEEEEEEAEAEAEC
+            ECECE3E3E3F1F1F1E8E8E8E2E2E2F6F6F6ECECECEEEEEEF0F0F0EEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEE0000EDEDEDEFEFEFECECECECECECECECECECECEC
+            ECECECECECECF5F5F5E9E9E9E5E5E5EDEDEDF2F2F2EEEEEEEAEAEAECECECE3E3
+            E3F1F1F1E8E8E8E2E2E2F6F6F6ECECECEEEEEEF0F0F0EEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEE0000EDEDEDEEEEEEECECECECECECECECECECECECECECECEC
+            ECECE5E5E5EAEAEAF1F1F1F1F1F1EAEAEAE7E7E7F0F0F0FDFDFDF6F6F6DFDFDF
+            F0F0F0FFFFFFDBDBDBF2F2F2DEDEDEE8E8E8EEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEE0000EDEDEDEEEEEEECECECECECECECECECECECECECECECECECECE5E5
+            E5EAEAEAF1F1F1F1F1F1EAEAEAE7E7E7F0F0F0FDFDFDF6F6F6DFDFDFF0F0F0FF
+            FFFFDBDBDBF2F2F2DEDEDEE8E8E8EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            0000EEEEEEEDEDEDECECECECECECECECECECECECECECECECECECE5E5E5EAEAEA
+            F1F1F1F1F1F1EAEAEAE7E7E7F0F0F0FDFDFDF6F6F6DFDFDFF0F0F0FFFFFFDBDB
+            DBF2F2F2DEDEDEE8E8E8EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEE
+            EEEDEDEDEEEEEEEDEDEDE3E3E3F7F7F7E2E2E2757575F0F0F0F5F5F5F8F8F8F1
+            F1F1E6E6E6E2E2E2DADADACDCDCDCECECEB6B6B6A9A9A9AEAEAE141414DADADA
+            E1E1E1ECECECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EDEDEDEEEEEE
+            ECECECEEEEEEE6E6E6F3F3F3E6E6E6939393C4C4C4FFFFFFFFFFFFF0F0F0F7F7
+            F7F4F4F4DEDEDEE2E2E2D9D9D9D4D4D4BFBFBF8F8F8F373737D6D6D6EBEBEBEB
+            EBEBEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EDEDEDEEEEEEEAEAEAF0
+            F0F0EAEAEAEDEDEDEDEDEDBEBEBE989898E1E1E1FFFFFFF6F6F6FDFDFDF8F8F8
+            E8E8E8EDEDEDE6E6E6DFDFDFC0C0C0767676929292DFDFDFF2F2F2EAEAEAEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EDEDEDEFEFEFE8E8E8F1F1F1EDED
+            EDE9E9E9F1F1F1DDDDDD8686869A9A9AD8D8D8FFFFFFFAFAFAF3F3F3F6F6F6EA
+            EAEAF0F0F0D1D1D1AEAEAE717171ECECECEDEDEDF2F2F2EBEBEBEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEE2E2E2B4B4B48D8D8D999999CCCCCCF1F1F1EBEBEBD5D5D59191
+            91A3A3A3C0C0C0DCDCDCEDEDEDF0F0F0EBEBEBE6E6E6EEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEF3F3F3E7E7E7D0D0D0B2B2B2979797888888858585878787C1C1C1CBCBCB
+            DBDBDBE9E9E9F1F1F1F1F1F1ECECECE8E8E8EEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEE0000EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE6E6
+            E6EFEFEFF5F5F5F0F0F0E5E5E5E2E2E2ECECECF7F7F7EBEBEBEDEDEDEFEFEFF0
+            F0F0F0F0F0EFEFEFEEEEEEECECECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            0000EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEBEBEBEAEAEA
+            EAEAEAEDEDEDF1F1F1F2F2F2EEEEEEEAEAEAF1F1F1EFEFEFEDEDEDEBEBEBEBEB
+            EBECECECEEEEEEEFEFEFEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE7E7E7EBEBEBEEEEEEED
+            EDEDE9E9E9E7E7E7E7E7E7E9E9E9EBEBEBEAEAEAEAEAEAE9E9E9EAEAEAEBEBEB
+            EDEDEDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEBEBEBEAEAEAEBEBEBEBEBEBEDED
+            EDEEEEEEEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEEEEEEEEEEEEEDEDEDECECECEC
+            ECECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEF3F3F3ECECECE6E6E6E8E8E8EEEEEEF0F0F0
+            E9E9E9E2E2E2F1F1F1F1F1F1F0F0F0EFEFEFEEEEEEEEEEEEEDEDEDEDEDEDEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEE4E4E4EDEDEDF5F5F5F4F4F4ECECECE9E9E9EDEDEDF4
+            F4F4EDEDEDECECECEBEBEBEAEAEAEAEAEAECECECEEEEEEF0F0F0EEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEE0000}
+          OnClick = btnDraw2Click
+        end
+        object btnDraw3: TSpeedButton
+          Left = 79
+          Top = 24
+          Width = 36
+          Height = 36
+          Glyph.Data = {
+            F6070000424DF6070000000000003604000028000000200000001E0000000100
+            080000000000C003000012170000121700000001000000000000000000000000
+            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+            A6000020400000206000002080000020A0000020C0000020E000004000000040
+            20000040400000406000004080000040A0000040C0000040E000006000000060
+            20000060400000606000006080000060A0000060C0000060E000008000000080
+            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+            20004000400040006000400080004000A0004000C0004000E000402000004020
+            20004020400040206000402080004020A0004020C0004020E000404000004040
+            20004040400040406000404080004040A0004040C0004040E000406000004060
+            20004060400040606000406080004060A0004060C0004060E000408000004080
+            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+            20008000400080006000800080008000A0008000C0008000E000802000008020
+            20008020400080206000802080008020A0008020C0008020E000804000008040
+            20008040400080406000804080008040A0008040C0008040E000806000008060
+            20008060400080606000806080008060A0008060C0008060E000808000008080
+            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6F6F6F6F6
+            F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6FFFFFF0807070707
+            070707070707070707070707070707070707070707070708F6FFFFA452525252
+            5252525252525252525252525252525252525252525252A4F6FFFF52FFFFFFFF
+            FFFF08FFFFFFFFFFFF08FFFFFFFFFFFF08FFFFFFFFFFFF52F6FFFF52FFFFFFFF
+            FFFF08FFFFFFFFFFFF08FFFFFFFFFFFF08FFFFFFFFFFFF52F6FFFF52FFFFFFFF
+            FFFF08FFFFFFFFFFFF08FFFFFFFFFFFF08FFFFFFFFFFFF52F6FFFF52FFFFFFFF
+            FFFF08FFFFFFFFFFFF08FFFFFFFFFFFF08FFFFFFFFFFFF52F6FFFF52FFFFFFFF
+            FFFF07FFFFFFFFFFFF07FFFFFFFFFFFF07FFFFFFFFFFFF52F6FFFF5207070707
+            070707070707070707070707070707070707070707070752F6FFFF52FFFFFFFF
+            FFFF07FFFFFFFFFFFF07FFFFFFFFFFFF07FFFFFFFFFFFF52F6FFFF52FFFFFFFF
+            FFFF07FFFFFFFFFFFF07FFFFFFFFFFFF07FFFFFFFFFFFF52F6FFFF52FFFFFFFF
+            FFFF07FFFFFFFFFFFF07FFFFFFFFFFFF07FFFFFFFFFFFF52F6FFFF52FFFFFFFF
+            FFFF07FFFFFFFFFFFF07FFFFFFFFFFFF07FFFFFFFFFFFF52F6FFFF52FFFFFFFF
+            FFFF07FFFFFFFFFFFF07FFFFFFFFFFFF07FFFFFFFFFFFF52F6FFFF5207070707
+            070707070707070707070707070707070707070707070752F6FFFF52F6F6F6F6
+            F6F607F6F6F6F6F6F607F6F6F6F6F6F607F6F6F6F6F6F652F6FFFF52F6F6F6F6
+            F6F607F6F6F6F6F6F607F6F6F6F6F6F607F6F6F6F6F6F652F6FFFF52F6F6F6F6
+            F6F607F6F6F6F6F6F607F6F6F6F6F6F607F6F6F6F6F6F652F6FFFF52F6F6F6F6
+            F6F607F6F6F6F6F6F607F6F6F6F6F6F607F6F6F6F6F6F652F6FFFF52F6F6F6F6
+            F6F6F5F6F6F6F6F6F6F5F6F6F6F6F6F6F5F6F6F6F6F6F652F6FFFF52EDEDEDED
+            EDEDEDEDEDEDEDEDEDEDEDEDEDEDEDEDEDEDEDEDEDEDED52F6FFFF52F6F6F6F6
+            F6F6EDF6F6F6F6F6F6EDF6F6F6F6F6F6EDF6F6F6F6F6F652F6FFFF5208080808
+            0808F7080808080808F7080808080808F708080808080852F6FFFF5208080808
+            0808F7080808080808F7080808080808F708080808080852F6FFFF5208080808
+            0808F7080808080808F7080808080808F708080808080852F6FFFF52F6F6F6F6
+            F6F607F6F6F6F6F6F607F6F6F6F6F6F607F6F6F6F6F6F652F6FFFF5252525252
+            525252525252525252525252525252525252525252525252F6FFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+          OnClick = btnDraw3Click
+        end
+        object btnDrawText: TSpeedButton
+          Left = 283
+          Top = 24
+          Width = 36
+          Height = 36
+          Glyph.Data = {
+            16080000424D160800000000000036000000280000001B000000180000000100
+            180000000000E0070000C40E0000C40E00000000000000000000D8E9ECD8E9EC
+            D8E9ECD8E9ECD8E9ECD8E9ECDAE9ECDAE9ECD8E7EAD6E5E8DBE7EBDAE6EAE3EF
+            F3D0DCE0E8F3F7D4E0E4D7E6E9E0F1F4D0E1E4E3F4F7DAEBEED0E1E4D6E7EAD9
+            EAEDD8E9ECD8E9ECD8E9EC000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9EC
+            DAE9ECDAE9ECF0FFFFD2E1E4E8F4F8D8E4E8D6E2E6DBE7EBE6F1F5DCE8ECCDDC
+            DFD8E9ECE4F5F8D2E3E6D8E9ECDEEFF2CBDCDFDBECEFD8E9ECD8E9ECD8E9EC00
+            0000D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECDAE9ECDAE9ECCBDADDD6E5E8
+            E0ECF0D4E0E4E7F3F7DBE7EBD2DDE1DCE8ECD9E8EBEFFFFFC3D4D7C7D8DBEDFE
+            FFCEDFE2EFFFFFD3E4E7D8E9ECD8E9ECD8E9EC000000D8E9ECD8E9ECD8E9ECD8
+            E9ECD8E9ECD8E9ECDAE9ECDAE9ECD8E7EAEFFEFFD8E4E8D7E3E7DCE8ECC5D1D5
+            D8E3E7D9E5E9C9D8DBD4E5E8EFFFFFCFE0E3E5F6F900010400010400090CD8E9
+            ECD8E9ECD8E9EC000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECDAE9ECDA
+            E9ECD9E8EBD2E1E4D3DFE3D8E4E8C8D4D8CAD6DAD1DCE0C5D1D5DDECEFCBDCDF
+            CDDEE1C2D3D6E4F5F8DCEDF0000205000E11D8E9ECD8E9ECD8E9EC000000D8E9
+            ECD8E9ECD8E9ECD8E9ECD8E9ECD8E9ECDAE9ECDAE9ECDBEAEDDAE9ECC8D4D898
+            A4A897A3A7A2AEB27D888CB6C2C6D1E0E3DBECEFD4E5E8EFFFFFD5E6E9C9DADD
+            EBFCFF000104D8E9ECD8E9ECD8E9EC000000D8E9ECD8E9ECD8E9ECD8E9ECD8E9
+            ECD8E9ECDAE9ECDAE9ECD7E6E9E3F2F59BA7AB4B575B030F13010D113D484C95
+            A1A5D1E0E3D8E9ECCDDEE1CBDCDFE1F2F5D0E1E4E2F3F6DCEDF0D8E9ECD8E9EC
+            D8E9EC000000D6E9ECD6E9ECD6E9ECD6E9ECD6E9ECD8E9ECD8E9ECDAE9ECD5E4
+            E7E5F4F7D0DCE0D0DCE0000C10000004CFDADECBD6DAD7E6E9D1E2E5DEEFF2D9
+            EAEDDBECEFDAEBEED3E4E7D9EAEDD8E9ECD8E9ECD8E9EC000000D3E8E9DAEFF0
+            DCF1F2D7ECEDD5EAEBD9EDEEDBEDEED9E8EAD8E7E9E0EDEFD9E5E7DBE7E90511
+            13020B0EC5CED1CFDBDDD2E1E4DAEBEEDFF0F3D8E9ECD5E6E9D9EAEDDCEDF0DB
+            ECEFD8E9ECD8E9ECD8E9EC000000D2EAEAD1E9E9CFE7E7CCE4E4D0E5E6D6EAEB
+            DAECEDDBEAECD9E6E8DFECEED8E4E6DAE6E8060F12020B0EC8CFD2D2DBDED8E7
+            EAD6E7EAD8E9ECD9EAEDD7E8EBD5E6E9D5E6E9D6E7EAD8E9ECD8E9ECD8E9EC00
+            0000D8EDEED3E8E9D0E5E6D3E8E9D7EBECD7EBECD9EBECDCEBEDDAE7E9DFECEE
+            D7E3E5DBE4E7070E11040B0EC9D0D3D4DDE0DCEBEED6E7EAD6E7EADBECEFDDEE
+            F1D8E9ECD6E7EAD7E8EBD8E9ECD8E9ECD8E9EC000000D7EBECD4E9EAD7EBECDE
+            F2F3DEF2F3D9EBECD7E6E8D9E8EADCE9EBE2EEF0DBE4E7DBE4E7070E11040B0E
+            C9D0D3D4DDE0D6E5E8D7E8EBDAEBEED9EAEDD9EAEDDBECEFDBECEFD8E9ECD8E9
+            ECD8E9ECD8E9EC000000D4E6E7D3E7E8D9EBECDCEEEFD8EAEBD5E4E6D5E4E6DC
+            E9EBDDE9EBE3EFF1DBE4E7DEE5E8070E11030A0DCACFD2D2DBDECFDEE1DAEBEE
+            DDEEF1D2E3E6D0E1E4DAEBEEDCEDF0D4E5E8D8E9ECD8E9ECD8E9EC000000D6E8
+            E9D9EBECD9EBECD6E5E7D4E3E5D8E7E9DEEBEDDFECEED7E3E5E0E9ECDBE2E5DD
+            E4E7080F12040B0EC9CED1D1DADDD5E4E7DCEDF0DBECEFD0E1E4D0E1E4DAEBEE
+            DCEDF0D5E6E9D8E9ECD8E9ECD8E9EC000000DBEAECE0EFF1DDECEED7E4E6D9E6
+            E8E2EFF1DDE9EBCEDADCCED7DAD7E0E3D4DBDEDAE1E4070E11040B0EC8CFD2D1
+            DADDDBEAEDCCDDE0C6D7DACDDEE1D5E6E9D8E9ECD8E9ECDAEBEED8E9ECD8E9EC
+            D8E9EC000000D6E5E7DFEEF0DFECEED7E4E6DDEAECE3F0F2CFDBDDAEBABCC5CE
+            D1CFD8DBCDD6D9D7DEE1060D10040B0EC8CFD2D2DBDED5E4E7B2C3C6A8B9BCC2
+            D3D6D5E6E9D0E1E4D0E1E4DBECEFD8E9ECD8E9ECD8E9EC000000E3F0F2D2DFE1
+            D8E5E7E5F2F4E3F0F2CCD9DBE4F0F23F4B4D939FA1C2CED0C8D4D6DFE8EB0009
+            0C0A1316BFC8CBD7E3E5B9C8CB97A8AB304144CADBDECFE0E3D3E4E7D9EAEDDC
+            EDF0D8E9ECD8E9ECD8E9EC000000E0EDEFD9E6E8DDEAECD6E3E5DEEBEDD8E5E7
+            DBE8EA3B484A121E20D3E0E2D8E4E6D0DCDE000608000C0EE6F2F4C4D1D3D0DF
+            E214252837484BDCEDF0CCDDE0ECFDFFE4F5F8C8D9DCD8E9ECD8E9ECD8E9EC00
+            0000DAE9EBD5E4E6E0EFF1D0DFE1DEEDEFE0EFF1DDECEE79888A111E20000D0F
+            3340423441430006081D2A2C26333537464818292C0001048B9C9FE4F5F8CCDD
+            E0D7E8EBCFE0E3E1F2F5D8E9ECD8E9ECD8E9EC000000DBEAECCFDEE0E2F1F3D6
+            E5E7DFEEF0D4E6E7DBEAECCEE0E1E0EFF1CCDEDFE2F1F3E1F3F4D7E9EAD4E6E7
+            CADCDDE2F4F5CDDEE1DAEBEED6E7EABBCCCFDDEEF1E3F4F7D2E3E6DAEBEED8E9
+            ECD8E9ECD8E9EC000000DCEEEFD2E4E5DFF1F2D2E4E5D8EAEBCCE0E1CFE1E2E2
+            F6F7CBDDDEEDFFFFC4D6D7CEE2E3E2F6F7C6DADBE7FBFCCBDFE0D5E6E9EDFEFF
+            D7E8EBDEEFF2E1F2F5D1E2E5D5E6E9DFF0F3D8E9ECD8E9ECD8E9EC000000D4E6
+            E7DAECEDDCEEEFCBDFE0D8ECEDDFF3F4D4E8E9D1E5E6D1E5E6D2E7E8D9EDEED6
+            EBECDFF4F5D2E7E8CADFE0E9FEFFD5E8EBD3E4E7C9DADDD8E9ECD5E6E9E1F2F5
+            D0E1E4E0F1F4D8E9ECD8E9ECD8E9EC000000CFE3E4DAEEEFD3E7E8D2E6E7DCF0
+            F1E1F6F7DBF0F1CEE3E4D2E7E8DAF2F2D0E5E6CEE6E6D4ECECDFF7F7D7EFEFCC
+            E1E2D1E4E7E8F9FCE4F5F8D7E8EBD8E9ECE4F5F8CCDDE0D5E6E9D8E9ECD8E9EC
+            D8E9EC000000D7EBECDAEEEFCEE2E3DDF1F2D6EBECC8DDDED1E6E7D7ECEDD6EE
+            EECCE4E4D0E8E8DCF4F4C9E1E1D0E8E8CAE2E2DEF3F4D8EBEED9EAEDCFE0E3DD
+            EEF1D8E9ECD1E2E5E8F9FCCEDFE2D8E9ECD8E9ECD8E9EC000000}
+          OnClick = btnDrawTextClick
+        end
+        object btnDraw5: TSpeedButton
+          Left = 147
+          Top = 24
+          Width = 36
+          Height = 36
+          Glyph.Data = {
+            0A070000424D0A07000000000000360000002800000019000000170000000100
+            180000000000D4060000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5F5F5FF
+            FFFFFFFFFF0404040E0E0EA4A4A4FCFCFCFFFFFFFFFFFFFFFFFFF3F3F3FFFFFF
+            F7F7F7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFF
+            FFFFFDFDFDFDFDFDF3F3F3FFFFFFB8B8B8323232F6F6F61F1F1F000000AAAAAA
+            FFFFFFF3F3F3F8F8F8FCFCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8FFFFFFE6E6E6000000BEBEBE
+            F3F3F3F4F4F4FFFFFF262626000000BBBBBBFDFDFDFAFAFAFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE7E7E7
+            F0F0F0C9C9C91D1D1DFCFCFCFFFFFFFDFDFDF5F5F5FFFFFFF3F3F32020200000
+            00B9B9B9EBEBEBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFF
+            FFFFFFFFFFFFF5F5F5FFFFFFFFFFFF000000B3B3B3E3E3E3FFFFFFEFEFEFF9F9
+            F9F2F2F2F5F5F5FFFFFFF9F9F92C2C2CB8B8B8FFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA1A1A11C1C1CFFFF
+            FFFDFDFDEEEEEEFFFFFFF5F5F5FFFFFFEBEBEBFFFFFFF1F1F1EFEFEF121212FF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFF8F8F8030303B3B3B3F1F1F1F5F5F5FFFFFFF3F3F3F3F3F3F8F8F8FFFFFFEC
+            ECECFFFFFFF2F2F2000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFF
+            FFFFFFFFFFFFFFFFFFFFF6F6F6AEAEAE202020F6F6F6FFFFFFFFFFFFEFEFEFF8
+            F8F8FFFFFFF7F7F7FBFBFBF0F0F0FAFAFAFAFAFA000000FFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1D1D1DBEBEBEEA
+            EAEAF7F7F7ECECECF2F2F2C1C1C11E1E1E000000FCFCFCEDEDEDFFFFFFF9F9F9
+            040404FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFF
+            FFFFABABAB2F2F2FE8E8E8FFFFFFFFFFFFB0B0B01C1C1C040404B3B3B3FBFBFB
+            000000FFFFFFE9E9E9FCFCFC0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FF00FFFFFFFFFFFFFFFFFFFFFFFF232323B9B9B9F5F5F5A8A8A8161616060606
+            B3B3B3F6F6F6F6F6F6FFFFFFFFFFFF040404FFFFFFE8E8E8000000FFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFF1D1D1DF3F3F3
+            2121211111119F9F9FFFFFFFF1F1F1FFFFFFFFFFFFF5F5F5FFFFFFEAEAEA0202
+            02FFFFFF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFF
+            FFFFFFFFFFFF060606111111B9B9B9FFFFFFF6F6F6E9E9E9FFFFFFEEEEEEFAFA
+            FAF9F9F9FFFFFFFFFFFFE7E7E72A2A2A0E0E0EFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDF9F9F9FFFFFFFBFB
+            FBFFFFFFF7F7F7FFFFFFF8F8F8FFFFFFFFFFFFFFFFFFFFFFFFF8F8F8181818FF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFF00}
+          OnClick = btnDraw5Click
+        end
+        object btnDraw4: TSpeedButton
+          Left = 113
+          Top = 24
+          Width = 36
+          Height = 36
+          Glyph.Data = {
+            6A080000424D6A0800000000000036000000280000001B000000190000000100
+            18000000000034080000C40E0000C40E00000000000000000000DAE7EFDAE7EF
+            DAE7EFDAE7EFDAE7EFDAE7EFD8E8EFD8E8EFD8E8EFD8E8EFD6E8EFD6E8EFD6E8
+            EFD6E8EFD5E8EFD5E9EED5EAECD5EAEBD6EAEBD6EAEBD8EAEBD8EAEBDAE9EBDA
+            E9EBDAE9EBDAE9EBD8EAEB000000D4E1E9DBE8F0DBE8F0D7E4ECD9E6EEDCE9F1
+            D6E6EDCFDFE6D8E8EFD8E8EFD6E8EFD6E8EFD6E8EFD6E8EFD5E8EFD5E9EED7EC
+            EECCE1E2CFE3E4DBEFF0E0F2F3CADCDDE3F2F4D3E2E4DAE9EBDAE9EBD8EAEB00
+            0000D6E3EBDBE9EFDCE9F1D9E7EDD8E5EDDAE8EED9E9F0D7E7EDD9E9F0D9E9EF
+            D9E9F0D9E9EFD9E9F0D9E9EFD7E9F0D7EAEFCBDEE1DCF0F1DFF1F2DBEDEEC7D9
+            DA031516C7D6D8EBFAFCDAE9EBDAE9EBD8EAEB000000D9E7EDDAE9ECDDEBF1DB
+            EAEDD6E4EAD8E7EADEECF2DFEEF1D6E4EAD6E5E8D6E4EAD6E5E8D6E4EAD6E5E8
+            D6E4EAD6E5E8E7F6F8D2E1E3DFEEF0BDCCCE0D1C1E000103001213BCCECFD8EA
+            EBD8EAEBDAE9EB000000DCEBEED8E7E9DDECEFDDECEED4E3E6D7E6E8DDECEFDA
+            E7E9DCE8ECDDE9EBDDE8ECDDE9EBDDE8ECDDE9EBDDE8ECDDE9EBD9E2E5D6E2E4
+            E7F3F50E1A1C000103000103041617000E0FD8EAEBD8EAEBDAE9EB000000DAEC
+            EDD5E7E6DBEDEEDAECEBD3E2E4D8E8E7D7E4E6BFCBCBC2CBCEC2CCCCC4CBCEC4
+            CCCCC6CBCEC6CBCCC6CBCEC6CBCEBCBFC3CBD0D3ADB4B7E2EBEED7E3E5DCEBED
+            D1E3E4CDE1E2D6EAEBD8EAEBDAE9EB000000D6EBE9D3E8E5DBEDECD7EAE7D3E3
+            E2DFEDEBCAD6D695A09E8890908A908F8A8F908B908F8D8F908D8F8F8F8E908F
+            8E9098979B95969AAAADB1C2C9CCC9D5D7F1FFFFCADCDDE6FAFBD6EAEBD8EAEB
+            DAE9EB000000D4E9E6D2E8E3DAEDEAD4E8E3D4E5E2E3F2EEBCC9C767726F545A
+            59555A58575959595A585B59595B59585D58595D58595D585A5C585D56575BC6
+            CBCEECF8FAD2E1E3CBDFE0DFF4F5D5EAEBD6EAEBDAE9EB000000D2E8E3D2E8E3
+            DAEEE9D2E6E1D4E5E1E7F6F2B3C1BD495451FAFFFEFBFFFEFDFFFEFFFFFEFFFF
+            FFFFFEFFFFFEFFFFFEFFFFFDFFE6E1E3626163C3C8C9DBE4E7D6E5E7D4E8E9CE
+            E3E4D5EAEBD6EAEBDAE9EB000000D8EEE9D7EDE8D6EAE5DAEEE9DFF0ECD6E5E1
+            C3D0CE475250FAFFFFFBFFFFFDFFFFFFFFFFFFFEFFFFFEFFFFFEFFFFFEFFFFFC
+            FBFFFFFC4E4F4DC6CCCBDEE8E8DAEAE9DEF2F3D4E9EAD5EAEBD6EAEBDAEAE900
+            0000D8EEE9D7EDE8D6EAE5D9EDE8DFF0ECD7E6E2C3D0CE45504EF9FFFEFAFFFE
+            FCFEFEFEFEFEFEFEFEFFFEFEFFFDFFFFFDFEFFFBF8FFFFFA4D4E4AC6CDCADCE9
+            E7D9E9E8DDF1F2D3E8E9D5EAEBD6EAEBDAEAE9000000D6EDE9D8EDEAD6E9E6D8
+            EBE8DEEFEBD8E7E3C2D0CC414C49F5FCF9F6FBF9FAFBF9FCFAF9FEFAF9FEFAF9
+            FFFAF9FFFAF7FCF7F4FCFCF6484C47C7CECBDDEAE8D7E7E6DCEEEFD2E5E8D6E9
+            ECD8EAEBDAEAE9000000D5EBE9D8EFEBD4E9E6D6E9E6DEEFECDBE9E5C4CFCC3E
+            4744EFF4F2F1F5F0F5F4F0F7F4EFF8F4EFFAF4EFFCF3EFFAF4EFF5F2EDF5F4F0
+            434644C7CDCCDEEAEAD5E4E6D9EAEDD1E4E7D6E9ECD8E9ECDAE9EB000000D4E9
+            EAD8EEECD5EAE8D5E8E5DDEEEBDDEBE7C3CECB3A413CE7EBE6E9EBE5EDEBE3F0
+            EAE3F2EBE2F4EBE2F5EBE1F2EBE2ECE9E4E9EAE63B403EC4CCCBDFEBEBD5E4E6
+            D8E9ECD2E5E8D6E9ECD8E9ECDAE9EB000000D4E9EAD9EEEFD5E9EAD3E5E4DDED
+            ECDFECEAC3CECB353C37DBDFD9DFE0D7E2E0D6E6E0D5E8DFD5E9E0D3EBDFD3E8
+            DFD5E3E0DBDEE1DF333938C3CBCBE1EDEFD5E4E6D8E9ECD5E8EBD6E9ECD8E9EC
+            DAE9EC000000D3E8EADAEFF0D5E9EAD2E4E3DDEDECE0EDEBC4CDCA323932D4D7
+            CED8D7CDDBD7CCDDD7CAE0D7C9E2D8C7E2D8C7DFD7CAD9D9D3D3D8D62E3433C1
+            CBCBE2EEF0D5E4E7D9E9EFD9E9EFD8E8EED8E9ECDAE9EC000000D3E8EADAEFF1
+            D5E8EBD2E4E5DDECEEE1EEECC4CDCA303730CED1C8D2D1C7D5D1C6D7D1C4DAD1
+            C3DAD2C1DCD2C1D7D2C3D2D4CECDD3D228302FC0CACAE2EEF2D6E5E8D9E9EFDB
+            EBF1D8E8EED8E8EEDAE8EE000000D2E5EADDF0F3D9EAEDDAECEDD4E3E5F4FFFF
+            D3DEDC242B26FCFFFAFFFFF7FFFFF6FFFFF4FFFFF3FFFFF1FFFFF1FFFFF4FDFF
+            FCD8E3E12D3737DCE8EADBE7EBCEDCE2DFEFF6D8E8EFD8E8EFD8E8EEDAE8EE00
+            0000C5D8DDD1E4E9D7E7EDE5F4F7D8E4E8DAE6E8BCC7C53A413E1F261F23261D
+            25261C27261C28261B2A27192A271927271B272E293A46461B2729BFCBCFD0DE
+            E4D9E7EDD5E5ECD8E8EFD8E8EFD8E8EFDAE7EF000000E0F0F7DCECF2D1DFE5DC
+            EBEED7E3E7DDE9EBF1FBFBC9D1D0E5ECE9E6ECE7E8ECE6EAECE6EAEDE4ECEDE3
+            ECEDE3E8EDE4DAE3E0DDEBEAD9E6E8F1FFFFDEECF2E0EDF5D1DDE7DFEBF5DAE6
+            F0DAE7EFDAE7EF000000DBE8F0DEEBF3D1DFE5DDEBF1DDE9EDD4E0E4EAF6F8EA
+            F6F6E0EBE9E0EBE9E2EBE8E4EBE8E4EBE8E4EBE6E5EBE6E4EBE6DBE8E6D2E2E1
+            DDECEEC9D8DBCEDCE2D9E6EED9E5EFDFEBF5DAE6F0DAE6F0DAE7EF000000D2DE
+            E4E0ECF2DAE6ECE0ECF2E0ECF2D0DCE2D0DCE0D2DEE2D7E4E6D7E4E6D7E4E6D8
+            E4E6D8E4E6D8E4E4D8E4E4D7E5E4DCECEBD5E7E8DFF0F3D3E4E7EAF8FEDAE7EF
+            DDE9F3CAD6E2DAE6F2DAE6F0DAE7EF000000DEEAF0E8F4FADDE9EFD8E4EADFEB
+            F1DDEBF1E2F0F6E7F5FBDEECF2DCECF2DCECF2DCECF2DCECF2DCECF2DCEDF0DC
+            EDF0E1F3F4DAECEDD9EAEDD2E2E8E4F1F9D0DCE6E1EDF9D7E3EFDAE6F2DAE6F2
+            DAE6F0000000D7E1E8E0EAF1DFEBF1DEEAF0DDEAF2DAE7EFD7E4ECD5E5ECD7E7
+            EED5E7EED4E7EED4E7EED2E7EFD2E7EFD2E7EFD4E7EED4E7EACFE3E4DCEFF2D7
+            E7EDDCE9F1D7E3EDD4E0ECD8E4F0DAE6F2DAE6F2DAE6F0000000DBE5ECDDE7EE
+            DEEAF0DEEAF0D9E6EED6E3EBD6E6EDDDEDF4D4E5EED3E6EED3E6EED1E6EECFE5
+            F0CFE5F0CFE5F0D1E6EED3E8EAC8DCDDDFF2F7D1E4E9D3DFE9E8F4FECEDAE6DE
+            EAF6DAE6F2DAE6F2DAE6F0000000}
+          OnClick = btnDraw4Click
+        end
+        object btnDraw6: TSpeedButton
+          Left = 181
+          Top = 24
+          Width = 36
+          Height = 36
+          Glyph.Data = {
+            66100000424D6610000000000000360000002800000025000000250000000100
+            18000000000030100000C40E0000C40E00000000000000000000BCBCBCBEBEBE
+            B6B6B6C5C5C5C0C0C0BABABAC2C2C2C4C4C4C2C2C2C2C2C2C2C2C2C2C2C2C2C2
+            C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2
+            C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2BDBDBDB9B9B9
+            BFBFBFB7B7B7D0D0D000C4C4C40404040B0B0B00000000000000000000000002
+            0202000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            000000000000000000000202020000000C0C0C000000B6B6B600B9B9B9FFFFFF
+            7C7C7C7B7B7B8383838383838585857A7A7A8080808080808080808080808080
+            8080808080808080808080808080808080808080808080808080808080808080
+            8080808080808080808080808080808080808080808080808080808080888888
+            737373030303C5C5C500C5C5C5FFFFFFBDBDBDC1C1C1C1C1C1BABABAC2C2C2C9
+            C9C9C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0BEBEBEBFBFBF868686000000BCBCBC00C1C1C1FCFCFC
+            BFBFBFC2C2C2C3C3C3C2C2C2BEBEBEBEBEBEBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFC0C0C0BEBEBE
+            808080060606BABABA00C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0C4C4C4C1C1C1C1C1C1C5C5C5B6B6B6C5C5C5B4B4B4C7C7C7C1C1C1BFBFBF
+            BDBDBDC9C9C9BEBEBEBEBEBEC1C1C1C0C0C0BEBEBEC4C4C4C0C0C0C1C1C1C1C1
+            C1BEBEBEC4C4C4BBBBBBC1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0BABABAC8C8C8B9B9B9BCBCBCCECE
+            CEBABABAC8C8C8BABABABCBCBCC9C9C9BBBBBBBCBCBCC0C0C0C3C3C3C2C2C2BF
+            BFBFBFBFBFBBBBBBBEBEBEC1C1C1C3C3C3BBBBBBBDBDBDC6C6C6C1C1C1BFBFBF
+            808080000000C1C1C100C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0C0C0C0BFBFBFC7C7C7C0C0C0BCBCBCC6C6C6BBBBBBC0C0C0BDBDBDC6C6C6
+            C0C0C0BDBDBDC1C1C1C5C5C5BABABAC1C1C1C5C5C5BCBCBCC2C2C2C2C2C2B5B5
+            B5CECECEBDBDBDBFBFBFC1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0C5C5C5BBBBBBBBBBBBC3C3C3BDBD
+            BDC3C3C3C5C5C5BFBFBF000000000000090909000000040404B8B8B8C5C5C5BE
+            BEBEBDBDBDC6C6C6B5B5B5C1C1C1C5C5C5BDBDBDC0C0C0C1C1C1C1C1C1BFBFBF
+            808080000000C1C1C100C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0C0C0C0BEBEBEC2C2C2CACACAB4B4B4000000000000000000C0C0C0C5C5C5
+            B7B7B7C0C0C0BCBCBC080808000000020202BFBFBFC3C3C3C8C8C8C2C2C2B7B7
+            B7C1C1C1C3C3C3C3C3C3C1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0BDBDBDC6C6C6BABABAC1C1C10707
+            07C5C5C5C0C0C0C3C3C3C3C3C3B9B9B9C0C0C0C2C2C2BFBFBFBBBBBBC6C6C6BE
+            BEBE000000BDBDBDC2C2C2C1C1C1BBBBBBC0C0C0C5C5C5BBBBBBC1C1C1BFBFBF
+            808080000000C1C1C100C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0C3C3C3BFBFBFC7C7C7000000BEBEBEBDBDBDBDBDBDC1C1C1C3C3C3B6B6B6
+            C4C4C4C4C4C4C0C0C0BCBCBCBEBEBEC0C0C0D0D0D0000000C6C6C6BDBDBDC0C0
+            C0B8B8B8C7C7C7BDBDBDC1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0C2C2C2BABABA050505C2C2C2BDBD
+            BDC1C1C1C4C4C4C1C1C1C0C0C0C2C2C2C4C4C4B8B8B8C3C3C3C3C3C3C0C0C0C1
+            C1C1B7B7B7C8C8C8000000C0C0C0C2C2C2C1C1C1BDBDBDC2C2C2C1C1C1BFBFBF
+            808080000000C1C1C100C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0BBBBBB020202C3C3C3BABABAC2C2C2C9C9C9B6B6B6C5C5C5C0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C3C3C3BEBEBEBCBCBC0A0A0AB6B6
+            B6C3C3C3C1C1C1BEBEBEC1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0C0C0C0090909B8B8B8C5C5C5BBBB
+            BBB7B7B7CBCBCBBDBDBDC0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0BDBDBDBFBFBFC3C3C3000000C6C6C6BDBDBDC0C0C0C4C4C4C1C1C1BFBFBF
+            808080000000C1C1C100C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0BFBFBF000000C0C0C0C4C4C4C5C5C5C4C4C4BEBEBEBBBBBBC0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C3C3C3C4C4C4BEBEBE040404BCBC
+            BCC2C2C2BBBBBBBEBEBEC1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0000000C6C6C6C5C5C5B8B8B8BEBE
+            BEBEBEBEB7B7B7CBCBCBC0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0BDBDBDB9B9B9C3C3C3C0C0C0000000BDBDBDC6C6C6C5C5C5C1C1C1BFBFBF
+            808080000000C1C1C100C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0000000BEBEBEBBBBBBC2C2C2CBCBCBC0C0C0C0C0C0BFBFBFC0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C4C4C4C2C2C2BCBCBCC3C3C30000
+            00C3C3C3BDBDBDBDBDBDC1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0010101C2C2C2B8B8B8CBCBCBB1B1
+            B1C7C7C7C3C3C3BEBEBEC0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0BDBDBDC4C4C4BFBFBFBBBBBB050505C1C1C1BBBBBBC5C5C5C1C1C1BFBFBF
+            808080000000C1C1C100C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0000000C6C6C6C8C8C8B2B2B2C0C0C0BCBCBCC3C3C3C1C1C1C0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0BEBEBEBCBCBCC1C1C1C8C8C80000
+            00BFBFBFC3C3C3C3C3C3C1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0060606B9B9B9BDBDBDC3C3C3C2C2
+            C2C7C7C7B9B9B9C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0C4C4C4BFBFBFC0C0C0BFBFBF010101C0C0C0C0C0C0BEBEBEC1C1C1BFBFBF
+            808080000000C1C1C100C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0BBBBBB0A0A0ABABABAC4C4C4C5C5C5BBBBBBBBBBBBC2C2C2BEBEBEC5C5C5
+            BBBBBBBDBDBDC2C2C2C1C1C1BCBCBCC4C4C4C5C5C5C1C1C1C1C1C1020202BEBE
+            BEC1C1C1BBBBBBC6C6C6C1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0C1C1C1000000B9B9B9C2C2C2BEBE
+            BEB6B6B6CFCFCFC0C0C0BABABAC1C1C1C3C3C3CDCDCDB8B8B8BEBEBECBCBCBB6
+            B6B6BBBBBBBEBEBEC2C2C2010101BFBFBFBBBBBBCFCFCFB4B4B4C1C1C1BFBFBF
+            808080000000C1C1C100C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0C0C0C0000000C5C5C5BDBDBDBEBEBED1D1D1B3B3B3BCBCBCCECECEB7B7B7
+            BDBDBDB8B8B8C5C5C5C7C7C7B9B9B9C7C7C7C3C3C3C4C4C4CACACA000000BABA
+            BAC9C9C9B9B9B9C5C5C5C1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0C4C4C4BFBFBF000000C8C8C8B2B2
+            B2BFBFBFBEBEBEC7C7C7B8B8B8C9C9C9BFBFBFBEBEBEC3C3C3BEBEBEB9B9B9C2
+            C2C2C4C4C4B5B5B5000000BDBDBDC9C9C9BCBCBCC3C3C3BBBBBBC1C1C1BFBFBF
+            808080000000C1C1C100C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0B7B7B7C7C7C7BCBCBC020202C8C8C8BEBEBEBEBEBEC0C0C0C9C9C9ADADAD
+            C9C9C9BFBFBFC2C2C2BDBDBDC3C3C3C0C0C0C2C2C2000000CACACAC2C2C2BBBB
+            BBC2C2C2C5C5C5BFBFBFC1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0C1C1C1C2C2C2C2C2C2B9B9B90000
+            00C9C9C9C4C4C4BDBDBDBDBDBDC2C2C2BDBDBDC5C5C5BABABAC2C2C2C2C2C2C1
+            C1C1020202B9B9B9BEBEBEC0C0C0C8C8C8BBBBBBBDBDBDC2C2C2C1C1C1BFBFBF
+            808080000000C1C1C100C1C1C1FEFEFEC0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0
+            C0C0C6C6C6B7B7B7C3C3C3C6C6C6BCBCBC000000000000030303BDBDBDC5C5C5
+            BEBEBEC3C3C3BDBDBD0202020A0A0A000000C8C8C8B8B8B8C8C8C8B9B9B9C0C0
+            C0BCBCBCCBCBCBBDBDBDC1C1C1BFBFBF808080000000C1C1C100C1C1C1FEFEFE
+            C0C0C0C1C1C1BFBFBFC2C2C2BFBFBFC0C0C0B9B9B9C3C3C3BFBFBFBCBCBCC1C1
+            C1C0C0C0C1C1C1BEBEBE000000060606020202000000050505BABABAB9B9B9C9
+            C9C9BABABACACACAB9B9B9C0C0C0C0C0C0C7C7C7B6B6B6C3C3C3C1C1C1BFBFBF
+            808080000000C1C1C100C4C4C4FAFAFAC8C8C8BEBEBEBDBDBDC2C2C2C1C1C1C1
+            C1C1C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0C0C0C0C4C4C47A7A7A070707C5C5C500C0C0C0F7F7F7
+            BEBEBEC0C0C0C4C4C4C4C4C4BEBEBEBDBDBDC0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C1C1C1BBBBBB
+            8A8A8A000000BCBCBC00C6C6C6FFFFFFBEBEBEC1C1C1BEBEBEBDBDBDBEBEBEC7
+            C7C7C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+            C0C0C0C0C0C0C0C0C0C0C7C7C7C3C3C3787878000000C6C6C600B8B8B8FFFFFF
+            BABABAC2C2C2C1C1C1C1C1C1BEBEBEBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFB9B9B9BDBDBD
+            7D7D7D090909BABABA00C9C9C9FFFFFFBFBFBFBBBBBBBEBEBEC5C5C5C0C0C0B8
+            B8B8BEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBE
+            BEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBEBE
+            BEBEBEBEBEBEBEBEBEBECBCBCBBFBFBF7B7B7B050505BFBFBF00BABABAF6F6F6
+            CECECEC0C0C0BCBCBCC0C0C0C5C5C5C5C5C5C2C2C2C2C2C2C2C2C2C2C2C2C2C2
+            C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2
+            C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2B2B2B2C6C6C6
+            848484000000BEBEBE00C4C4C4FAFAFAFFFFFFFFFFFFFFFFFFFBFBFBFBFBFBFE
+            FEFEFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD
+            FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD
+            FDFDFDFDFDFDFDFDFDFDFFFFFFF9F9F9FFFFFF020202C0C0C000BEBEBEC6C6C6
+            BFBFBFB9B9B9C6C6C6C3C3C3C0C0C0BEBEBEC2C2C2C2C2C2C2C2C2C2C2C2C2C2
+            C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2
+            C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2B8B8B8C9C9C9
+            BABABABDBDBDC6C6C600}
+          OnClick = btnDraw6Click
+        end
+        object btnDraw7: TSpeedButton
+          Left = 215
+          Top = 24
+          Width = 36
+          Height = 36
+          Glyph.Data = {
+            EA090000424DEA0900000000000036000000280000001E0000001B0000000100
+            180000000000B4090000C40E0000C40E00000000000000000000EEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEE0000ECECECECECECECECECECECECECECECECECEC
+            ECECECECECECF5F5F5E9E9E9E5E5E5EDEDEDF2F2F2EEEEEEEAEAEAECECECE3E3
+            E3F1F1F1E8E8E8E2E2E2F6F6F6ECECECEEEEEEF0F0F0EEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEE0000ECECECECECECECECECECECECECECECECECECECECECEC
+            ECECE5E5E5EAEAEAF1F1F1F1F1F1EAEAEAE7E7E7F0F0F0FDFDFDF6F6F6DFDFDF
+            F0F0F0FFFFFFDBDBDBF2F2F2DEDEDEE8E8E8EEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEE0000ECECECECECECECECECECECECECECECECECECECECECECECECF6F6
+            F6F0F0F0E9E9E9E8E8E8EDEDEDF1F1F1ECECECE5E5E5F0F0F0F5F5F5EEEEEEF2
+            F2F2D4D4D41212120000000C0C0CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            0000ECECECECECECECECECECECECECECECECECECECECECECECECEAEAEAF0F0F0
+            F1F1F1E9E9E9E1E1E1DFDFDFE0E0E0DFDFDFD0D0D0F0F0F0EAEAEAEEEEEEEFEF
+            EFE0E0E01C1C1C000000EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000ECEC
+            ECECECECECECECECECECECECECECECECECECECECECECEBEBEBE6E6E6E0E0E0DC
+            DCDCDBDBDBD9D9D9D5D5D5D0D0D0E2E2E2DADADAD9D9D9D1D1D1FDFDFDF5F5F5
+            DBDBDB0B0B0BEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000ECECECECECEC
+            ECECECECECECECECECECECECECECECECECECEFEFEFE2E2E2D7D7D7D3D3D3CDCD
+            CDC7C7C7CCCCCCD7D7D7C4C4C4BCBCBCE7E7E7F9F9F9C2C2C2F7F7F7E1E1E1E3
+            E3E3EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000ECECECECECECECECECEC
+            ECECECECECECECECECECECECECECE9E9E9C9C9C9A2A2A2777777404040141414
+            1212122B2B2B606060A4A4A4BCBCBCB5B5B5D8D8D8CDCDCDF3F3F3F1F1F1EEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000ECECECECECECECECECECECECECEC
+            ECECECECECECECECECECD0D0D07070702C2C2C4A4A4A8E8E8EABABAB9F9F9F90
+            90903B3B3B2F2F2F6B6B6BC4C4C4DADADADCDCDCDBDBDBF1F1F1EEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEE0000EDEDEDEFEFEFE8E8E8F1F1F1EDEDEDE9E9E9
+            F1F1F1DDDDDD989898787878AAAAAADBDBDBBEBEBEB4B4B4C6C6C6B5B5B5B8B8
+            B8A0A0A06868682B2B2BCCCCCCDBDBDBDFDFDFECECECEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEE0000EDEDEDEEEEEEEAEAEAF0F0F0EAEAEAEDEDEDEDEDEDBE
+            BEBEA2A2A2BFBFBFD2D2D2CECECEC5C5C5BEBEBEBABABABABABAB5B5B5B7B7B7
+            8D8D8D474747838383D7D7D7E4E4E4EAEAEAEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEE0000EDEDEDEEEEEEECECECEEEEEEE6E6E6F3F3F3E6E6E6939393C6C6
+            C6ECECECEBEBEBD1D1D1CDCDCDC8C8C8BBBBBBBCBCBCB7B7B7BCBCBCA4A4A47B
+            7B7B393939D9D9D9E4E4E4E9E9E9EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            0000EEEEEEEDEDEDEEEEEEEDEDEDE3E3E3F7F7F7E2E2E2757575F0F0F0EAEAEA
+            EBEBEBE5E5E5D6D6D6D1D1D1CCCCCCBEBEBEC1C1C1AEAEAEA2A2A2A9A9A91717
+            17DDDDDDDFDFDFEBEBEBEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEE
+            EEEDEDEDEEEEEEEDEDEDE3E3E3F7F7F7E2E2E2757575F0F0F0F5F5F5F8F8F8F1
+            F1F1E6E6E6E2E2E2DADADACDCDCDCECECEB6B6B6A9A9A9AEAEAE141414DADADA
+            E1E1E1ECECECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EDEDEDEEEEEE
+            ECECECEEEEEEE6E6E6F3F3F3E6E6E6939393C4C4C4FFFFFFFFFFFFF0F0F0F7F7
+            F7F4F4F4DEDEDEE2E2E2D9D9D9D4D4D4BFBFBF8F8F8F373737D6D6D6EBEBEBEB
+            EBEBEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EDEDEDEEEEEEEAEAEAF0
+            F0F0EAEAEAEDEDEDEDEDEDBEBEBE989898E1E1E1FFFFFFF6F6F6FDFDFDF8F8F8
+            E8E8E8EDEDEDE6E6E6DFDFDFC0C0C0767676929292DFDFDFF2F2F2EAEAEAEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EDEDEDEFEFEFE8E8E8F1F1F1EDED
+            EDE9E9E9F1F1F1DDDDDD8686869A9A9AD8D8D8FFFFFFFAFAFAF3F3F3F6F6F6EA
+            EAEAF0F0F0D1D1D1AEAEAE717171ECECECEDEDEDF2F2F2EBEBEBEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEE2E2E2B4B4B48D8D8D999999CCCCCCF1F1F1EBEBEBD5D5D59191
+            91A3A3A3C0C0C0DCDCDCEDEDEDF0F0F0EBEBEBE6E6E6EEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEF3F3F3E7E7E7D0D0D0B2B2B2979797888888858585878787C1C1C1CBCBCB
+            DBDBDBE9E9E9F1F1F1F1F1F1ECECECE8E8E8EEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEE0000EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE6E6
+            E6EFEFEFF5F5F5F0F0F0E5E5E5E2E2E2ECECECF7F7F7EBEBEBEDEDEDEFEFEFF0
+            F0F0F0F0F0EFEFEFEEEEEEECECECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            0000EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEBEBEBEAEAEA
+            EAEAEAEDEDEDF1F1F1F2F2F2EEEEEEEAEAEAF1F1F1EFEFEFEDEDEDEBEBEBEBEB
+            EBECECECEEEEEEEFEFEFEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE7E7E7EBEBEBEEEEEEED
+            EDEDE9E9E9E7E7E7E7E7E7E9E9E9EBEBEBEAEAEAEAEAEAE9E9E9EAEAEAEBEBEB
+            EDEDEDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEBEBEBEAEAEAEBEBEBEBEBEBEDED
+            EDEEEEEEEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEEEEEEEEEEEEEDEDEDECECECEC
+            ECECEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEF3F3F3ECECECE6E6E6E8E8E8EEEEEEF0F0F0
+            E9E9E9E2E2E2F1F1F1F1F1F1F0F0F0EFEFEFEEEEEEEEEEEEEDEDEDEDEDEDEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE0000EEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEE4E4E4EDEDEDF5F5F5F4F4F4ECECECE9E9E9EDEDEDF4
+            F4F4EDEDEDECECECEBEBEBEAEAEAEAEAEAECECECEEEEEEF0F0F0EEEEEEEEEEEE
+            EEEEEEEEEEEEEEEEEEEEEEEE0000}
+          OnClick = btnDraw7Click
+        end
+        object btnDraw8: TSpeedButton
+          Left = 249
+          Top = 24
+          Width = 36
+          Height = 36
+          OnClick = btnDraw8Click
+        end
+      end
+      object grbColour: TGroupBox
+        Left = 10
+        Top = 215
+        Width = 375
+        Height = 105
+        Caption = 'Colour'
+        TabOrder = 2
+        object btnColour4: TSpeedButton
+          Left = 216
+          Top = 21
+          Width = 36
+          Height = 36
+          Cursor = crHandPoint
+        end
+        object btnColour1: TSpeedButton
+          Left = 113
+          Top = 21
+          Width = 36
+          Height = 36
+          Cursor = crHandPoint
+        end
+        object btnColour2: TSpeedButton
+          Left = 147
+          Top = 21
+          Width = 36
+          Height = 36
+          Cursor = crHandPoint
+        end
+        object btnColour3: TSpeedButton
+          Left = 181
+          Top = 21
+          Width = 36
+          Height = 36
+          Cursor = crHandPoint
+        end
+        object btnColour8: TSpeedButton
+          Left = 216
+          Top = 56
+          Width = 36
+          Height = 36
+          Cursor = crHandPoint
+        end
+        object btnColour5: TSpeedButton
+          Left = 113
+          Top = 56
+          Width = 36
+          Height = 36
+          Cursor = crHandPoint
+        end
+        object btnColour6: TSpeedButton
+          Left = 147
+          Top = 56
+          Width = 36
+          Height = 36
+          Cursor = crHandPoint
+        end
+        object btnColour7: TSpeedButton
+          Left = 181
+          Top = 56
+          Width = 36
+          Height = 36
+          Cursor = crHandPoint
+        end
+        object SpeedButton1: TSpeedButton
+          Left = 29
+          Top = 38
+          Width = 36
+          Height = 36
+        end
+        object colorPanel: TPanel
+          Left = 18
+          Top = 27
+          Width = 57
+          Height = 57
+          BevelOuter = bvLowered
+          ParentBackground = False
+          TabOrder = 1
+        end
+        object pnlColorSelect: TPanel
+          Left = 36
+          Top = 44
+          Width = 24
+          Height = 24
+          ParentBackground = False
+          TabOrder = 0
+        end
+      end
+      object grbCursorPosition: TGroupBox
+        Left = 10
+        Top = 6
+        Width = 375
+        Height = 123
+        Caption = 'Cursor Position'
+        TabOrder = 0
+        object lblBearing: TLabel
+          Left = 128
+          Top = 24
+          Width = 3
+          Height = 13
+        end
+        object lblDistance: TLabel
+          Left = 128
+          Top = 47
+          Width = 3
+          Height = 13
+        end
+        object lbSlPosition: TLabel
+          Left = 128
+          Top = 69
+          Width = 3
+          Height = 13
+        end
+        object lblnmSGrid: TLabel
+          Left = 128
+          Top = 92
+          Width = 3
+          Height = 13
+        end
+        object lblWPosition: TLabel
+          Left = 259
+          Top = 70
+          Width = 3
+          Height = 13
+        end
+        object lblnmWGrid: TLabel
+          Left = 259
+          Top = 93
+          Width = 3
+          Height = 13
+        end
+        object BearingCursorPosition: TStaticText
+          Left = 11
+          Top = 24
+          Width = 108
+          Height = 17
+          Caption = 'Bearing from Centre :'
+          TabOrder = 0
+        end
+        object lblDegreesTBearing: TStaticText
+          Left = 280
+          Top = 24
+          Width = 52
+          Height = 17
+          Caption = 'degrees T'
+          TabOrder = 1
+        end
+        object DistanceCursorPosition: TStaticText
+          Left = 11
+          Top = 47
+          Width = 113
+          Height = 17
+          Caption = 'Distance from Centre :'
+          TabOrder = 2
+        end
+        object lblnmDistance: TStaticText
+          Left = 280
+          Top = 47
+          Width = 18
+          Height = 17
+          Caption = 'nm'
+          TabOrder = 3
+        end
+        object PositionCursorPosition: TStaticText
+          Left = 11
+          Top = 70
+          Width = 48
+          Height = 17
+          Caption = 'Position :'
+          TabOrder = 4
+        end
+        object GridCursorPosition: TStaticText
+          Left = 11
+          Top = 93
+          Width = 30
+          Height = 17
+          Caption = 'Grid :'
+          TabOrder = 5
+        end
+      end
+      object gbGrid: TGroupBox
+        Left = 9
+        Top = 326
+        Width = 376
+        Height = 265
+        Caption = 'Grid'
+        TabOrder = 8
+        object Label31: TLabel
+          Left = 19
+          Top = 111
+          Width = 55
+          Height = 13
+          Caption = 'Cell Width :'
+        end
+        object Label32: TLabel
+          Left = 19
+          Top = 138
+          Width = 58
+          Height = 13
+          Caption = 'Cell Height :'
+        end
+        object Label33: TLabel
+          Left = 19
+          Top = 165
+          Width = 100
+          Height = 13
+          Caption = 'Number of Columns :'
+        end
+        object Label34: TLabel
+          Left = 252
+          Top = 218
+          Width = 45
+          Height = 13
+          Caption = 'degreesT'
+        end
+        object Label36: TLabel
+          Left = 252
+          Top = 111
+          Width = 14
+          Height = 13
+          Caption = 'nm'
+        end
+        object Label35: TLabel
+          Left = 252
+          Top = 138
+          Width = 14
+          Height = 13
+          Caption = 'nm'
+        end
+        object Label39: TLabel
+          Left = 19
+          Top = 192
+          Width = 81
+          Height = 13
+          Caption = 'Number of Row :'
+        end
+        object Label40: TLabel
+          Left = 19
+          Top = 219
+          Width = 78
+          Height = 13
+          Caption = 'Rotation Angle :'
+        end
+        object GroupBox5: TGroupBox
+          Left = 3
+          Top = 20
+          Width = 370
+          Height = 82
+          Caption = 'Center Point'
+          TabOrder = 0
+          object Label37: TLabel
+            Left = 16
+            Top = 24
+            Width = 44
+            Height = 13
+            Caption = 'Position :'
+          end
+          object Label38: TLabel
+            Left = 16
+            Top = 51
+            Width = 26
+            Height = 13
+            Caption = 'Grid :'
+          end
+          object edtGridPosLat: TEdit
+            Left = 123
+            Top = 21
+            Width = 110
+            Height = 21
+            TabOrder = 0
+          end
+          object edtGridGLat: TEdit
+            Left = 123
+            Top = 48
+            Width = 110
+            Height = 21
+            TabOrder = 1
+          end
+          object edtGridPosLong: TEdit
+            Left = 239
+            Top = 21
+            Width = 110
+            Height = 21
+            TabOrder = 2
+          end
+          object edtGridGLong: TEdit
+            Left = 239
+            Top = 48
+            Width = 110
+            Height = 21
+            TabOrder = 3
+          end
+        end
+        object Edit11: TEdit
+          Left = 125
+          Top = 108
+          Width = 110
+          Height = 21
+          TabOrder = 1
+        end
+        object Edit12: TEdit
+          Left = 125
+          Top = 135
+          Width = 110
+          Height = 21
+          TabOrder = 2
+        end
+        object Edit13: TEdit
+          Left = 125
+          Top = 162
+          Width = 110
+          Height = 21
+          TabOrder = 3
+        end
+        object Edit7: TEdit
+          Left = 125
+          Top = 189
+          Width = 110
+          Height = 21
+          TabOrder = 4
+        end
+        object Edit8: TEdit
+          Left = 125
+          Top = 216
+          Width = 110
+          Height = 21
+          TabOrder = 5
+        end
+      end
+      object gbPolygon: TGroupBox
+        Left = 9
+        Top = 326
+        Width = 376
+        Height = 265
+        Caption = 'Polygon'
+        TabOrder = 10
+        object GroupBox1: TGroupBox
+          Left = 3
+          Top = 20
+          Width = 370
+          Height = 82
+          Caption = 'Selected Point'
+          TabOrder = 0
+          object Label45: TLabel
+            Left = 16
+            Top = 24
+            Width = 44
+            Height = 13
+            Caption = 'Position :'
+          end
+          object Label46: TLabel
+            Left = 16
+            Top = 51
+            Width = 26
+            Height = 13
+            Caption = 'Grid :'
+          end
+          object edtPolygonPosLat: TEdit
+            Left = 104
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 0
+          end
+          object edtPolygonGridLat: TEdit
+            Left = 104
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 1
+          end
+          object edtPolygonPosLong: TEdit
+            Left = 231
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 2
+          end
+          object edtPolygonGridLong: TEdit
+            Left = 231
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 3
+          end
+        end
+      end
+      object gbArc: TGroupBox
+        Left = 9
+        Top = 326
+        Width = 376
+        Height = 265
+        Caption = 'Arc'
+        TabOrder = 7
+        object Label25: TLabel
+          Left = 19
+          Top = 111
+          Width = 58
+          Height = 13
+          Caption = 'Start Angle:'
+        end
+        object Label26: TLabel
+          Left = 19
+          Top = 138
+          Width = 52
+          Height = 13
+          Caption = 'End Angle:'
+        end
+        object Label27: TLabel
+          Left = 19
+          Top = 183
+          Width = 39
+          Height = 13
+          Caption = 'Radius :'
+        end
+        object Label28: TLabel
+          Left = 242
+          Top = 138
+          Width = 45
+          Height = 13
+          Caption = 'degreesT'
+        end
+        object Label29: TLabel
+          Left = 242
+          Top = 111
+          Width = 45
+          Height = 13
+          Caption = 'degreesT'
+        end
+        object Label30: TLabel
+          Left = 242
+          Top = 183
+          Width = 14
+          Height = 13
+          Caption = 'nm'
+        end
+        object GroupBox2: TGroupBox
+          Left = 3
+          Top = 20
+          Width = 370
+          Height = 82
+          Caption = 'Center Point'
+          TabOrder = 0
+          object Label19: TLabel
+            Left = 16
+            Top = 24
+            Width = 44
+            Height = 13
+            Caption = 'Position :'
+          end
+          object Label20: TLabel
+            Left = 16
+            Top = 51
+            Width = 26
+            Height = 13
+            Caption = 'Grid :'
+          end
+          object edtCenterPosLat: TEdit
+            Left = 104
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 0
+          end
+          object edtCenterGridLat: TEdit
+            Left = 104
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 1
+          end
+          object edtCenterPosLong: TEdit
+            Left = 231
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 2
+          end
+          object edtCenterGridLong: TEdit
+            Left = 231
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 3
+          end
+        end
+        object edtArcStartAngle: TEdit
+          Left = 115
+          Top = 108
+          Width = 121
+          Height = 21
+          TabOrder = 1
+        end
+        object edtArcEndAngle: TEdit
+          Left = 115
+          Top = 135
+          Width = 121
+          Height = 21
+          TabOrder = 2
+        end
+        object edtArcRadius: TEdit
+          Left = 115
+          Top = 180
+          Width = 121
+          Height = 21
+          TabOrder = 3
+        end
+      end
+      object gbCircle: TGroupBox
+        Left = 9
+        Top = 326
+        Width = 376
+        Height = 265
+        Caption = 'Circle'
+        TabOrder = 5
+        object Label13: TLabel
+          Left = 19
+          Top = 111
+          Width = 39
+          Height = 13
+          Caption = 'Radius :'
+        end
+        object Label17: TLabel
+          Left = 290
+          Top = 111
+          Width = 14
+          Height = 13
+          Caption = 'nm'
+        end
+        object GroupBox4: TGroupBox
+          Left = 3
+          Top = 20
+          Width = 370
+          Height = 82
+          Caption = 'Center Point'
+          TabOrder = 0
+          object Label21: TLabel
+            Left = 16
+            Top = 24
+            Width = 106
+            Height = 13
+            Caption = 'Bearing From Center :'
+          end
+          object Label22: TLabel
+            Left = 16
+            Top = 51
+            Width = 111
+            Height = 13
+            Caption = 'Distance From Center :'
+          end
+          object Label23: TLabel
+            Left = 287
+            Top = 24
+            Width = 45
+            Height = 13
+            Caption = 'degreesT'
+          end
+          object Label24: TLabel
+            Left = 287
+            Top = 51
+            Width = 14
+            Height = 13
+            Caption = 'nm'
+          end
+          object edtBearingFromCenterCircle: TEdit
+            Left = 160
+            Top = 21
+            Width = 121
+            Height = 21
+            TabOrder = 0
+          end
+          object edtDistanceFromCenterCircle: TEdit
+            Left = 160
+            Top = 48
+            Width = 121
+            Height = 21
+            TabOrder = 1
+          end
+        end
+        object edtRadiusCircle: TEdit
+          Left = 163
+          Top = 108
+          Width = 121
+          Height = 21
+          TabOrder = 1
+        end
+      end
+    end
+    object Panel3: TPanel
+      Left = 1
+      Top = 670
+      Width = 388
+      Height = 75
+      Align = alBottom
+      BevelOuter = bvNone
+      TabOrder = 2
+      object btnApply: TButton
+        Left = 310
+        Top = 6
+        Width = 75
+        Height = 25
+        Caption = 'Apply'
+        TabOrder = 0
+        OnClick = btnApplyClick
+      end
+      object btnCancel: TButton
+        Left = 229
+        Top = 6
+        Width = 75
+        Height = 25
+        Caption = 'Cancel'
+        TabOrder = 1
+        OnClick = btnCancelClick
+      end
+      object btnOK: TButton
+        Left = 148
+        Top = 6
+        Width = 75
+        Height = 25
+        Caption = 'OK'
+        TabOrder = 2
+        OnClick = btnOKClick
+      end
+      object btnScreenCapture: TButton
+        Left = 229
+        Top = 37
+        Width = 156
+        Height = 25
+        Caption = 'Screen Capture'
+        TabOrder = 3
+        OnClick = btnScreenCaptureClick
+      end
+    end
+    object colorChoose: TColorGrid
+      Left = 102
+      Top = 254
+      Width = 284
+      Height = 100
+      ClickEnablesColor = True
+      BackgroundEnabled = False
+      TabOrder = 3
+      OnChange = colorChooseChange
+    end
+  end
+  object ImageList1: TImageList
+    BkColor = 14215660
+    Left = 848
+    Top = 72
+    Bitmap = {
+      494C010122002400140010001000ECE9D800FF10FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000009000000001002000000000000090
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FCFC
+      FC00FFFFFF00D6D6D600A5A5A500A8A8A800A7A7A700A6A6A600CECECE00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FCFCFC00FFFFFF00FDFD
+      FD00FBFBFB00BDBDBD005F5F5F00707070006F6F6F0074747400ADADAD00F6F6
+      F600FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000000000000D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FEFEFE00FFFFFF00F8F8
+      F800FDFDFD00ABABAB005D5D5D00727272006D6D6D006C6C6C00ACACAC00FDFD
+      FD00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC000000000000000000D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00F4F4
+      F400FFFFFF00B0B0B0005A5A5A006F6F6F006E6E6E0073737300B1B1B100FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00000000000000000000000000D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000F9F9F900FEFEFE00FFFFFF00F8F8
+      F800FFFFFF00ACACAC005B5B5B00686868006565650072727200A3A3A300FDFD
+      FD00FFFFFF00FFFFFF00FDFDFD00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000000000000000000000000000D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00F0F0F000FBFBFB00F0F0
+      F000F4F4F400BBBBBB005A5A5A00717171006A6A6A006A6A6A009A9A9A00E7E7
+      E700F9F9F900F9F9F900F7F7F700FCFCFC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000009191910085858500909090008787
+      87008E8E8E00717171006868680067676700696969006C6C6C00777777009797
+      97008E8E8E008E8E8E008C8C8C0094949400D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000006A6A6A006A6A6A006F6F6F006565
+      65006E6E6E006969690070707000666666006B6B6B006D6D6D00656565006767
+      67006C6C6C006C6C6C006A6A6A0074747400D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000006D6D6D00757575006B6B6B006868
+      6800686868006F6F6F0069696900727272007070700069696900717171007272
+      72006E6E6E006E6E6E006B6B6B0076767600D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000006C6C6C0072727200666666006A6A
+      6A00696969006C6C6C006A6A6A006E6E6E006E6E6E006B6B6B006D6D6D006262
+      62006F6F6F006E6E6E006C6C6C0076767600D8E9EC0000000000D8E9EC00D8E9
+      EC00000000000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000007777770076767600777777007272
+      7200848484005E5E5E006868680064646400646464006E6E6E00676767007979
+      79006D6D6D006D6D6D00707070007F7F7F00D8E9EC0000000000D8E9EC00D8E9
+      EC00000000000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FDFDFD00B2B2B20057575700737373006E6E6E0068686800A6A6A600FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FEFEFE00FFFFFF00FBFBFB00FFFF
+      FF00FEFEFE00AAAAAA005F5F5F00696969006C6C6C00676767009E9E9E00FAFA
+      FA00FCFCFC00FCFCFC00FCFCFC00FAFAFA00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FDFDFD00FFFFFF00FEFEFE00FFFF
+      FF00FFFFFF00B2B2B20060606000646464006E6E6E0070707000A1A1A100F9F9
+      F900FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00B4B4B4005A5A5A00737373006D6D6D0063636300A0A0A000FDFD
+      FD00FEFEFE00FEFEFE00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FEFEFE00FEFEFE00FFFF
+      FF00F8F8F800ACACAC0056565600717171006D6D6D006E6E6E00A4A4A400F8F8
+      F800FEFEFE00FEFEFE00FDFDFD00FEFEFE00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C100FFFFFF00707070007070700070707000FFFFFF00FFFFFF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00FAFAFA00FFFFFF00FFFFFF00FAFA
+      FA00FEFEFE00FFFFFF00FBFBFB00FFFFFF00E8E8E800FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000000000000000000000000000C1C1C100D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100FFFF
+      FF00707070007070700060606000707070007070700060606000FFFFFF00FFFF
+      FF00D8E9EC00D8E9EC00D8E9EC00D8E9EC00FFFFFF00FFFFFF00FCFCFC00FFFF
+      FF00FEFEFE00FEFEFE00FEFEFE00FBFBFB00A1A1A100C8C8C800F3F3F300FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00C1C1
+      C100000000000000000000000000000000000000000000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C1000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00FFFFFF00707070007070
+      70007070700060606000C1C1C100FFFFFF00FFFFFF007070700070707000FFFF
+      FF00FFFFFF00C1C1C100D8E9EC00D8E9EC00FFFFFF00FCFCFC00FCFCFC00FFFF
+      FF00FFFFFF00FAFAFA00FFFFFF00E6E6E6009999990097979700D5D5D500FDFD
+      FD00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000C1C1C100D8E9EC00D8E9EC00D8E9EC0000000000060606000000
+      0000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000C1C1C1000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC007070700070707000606060006060
+      6000C1C1C100FFFFFF007070700070707000FFFFFF00FFFFFF00707070007070
+      7000FFFFFF00FFFFFF00D8E9EC00D8E9EC00FFFFFF00FCFCFC00EAEAEA00CCCC
+      CC00F9F9F900FFFFFF00FAFAFA00A2A2A200DEDEDE00F3F3F3008B8B8B00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00C1C1C1000000000000000000D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000001919
+      190000000000C1C1C100D8E9EC00D8E9EC0000000000D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC006060600070707000C1C1C100FFFF
+      FF007070700070707000707070007070700070707000FFFFFF00FFFFFF007070
+      700070707000FFFFFF00FFFFFF00D8E9EC00FFFFFF00F7F7F700EDEDED009898
+      9800D9D9D900F3F3F300E0E0E000BCBCBC00EBEBEB00ABABAB00F9F9F900FCFC
+      FC00FFFFFF00FEFEFE00FFFFFF00FFFFFF00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC000000000000000000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      00000606060000000000C1C1C10000000000D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0070707000FFFFFF00707070007070
+      7000707070007070700070707000707070007070700070707000FFFFFF00FFFF
+      FF007070700070707000FFFFFF00FFFFFF00FFFFFF00FFFFFF00EEEEEE00D9D9
+      D9008F8F8F00EBEBEB0080808000DCDCDC00DADADA00A2A2A200FEFEFE00FFFF
+      FF00FBFBFB00FFFFFF00F9F9F900FFFFFF00D8E9EC000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00C1C1C1000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1
+      C100000000000606060000000000D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC006060600070707000707070007070
+      700070707000707070007070700070707000707070007070700070707000FFFF
+      FF00FFFFFF007070700070707000D8E9EC00FDFDFD00FFFFFF00E6E6E600DADA
+      DA00E8E8E80085858500C6C6C600CFCFCF00B8B8B800FCFCFC00FAFAFA00F6F6
+      F600FEFEFE00FFFFFF00FFFFFF00FFFFFF00D8E9EC0000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000C1C1C10000000000C1C1C100D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC007070700070707000707070007070
+      7000707070007070700070707000707070007070700070707000707070007070
+      7000FFFFFF0070707000FFFFFF00D8E9EC00FFFFFF00FFFFFF00EEEEEE00DCDC
+      DC00CCCCCC00DCDCDC00D4D4D400E0E0E00089898900B7B7B700BFBFBF00BFBF
+      BF00EEEEEE00FFFFFF00FFFFFF00FAFAFA00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9
+      EC0000000000D8E9EC00000000001919190000000000D8E9EC00D8E9EC00D8E9
+      EC00C1C1C10000000000D8E9EC00D8E9EC0060606000C1C1C100606060007070
+      7000707070007070700070707000707070007070700070707000707070007070
+      70007070700070707000FFFFFF00D8E9EC00FFFFFF00FFFFFF00ECECEC00E0E0
+      E000CFCFCF00D7D7D700CDCDCD00D4D4D400D7D7D700DADADA00DEDEDE008C8C
+      8C00E6E6E600FEFEFE00FFFFFF00FBFBFB00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000C1C1C10000000000D8E9EC00000000001919190000000000C1C1C100D8E9
+      EC00000000007070700000000000D8E9EC00D8E9EC0060606000C1C1C1007070
+      7000707070007070700070707000707070007070700070707000707070007070
+      70007070700070707000FFFFFF00FFFFFF00FFFFFF00FFFFFF00EDEDED00E2E2
+      E200CECECE00CECECE00CECECE00D1D1D100BFBFBF00DADADA0096969600FEFE
+      FE00FFFFFF00FCFCFC00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC000000000006060600000000000000
+      0000000000007070700060606000D8E9EC00D8E9EC00D8E9EC0060606000C1C1
+      C100606060007070700070707000707070007070700070707000707070007070
+      7000707070007070700070707000FFFFFF00FFFFFF00FFFFFF00EDEDED00E5E5
+      E500CBCBCB00CDCDCD00C5C5C500CBCBCB00D3D3D300A4A4A400FFFFFF00FFFF
+      FF00FEFEFE00FFFFFF00FEFEFE00FEFEFE00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000007070
+      7000707070000000000000000000D8E9EC00D8E9EC00D8E9EC00C1C1C1006060
+      6000D8E9EC007070700070707000707070007070700070707000707070007070
+      7000707070006060600060606000D8E9EC00FFFFFF00FEFEFE00EEEEEE00E8E8
+      E800C7C7C700C3C3C300CDCDCD00C7C7C700BEBEBE00FFFFFF00FFFFFF00F5F5
+      F500FCFCFC00FAFAFA00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C1000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00C1C1C10000000000707070007070
+      70007070700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0060606000C1C1C10060606000707070007070700070707000707070007070
+      700060606000C1C1C100D8E9EC00D8E9EC00FFFFFF00FFFFFF00F1F1F100E2E2
+      E200C3C3C300BFBFBF00C7C7C700DEDEDE00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000C1C1C100D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC000000000000000000707070007070
+      70007070700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C10060606000C1C1C10070707000707070006060600060606000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00F9F9F900FFFFFF00ECECEC00EDED
+      ED00B5B5B500B6B6B600FFFFFF00FAFAFA00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000000000007070700070707000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00606060007070700060606000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00FFFFFF00FFFFFF00E2E2E200FFFF
+      FF00A8A8A800FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00FFFFFF00FFFFFF00F5F5F500B5B5
+      B500F8F8F800FFFFFF00F7F7F700F3F3F300FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9EC00D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00C1C1C100D8E9EC00B9B9B900D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00606060000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000070707000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00606060007070
+      70007070700070707000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9
+      EC00C1C1C100606060000000000038383800C1C1C100D8E9EC00C1C1C100D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC007070700000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000060606000D8E9EC00C1C1C10000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0059595900D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1
+      E100E1E1E10060606000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC007070700000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000060606000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC0000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1
+      E100E1E1E10070707000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000070707000707070000000
+      0000000000007070700070707000707070000000000000000000707070007070
+      700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC0000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0059595900D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1
+      E100E1E1E10060606000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000070707000707070000000
+      0000707070007070700070707000707070007070700000000000707070007070
+      700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00000000000000
+      000000000000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00E1E1E100E1E1E10060606000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000070707000707070000000
+      000070707000C1C1C10060606000686868007070700000000000707070007070
+      700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00C1C1C10000000000D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00C1C1C100000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00E1E1E100E1E1E10060606000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000070707000707070000000
+      000060606000D8E9EC00C1C1C100707070007070700000000000707070007070
+      700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC006060600000000000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00C1C1
+      C100D8E9EC00D8E9EC000000000070707000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00000000000000000000000000C1C1C100D8E9EC000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00E1E1E100E1E1E10070707000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFFFF00FFFFFF000000
+      0000000000007070700070707000707070000000000000000000FFFFFF00FFFF
+      FF0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100606060000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000060606000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1E10060606000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFFFF00FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1E10060606000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C1000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1E1007070
+      7000D8E9EC00C1C1C100D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9
+      EC007070700000000000FFFFFF007F7F7F0060606000D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00C1C1C10000000000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00000000000000000000000000D8E9EC00D8E9EC000000000000000000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1
+      E100606060007070700070707000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00606060000000000030303000C1C1C100D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000000000000000000000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1
+      E100E1E1E100E1E1E10060606000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000059595900D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1
+      E100E1E1E100E1E1E10070707000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0059595900D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1
+      E100E1E1E100E1E1E10060606000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B6B6
+      B600BDBDBD00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B8B8B800D8D8D800FFFFFF00FFFF
+      FF00FFFFFF00E5E5E500D8E9EC00B7B7B700D4D4D400FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00EEEEEE00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC009292920060606000666666007070
+      700087878700D8E9EC00D8E9EC00999999006565650070707000707070007070
+      70006C6C6C00646464007F7F7F00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00B8B8B8009E9E9E009898
+      9800E5E5E500B7B7B700BCBCBC00D8E9EC00B6B6B600AAAAAA00707070007070
+      700095959500ECECEC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00949494008282
+      8200D6D6D600FFFFFF00FFFFFF00FFFFFF00D4D4D40070707000707070007070
+      700081818100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000C1C1C1000000000000000000D8E9EC00D8E9EC00C1C1C10000000000C1C1
+      C1000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00B7B7B700A4A4
+      A400707070006B6B6B00656565007070700070707000707070006C6C6C008A8A
+      8A00EBEBEB00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000000000000000000000000000000000000000000000000000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC009595
+      950097979700E5E5E500D8E9EC00999999006565650070707000707070008282
+      8200D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC000000000000000000000000007070700000000000D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC009595
+      950081818100D6D6D600EBEBEB00A8A8A800707070006B6B6B008C8C8C00EAEA
+      EA00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000D8E9EC000000000000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000C1C1C1000000000000000000000000000000000000000000C1C1C1000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC009696960095959500D1D1D10070707000707070007070700086868600BDBD
+      BD00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000000000000000000060606000C1C1C10060606000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B7B7
+      B700A0A0A00080808000A7A7A700707070006B6B6B008E8E8E00EAEAEA00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC009C9C9C0070707000707070007070700083838300D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC009C9C9C00707070006B6B6B0090909000E9E9E900D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0097979700656565007070700084848400D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00B7B7B700A2A2A20079797900D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B9B9B900DBDBDB00F3F3
+      F300F3F3F300F4F4F400F4F4F400D4D4D400B2B2B200B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B20089898900D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00FFFFFF00E7E7E700B2B2B200B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B20095959500838383008787
+      87008787870087878700C3C3C300F9F9F900D4D4D400B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B2008585850070707000707070007070
+      700070707000707070009E9E9E00FFFFFF00E6E6E600B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC009999990075757500707070007070
+      700070707000707070007C7C7C00C2C2C200F9F9F900D4D4D400B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B2007070700070707000707070007070
+      7000707070007070700070707000A0A0A000FFFFFF00B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC007171710070707000707070007070
+      70007070700070707000707070007D7D7D00C2C2C200DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B2007070700070707000707070007070
+      700070707000707070007070700070707000FFFFFF00B2B2B200B2B2B200B2B2
+      B200BCBCBC00E4E4E400B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC006F6F6F0070707000707070007070
+      700070707000707070007070700070707000B4B4B400DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B2007070700070707000707070007070
+      700070707000707070007070700070707000FFFFFF00B2B2B200B2B2B200B2B2
+      B2008D8D8D00FFFFFF00E3E3E300B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC006A6A6A0070707000707070007070
+      700070707000707070007070700070707000B4B4B400DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B2007070700070707000707070007070
+      700070707000707070007070700066666600FFFFFF00BBBBBB00E3E3E300E3E3
+      E30070707000A5A5A500FFFFFF00E3E3E300D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC006E6E6E0070707000707070007070
+      70007070700070707000707070006A6A6A00ADADAD00DBDBDB00B7B7B700D3D3
+      D300EEEEEE00EEEEEE00EEEEEE00EEEEEE007070700070707000707070007070
+      70007070700070707000707070006A6A6A00CFCFCF0085858500A7A7A700A7A7
+      A7007070700070707000A7A7A700FFFFFF00D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      0000000000000000000000000000D8E9EC006B6B6B0070707000707070007070
+      70007070700070707000707070006E6E6E0096969600BCBCBC009D9D9D008989
+      8900919191009191910091919100BDBDBD007070700070707000707070007070
+      700070707000707070006666660098989800BBBBBB006A6A6A00666666007070
+      7000707070007070700066666600D0D0D000D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000000000008484840070707000707070007070
+      700070707000707070006A6A6A0082828200AAAAAA00B7B7B700959595006969
+      69006B6B6B00696969006B6B6B008B8B8B009797970066666600666666007070
+      700070707000666666009A9A9A00B2B2B200E6E6E60097979700919191009797
+      9700666666007070700091919100B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00A8A8A8007F7F7F00646464006A6A
+      6A00707070006A6A6A0086868600ADADAD00CDCDCD00D2D2D200ABABAB009F9F
+      9F009F9F9F009F9F9F009F9F9F00A5A5A500B2B2B20090909000999999007070
+      7000C3C3C30090909000C1C1C10082828200FFFFFF00B2B2B200B2B2B200BBBB
+      BB006060600097979700B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00B2B2B200A6A6A600A2A2A2008A8A
+      8A00A6A6A600BABABA00AEAEAE009C9C9C00B7B7B700DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B8B8B8006767
+      6700FFFFFF00BBBBBB008A8A8A0069696900FFFFFF00B2B2B200B2B2B200B8B8
+      B8008F8F8F00B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B2B2B200B4B4B4008B8B
+      8B00B5B5B500DDDDDD009C9C9C0074747400B2B2B200DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B2006969
+      6900FFFFFF008B8B8B009696960070707000FFFFFF00B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B2B2B200B2B2B2008D8D
+      8D00B8B8B800BCBCBC00909090008B8B8B00B4B4B400DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B2006767
+      6700B1B1B1008D8D8D00B9B9B90067676700FFFFFF00B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000000000000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B2B2B200B2B2B2008989
+      8900818181009A9A9A00A8A8A8008F8F8F00AEAEAE00DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200BABABA006060
+      600093939300B2B2B200BABABA0060606000FFFFFF00B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B2B2B200B7B7B7008B8B
+      8B0080808000A8A8A800B7B7B7008F8F8F00ACACAC00DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B9B9B9008B8B
+      8B00B2B2B200B2B2B200B9B9B90060606000DEDEDE00B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B2B2B200B5B5B500A6A6
+      A600A5A5A500B2B2B200B4B4B4008D8D8D0098989800C5C5C500B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B2008A8A8A00B9B9B900B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00B5B5B500D8E9EC00D8E9EC00D8E9EC00B5B5B500D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C2C2C200C2C2C200C2C2
+      C200CECECE00C2C2C200C2C2C200C2C2C200CECECE00C2C2C200D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00000000000000000000000000000000000000000000000000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00A5A5A500E2E2E200E2E2E200E2E2
+      E200E2E2E200E2E2E200E2E2E200E2E2E200E2E2E200FFFFFF00C1C1C100D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C1000000
+      000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF0070707000707070000000
+      000000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      00000000000000000000000000000000000000000000E4E4E400FFFFFF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C1000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000000000006060
+      60007070700000000000C1C1C100D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00000000000000
+      0000D8E9EC000000000000000000000000000000000000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFFFF000000
+      000000000000FFFFFF00B2B2B20000000000B2B2B200FFFFFF00B2B2B2000000
+      0000000000007070700000000000D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00D8E9
+      EC00D8E9EC00BFBFBF00B4B4B400D8E9EC00D8E9EC00C1C1C10000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      0000FFFFFF00B2B2B200FFFFFF0000000000FFFFFF00B2B2B200FFFFFF00FFFF
+      FF00000000000000000000000000C1C1C1000000000000000000000000000000
+      000000000000000000000000000000000000000000006E6E6E00FFFFFF00B4B4
+      B400A8A8A800FFFFFF00CACACA00D8E9EC00D8E9EC0000000000FFFFFF00FFFF
+      FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      0000D8E9EC000000000000000000000000000000000000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000060606000C1C1C100FFFF
+      FF0000000000FFFFFF00B2B2B200FFFFFF00B2B2B200FFFFFF00C1C1C1000000
+      0000707070007070700070707000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000062626200FFFFFF00BFBF
+      BF006E6E6E00EBEBEB00FFFFFF00BDBDBD0000000000FFFFFF00FFFFFF000000
+      000000000000FFFFFF00000000007F7F7F00FFFFFF0000000000FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00B2B2B200FFFFFF00C1C1C100FFFFFF00C1C1C100606060007070
+      7000707070007070700070707000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00B4B4
+      B4006262620070707000EBEBEB00F5F5F500000000000000000000000000D8E9
+      EC0000000000FFFFFF00000000007F7F7F00FFFFFF0000000000FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000FFFF
+      FF00FFFFFF00FFFFFF00B2B2B200FFFFFF006060600070707000707070007070
+      7000707070000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00BFBF
+      BF0000000000707070006A6A6A00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000FFFFFF00000000007F7F7F00FFFFFF0000000000FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC0000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00C1C1C1000000000000000000707070007070
+      7000707070007070700070707000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000006E6E6E00FFFFFF00B4B4
+      B4000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000FFFFFF00000000007F7F7F00FFFFFF0000000000FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC0000000000D8E9
+      EC0000000000D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC000000
+      000000000000D8E9EC00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0000000000FFFFFF0000000000000000000000
+      00007070700070707000707070000000000000000000000000007D7D7D007D7D
+      7D007D7D7D007D7D7D007D7D7D00000000000000000061616100FFFFFF00D8E9
+      EC0068686800D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000FFFFFF00000000007F7F7F00FFFFFF000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      0000D8E9EC0000000000D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC0000000000D8E9EC0000000000FFFFFF00FFFF
+      FF0000000000FFFFFF00FFFFFF00FFFFFF0000000000FFFFFF00000000000000
+      0000000000000000000000000000D8E9EC000000000000000000F3F3F300F3F3
+      F300F3F3F300F3F3F300F3F3F30000000000000000006F6F6F00F9F9F900D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000FFFFFF00000000007F7F7F00FFFFFF0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC000000
+      000000000000D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC0000000000FFFFFF000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000FFFFFF000000
+      0000000000000000000000000000D8E9EC006F6F6F006F6F6F00707070007070
+      70007070700070707000707070006F6F6F000000000066666600D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000000000007F7F7F0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC0000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0000000000FFFFFF00FFFFFF0000000000FFFF
+      FF00000000000000000000000000D8E9EC000000000000000000757575000000
+      00007070700000000000000000006565650074747400D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000059595900D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC000000
+      000000000000FFFFFF00FFFFFF0000000000FFFFFF00FFFFFF00FFFFFF000000
+      0000FFFFFF000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      00007373730064646400D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000000000000000
+      000000000000D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00000000000000000000000000000000000000000000000000D8E9
+      EC0000000000FFFFFF0000000000D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      0000000000000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC0000000000000000000000000000000000D8E9EC000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B9B9
+      B900D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B4B4B400BFBFBF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC003030
+      3000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC009B9B9B000C0C0C006B6B
+      6B00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B3B3B300C1C1C100D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC006060
+      600060606000D8E9EC00D8E9EC00D8E9EC00B3B3B3005353530015151500D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00A7A7A7000000000000000000000000000000
+      000001010100D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC009999990017171700D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00A9A9A90000000000000000000000
+      000001010100D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC009999990017171700D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00ABABAB00000000000000
+      000001010100D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC0000000000D8E9EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC009999990019191900BFBFBF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00A9A9A90007070700ADADAD000000
+      000001010100D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC006060
+      600060606000D8E9EC00D8E9EC00D8E9EC00B3B3B3005353530015151500D8E9
+      EC00B3B3B300D8E9EC00A5A5A5000000000009090900D8E9EC00D8E9EC00AFAF
+      AF0001010100D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC0000000000000000000000
+      000000000000D8E9EC0000000000000000000000000000000000D8E9EC000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000003030
+      3000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00A7A7A700545454000000
+      000000000000000000000D0D0D00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000D8E9EC0000000000D8E9EC0000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC0000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0080808000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0080808000D8E9EC0080808000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000080808000D8E9EC00D8E9
+      EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0080808000D8E9
+      EC00D8E9EC008080800000000000D8E9EC00808080008080800080808000D8E9
+      EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0080808000D8E9
+      EC00D8E9EC008080800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00C1C1C10000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000080808000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC008080800000000000D8E9EC00D8E9EC00D8E9EC008080800080808000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC008080800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000C1C1C100D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000008080
+      800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000008080
+      800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000008080
+      800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000008080
+      800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0080808000808080000000
+      000000000000D8E9EC00808080008080800080808000D8E9EC00000000000000
+      0000D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC0080808000D8E9EC000000
+      000000000000D8E9EC00D8E9EC0080808000D8E9EC00D8E9EC00000000000000
+      0000D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC0000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC0000000000808080000000
+      000000000000D8E9EC00000000000000000000000000D8E9EC00000000000000
+      00000000000080808000D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000080808000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00000000008080
+      8000000000008080800080808000D8E9EC00D8E9EC00D8E9EC00C1C1C1000000
+      0000D8E9EC00D8E9EC00D8E9EC00C1C1C10000000000D8E9EC00D8E9EC00D8E9
+      EC00C1C1C10000000000D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC008080800000000000D8E9EC0080808000D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000C1C1C100D8E9EC00D8E9EC00D8E9EC0000000000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC000000000000000000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC008080800000000000D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00808080008080800080808000000000008080800080808000D8E9EC008080
+      8000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00000000000000000000000000D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000080808000D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00C1C1C10000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC008080
+      8000D8E9EC000000000080808000D8E9EC00808080000000000080808000D8E9
+      EC00D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0080808000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC008080
+      8000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC000000000000000000D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC00000000000000000000000000D8E9EC00000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC0000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC008080800080808000D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC0000000000D8E9EC0080808000D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC0000000000D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00FFFFFF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC008080
+      8000D8E9EC00D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D3C5C700D5C0C300D4BBBF00DDBD
+      C200DCB8BE00E1BBC100D4AEB400E6C0C600F9D5DB00D4B2B800E1C1C600D1B3
+      B800D7B9BE00D4B6BB00D2B7BB00CFB8BC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00CCB5B900280A0F0039171D002200
+      0000360A110043141C00290000003F0E16002700000034080F003F151C002C03
+      0A00381218002100030047272C0023080C00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00B6B6B6007E7E7E00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000000000000D8E9EC00D8E9EC00D9C2C60026030700FFF9FE00FFE4
+      EE00FFF7FF00FBD4E300FFF4FF00FFD7F6003F173A00FFDCF800FFF4FF00F5D1
+      E100FFF8FF00FFF3FC00F9DCE500300E1500D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC008C8C8C000000000081818100B6B6B600D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC000000000000000000D8E9EC00CEBFC300320C0C00FFEAEC00FFF3
+      FF00EFE6FB00FFF2FF00F5E3FF00200C59001F0F6300160C4E00ECE4FF00F2E6
+      FF00F2E6FA00FFF9FF00F9E5F20031041400D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00B6B6B6008484840000000000000000000000000090909000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00000000000000000000000000D8E9EC00C4BCBD0023000000FFFAFC00F8F0
+      FF00F2F6FF00E2E1FF0019184A0006035800030760000A13570000063800F2F4
+      FF00F5F5FF00E3E5F700FFF8FF0027000800D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0093939300000000000000000000000000000000000000000087878700B6B6
+      B600D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000000000000000000000000000D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00BCB9B1003E1B1100FFE8E800DFD7
+      EE00E3E8FF00F3F7FF00D6DDFE00E5F0FF000F215600E1F7FF00D6E9FF00E9EF
+      FF00DADBF500F1F2FF00EFDFF00038051900D8E9EC00D8E9EC00D8E9EC008B8B
+      8B00000000000000000000000000000000000000000000000000000000009696
+      9600D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00C4C2C100411F1F00FFF7FF00DACF
+      F7001F245100DEE3FF00ECF7FF00BCCFF40008244600BCDDF000D6F1FF00D7E0
+      FF0022244700E9EBFF00F8E8F9003A071B00D8E9EC00D8E9EC00D8E9EC002424
+      2400242424002424240000000000000000000000000024242400242424002424
+      2400D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00BAB9C90019000B00F4CDF3002819
+      5D0007065000ECEEFF00D7E3FF00DDF7FF00B2D6F400D6FEFF00BCDAF700E4ED
+      FF00100E49001A1C3A00F9E9FB003B071E00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00C9C0D500360B2600451440002710
+      5A001D146400100A43001E214D00ACBFE400DDF9FF00C0E1F500162E4C001213
+      50001E1754001413330039293B0027000A00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D7BFCB0034000A00FFD7F5003E18
+      5200230C4A00FFF0FF00EFE4FF00F4F4FF00E6EEFF00EAF8FF00CDD4ED00EBDF
+      FF001B0C3F001B173400FFF8FF0039051C00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000000000000000000000000000000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00000000000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D5BEC200410A0D00FFF4FF00F4D3
+      F8002F1B4600EDD8F800FFF0FF00E3DAFF000F0F3700DDE4FF00F4F8FF00D8CB
+      F10034264A00E9E6FC00F5E5F6003C091D00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000000000000000000000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00000000000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00BBB6B30039120A00FFE4E100FFF9
+      FF00E1DFF500FDF9FF00DAD5F400F1EDFF000D104D00E8F3FF00CDD8F800F3F4
+      FF00EBEAFE00F8FBFF00EBDDE90036041600D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00BBC0BF002F130800FFFEF500F2EF
+      F100F4FDFF00E9EAF800201F410006044A0017196700020D47000A173D00F3FA
+      FF00DCE2ED00DCE1EA00FFFAFF0037061400D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00C3CAD3001F060200FFE7E200EBEC
+      F000DDE7F100F8FAFF00D5D1FA001E186A000A076300131A5F00CCD7FF00E2E8
+      FF00F2F7FF00F8FEFF00FFF6FC0027000100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000F0F0F000F0F0F000F0F0F00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00B0AEB4003E1A1400FFFDF500FFF3
+      F500FFFCFF00EDE1ED00FFF2FF00EBD9FF001F106100D2CBFF00F8F4FF00F0E7
+      F400F9F4F600E3E8E700FBF0F2003B0D1300D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00DFC7C100450A00003E0000003B12
+      0F001F000100280300002F060E002500230018001D0018001000250A0E00310C
+      0800331710000C0A020029201C003B0E1100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00424D3E000000000000003E000000
+      2800000040000000900000000100010000000000800400000000000000000000
+      000000000000000000000000FFFFFF000000FFFF000000000000FFF300000000
+      0000FFE9000000000000FFD1000000000000F823000000000000E78700000000
+      0000C7C7000000000000DFEF000000000000BFF7000000000000B03700000000
+      0000B037000000000000BFF7000000000000DFEF000000000000DFEF00000000
+      0000E79F000000000000F87F00000000FFFFFFFFF01F0000FC1FDFFFC00F0000
+      E00F1FCF80030000E003878F00030000C463C35F00010000CE71E0BF00000000
+      9E71E17F000100008E71F87F00010000BE7DB47300010000FE7F021180000000
+      FE7F0701C0000000FE7F6781C8010000FE7FC703F0030000FCBFC703F01F0000
+      FDBFFC07FC3F0000FE7FFE1FFFFF0000FFFFD777FFFFD7FFFAFFC000FFFFC1FF
+      B0579FFC9FF7C3FF0007BFFE8FFFC3FF0007BFFE87F7C1FF0007BFFEC3EFF0FF
+      0007BFFCE38FF8FF04078EECF09FFC3F00078001F83FFE3F0007FF7FFC3FFF0F
+      0007FF7FF03FFF8B904FFE3FF18FFFC0F87FF80F83CFFFE1FFFFFC1F87E7FFE0
+      FFFFFE3F8FF7FFE1FFFFFF7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE7
+      FFFFFFFFFFFF0200F7FFFFFFF7F70601E7FFFFFFE1C38103E0FFEF7FE9D3C007
+      E07FE71FE183C007E00FE11FE003E20FE007E007E823E00FE01FE10FE003F00F
+      E07FE31FF007E01FE1FFE77FF9CFF83FE7FFFF7FF9CFF83FFFFFFFFFFFFFF87F
+      FFFFFFFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF00003C00FFFFC1FF00000000FFFF
+      FEFF00000000FFFF7F7F00000000FFFF7F7F00000000E31F7F7B00000000E31F
+      7F7B00000000E31F7F6100000000E31FBEE000000000E31FC1FB00000000E31F
+      F77B00000000E31FF67F00000000E31FF57F00000000E31FF37F00000000FFFF
+      F77F00000000FFFFFF7F00000000FFFFF77FFDBFFFFFFF7F803FF01FFFFFF80F
+      001FF00F002FC007001FC00F7FEFC001001FC00F482F80010019800F7FEF8000
+      0001800F682F00000000000F7FEF00000000100F7F6F00000001F00F6EAE0000
+      0003F00F556400000017F01F6ABA8001001FF03F257C8001003FF87FFAFCC001
+      007FFCFFFDFAE001E3FFFFFFFE04F811BFFDFFFFFFFFFFFFB7EDFFFFFFFFFFFF
+      D7EBFFFFFFFF803FE7E7FFFFFFFF001F8421FFEF9FFF001FFBDFEFE78F9F001F
+      F66FC1E71E07001EF5AFC3F73F07001CF5AFC7F73F870018F66FCAF71F070018
+      FBDFDCE71467001C8421FF0781FF001EE7E7FFFFFFFF1B1FD7EBFFFFFFFF0A1F
+      B7EDFFFFFFFF843F7FFEFFFFFFFFF1FF7FFD7FFDFFFFFFFF37D917D9FE7FF81F
+      97D397D3FE1FF3CFC7C7C7C7FC1FEFF7844BA6CBFF7FDC3B844386C1CE739BD9
+      F2BFFEFBC738F66DF4DFF02F8000B5ADF45FF01FCF79B5ADF2DFFEFFEE7BF66D
+      E91BF6EFFF3FBBD9844386C3FC1FDC3BE7CFE64FFE3FEFF7D7D7D7D5FF7FF3CF
+      B7DAB7DAFFFFF81F5FFD6DFDFFFFFFFF0000FFFFFFFFFFFF0000FCFFFFFFFFF3
+      0000FC3FFF1FFFE90000F03FFF1FFFD10000F00FFF1FF8230000E00FFF1FE787
+      0000E00FFF1FCFC70000FC7FFF1FDCEF0000FC7FFF1FBCF70000FC7FF803B037
+      0000FC7FFC07B0370000FC7FFE0FBCF70000FC7FFF1FDCEF0000FC7FFFBFDFEF
+      0000FFFFFFBFE79F0000FFFFFFFFF87F00000000000000000000000000000000
+      000000000000}
+  end
+  object ImageDrawingTools: TImageList
+    Left = 328
+    Top = 96
+    Bitmap = {
+      494C010108000A00040010001000FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000003000000001002000000000000030
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000F1F1F100ECECEC00ECECEC00ECEC
+      EC00ECECEC00ECECEC00ECECEC00ECECEC00ECECEC00ECECEC00ECECEC00ECEC
+      EC00ECECEC00ECECEC00F1F1F100FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000E4DFE000E4DFE000E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000E4DFE000BBA9A800D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00DAE9EC00D8E4E800DBE7EB00E4EFF300E8F3F700D7E6E900E0F1F400E3F4
+      F700D0E1E400D6E7EA00D8E9EC00D8E9EC007E7A770046403C0046403C004640
+      3C0046403C0046403C0046403C0046403C0046403C0046403C0046403C004640
+      3C0046403C0046403C007E7A7700FFFFFF00FFFFFF00F8F8F800F8F8F800F8F8
+      F800F8F8F800F8F8F800F8F8F800F8F8F800F8F8F800F8F8F800F8F8F800F8F8
+      F800F8F8F800F8F8F800F8F8F800FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000E4DFE000E4DFE000E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000E4DFE000BBA9A800D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00DAE9EC00D8E4E800E0ECF000E8F3F700D2DDE100D9E8EB00EFFFFF00C7D8
+      DB00CEDFE200EFFFFF00D8E9EC00D8E9EC0046403C00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00D4D4D400FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF0046403C00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000E4DFE000E4DFE000E3DEDF00E3DEDF00E4DFE000E4DF
+      E000E1DFDF00E4DFE000E4DFE000BBA9A800D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00DAE9EC00F1FDFF00D8E4E800DDE8EC00D8E3E700C9D8DB00D4E5E800CFE0
+      E3000001040000010400D8E9EC00D8E9EC0046403C00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00D0D0D000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF0046403C00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00656565006565650065656500656565006565650065656500BBBBBB00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000DED9DA00D7D2D300DBD6D700E1DCDD00E4DFE0000301
+      010002000000E3DEDF00E3DEDF00B9AAA800D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00DAE9EC00DCE8EC00C8D4D80098A3A7007D888C00D1E0E300DBECEF00EFFF
+      FF00C9DADD00EBFCFF00D8E9EC00D8E9EC0046403C00CBCBCB00CBCBCB00CBCB
+      CB00CBCBCB00CBCBCB00CBCBCB00CBCBCB00CBCBCB00CBCBCB00CBCBCB00CBCB
+      CB00CBCBCB00CBCBCB0046403C00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF0065656500FFFFFF00FFFFFF00FFFFFF00FFFFFF00F5F5F50065656500FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000A8A6A6009B999900BAB8B800E2DDDE00E4DFE000E4DF
+      E00002000000E4DFE000E4DFE000BBA9A800D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00DAE9EC00E5F1F5009CA8AC00040F13003D484C00D1E0E300D8E9EC00CBDC
+      DF00D0E1E400E2F3F600D8E9EC00D8E9EC0046403C00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00C7C7C700FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF0046403C00FFFFFF00FFFFFF00FAFAFA00FAFAFA00FAFA
+      FA0065656500FAFAFA00FAFAFA00FAFAFA00FAFAFA00FAFAFA0065656500FAFA
+      FA00FAFAFA00FAFAFA00FAFAFA00FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E2E0E000E4DFE000D0CECE000A0A0A00D4D2D200E3DEDF00E3DEDF00E4DF
+      E000E1DFDF00E4DFE000E4DFE000BBA9A800D3E8E900DCF1F200D5EAEB00D9ED
+      EE00D9E8EA00E0EDEF00D9E5E70007101300C5CED100D2E1E400DAEBEE00D8E9
+      EC00D9EAED00DCEDF000D8E9EC00D8E9EC0046403C00FCFBFB00FCFBFB00FCFB
+      FB00FCFBFB00FCFBFB00FCFBFB00C1C1C100FCFBFB00FCFBFB00FCFBFB00FCFB
+      FB00FCFBFB00FCFBFB0046403C00FFFFFF00FFFFFF00F5F5F500F5F5F500F5F5
+      F50065656500F5F5F500F5F5F50065656500ACACAC00E3E3E300A4A4A4009292
+      9200F5F5F500F5F5F500F5F5F500FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000DCDADA000E0E0E00D8D3D400E5E0E100E5E0E100E4DF
+      E000E4DFE000E4DFE000E3DEDF00BAA8A700D2EAEA00CFE7E700D0E5E600D6EA
+      EB00DBEAEC00DFECEE00D8E4E600060F1200C8CFD200D8E7EA00D7E8EB00D9EA
+      ED00D5E6E900D5E6E900D8E9EC00D8E9EC0046403C00BCBBBB00BCBBBB00BCBB
+      BB00BCBBBB00BCBBBB00BCBBBB00BCBBBB00BCBBBB00BCBBBB00BCBBBB00BCBB
+      BB00BCBBBB00BCBBBB0046403C00FFFFFF00FFFFFF00F0F0F000F0F0F000F0F0
+      F00065656500F0F0F000888888007F7F7F00A2A2A20065656500656565006565
+      6500F0F0F000F0F0F000F0F0F000FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000DFDADB000D0D0D00D4D2D200E3DEDF00E4DFE000E4DF
+      E000E4DFE000E4DFE000E4DFE000BBA9A800D7EBEC00D7EBEC00E0F2F300D9EB
+      EC00DBE8EA00E2EEF000DBE4E700070E1100CBD0D300D8E4E800D7E8EB00D9EA
+      ED00DCEDF000DBECEF00D8E9EC00D8E9EC0046403C00F1EFEE00F1EFEE00F1EF
+      EE00F1EFEE00F1EFEE00F1EFEE00B5B5B400F1EFEE00F1EFEE00F1EFEE00F1EF
+      EE00F1EFEE00F1EFEE0046403C00FFFFFF00FFFFFF00EAEAEA00EAEAEA00EAEA
+      EA0065656500D1D1D10065656500EAEAEA00EAEAEA00EAEAEA00EAEAEA00EAEA
+      EA00EAEAEA00EAEAEA00EAEAEA00FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E1DCDD00E1DCDD00DFDADB000D0D0D00D5D3D300E2DDDE00E1DCDD00E2DD
+      DE00E4DFE000E4DFE000E4DFE000BBA9A800D4E6E700D9EBEC00DAE9EB00D5E4
+      E600DCE9EB00E5EEF100DDE4E7000A0F1200CACFD200D1DDE100DAEBEE00D2E3
+      E600DAEBEE00DCEDF000D8E9EC00D8E9EC0046403C00EDE9E700EDE9E700EDE9
+      E700EDE9E700EDE9E700EDE9E700B2B1B000EDE9E700EDE9E700EDE9E700EDE9
+      E700EDE9E700EDE9E70046403C00FFFFFF00FFFFFF00E5E5E500E5E5E500E5E5
+      E5006565650065656500DDDDDD00E5E5E500E5E5E500E5E5E500E5E5E500E5E5
+      E500E5E5E500E5E5E500E5E5E500FFFFFF00E4DFE000E4DFE000E3DEDF00E4DF
+      E000DCDADA00D6D4D400DAD5D6000C0C0C00D2D0D000DAD8D800D7D5D500E1DC
+      DD00E4DFE000E4DFE000E4DFE000BBA9A800DBEAEC00DDECEE00D9E6E800E2EF
+      F100CEDADC00D7E0E300D4DBDE00070E1100CACFD200DDE9ED00CCDDE000CDDE
+      E100D8E9EC00D8E9EC00D8E9EC00D8E9EC0046403C00B1AFAE00B1AFAE00B1AF
+      AE00B1AFAE00B1AFAE00B1AFAE00B1AFAE00B1AFAE00B1AFAE00B1AFAE00B1AF
+      AE00B1AFAE00B1AFAE0046403C00FFFFFF00FFFFFF00E1E1E100E1E1E100E1E1
+      E10065656500A2A2A200E1E1E100E1E1E100E1E1E100E1E1E100E1E1E100E1E1
+      E100E1E1E100E1E1E100E1E1E100FFFFFF00E4DFE000E4DFE000E3DEDF00E4DF
+      E000B5B3B300D3D1D100D7D2D3000D0D0D00D1CFCF00C8C6C600D5D3D300E2DD
+      DE00E4DFE000E4DFE000E4DFE000BBA9A800D6E5E700DFECEE00DDEAEC00E3F0
+      F200AEBABC00CFD8DB00CDD6D900060D1000C8CFD200D5E4E700B2C3C600C2D3
+      D600D0E1E400D0E1E400D8E9EC00D8E9EC0046403C00E3DEDB00E3DEDB00E3DE
+      DB00E3DEDB00E3DEDB00E3DEDB00AFAEAD00E3DEDB00E3DEDB00E3DEDB00E3DE
+      DB00E3DEDB00E3DEDB0046403C00FFFFFF00FFFFFF00E9E9E900E9E9E900E9E9
+      E9006D6D6D00E9E9E900E9E9E900E9E9E900E9E9E900E9E9E900E9E9E900E9E9
+      E900E9E9E900E9E9E900E9E9E900FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E0005C5A5A00CDCBCB00D9D7D7000E0C0C00D9D7D70034323200DDD8D900E3DE
+      DF00E4DFE000E4DFE000E4DFE000BAA8A700E0EDEF00DDEAEC00DEEBED00D8E5
+      E7003B484A00D3E0E200D8E4E60000070900E5F1F300D0DFE20014252800DCED
+      F000ECFDFF00E4F5F800D8E9EC00D8E9EC0046403C00DFD8D500DFD8D500DFD8
+      D500DFD8D500DFD8D500DFD8D500AEACAB00DFD8D500DFD8D500DFD8D500DFD8
+      D500DFD8D500DFD8D50046403C00FFFFFF00FFFFFF00F1F1F100F1F1F100F1F1
+      F100F1F1F100F1F1F100F1F1F100F1F1F100F1F1F100F1F1F100F1F1F100F1F1
+      F100F1F1F100F1F1F100F1F1F100FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000E4DFE000E4DFE000E4DFE000E4DFE000E4DFE000E3DE
+      DF00E3DEDF00E3DEDF00E4DFE000BBA9A800DAE9EB00E0EFF100DEEDEF00E0EF
+      F10079888A00000D0F0033404200000608002633350018292C0000010400E4F5
+      F800D7E8EB00CFE0E300D8E9EC00D8E9EC0046403C0046403C0046403C004640
+      3C0046403C0046403C0046403C0046403C0046403C0046403C0046403C004640
+      3C0046403C0046403C0046403C00FFFFFF00FFFFFF00F9F9F900F9F9F900F9F9
+      F900F9F9F900F9F9F900F9F9F900F9F9F900F9F9F900F9F9F900F9F9F900F9F9
+      F900F9F9F900F9F9F900F9F9F900FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000E4DFE000E4DFE000E3DEDF00E3DEDF00E3DEDF00E4DF
+      E000E4DFE000E4DFE000E4DFE000BCAAA900DCEEEF00DFF1F200D8EAEB00CEE0
+      E100E2F6F700EDFFFF00C4D6D700E4F6F700E7FBFC00D5E6E900EDFEFF00DEEF
+      F200D2E3E600D5E6E900D8E9EC00D8E9EC0046403C007D6F68007D6F68007D6F
+      68007D6F68007D6F68007D6F68007D6F68007D6F68007D6F68007D6F68007D6F
+      68007D6F68007D6F680046403C00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00E4DFE000E4DFE000E4DFE000E4DF
+      E000E4DFE000E4DFE000E4DFE000E4DFE000E4DFE000E3DEDF00E3DEDF00E4DF
+      E000E2E0E000E4DFE000E3DEDF00BBA9A800D4E6E700DCEEEF00DAECED00DFF3
+      F400D1E5E600D3E7E800D9EDEE00E0F4F500C9DEDF00D5E8EB00D3E4E700D8E9
+      EC00E1F2F500D0E1E400D8E9EC00D8E9EC007E7A770046403C0046403C004640
+      3C0046403C0046403C0046403C0046403C0046403C0046403C0046403C004640
+      3C0046403C0046403C007E7A7700FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FEFEFE00FFFFFF00FEFEFE00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00E3DEDF00E4DFE000B9AAA800D7EBEC00CEE2E300D6EBEC00C8DD
+      DE00D7ECED00CEE3E400D0E8E800C9E1E100CAE2E200D8EBEE00D9EAED00DDEE
+      F100D1E2E500E8F9FC00D8E9EC00D8E9EC007B797B007B797B007B797B007B79
+      7B007B797B007B797B007B797B007B797B007B797B007B797B007B797B007B79
+      7B007B797B007B797B007B797B007B797B00EEEEEE00EEEEEE00EEEEEE00EEEE
+      EE00EEEEEE00EEEEEE00EEEEEE00EEEEEE00EEEEEE00EEEEEE00EEEEEE00EEEE
+      EE00EEEEEE00EEEEEE00EEEEEE00EEEEEE000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000DAE7EF00DAE7EF00DAE7EF00DAE7
+      EF00D8E8EF00D8E8EF00D6E8EF00D6E8EF00D5E8EF00D5EAEC00D5EAEB00D6EA
+      EB00DAE9EB00DAE9EB00DAE9EB00DAE9EB00FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C6007B797B00EEEEEE00EEEEEE00EEEEEE00EEEE
+      EE00EEEEEE00EEEEEE00EEEEEE00EEEEEE00EEEEEE00EEEEEE00EEEEEE00EEEE
+      EE00EEEEEE00EEEEEE00EEEEEE00EEEEEE00FFFFFF00FFFFFF00F5F5F500FFFF
+      FF00FFFFFF00040404000E0E0E00A4A4A400FCFCFC00FFFFFF00FFFFFF00FFFF
+      FF00F3F3F300FFFFFF00F7F7F70000000000D6E3EB00DCE9F100D8E5ED00DAE8
+      EE00D7E7ED00D9E9EF00D9E9F000D9E9F000D7E9F000CBDEE100DCF0F100DBED
+      EE0005141600C7D6D800DAE9EB00DAE9EB00FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C6007B797B00ECECEC00ECECEC00ECECEC00ECEC
+      EC00E5E5E500F1F1F100EAEAEA00F0F0F000FDFDFD00DFDFDF00FFFFFF00F2F2
+      F200E8E8E800EEEEEE00EEEEEE00EEEEEE00FDFDFD00FDFDFD00F3F3F300FFFF
+      FF00B8B8B80033333300F6F6F6001F1F1F0000000000AAAAAA00FFFFFF00F3F3
+      F300F8F8F800FCFCFC00FFFFFF0000000000D9E7ED00DDEBF100D6E4EA00D8E7
+      EA00DFEEF100D6E5E800D6E4EA00D6E4EA00D8E4EA00E9F6F800D4E1E300BDCC
+      CE000001030002111300DAE9EB00DAE9EB00FFFFFF00C6C7C600C6C7C600C6C7
+      C60000000000A5A6A500C6C7C600C6C7C600C6C7C600C6C7C600C6C7C6000000
+      0000C6C7C600C6C7C600C6C7C6007B797B00ECECEC00ECECEC00ECECEC00ECEC
+      EC00F6F6F600E9E9E900EDEDED00ECECEC00E5E5E500F5F5F500F2F2F2001212
+      12000C0C0C00EEEEEE00EEEEEE00EEEEEE00FFFFFF00F8F8F800FFFFFF00E6E6
+      E60000000000BEBEBE00F3F3F300F4F4F400FFFFFF002626260000000000BBBB
+      BB00FDFDFD00FAFAFA00FFFFFF0000000000DAECED00DBEDEE00D3E2E400D8E8
+      E700BFCBCB00C2CCCC00C4CBCE00C6CBCE00C7CACE00BCBFC300CBD0D300E2EB
+      EE00DCEBED00D1E3E400D8EAEB00DAE9EB00FFFFFF00C6C7C600C6C7C600C6C7
+      C6002120210042414200C6C7C600C6C7C600C6C7C600C6C7C600737173000000
+      0000C6C7C600C6C7C600C6C7C6007B797B00ECECEC00ECECEC00ECECEC00ECEC
+      EC00EBEBEB00E0E0E000DBDBDB00D5D5D500D0D0D000DADADA00D1D1D100F5F5
+      F5000B0B0B00EEEEEE00EEEEEE00EEEEEE00FFFFFF00E7E7E700F0F0F000C9C9
+      C9001D1D1D00FCFCFC00FFFFFF00FDFDFD00F5F5F500FFFFFF00F3F3F3002020
+      200000000000B9B9B900EBEBEB0000000000D4E9E600DAEDEA00D4E5E200E3F2
+      EE0067726F00555A5800575959005B5959005D5859005D585A005C585D00C6CB
+      CE00D4E1E300CBDFE000D5EAEB00DCE9EB00FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C60000000000C6C7C600C6C7C600C6C7C600C6C7C600000000008486
+      8400C6C7C600C6C7C600C6C7C6007B797B00ECECEC00ECECEC00ECECEC00ECEC
+      EC00EAEAEA00A2A2A20040404000131313002B2B2B00A4A4A400B5B5B500CDCD
+      CD00F1F1F100EEEEEE00EEEEEE00EEEEEE00F5F5F500FFFFFF00FFFFFF000000
+      0000B3B3B300E3E3E300FFFFFF00EFEFEF00F9F9F900F2F2F200F5F5F500FFFF
+      FF00F9F9F9002D2D2D00B8B8B80000000000D2E8E300DAEEE900D4E5E100E7F6
+      F2004C555200FBFFFE00FDFFFE00FFFFFF00FFFEFF00FFFDFF00E6E1E300C4C8
+      C900D8E5E700D4E8E900D5EAEB00DCE9EB00FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C600000000000000000000000000000000000000000000000000C6C7
+      C600C6C7C600C6C7C600C6C7C6007B797B00ECECEC00ECECEC00ECECEC00ECEC
+      EC00D0D0D0002C2C2C008E8E8E009F9F9F009090900030303000C4C4C400DCDC
+      DC00F1F1F100EEEEEE00EEEEEE00EEEEEE00FFFFFF00FFFFFF00A0A0A0001C1C
+      1C00FFFFFF00FDFDFD00EEEEEE00FFFFFF00F5F5F500FFFFFF00EBEBEB00FFFF
+      FF00F1F1F100EFEFEF001313130000000000D8EEE900D6EAE500DFF0EC00D7E6
+      E200474F4E00FAFFFE00FCFEFE00FEFEFE00FFFDFF00FFFBF800FFFFFA00C7CC
+      CA00DBE9E800DDF1F200D5EAEB00DCEAE900FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C60000000000636163008C8E8C008C8E8C008C8E8C0000000000C6C7
+      C600C6C7C600C6C7C600C6C7C6007B797B00EDEDED00EAEAEA00EAEAEA00EDED
+      ED00A2A2A200D2D2D200C5C5C500BABABA00BABABA00B7B7B70047474700D7D7
+      D700EAEAEA00EEEEEE00EEEEEE00EEEEEE00FFFFFF00F8F8F80003030300B3B3
+      B300F1F1F100F5F5F500FFFFFF00F3F3F300F3F3F300F8F8F800FFFFFF00ECEC
+      EC00FFFFFF00F2F2F2000000000000000000D7ECE900D6E9E600DEEFEC00D8E6
+      E400434C4900F6FBF900FAFBF900FEFAF900FFFAF900FCF7F400FCFCF600C8CD
+      CB00D7E7E600DCEEEF00D6E9EC00DAEAE900FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C600B5B6B50000000000C6C7C600C6C7C600080808005A595A00C6C7
+      C600C6C7C600C6C7C600C6C7C6007B797B00EDEDED00EEEEEE00E3E3E300E2E2
+      E200F0F0F000EBEBEB00D6D6D600CCCCCC00BEBEBE00AEAEAE00A9A9A900DDDD
+      DD00EBEBEB00EEEEEE00EEEEEE00EEEEEE00F6F6F600AFAFAF0020202000F6F6
+      F600FFFFFF00FFFFFF00EFEFEF00F8F8F800FFFFFF00F7F7F700FBFBFB00F0F0
+      F000FAFAFA00FAFAFA000000000000000000D4E9EA00D5EAE800DDEEEB00DDEA
+      E8003A413C00E9EBE500EDEBE300F2EBE200F5EBE100ECE9E400E9EAE600C4CC
+      CB00D5E4E600D8E9EC00D6E9EC00DAE9EB00FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C60000000000C6C7C600C6C7C60000000000C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C6007B797B00EDEDED00ECECEC00E6E6E600E6E6
+      E600C4C4C400FFFFFF00F7F7F700DEDEDE00E2E2E200D4D4D4008F8F8F00D6D6
+      D600EBEBEB00EEEEEE00EEEEEE00EEEEEE00FFFFFF001D1D1D00BEBEBE00EAEA
+      EA00F7F7F700ECECEC00F2F2F200C1C1C1001E1E1E0000000000FCFCFC00EDED
+      ED00FFFFFF00F9F9F9000404040000000000D4E9EA00D5E9EA00DDEEEB00DFED
+      E900363C3700DFE0D700E2E0D600E8DFD500EBDFD300E3E0DB00DEE1DF00C3CB
+      CB00D5E4E600D8E9EC00D6E9EC00DAE9EC00FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C60000000000181818004A494A0000000000C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C6007B797B00EDEDED00EAEAEA00EAEAEA00EDED
+      ED0098989800FFFFFF00FDFDFD00E8E8E800ECECEC00DFDFDF0076767600DFDF
+      DF00EAEAEA00EEEEEE00EEEEEE00EEEEEE00ABABAB002F2F2F00E8E8E800FFFF
+      FF00FFFFFF00B0B0B0001C1C1C0004040400B3B3B300FBFBFB0000000000FFFF
+      FF00E9E9E900FCFCFC000F0F0F0000000000D3E8EA00D7E8EB00DFEDEC00E1EE
+      EC0030363100D2D1C700D5D1C600DAD1C300DCD2C100D2D4CE00CDD4D100C0CA
+      CA00D6E5E800D9E9EF00D8E8EE00DAE8EE00FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C60073717300000000000000000018181800C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C6007B797B00EEEEEE00EEEEEE00EEEEEE00EEEE
+      EE00E2E2E2008D8D8D00CCCCCC00EBEBEB00D5D5D500A3A3A300DCDCDC00F0F0
+      F000E6E6E600EEEEEE00EEEEEE00EEEEEE0023232300B9B9B900F5F5F500A8A8
+      A8001717170006060600B3B3B300F6F6F600F6F6F600FFFFFF00FFFFFF000404
+      0400FFFFFF00E8E8E8000000000000000000D2E5EA00D9EAED00D6E3E500F4FF
+      FF00242B2600FFFFF800FFFFF700FFFFF300FFFFF100FDFFFC00D8E3E100DCE8
+      E800CEDCE200DFEFF600D8E8EF00DAE8EE00FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C6000000000000000000A5A6A500C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C6007B797B00EEEEEE00EEEEEE00EEEEEE00EEEE
+      EE00E6E6E600F5F5F500E5E5E500ECECEC00F7F7F700EDEDED00F0F0F000EFEF
+      EF00ECECEC00EEEEEE00EEEEEE00EEEEEE001D1D1D00F3F3F300212121001111
+      11009F9F9F00FFFFFF00F1F1F100FFFFFF00FFFFFF00F5F5F500FFFFFF00EAEA
+      EA0002020200FFFFFF000000000000000000E0F0F700D1DFE500D7E3E700DDE9
+      EB00C9D1D000E6EBE900E8ECE700EAEDE400ECEDE300DAE3E000DDEBEA00F1FF
+      FF00E0EDF500D1DDE700DAE6F000DAE7EF00FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C6007B797B00EEEEEE00EEEEEE00EEEEEE00EEEE
+      EE00EBEBEB00EAEAEA00F1F1F100EEEEEE00EAEAEA00EFEFEF00EBEBEB00ECEC
+      EC00EFEFEF00EEEEEE00EEEEEE00EEEEEE000606060011111100B9B9B900FFFF
+      FF00F6F6F600E9E9E900FFFFFF00EEEEEE00FAFAFA00F9F9F900FFFFFF00FFFF
+      FF00E7E7E7002A2A2A000E0E0E0000000000D2DEE400DAE6EC00E0ECF200D0DC
+      E200D2DEE200D7E4E600D7E4E600D8E4E600D8E4E400DCECEB00D5E7E800D3E4
+      E700DAE7EF00DDE9F300DAE6F200DAE7EF00FFFFFF00C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7C600C6C7
+      C600C6C7C600C6C7C600C6C7C6007B797B00EEEEEE00EEEEEE00EEEEEE00EEEE
+      EE00EBEBEB00EBEBEB00EDEDED00EFEFEF00EFEFEF00EFEFEF00EEEEEE00EDED
+      ED00ECECEC00EEEEEE00EEEEEE00EEEEEE00FFFFFF00FDFDFD00F9F9F900FFFF
+      FF00FBFBFB00FFFFFF00F7F7F700FFFFFF00F8F8F800FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00F8F8F8001818180000000000DEEAF000DDE9EF00DFEBF100DFEB
+      F100E7F5FB00DCECF200DCECF200DCECF200DCEDF000E1F3F400DAECED00D2E2
+      E800D0DCE600E1EDF900DAE6F200DAE6F000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF007B797B00EEEEEE00EEEEEE00EEEEEE00EEEE
+      EE00E4E4E400F5F5F500ECECEC00EDEDED00F4F4F400ECECEC00EAEAEA00ECEC
+      EC00F0F0F000EEEEEE00EEEEEE00EEEEEE000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000DBE5EC00DEEAF000D9E6EE00D6E3
+      EB00DDEDF400D4E5EE00D3E6EE00D1E5F000CFE5F000D3E8EA00C8DCDD00D3E3
+      E900E8F4FE00CED9E700DAE5F300DAE6F200424D3E000000000000003E000000
+      2800000040000000300000000100010000000000800100000000000000000000
+      000000000000000000000000FFFFFF0000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000}
+  end
+  object ImageList2: TImageList
+    BkColor = 14215660
+    Left = 848
+    Top = 72
+    Bitmap = {
+      494C010122002400140010001000ECE9D800FF10FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000009000000001002000000000000090
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FCFC
+      FC00FFFFFF00D6D6D600A5A5A500A8A8A800A7A7A700A6A6A600CECECE00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FCFCFC00FFFFFF00FDFD
+      FD00FBFBFB00BDBDBD005F5F5F00707070006F6F6F0074747400ADADAD00F6F6
+      F600FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000000000000D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FEFEFE00FFFFFF00F8F8
+      F800FDFDFD00ABABAB005D5D5D00727272006D6D6D006C6C6C00ACACAC00FDFD
+      FD00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC000000000000000000D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00F4F4
+      F400FFFFFF00B0B0B0005A5A5A006F6F6F006E6E6E0073737300B1B1B100FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00000000000000000000000000D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000F9F9F900FEFEFE00FFFFFF00F8F8
+      F800FFFFFF00ACACAC005B5B5B00686868006565650072727200A3A3A300FDFD
+      FD00FFFFFF00FFFFFF00FDFDFD00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000000000000000000000000000D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00F0F0F000FBFBFB00F0F0
+      F000F4F4F400BBBBBB005A5A5A00717171006A6A6A006A6A6A009A9A9A00E7E7
+      E700F9F9F900F9F9F900F7F7F700FCFCFC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000009191910085858500909090008787
+      87008E8E8E00717171006868680067676700696969006C6C6C00777777009797
+      97008E8E8E008E8E8E008C8C8C0094949400D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000006A6A6A006A6A6A006F6F6F006565
+      65006E6E6E006969690070707000666666006B6B6B006D6D6D00656565006767
+      67006C6C6C006C6C6C006A6A6A0074747400D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000006D6D6D00757575006B6B6B006868
+      6800686868006F6F6F0069696900727272007070700069696900717171007272
+      72006E6E6E006E6E6E006B6B6B0076767600D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000006C6C6C0072727200666666006A6A
+      6A00696969006C6C6C006A6A6A006E6E6E006E6E6E006B6B6B006D6D6D006262
+      62006F6F6F006E6E6E006C6C6C0076767600D8E9EC0000000000D8E9EC00D8E9
+      EC00000000000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000007777770076767600777777007272
+      7200848484005E5E5E006868680064646400646464006E6E6E00676767007979
+      79006D6D6D006D6D6D00707070007F7F7F00D8E9EC0000000000D8E9EC00D8E9
+      EC00000000000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FDFDFD00B2B2B20057575700737373006E6E6E0068686800A6A6A600FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FEFEFE00FFFFFF00FBFBFB00FFFF
+      FF00FEFEFE00AAAAAA005F5F5F00696969006C6C6C00676767009E9E9E00FAFA
+      FA00FCFCFC00FCFCFC00FCFCFC00FAFAFA00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FDFDFD00FFFFFF00FEFEFE00FFFF
+      FF00FFFFFF00B2B2B20060606000646464006E6E6E0070707000A1A1A100F9F9
+      F900FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00B4B4B4005A5A5A00737373006D6D6D0063636300A0A0A000FDFD
+      FD00FEFEFE00FEFEFE00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FEFEFE00FEFEFE00FFFF
+      FF00F8F8F800ACACAC0056565600717171006D6D6D006E6E6E00A4A4A400F8F8
+      F800FEFEFE00FEFEFE00FDFDFD00FEFEFE00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C100FFFFFF00707070007070700070707000FFFFFF00FFFFFF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00FAFAFA00FFFFFF00FFFFFF00FAFA
+      FA00FEFEFE00FFFFFF00FBFBFB00FFFFFF00E8E8E800FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000000000000000000000000000C1C1C100D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100FFFF
+      FF00707070007070700060606000707070007070700060606000FFFFFF00FFFF
+      FF00D8E9EC00D8E9EC00D8E9EC00D8E9EC00FFFFFF00FFFFFF00FCFCFC00FFFF
+      FF00FEFEFE00FEFEFE00FEFEFE00FBFBFB00A1A1A100C8C8C800F3F3F300FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00C1C1
+      C100000000000000000000000000000000000000000000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C1000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00FFFFFF00707070007070
+      70007070700060606000C1C1C100FFFFFF00FFFFFF007070700070707000FFFF
+      FF00FFFFFF00C1C1C100D8E9EC00D8E9EC00FFFFFF00FCFCFC00FCFCFC00FFFF
+      FF00FFFFFF00FAFAFA00FFFFFF00E6E6E6009999990097979700D5D5D500FDFD
+      FD00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000C1C1C100D8E9EC00D8E9EC00D8E9EC0000000000060606000000
+      0000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000C1C1C1000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC007070700070707000606060006060
+      6000C1C1C100FFFFFF007070700070707000FFFFFF00FFFFFF00707070007070
+      7000FFFFFF00FFFFFF00D8E9EC00D8E9EC00FFFFFF00FCFCFC00EAEAEA00CCCC
+      CC00F9F9F900FFFFFF00FAFAFA00A2A2A200DEDEDE00F3F3F3008B8B8B00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00C1C1C1000000000000000000D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000001919
+      190000000000C1C1C100D8E9EC00D8E9EC0000000000D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC006060600070707000C1C1C100FFFF
+      FF007070700070707000707070007070700070707000FFFFFF00FFFFFF007070
+      700070707000FFFFFF00FFFFFF00D8E9EC00FFFFFF00F7F7F700EDEDED009898
+      9800D9D9D900F3F3F300E0E0E000BCBCBC00EBEBEB00ABABAB00F9F9F900FCFC
+      FC00FFFFFF00FEFEFE00FFFFFF00FFFFFF00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC000000000000000000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      00000606060000000000C1C1C10000000000D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0070707000FFFFFF00707070007070
+      7000707070007070700070707000707070007070700070707000FFFFFF00FFFF
+      FF007070700070707000FFFFFF00FFFFFF00FFFFFF00FFFFFF00EEEEEE00D9D9
+      D9008F8F8F00EBEBEB0080808000DCDCDC00DADADA00A2A2A200FEFEFE00FFFF
+      FF00FBFBFB00FFFFFF00F9F9F900FFFFFF00D8E9EC000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00C1C1C1000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1
+      C100000000000606060000000000D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC006060600070707000707070007070
+      700070707000707070007070700070707000707070007070700070707000FFFF
+      FF00FFFFFF007070700070707000D8E9EC00FDFDFD00FFFFFF00E6E6E600DADA
+      DA00E8E8E80085858500C6C6C600CFCFCF00B8B8B800FCFCFC00FAFAFA00F6F6
+      F600FEFEFE00FFFFFF00FFFFFF00FFFFFF00D8E9EC0000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000C1C1C10000000000C1C1C100D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC007070700070707000707070007070
+      7000707070007070700070707000707070007070700070707000707070007070
+      7000FFFFFF0070707000FFFFFF00D8E9EC00FFFFFF00FFFFFF00EEEEEE00DCDC
+      DC00CCCCCC00DCDCDC00D4D4D400E0E0E00089898900B7B7B700BFBFBF00BFBF
+      BF00EEEEEE00FFFFFF00FFFFFF00FAFAFA00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9
+      EC0000000000D8E9EC00000000001919190000000000D8E9EC00D8E9EC00D8E9
+      EC00C1C1C10000000000D8E9EC00D8E9EC0060606000C1C1C100606060007070
+      7000707070007070700070707000707070007070700070707000707070007070
+      70007070700070707000FFFFFF00D8E9EC00FFFFFF00FFFFFF00ECECEC00E0E0
+      E000CFCFCF00D7D7D700CDCDCD00D4D4D400D7D7D700DADADA00DEDEDE008C8C
+      8C00E6E6E600FEFEFE00FFFFFF00FBFBFB00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000C1C1C10000000000D8E9EC00000000001919190000000000C1C1C100D8E9
+      EC00000000007070700000000000D8E9EC00D8E9EC0060606000C1C1C1007070
+      7000707070007070700070707000707070007070700070707000707070007070
+      70007070700070707000FFFFFF00FFFFFF00FFFFFF00FFFFFF00EDEDED00E2E2
+      E200CECECE00CECECE00CECECE00D1D1D100BFBFBF00DADADA0096969600FEFE
+      FE00FFFFFF00FCFCFC00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC000000000006060600000000000000
+      0000000000007070700060606000D8E9EC00D8E9EC00D8E9EC0060606000C1C1
+      C100606060007070700070707000707070007070700070707000707070007070
+      7000707070007070700070707000FFFFFF00FFFFFF00FFFFFF00EDEDED00E5E5
+      E500CBCBCB00CDCDCD00C5C5C500CBCBCB00D3D3D300A4A4A400FFFFFF00FFFF
+      FF00FEFEFE00FFFFFF00FEFEFE00FEFEFE00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000007070
+      7000707070000000000000000000D8E9EC00D8E9EC00D8E9EC00C1C1C1006060
+      6000D8E9EC007070700070707000707070007070700070707000707070007070
+      7000707070006060600060606000D8E9EC00FFFFFF00FEFEFE00EEEEEE00E8E8
+      E800C7C7C700C3C3C300CDCDCD00C7C7C700BEBEBE00FFFFFF00FFFFFF00F5F5
+      F500FCFCFC00FAFAFA00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C1000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00C1C1C10000000000707070007070
+      70007070700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0060606000C1C1C10060606000707070007070700070707000707070007070
+      700060606000C1C1C100D8E9EC00D8E9EC00FFFFFF00FFFFFF00F1F1F100E2E2
+      E200C3C3C300BFBFBF00C7C7C700DEDEDE00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000C1C1C100D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC000000000000000000707070007070
+      70007070700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C10060606000C1C1C10070707000707070006060600060606000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00F9F9F900FFFFFF00ECECEC00EDED
+      ED00B5B5B500B6B6B600FFFFFF00FAFAFA00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000000000007070700070707000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00606060007070700060606000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00FFFFFF00FFFFFF00E2E2E200FFFF
+      FF00A8A8A800FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00FFFFFF00FFFFFF00F5F5F500B5B5
+      B500F8F8F800FFFFFF00F7F7F700F3F3F300FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9EC00D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00C1C1C100D8E9EC00B9B9B900D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00606060000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000070707000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00606060007070
+      70007070700070707000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9
+      EC00C1C1C100606060000000000038383800C1C1C100D8E9EC00C1C1C100D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC007070700000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000060606000D8E9EC00C1C1C10000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0059595900D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1
+      E100E1E1E10060606000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC007070700000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000060606000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC0000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1
+      E100E1E1E10070707000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000070707000707070000000
+      0000000000007070700070707000707070000000000000000000707070007070
+      700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC0000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0059595900D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1
+      E100E1E1E10060606000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000070707000707070000000
+      0000707070007070700070707000707070007070700000000000707070007070
+      700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00000000000000
+      000000000000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00E1E1E100E1E1E10060606000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000070707000707070000000
+      000070707000C1C1C10060606000686868007070700000000000707070007070
+      700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00C1C1C10000000000D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00C1C1C100000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00E1E1E100E1E1E10060606000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000070707000707070000000
+      000060606000D8E9EC00C1C1C100707070007070700000000000707070007070
+      700000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC006060600000000000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00C1C1
+      C100D8E9EC00D8E9EC000000000070707000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00000000000000000000000000C1C1C100D8E9EC000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00E1E1E100E1E1E10070707000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFFFF00FFFFFF000000
+      0000000000007070700070707000707070000000000000000000FFFFFF00FFFF
+      FF0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100606060000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000060606000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1E10060606000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFFFF00FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1E10060606000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C1000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1E1007070
+      7000D8E9EC00C1C1C100D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9
+      EC007070700000000000FFFFFF007F7F7F0060606000D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00C1C1C10000000000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00000000000000000000000000D8E9EC00D8E9EC000000000000000000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1E100E1E1
+      E100606060007070700070707000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00606060000000000030303000C1C1C100D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000000000000000000000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1
+      E100E1E1E100E1E1E10060606000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000059595900D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1
+      E100E1E1E100E1E1E10070707000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0059595900D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00E1E1
+      E100E1E1E100E1E1E10060606000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B6B6
+      B600BDBDBD00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B8B8B800D8D8D800FFFFFF00FFFF
+      FF00FFFFFF00E5E5E500D8E9EC00B7B7B700D4D4D400FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00EEEEEE00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00C1C1C100D8E9EC00D8E9EC00D8E9EC009292920060606000666666007070
+      700087878700D8E9EC00D8E9EC00999999006565650070707000707070007070
+      70006C6C6C00646464007F7F7F00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00B8B8B8009E9E9E009898
+      9800E5E5E500B7B7B700BCBCBC00D8E9EC00B6B6B600AAAAAA00707070007070
+      700095959500ECECEC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00949494008282
+      8200D6D6D600FFFFFF00FFFFFF00FFFFFF00D4D4D40070707000707070007070
+      700081818100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000C1C1C1000000000000000000D8E9EC00D8E9EC00C1C1C10000000000C1C1
+      C1000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00B7B7B700A4A4
+      A400707070006B6B6B00656565007070700070707000707070006C6C6C008A8A
+      8A00EBEBEB00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000000000000000000000000000000000000000000000000000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC009595
+      950097979700E5E5E500D8E9EC00999999006565650070707000707070008282
+      8200D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC000000000000000000000000007070700000000000D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC009595
+      950081818100D6D6D600EBEBEB00A8A8A800707070006B6B6B008C8C8C00EAEA
+      EA00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000D8E9EC000000000000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000C1C1C1000000000000000000000000000000000000000000C1C1C1000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC009696960095959500D1D1D10070707000707070007070700086868600BDBD
+      BD00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000000000000000000060606000C1C1C10060606000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B7B7
+      B700A0A0A00080808000A7A7A700707070006B6B6B008E8E8E00EAEAEA00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC009C9C9C0070707000707070007070700083838300D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC009C9C9C00707070006B6B6B0090909000E9E9E900D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0097979700656565007070700084848400D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00B7B7B700A2A2A20079797900D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B9B9B900DBDBDB00F3F3
+      F300F3F3F300F4F4F400F4F4F400D4D4D400B2B2B200B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B20089898900D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00FFFFFF00E7E7E700B2B2B200B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B20095959500838383008787
+      87008787870087878700C3C3C300F9F9F900D4D4D400B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B2008585850070707000707070007070
+      700070707000707070009E9E9E00FFFFFF00E6E6E600B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC009999990075757500707070007070
+      700070707000707070007C7C7C00C2C2C200F9F9F900D4D4D400B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B2007070700070707000707070007070
+      7000707070007070700070707000A0A0A000FFFFFF00B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC007171710070707000707070007070
+      70007070700070707000707070007D7D7D00C2C2C200DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B2007070700070707000707070007070
+      700070707000707070007070700070707000FFFFFF00B2B2B200B2B2B200B2B2
+      B200BCBCBC00E4E4E400B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC006F6F6F0070707000707070007070
+      700070707000707070007070700070707000B4B4B400DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B2007070700070707000707070007070
+      700070707000707070007070700070707000FFFFFF00B2B2B200B2B2B200B2B2
+      B2008D8D8D00FFFFFF00E3E3E300B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC006A6A6A0070707000707070007070
+      700070707000707070007070700070707000B4B4B400DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B2007070700070707000707070007070
+      700070707000707070007070700066666600FFFFFF00BBBBBB00E3E3E300E3E3
+      E30070707000A5A5A500FFFFFF00E3E3E300D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC006E6E6E0070707000707070007070
+      70007070700070707000707070006A6A6A00ADADAD00DBDBDB00B7B7B700D3D3
+      D300EEEEEE00EEEEEE00EEEEEE00EEEEEE007070700070707000707070007070
+      70007070700070707000707070006A6A6A00CFCFCF0085858500A7A7A700A7A7
+      A7007070700070707000A7A7A700FFFFFF00D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      0000000000000000000000000000D8E9EC006B6B6B0070707000707070007070
+      70007070700070707000707070006E6E6E0096969600BCBCBC009D9D9D008989
+      8900919191009191910091919100BDBDBD007070700070707000707070007070
+      700070707000707070006666660098989800BBBBBB006A6A6A00666666007070
+      7000707070007070700066666600D0D0D000D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC000000
+      0000000000000000000000000000000000008484840070707000707070007070
+      700070707000707070006A6A6A0082828200AAAAAA00B7B7B700959595006969
+      69006B6B6B00696969006B6B6B008B8B8B009797970066666600666666007070
+      700070707000666666009A9A9A00B2B2B200E6E6E60097979700919191009797
+      9700666666007070700091919100B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00A8A8A8007F7F7F00646464006A6A
+      6A00707070006A6A6A0086868600ADADAD00CDCDCD00D2D2D200ABABAB009F9F
+      9F009F9F9F009F9F9F009F9F9F00A5A5A500B2B2B20090909000999999007070
+      7000C3C3C30090909000C1C1C10082828200FFFFFF00B2B2B200B2B2B200BBBB
+      BB006060600097979700B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00B2B2B200A6A6A600A2A2A2008A8A
+      8A00A6A6A600BABABA00AEAEAE009C9C9C00B7B7B700DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B8B8B8006767
+      6700FFFFFF00BBBBBB008A8A8A0069696900FFFFFF00B2B2B200B2B2B200B8B8
+      B8008F8F8F00B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B2B2B200B4B4B4008B8B
+      8B00B5B5B500DDDDDD009C9C9C0074747400B2B2B200DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B2006969
+      6900FFFFFF008B8B8B009696960070707000FFFFFF00B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B2B2B200B2B2B2008D8D
+      8D00B8B8B800BCBCBC00909090008B8B8B00B4B4B400DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B2006767
+      6700B1B1B1008D8D8D00B9B9B90067676700FFFFFF00B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000000000000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B2B2B200B2B2B2008989
+      8900818181009A9A9A00A8A8A8008F8F8F00AEAEAE00DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200BABABA006060
+      600093939300B2B2B200BABABA0060606000FFFFFF00B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B2B2B200B7B7B7008B8B
+      8B0080808000A8A8A800B7B7B7008F8F8F00ACACAC00DBDBDB00B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B9B9B9008B8B
+      8B00B2B2B200B2B2B200B9B9B90060606000DEDEDE00B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B2B2B200B2B2B200B5B5B500A6A6
+      A600A5A5A500B2B2B200B4B4B4008D8D8D0098989800C5C5C500B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B2008A8A8A00B9B9B900B2B2B200B2B2B200B2B2
+      B200B2B2B200B2B2B200B2B2B200B2B2B200D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00B5B5B500D8E9EC00D8E9EC00D8E9EC00B5B5B500D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C100D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C2C2C200C2C2C200C2C2
+      C200CECECE00C2C2C200C2C2C200C2C2C200CECECE00C2C2C200D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00000000000000000000000000000000000000000000000000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00A5A5A500E2E2E200E2E2E200E2E2
+      E200E2E2E200E2E2E200E2E2E200E2E2E200E2E2E200FFFFFF00C1C1C100D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C1000000
+      000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF0070707000707070000000
+      000000000000D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      00000000000000000000000000000000000000000000E4E4E400FFFFFF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1C1000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000000000006060
+      60007070700000000000C1C1C100D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00000000000000
+      0000D8E9EC000000000000000000000000000000000000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFFFF000000
+      000000000000FFFFFF00B2B2B20000000000B2B2B200FFFFFF00B2B2B2000000
+      0000000000007070700000000000D8E9EC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00D8E9
+      EC00D8E9EC00BFBFBF00B4B4B400D8E9EC00D8E9EC00C1C1C10000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      0000FFFFFF00B2B2B200FFFFFF0000000000FFFFFF00B2B2B200FFFFFF00FFFF
+      FF00000000000000000000000000C1C1C1000000000000000000000000000000
+      000000000000000000000000000000000000000000006E6E6E00FFFFFF00B4B4
+      B400A8A8A800FFFFFF00CACACA00D8E9EC00D8E9EC0000000000FFFFFF00FFFF
+      FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      0000D8E9EC000000000000000000000000000000000000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000060606000C1C1C100FFFF
+      FF0000000000FFFFFF00B2B2B200FFFFFF00B2B2B200FFFFFF00C1C1C1000000
+      0000707070007070700070707000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000062626200FFFFFF00BFBF
+      BF006E6E6E00EBEBEB00FFFFFF00BDBDBD0000000000FFFFFF00FFFFFF000000
+      000000000000FFFFFF00000000007F7F7F00FFFFFF0000000000FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00B2B2B200FFFFFF00C1C1C100FFFFFF00C1C1C100606060007070
+      7000707070007070700070707000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00B4B4
+      B4006262620070707000EBEBEB00F5F5F500000000000000000000000000D8E9
+      EC0000000000FFFFFF00000000007F7F7F00FFFFFF0000000000FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000FFFF
+      FF00FFFFFF00FFFFFF00B2B2B200FFFFFF006060600070707000707070007070
+      7000707070000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00BFBF
+      BF0000000000707070006A6A6A00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000FFFFFF00000000007F7F7F00FFFFFF0000000000FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC0000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00C1C1C1000000000000000000707070007070
+      7000707070007070700070707000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000006E6E6E00FFFFFF00B4B4
+      B4000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000FFFFFF00000000007F7F7F00FFFFFF0000000000FFFFFF000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC0000000000D8E9
+      EC0000000000D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC000000
+      000000000000D8E9EC00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0000000000FFFFFF0000000000000000000000
+      00007070700070707000707070000000000000000000000000007D7D7D007D7D
+      7D007D7D7D007D7D7D007D7D7D00000000000000000061616100FFFFFF00D8E9
+      EC0068686800D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000FFFFFF00000000007F7F7F00FFFFFF000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC000000
+      0000D8E9EC0000000000D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC0000000000D8E9EC0000000000FFFFFF00FFFF
+      FF0000000000FFFFFF00FFFFFF00FFFFFF0000000000FFFFFF00000000000000
+      0000000000000000000000000000D8E9EC000000000000000000F3F3F300F3F3
+      F300F3F3F300F3F3F300F3F3F30000000000000000006F6F6F00F9F9F900D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000FFFFFF00000000007F7F7F00FFFFFF0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9EC000000
+      000000000000D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC0000000000FFFFFF000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000FFFFFF000000
+      0000000000000000000000000000D8E9EC006F6F6F006F6F6F00707070007070
+      70007070700070707000707070006F6F6F000000000066666600D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000000000007F7F7F0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC0000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0000000000FFFFFF00FFFFFF0000000000FFFF
+      FF00000000000000000000000000D8E9EC000000000000000000757575000000
+      00007070700000000000000000006565650074747400D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000059595900D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC000000
+      000000000000FFFFFF00FFFFFF0000000000FFFFFF00FFFFFF00FFFFFF000000
+      0000FFFFFF000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      00007373730064646400D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000000000000000
+      000000000000D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00000000000000000000000000000000000000000000000000D8E9
+      EC0000000000FFFFFF0000000000D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      0000000000000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC0000000000000000000000000000000000D8E9EC000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B9B9
+      B900D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B4B4B400BFBFBF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00C1C1
+      C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC003030
+      3000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC009B9B9B000C0C0C006B6B
+      6B00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00B3B3B300C1C1C100D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC006060
+      600060606000D8E9EC00D8E9EC00D8E9EC00B3B3B3005353530015151500D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00A7A7A7000000000000000000000000000000
+      000001010100D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC009999990017171700D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00A9A9A90000000000000000000000
+      000001010100D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC009999990017171700D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00ABABAB00000000000000
+      000001010100D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC0000000000D8E9EC00C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC009999990019191900BFBFBF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00A9A9A90007070700ADADAD000000
+      000001010100D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC006060
+      600060606000D8E9EC00D8E9EC00D8E9EC00B3B3B3005353530015151500D8E9
+      EC00B3B3B300D8E9EC00A5A5A5000000000009090900D8E9EC00D8E9EC00AFAF
+      AF0001010100D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC0000000000000000000000
+      000000000000D8E9EC0000000000000000000000000000000000D8E9EC000000
+      0000000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000003030
+      3000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9EC00A7A7A700545454000000
+      000000000000000000000D0D0D00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000000000000000
+      0000D8E9EC0000000000D8E9EC0000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC0000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00000000000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0080808000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0080808000D8E9EC0080808000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000080808000D8E9EC00D8E9
+      EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0080808000D8E9
+      EC00D8E9EC008080800000000000D8E9EC00808080008080800080808000D8E9
+      EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0080808000D8E9
+      EC00D8E9EC008080800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00C1C1C10000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000080808000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC008080800000000000D8E9EC00D8E9EC00D8E9EC008080800080808000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC008080800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000C1C1C100D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000008080
+      800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000008080
+      800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000008080
+      800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000008080
+      800000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0080808000808080000000
+      000000000000D8E9EC00808080008080800080808000D8E9EC00000000000000
+      0000D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC0080808000D8E9EC000000
+      000000000000D8E9EC00D8E9EC0080808000D8E9EC00D8E9EC00000000000000
+      0000D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC0000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC0000000000808080000000
+      000000000000D8E9EC00000000000000000000000000D8E9EC00000000000000
+      00000000000080808000D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000080808000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00000000008080
+      8000000000008080800080808000D8E9EC00D8E9EC00D8E9EC00C1C1C1000000
+      0000D8E9EC00D8E9EC00D8E9EC00C1C1C10000000000D8E9EC00D8E9EC00D8E9
+      EC00C1C1C10000000000D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC008080800000000000D8E9EC0080808000D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000C1C1C100D8E9EC00D8E9EC00D8E9EC0000000000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC000000000000000000C1C1C100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC008080800000000000D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00808080008080800080808000000000008080800080808000D8E9EC008080
+      8000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00000000000000000000000000D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000080808000D8E9EC0000000000D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00C1C1C10000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC008080
+      8000D8E9EC000000000080808000D8E9EC00808080000000000080808000D8E9
+      EC00D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0080808000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC008080
+      8000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000C1C1C100D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC000000000000000000D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC00000000000000000000000000D8E9EC00000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC0000000000000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC008080800080808000D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC0000000000D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC0000000000D8E9EC0080808000D8E9EC0000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC0000000000D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00000000000000000000000000000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00FFFFFF00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC0000000000D8E9EC00D8E9EC008080
+      8000D8E9EC00D8E9EC0080808000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D3C5C700D5C0C300D4BBBF00DDBD
+      C200DCB8BE00E1BBC100D4AEB400E6C0C600F9D5DB00D4B2B800E1C1C600D1B3
+      B800D7B9BE00D4B6BB00D2B7BB00CFB8BC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00CCB5B900280A0F0039171D002200
+      0000360A110043141C00290000003F0E16002700000034080F003F151C002C03
+      0A00381218002100030047272C0023080C00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00B6B6B6007E7E7E00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC000000000000000000D8E9EC00D8E9EC00D9C2C60026030700FFF9FE00FFE4
+      EE00FFF7FF00FBD4E300FFF4FF00FFD7F6003F173A00FFDCF800FFF4FF00F5D1
+      E100FFF8FF00FFF3FC00F9DCE500300E1500D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC008C8C8C000000000081818100B6B6B600D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC000000000000000000D8E9EC00CEBFC300320C0C00FFEAEC00FFF3
+      FF00EFE6FB00FFF2FF00F5E3FF00200C59001F0F6300160C4E00ECE4FF00F2E6
+      FF00F2E6FA00FFF9FF00F9E5F20031041400D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00B6B6B6008484840000000000000000000000000090909000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00000000000000000000000000D8E9EC00C4BCBD0023000000FFFAFC00F8F0
+      FF00F2F6FF00E2E1FF0019184A0006035800030760000A13570000063800F2F4
+      FF00F5F5FF00E3E5F700FFF8FF0027000800D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0093939300000000000000000000000000000000000000000087878700B6B6
+      B600D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000000000000000000000000000D8E9EC000000
+      00000000000000000000D8E9EC00D8E9EC00BCB9B1003E1B1100FFE8E800DFD7
+      EE00E3E8FF00F3F7FF00D6DDFE00E5F0FF000F215600E1F7FF00D6E9FF00E9EF
+      FF00DADBF500F1F2FF00EFDFF00038051900D8E9EC00D8E9EC00D8E9EC008B8B
+      8B00000000000000000000000000000000000000000000000000000000009696
+      9600D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00C4C2C100411F1F00FFF7FF00DACF
+      F7001F245100DEE3FF00ECF7FF00BCCFF40008244600BCDDF000D6F1FF00D7E0
+      FF0022244700E9EBFF00F8E8F9003A071B00D8E9EC00D8E9EC00D8E9EC002424
+      2400242424002424240000000000000000000000000024242400242424002424
+      2400D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00BAB9C90019000B00F4CDF3002819
+      5D0007065000ECEEFF00D7E3FF00DDF7FF00B2D6F400D6FEFF00BCDAF700E4ED
+      FF00100E49001A1C3A00F9E9FB003B071E00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00C9C0D500360B2600451440002710
+      5A001D146400100A43001E214D00ACBFE400DDF9FF00C0E1F500162E4C001213
+      50001E1754001413330039293B0027000A00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D7BFCB0034000A00FFD7F5003E18
+      5200230C4A00FFF0FF00EFE4FF00F4F4FF00E6EEFF00EAF8FF00CDD4ED00EBDF
+      FF001B0C3F001B173400FFF8FF0039051C00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC000000000000000000000000000000000000000000000000000000
+      00000000000000000000D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00000000000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00D5BEC200410A0D00FFF4FF00F4D3
+      F8002F1B4600EDD8F800FFF0FF00E3DAFF000F0F3700DDE4FF00F4F8FF00D8CB
+      F10034264A00E9E6FC00F5E5F6003C091D00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC0000000000000000000000000000000000000000000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00000000000000000000000000000000000000000000000000D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00BBB6B30039120A00FFE4E100FFF9
+      FF00E1DFF500FDF9FF00DAD5F400F1EDFF000D104D00E8F3FF00CDD8F800F3F4
+      FF00EBEAFE00F8FBFF00EBDDE90036041600D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000000000000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC0000000000D8E9EC00D8E9EC00D8E9EC00BBC0BF002F130800FFFEF500F2EF
+      F100F4FDFF00E9EAF800201F410006044A0017196700020D47000A173D00F3FA
+      FF00DCE2ED00DCE1EA00FFFAFF0037061400D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00000000000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC000000000000000000D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00C3CAD3001F060200FFE7E200EBEC
+      F000DDE7F100F8FAFF00D5D1FA001E186A000A076300131A5F00CCD7FF00E2E8
+      FF00F2F7FF00F8FEFF00FFF6FC0027000100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC000F0F0F000F0F0F000F0F0F00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      0000D8E9EC00D8E9EC00D8E9EC00D8E9EC00B0AEB4003E1A1400FFFDF500FFF3
+      F500FFFCFF00EDE1ED00FFF2FF00EBD9FF001F106100D2CBFF00F8F4FF00F0E7
+      F400F9F4F600E3E8E700FBF0F2003B0D1300D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC0000000000D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC000000
+      000000000000D8E9EC00D8E9EC00D8E9EC00D8E9EC000000000000000000D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00DFC7C100450A00003E0000003B12
+      0F001F000100280300002F060E002500230018001D0018001000250A0E00310C
+      0800331710000C0A020029201C003B0E1100D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC0000000000000000000000000000000000D8E9EC00D8E9EC00D8E9
+      EC00D8E9EC00D8E9EC00D8E9EC00D8E9EC00424D3E000000000000003E000000
+      2800000040000000900000000100010000000000800400000000000000000000
+      000000000000000000000000FFFFFF000000FFFF000000000000FFF300000000
+      0000FFE9000000000000FFD1000000000000F823000000000000E78700000000
+      0000C7C7000000000000DFEF000000000000BFF7000000000000B03700000000
+      0000B037000000000000BFF7000000000000DFEF000000000000DFEF00000000
+      0000E79F000000000000F87F00000000FFFFFFFFF01F0000FC1FDFFFC00F0000
+      E00F1FCF80030000E003878F00030000C463C35F00010000CE71E0BF00000000
+      9E71E17F000100008E71F87F00010000BE7DB47300010000FE7F021180000000
+      FE7F0701C0000000FE7F6781C8010000FE7FC703F0030000FCBFC703F01F0000
+      FDBFFC07FC3F0000FE7FFE1FFFFF0000FFFFD777FFFFD7FFFAFFC000FFFFC1FF
+      B0579FFC9FF7C3FF0007BFFE8FFFC3FF0007BFFE87F7C1FF0007BFFEC3EFF0FF
+      0007BFFCE38FF8FF04078EECF09FFC3F00078001F83FFE3F0007FF7FFC3FFF0F
+      0007FF7FF03FFF8B904FFE3FF18FFFC0F87FF80F83CFFFE1FFFFFC1F87E7FFE0
+      FFFFFE3F8FF7FFE1FFFFFF7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE7
+      FFFFFFFFFFFF0200F7FFFFFFF7F70601E7FFFFFFE1C38103E0FFEF7FE9D3C007
+      E07FE71FE183C007E00FE11FE003E20FE007E007E823E00FE01FE10FE003F00F
+      E07FE31FF007E01FE1FFE77FF9CFF83FE7FFFF7FF9CFF83FFFFFFFFFFFFFF87F
+      FFFFFFFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF00003C00FFFFC1FF00000000FFFF
+      FEFF00000000FFFF7F7F00000000FFFF7F7F00000000E31F7F7B00000000E31F
+      7F7B00000000E31F7F6100000000E31FBEE000000000E31FC1FB00000000E31F
+      F77B00000000E31FF67F00000000E31FF57F00000000E31FF37F00000000FFFF
+      F77F00000000FFFFFF7F00000000FFFFF77FFDBFFFFFFF7F803FF01FFFFFF80F
+      001FF00F002FC007001FC00F7FEFC001001FC00F482F80010019800F7FEF8000
+      0001800F682F00000000000F7FEF00000000100F7F6F00000001F00F6EAE0000
+      0003F00F556400000017F01F6ABA8001001FF03F257C8001003FF87FFAFCC001
+      007FFCFFFDFAE001E3FFFFFFFE04F811BFFDFFFFFFFFFFFFB7EDFFFFFFFFFFFF
+      D7EBFFFFFFFF803FE7E7FFFFFFFF001F8421FFEF9FFF001FFBDFEFE78F9F001F
+      F66FC1E71E07001EF5AFC3F73F07001CF5AFC7F73F870018F66FCAF71F070018
+      FBDFDCE71467001C8421FF0781FF001EE7E7FFFFFFFF1B1FD7EBFFFFFFFF0A1F
+      B7EDFFFFFFFF843F7FFEFFFFFFFFF1FF7FFD7FFDFFFFFFFF37D917D9FE7FF81F
+      97D397D3FE1FF3CFC7C7C7C7FC1FEFF7844BA6CBFF7FDC3B844386C1CE739BD9
+      F2BFFEFBC738F66DF4DFF02F8000B5ADF45FF01FCF79B5ADF2DFFEFFEE7BF66D
+      E91BF6EFFF3FBBD9844386C3FC1FDC3BE7CFE64FFE3FEFF7D7D7D7D5FF7FF3CF
+      B7DAB7DAFFFFF81F5FFD6DFDFFFFFFFF0000FFFFFFFFFFFF0000FCFFFFFFFFF3
+      0000FC3FFF1FFFE90000F03FFF1FFFD10000F00FFF1FF8230000E00FFF1FE787
+      0000E00FFF1FCFC70000FC7FFF1FDCEF0000FC7FFF1FBCF70000FC7FF803B037
+      0000FC7FFC07B0370000FC7FFE0FBCF70000FC7FFF1FDCEF0000FC7FFFBFDFEF
+      0000FFFFFFBFE79F0000FFFFFFFFF87F00000000000000000000000000000000
+      000000000000}
+  end
+end

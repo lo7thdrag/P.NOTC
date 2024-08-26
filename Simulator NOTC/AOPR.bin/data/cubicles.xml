@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<t3groups>
+  <controllers id="Controller" name="Controller Group">
+    <console ip="192.168.0.217" name="Instruktur 1"></console>
+    <console ip="192.168.1.20" name="Instruktur 2"></console>
+    <console ip="192.168.1.30" name="2D Viewer" ></console>
+    <console ip="192.168.0.11" name="Programmer" ></console>    
+  </controllers>
+  <vbs id="VBS" name="VBS Group">
+	<console ip="192.168.1.40" name="VBS_1"></console>
+	
+  </vbs>
+    <wasdal id="Wasdal" name="Wasdal Group">
+	<console ip="192.168.1.15" name="Wasdal Tengah Station 1"></console>
+	<console ip="192.168.1.11" name="Wasdal 1 Station 1"></console>
+	<console ip="192.168.1.12" name="Wasdal 1 Station 2"></console>
+	<console ip="192.168.1.13" name="Wasdal 1 Station 3"></console>
+        <console ip="192.168.1.14" name="Wasdal 1 Station 4"></console>
+        <console ip="192.168.1.181" name="Programmer"></console>
+  </wasdal>
+  <cubicles>
+    <cubicle id="Operator_1" name="Operator 1">
+    	<console ip="192.168.0.111" name="Operator 1"></console>  
+    </cubicle>
+    <cubicle id="Operator_2" name="Operator 2">
+    	<console ip="192.168.0.173" name="Operator 2"></console>  
+    </cubicle>
+    <cubicle id="Operator_3" name="Operator 3">
+    	<console ip="192.168.0.71" name="Operator 3"></console>  
+    </cubicle>
+    <cubicle id="Operator_2" name="Programmer">
+    	<console ip="192.168.1.118" name="Programmer"></console>  
+    </cubicle>
+  </cubicles>
+</t3groups>

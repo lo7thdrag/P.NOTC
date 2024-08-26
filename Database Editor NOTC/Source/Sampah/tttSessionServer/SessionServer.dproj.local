@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2011/01/24 16:16:32.531.pas,D:\astt.2\astt.project\T3.source.edit\LibTTT\libNetSession\uSessionMan.pas=D:\astt.2\astt.project\T3.source.edit\LibTTT\libNetSession\uBaseSessionMan.pas</Transaction>
+    <Transaction>2011/01/25 13:15:15.984.pas,D:\astt.2\astt.project\T3.source.edit\LibTTT\libNetSession\uBaseSessionMan.pas=D:\astt.2\astt.project\T3.source.edit\LibTTT\libNetSession\uBaseNetSession.pas</Transaction>
+    <Transaction>2011/01/25 13:16:42.375.pas,D:\astt.2\astt.project\T3.source.edit\tttSessionServer\Unit1.pas=D:\astt.2\astt.project\T3.source.edit\LibTTT\libNetSession\uNetSessionSvr.pas</Transaction>
+    <Transaction>2011/01/25 13:18:50.218.pas,D:\astt.2\astt.project\T3.source.edit\tttSessionServer\uSessionSvrMain.pas=</Transaction>
+    <Transaction>2011/01/25 16:44:10.687.pas,D:\astt.2\astt.project\T3.source.edit\LibTTT\libNetSession\uBaseNetSession.pas=D:\astt.2\astt.project\T3.source.edit\SimFramework\LibNets\uBaseNetHandler.pas</Transaction>
+    <Transaction>2011/01/26 08:55:30.015.pas,D:\astt.2\astt.project\T3.source.edit\LibTTT\libNetSession\uNetSessionSvr.pas=D:\astt.2\astt.project\T3.source.edit\LibTTT\libNetSession\uNetSessionServer.pas</Transaction>
+    <Transaction>2011/02/11 11:10:53.484.pas,D:\astt.2\astt.project\T3.source.edit\tttSessionServer\Unit1.pas=D:\astt.2\astt.project\T3.source.edit\tttSessionServer\uGameSession.pas</Transaction>
+  </Transactions>
+</BorlandProject>

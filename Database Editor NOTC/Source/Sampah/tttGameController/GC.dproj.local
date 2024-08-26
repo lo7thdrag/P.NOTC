@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2011/01/18 10:38:29.812.pas,C:\Documents and Settings\ATNP\My Documents\RAD Studio\Projects\Unit1.pas=D:\astt.2\andy\GameControl\ufMainGC.pas</Transaction>
+    <Transaction>2011/01/18 10:38:29.812.dfm,C:\Documents and Settings\ATNP\My Documents\RAD Studio\Projects\Unit1.dfm=D:\astt.2\andy\GameControl\ufMainGC.dfm</Transaction>
+    <Transaction>2011/01/18 10:38:37.593.dproj,C:\Documents and Settings\ATNP\My Documents\RAD Studio\Projects\Project1.dproj=D:\astt.2\andy\GameControl\GC.dproj</Transaction>
+    <Transaction>2011/02/01 14:44:12.000.pas,D:\astt.2\astt.project\T3.source.edit\tttGameController\Unit1.pas=D:\astt.2\astt.project\T3.source.edit\LibTTT\libNetSession\uNetSessionClient.pas</Transaction>
+    <Transaction>2011/02/01 14:55:16.328.pas,D:\astt.2\astt.project\T3.source.edit\LibTTT\libNetSession\uBaseNetSession.pas=</Transaction>
+    <Transaction>2011/02/17 11:45:23.453.pas,D:\astt.2\astt.project\T3.source.edit\tttGameController\Unit1.pas=D:\astt.2\astt.project\T3.source.edit\tttGameController\ufStartSession.pas</Transaction>
+    <Transaction>2011/02/17 11:45:23.453.dfm,D:\astt.2\astt.project\T3.source.edit\tttGameController\Unit1.dfm=D:\astt.2\astt.project\T3.source.edit\tttGameController\ufStartSession.dfm</Transaction>
+    <Transaction>2011/02/17 13:50:17.640.pas,D:\astt.2\astt.project\T3.source.edit\tttGameController\Unit1.pas=D:\astt.2\astt.project\T3.source.edit\tttGameController\ufStartExerciseWizard.pas</Transaction>
+    <Transaction>2011/02/17 13:50:17.640.dfm,D:\astt.2\astt.project\T3.source.edit\tttGameController\Unit1.dfm=D:\astt.2\astt.project\T3.source.edit\tttGameController\ufStartExerciseWizard.dfm</Transaction>
+    <Transaction>2011/02/22 13:20:42.796.pas,D:\astt.2\astt.project\T3.source.edit\tttGameController\Unit1.pas=D:\astt.2\astt.project\T3.source.edit\tttGameController\ufStartReplayRecorded.pas</Transaction>
+    <Transaction>2011/02/22 13:20:42.796.dfm,D:\astt.2\astt.project\T3.source.edit\tttGameController\Unit1.dfm=D:\astt.2\astt.project\T3.source.edit\tttGameController\ufStartReplayRecorded.dfm</Transaction>
+    <Transaction>2011/02/22 13:43:03.109.pas,D:\astt.2\astt.project\T3.source.edit\tttGameController\Unit1.pas=D:\astt.2\astt.project\T3.source.edit\tttGameController\ufAudioTrackSetting.pas</Transaction>
+    <Transaction>2011/02/22 13:43:03.109.dfm,D:\astt.2\astt.project\T3.source.edit\tttGameController\Unit1.dfm=D:\astt.2\astt.project\T3.source.edit\tttGameController\ufAudioTrackSetting.dfm</Transaction>
+    <Transaction>2011/02/22 13:49:45.953.pas,D:\astt.2\astt.project\T3.source.edit\tttGameController\Unit1.pas=D:\astt.2\astt.project\T3.source.edit\tttGameController\ufConnectTerminate.pas</Transaction>
+    <Transaction>2011/02/22 13:49:45.953.dfm,D:\astt.2\astt.project\T3.source.edit\tttGameController\Unit1.dfm=D:\astt.2\astt.project\T3.source.edit\tttGameController\ufConnectTerminate.dfm</Transaction>
+    <Transaction>2011/02/25 19:56:12.125.pas,D:\astt\astt.project\T3.source.edit\tttGameController\Unit1.pas=D:\astt\astt.project\T3.source.edit\LibTTT\libNetSession\uT3GroupList.pas</Transaction>
+    <Transaction>2011/02/25 19:57:08.781.pas,D:\astt\astt.project\T3.source.edit\SimFramework\LibComponent\XMLReader\xmlInterface.pas=D:\astt\astt.project\T3.source.edit\SimFramework\LibComponent\XMLReader\GmXMLInterface.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="..\..\T3.source"/>
+    <File Path="..\LibTTT"/>
+    <File Path="..\LibTTT\libNetSession"/>
+    <File Path="..\LibTTT\libNetSession\uNetSessionClient.pas"/>
+    <File Path="..\LibTTT\libNetSession\uNetSessionData.pas"/>
+    <File Path="..\LibTTT\libNetSession\uT3GroupList.pas"/>
+    <File Path="..\LibTTT\uLibSettingTTT.pas"/>
+    <File Path="..\SimFramework"/>
+    <File Path="..\SimFramework\LibBaseUtils"/>
+    <File Path="..\SimFramework\LibBaseUtils\Counter"/>
+    <File Path="..\SimFramework\LibBaseUtils\Counter\uSteppers.pas"/>
+    <File Path="..\SimFramework\LibBaseUtils\Counter\uThreadTimer.pas"/>
+    <File Path="..\SimFramework\LibBaseUtils\StringUtils"/>
+    <File Path="..\SimFramework\LibBaseUtils\StringUtils\uStringFunc.pas"/>
+    <File Path="..\SimFramework\LibBaseUtils\uIniFilesProcs.pas"/>
+    <File Path="..\SimFramework\LibComponent"/>
+    <File Path="..\SimFramework\LibComponent\Base64"/>
+    <File Path="..\SimFramework\LibComponent\Base64\uCodecBase64.pas"/>
+    <File Path="..\SimFramework\LibComponent\Executor"/>
+    <File Path="..\SimFramework\LibComponent\Executor\uExecuter.pas"/>
+    <File Path="..\SimFramework\LibComponent\XMLReader"/>
+    <File Path="..\SimFramework\LibComponent\XMLReader\GmXml.pas"/>
+    <File Path="..\SimFramework\LibComponent\XMLReader\GmXMLInterface.pas"/>
+    <File Path="..\SimFramework\LibNets"/>
+    <File Path="..\SimFramework\LibNets\NetComponent"/>
+    <File Path="..\SimFramework\LibNets\NetComponent\uNetBaseSocket.pas"/>
+    <File Path="..\SimFramework\LibNets\NetComponent\uPacketBuffer.pas"/>
+    <File Path="..\SimFramework\LibNets\NetComponent\uPacketRegister.pas"/>
+    <File Path="..\SimFramework\LibNets\NetComponent\uTCPClient.pas"/>
+    <File Path="..\SimFramework\LibNets\NetComponent\uTCPDatatype.pas"/>
+    <File Path="..\SimFramework\LibNets\NetComponent\uTCPServer.pas"/>
+    <File Path="..\SimFramework\LibNets\uBaseNetHandler.pas"/>
+    <File Path="ufAudioTrackSetting.pas"/>
+    <File Path="ufAudioTrackSetting.dfm"/>
+    <File Path="ufConnectTerminate.pas"/>
+    <File Path="ufConnectTerminate.dfm"/>
+    <File Path="ufMainGC.pas"/>
+    <File Path="ufMainGC.dfm"/>
+    <File Path="ufStartExerciseWizard.pas"/>
+    <File Path="ufStartExerciseWizard.dfm"/>
+    <File Path="ufStartReplayRecorded.pas"/>
+    <File Path="ufStartReplayRecorded.dfm"/>
+    <File Path="ufStartSession.pas"/>
+    <File Path="ufStartSession.dfm"/>
+    <File Path="uDMGC.pas"/>
+    <File Path="uDMGC.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

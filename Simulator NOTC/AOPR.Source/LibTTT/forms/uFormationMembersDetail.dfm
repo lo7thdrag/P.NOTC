@@ -1,0 +1,190 @@
+object frmFormationMembersDetail: TfrmFormationMembersDetail
+  Left = 0
+  Top = 0
+  BorderStyle = bsSizeToolWin
+  Caption = 'Members Properties'
+  ClientHeight = 136
+  ClientWidth = 307
+  Color = 5980694
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object grpMembers: TGroupBox
+    Left = 0
+    Top = 1
+    Width = 306
+    Height = 134
+    ParentBackground = False
+    TabOrder = 0
+    object btnClose: TButton
+      Left = 201
+      Top = 96
+      Width = 91
+      Height = 30
+      Caption = 'Close'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 10
+      OnClick = btnCloseClick
+    end
+    object lblAltitude: TStaticText
+      Left = 10
+      Top = 64
+      Width = 128
+      Height = 20
+      Caption = 'Altitude                   :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      Transparent = False
+    end
+    object lblRange: TStaticText
+      Left = 10
+      Top = 40
+      Width = 131
+      Height = 20
+      Caption = 'Range from Leader   :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      Transparent = False
+    end
+    object lblBearing: TStaticText
+      Left = 10
+      Top = 17
+      Width = 130
+      Height = 20
+      Caption = 'Bearing from Leader :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 5
+      Transparent = False
+    end
+    object edtAltitude: TEdit
+      Left = 146
+      Top = 62
+      Width = 90
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      Text = '000'
+      OnKeyPress = edtAltitudeKeyPress
+    end
+    object edtRange: TEdit
+      Left = 146
+      Top = 38
+      Width = 90
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      Text = '000'
+    end
+    object edtBearing: TEdit
+      Left = 146
+      Top = 15
+      Width = 90
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      Text = '000'
+    end
+    object lbAltitude: TStaticText
+      Left = 242
+      Top = 64
+      Width = 26
+      Height = 20
+      Caption = 'feet'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+      Transparent = False
+    end
+    object lbRange: TStaticText
+      Left = 242
+      Top = 40
+      Width = 22
+      Height = 20
+      Caption = 'nm'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 7
+      Transparent = False
+    end
+    object lblDegrees: TStaticText
+      Left = 242
+      Top = 17
+      Width = 50
+      Height = 20
+      Caption = 'degrees'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 8
+      Transparent = False
+    end
+    object btnAddorRemove: TButton
+      Left = 102
+      Top = 96
+      Width = 91
+      Height = 30
+      Caption = 'Add Members'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 9
+      OnClick = btnAddorRemoveClick
+    end
+  end
+end

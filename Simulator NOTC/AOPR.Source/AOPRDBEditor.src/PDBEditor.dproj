@@ -1,0 +1,635 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{81DB690B-3FFB-45F7-948D-8F25507DF74C}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>PDBEditor.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_ExeOutput>..\..\t3.bin\</DCC_ExeOutput>
+			<DCC_DcuOutput>..\..\T3.comp\</DCC_DcuOutput>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_DependencyCheckOutputName>..\..\t3.bin\PDBEditor.exe</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Platform>x86</DCC_Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="PDBEditor.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="..\LibTTT\forms\ufDBEditor.pas">
+				<Form>fDBEditor</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\ufScenario.pas">
+				<Form>frmScenario</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uGroupAllocationWindow.pas">
+				<Form>GroupAllocationWindowForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uLinkWindow.pas">
+				<Form>LinkWindowForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uPlatformDeployment.pas">
+				<Form>fPlatformDeploytment</Form>
+			</DCCReference>
+			<DCCReference Include="uSimDBEditor.pas"/>
+			<DCCReference Include="..\LibTTT\uLibSettingTTT.pas"/>
+			<DCCReference Include="..\LibTTT\forms\ufDBSetting.pas">
+				<Form>frmDBSetting</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uDataModuleTTT.pas">
+				<Form>dmTTT</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\uIniFilesProcs.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\StringUtils\uCodecBase64.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\tttData.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\newClassASTT.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Vehicle.pas"/>
+			<DCCReference Include="..\SimFramework\LibSims\SimSystem\uSimObjects.pas"/>
+			<DCCReference Include="..\LibTTT\LibVisual\uSimVisuals.pas"/>
+			<DCCReference Include="..\LibTTT\LibVisual\uObjectVisuals.pas"/>
+			<DCCReference Include="..\SimFramework\LibSims\SimsObjects\u2DMover.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\CoordSystem\uBaseCoordSystem.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\Counter\uSteppers.pas"/>
+			<DCCReference Include="..\SimFramework\LibSims\SimSystem\uBaseSimObjects.pas"/>
+			<DCCReference Include="..\SimFramework\LibSims\SimSystem\uSimContainers.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\CoordSystem\uDataTypes.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\CoordSystem\uCoordConvertor.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\StringUtils\uStringFunc.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Sensor.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Radar.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Sonar.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Weapon.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Countermeasure.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uAvailableScenario.pas">
+				<Form>fAvailableScenario</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uResurceAllocationSelect.pas">
+				<Form>fResorceAllocationSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\ufResouceAllocation.pas">
+				<Form>fResourceAllocSelection</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBScenario.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\Counter\uVirtualTime.pas"/>
+			<DCCReference Include="..\SimFramework\LibBaseUtils\Counter\uThreadTimer.pas"/>
+			<DCCReference Include="..\LibTTT\uT3SimManager.pas"/>
+			<DCCReference Include="..\LibTTT\libVisual\uCompassVisual.pas"/>
+			<DCCReference Include="..\LibTTT\uMapXHandler.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uPlatformDeploymentPickList.pas">
+				<Form>PlatformDeploymentPickListForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Geo.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBLink.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBFormation.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBNote_Storage.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Deploy.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBPattern.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBBlind_Zone.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Fitted.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Satellite.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBGame_Defaults.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Bomb.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Gun.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Scripted.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBRainfall.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Sonobuoy.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uAddParticipant.pas">
+				<Form>AddParticipantForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uEvents.pas">
+				<Form>EventsWindowForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uAddExCompChannel.pas">
+				<Form>AddExCompChannelForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uAddMember.pas">
+				<Form>AddMemberForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBDefault_Var.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBCloud_Effect.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uFEnvironmentSelection.pas">
+				<Form>fEnvironmentsSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uFormationEditor.pas">
+				<Form>FormationEditorForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uFormationEditorPanel.pas">
+				<Form>FormationEditorPanelForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uFormationMemberList.pas">
+				<Form>FormationMemberForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uFormatioResourceList.pas">
+				<Form>FormationResourcesForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uGameAreaList.pas">
+				<Form>fGameAreaList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uExerciseArea.pas">
+				<Form>ExerciseAreaForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_GameEnvironment.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_MotionCharacteristics.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uEnvironmentSelect.pas">
+				<Form>fEnvironmentSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uGameDefaults.pas">
+				<Form>fGameDefaults</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uGameDefaultSelect.pas">
+				<Form>fGameDefaultSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMissileSelect.pas">
+				<Form>fMissileSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uTorpedoSelect.pas">
+				<Form>fTorpedo</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSonobuoySelect.pas">
+				<Form>fSonobuoy</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMineSelect.pas">
+				<Form>fMine</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSatelliteSelect.pas">
+				<Form>fSatellite</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\uSimManager.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uReferencePointEditor.pas">
+				<Form>ReferencePointEditorForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uEnvironment.pas">
+				<Form>EnvironmentForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uGameAreaSelection.pas">
+				<Form>fGameAreaSelection</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uEnvironmentCharacteristicsWindow.pas">
+				<Form>EnvironmentCharacteristicsWindowForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\netTTT\uTCPData_TTT.pas"/>
+			<DCCReference Include="..\SimFramework\LibNets\NetComponent\uPacketBuffer.pas"/>
+			<DCCReference Include="..\SimFramework\LibNets\NetComponent\uPacketRegister.pas"/>
+			<DCCReference Include="..\SimFramework\LibNets\NetComponent\uTCPClient.pas"/>
+			<DCCReference Include="..\SimFramework\LibNets\NetComponent\uTCPDatatype.pas"/>
+			<DCCReference Include="..\SimFramework\LibNets\NetComponent\uTCPServer.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\ICS7\OverbyteIcsLibrary.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\ICS7\OverbyteIcsLogger.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\ICS7\OverbyteIcsThreadTimer.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\ICS7\OverbyteIcsTypes.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\ICS7\OverbyteIcsUtils.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\ICS7\OverbyteIcsWinsock.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\ICS7\OverbyteIcsWndControl.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\ICS7\OverbyteIcsWSockBuf.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\ICS7\OverbyteIcsWSocket.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\ICS7\OverbyteIcsWSocketS.pas">
+				<Form>$R *.res</Form>
+			</DCCReference>
+			<DCCReference Include="..\SimFramework\LibComponent\ICS7\OverbyteIcsWSocketTS.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uGeographicalFeatureImport.pas">
+				<Form>GeographicalFeatureImportForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSatellitePlatform.pas">
+				<Form>SatellitePlatformForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSatelliteList.pas">
+				<Form>SatelliteListForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uInputName.pas">
+				<Form>fInputName</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uPISelect.pas">
+				<Form>fPISelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMotionSingleList.pas">
+				<Form>fmotionSingleList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMotion.pas">
+				<Form>MotionHorizontalForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uRadarIntervalList.pas">
+				<Form>RadarIntervalListForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uRadarIntervalSetup.pas">
+				<Form>RadarIntervalSetupForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uRadarMount.pas">
+				<Form>RadarMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uRadarPickList.pas">
+				<Form>fRadarPickList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uLandmassEditor.pas">
+				<Form>fLandmassEditor</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\drawRec.pas">
+				<Form>fEditGameCenter</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uRadarSummary.pas">
+				<Form>fRadar</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uCharacteristicLandmass.pas">
+				<Form>fCharacteristicLandmass</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uVehiclePicklistFilter.pas">
+				<Form>fVehiclePicklistFilter</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uVehicleSelect.pas">
+				<Form>fVehicleSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uVehicleAttributeWindow.pas">
+				<Form>fVehicleAttributeWindow</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uVehicleName.pas">
+				<Form>fVehicleName</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMotionDoubleList.pas">
+				<Form>fMotionDouble</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSensorDoubleList.pas">
+				<Form>fSensor</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uWeaponDoubleList.pas">
+				<Form>fWeaponDoubleList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uESMMount.pas">
+				<Form>ESMMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uESMPickList.pas">
+				<Form>fESMPickList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_ESM.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uESMWindow.pas">
+				<Form>fESMWindow</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAssets_SubAreaEnviroDefinition.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uSonobuoySinglePickList.pas">
+				<Form>fSonobuoySelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSonobuoyWindow.pas">
+				<Form>fSonobuoyWindow</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSonarList.pas">
+				<Form>fSonarList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSonarMount.pas">
+				<Form>SonarMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uEOPicklist.pas">
+				<Form>fEO</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uElectroOpticalDetectorMount.pas">
+				<Form>ElectroOpticalMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uElectroOpticalDetector.pas">
+				<Form>ElectroOpticalForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMAD.pas">
+				<Form>MADMount</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMADPicklist.pas">
+				<Form>fMADPicklist</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMADWindow.pas">
+				<Form>MADForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\uRotWheel.pas">
+				<Form>uSonar in &apos;..\LibTTT\forms\uSonar.pas&apos; {fSonar</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSonarPicklist.pas">
+				<Form>fSonarPicklist</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSonar.pas">
+				<Form>fSonar</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSonarDefList.pas">
+				<Form>fSonarDefList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSonarDoubleList.pas">
+				<Form>fSonarDoubleList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uWeaponSingleList.pas">
+				<Form>fWeaponSingle</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMissileSummary.pas">
+				<Form>fMissileSummary</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uTorpedoSummary.pas">
+				<Form>fTorpedoSummary</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMineSummary.pas">
+				<Form>fMineSummary</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uBombWindow.pas">
+				<Form>fBombWindow</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uScrCapture.pas">
+				<Form>fScrCapture</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\ufCaptureRes.pas">
+				<Form>fCaptureRes</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uGunSummary.pas">
+				<Form>fGunSummary</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\uDetectedObject.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uResourceAllocation.pas">
+				<Form>ResourceAllocationForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uRAList.pas">
+				<Form>fRAList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uVehicleList.pas">
+				<Form>fVehicleList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAssetObject.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uChannelComList.pas">
+				<Form>fChannelComList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uCommunicationsChannels.pas">
+				<Form>CommunicationsChannelsForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uOverlay.pas">
+				<Form>fOverlay</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uOverlayEditor.pas">
+				<Form>OverlayEditorForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uOverlaySelectListForm.pas">
+				<Form>fOverlaySelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uStudentRoleListWindow.pas">
+				<Form>fStudentRoleListWindow</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uStudentRoleList.pas">
+				<Form>fStudentRole</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uEditStudentRoleList.pas">
+				<Form>fEditRoleList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uOtherSingleList.pas">
+				<Form>fOtherSingle</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uCountermeasuresSingleList.pas">
+				<Form>fCountermeasureSingle</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uAcousticDecoy.pas">
+				<Form>fAcousticDecoy</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uAirBubbleDef.pas">
+				<Form>fAirBubble</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uChaffDecoy.pas">
+				<Form>fChaff</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uFloatingDecoy.pas">
+				<Form>fFloatingDecoy</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uDefensiveJammer.pas">
+				<Form>fDefensiveJammer</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uTowedJammerDecoyDef.pas">
+				<Form>fTowedjammerDecoy</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uRadarJammer.pas">
+				<Form>fRadarJammer</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uWaypointEditorPanel.pas">
+				<Form>WaypointEditorPanelForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libObjects\uSensor.pas"/>
+			<DCCReference Include="..\LibTTT\libObjects\uWaypoint.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uPictureCentreControl.pas">
+				<Form>fPictureCentreSettings</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uTrackHistory.pas">
+				<Form>fTrackHistory</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uPlatformHandle.pas">
+				<Form>frmHandle</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uGroupSelect.pas">
+				<Form>fGroupSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\SimFramework\LibNets\NetComponent\uNetBaseSocket.pas"/>
+			<DCCReference Include="..\SimFramework\LibNets\uBaseNetHandler.pas"/>
+			<DCCReference Include="..\LibTTT\forms\ufProgress.pas">
+				<Form>frmProgress</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\netTTT\uGameData_TTT.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Runtime_Platform_Library.pas"/>
+			<DCCReference Include="..\LibTTT\forms\UfPlatformLibrary.pas">
+				<Form>fPlatformLibraryDoublePickList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libNetSession\uT3GroupList.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\XMLReader\GmXml.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\XMLReader\GmXMLInterface.pas"/>
+			<DCCReference Include="..\SimFramework\LibComponent\XMLReader\xmlInterface.pas">
+				<Form>,
+  uSimMgr_Client in &apos;..\tttSimClient.src\uSimMgr_Client.pas&apos;,
+  uNetHandle_Client in &apos;..\tttSimClient.src\uNetHandle_Client.pas&apos;,
+  uNetUDPnode in &apos;..\SimFramework\LibNets\NetComponent\uNetUDPnode.pas&apos;,
+  uNetHandle_TTT in &apos;..\LibTTT\netTTT\uNetHandle_TTT.pas&apos;</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uGroupMemberSelection.pas">
+				<Form>fGroupMemberSelection</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uRuntimePlatform.pas">
+				<Form>fRuntimePlatform</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libObjects\uGuidance.pas"/>
+			<DCCReference Include="..\LibTTT\forms\uBombDoublePickList.pas">
+				<Form>fBombDoublePickList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\UfRadarDoublePickList.pas">
+				<Form>fRadarDoublePickList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMADDoublePickList.pas">
+				<Form>fMADDoublePickList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uESMDoublePickList.pas">
+				<Form>fESMDoublePickList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uEODoublePickList.pas">
+				<Form>fEODoublePickList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uIFFDoublePickList.pas">
+				<Form>fIFFDoublePickList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uVDDoublePickList.pas">
+				<Form>fVDDoublePickList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSonobuoyDoublePickList.pas">
+				<Form>fSonobuoyDoublePickList</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uGunSelect.pas">
+				<Form>fGunSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uRadarJammerSelect.pas">
+				<Form>fRadarJammerSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uAirBubbleSelect.pas">
+				<Form>fAirBubbleSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uAccousticDecoySelect.pas">
+				<Form>fAccousticDeploySelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uDefensiveJammerSelect.pas">
+				<Form>fDefensiveJammerSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uTJDecoySelect.pas">
+				<Form>fTJDecoySelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uFloatingDecoySelect.pas">
+				<Form>fFloatingDecoySelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uChaffSelect.pas">
+				<Form>fChaffSelect</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uIFFMount.pas">
+				<Form>IFFMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMineMount.pas">
+				<Form>MineMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMissileLaunchers.pas">
+				<Form>MissileLaunchersForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uMissileMountForm.pas">
+				<Form>MissileMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uTorpedoMounts.pas">
+				<Form>TorpedoMountsForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uGunMount.pas">
+				<Form>GunMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uBombDepthChargeMount.pas">
+				<Form>BombDepthChargeMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uTorpedoLauncher.pas">
+				<Form>TorpedoLauncherForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uRadarJammerMount.pas">
+				<Form>RadarJammerMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uAirBubbleMounts.pas">
+				<Form>AirBubblesMounts</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uAccousticDecoyMount.pas">
+				<Form>AccousticDecoy</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSonobuoyMount.pas">
+				<Form>SonobuoyMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uTowedJammerMount.pas">
+				<Form>TowedJammerMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uFloatingDecoyMount.pas">
+				<Form>FloatingMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uChaffMount.pas">
+				<Form>ChaffMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uVisualDetectorMount.pas">
+				<Form>VisualDetectorMountForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uSNRvsPOD.pas">
+				<Form>fSnrVsPod</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uPredefinedPattern.pas">
+				<Form>fPredefinedPattern</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\forms\uBlindZoneAttachment.pas">
+				<Form>BlindZonesAttachmentForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Cubicle.pas"/>
+			<DCCReference Include="..\LibTTT\libDBScenario\uDBCubicles.pas"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">PDBEditor.dpr</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k140.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp140.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+				<ModelSupport>False</ModelSupport>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

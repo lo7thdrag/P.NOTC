@@ -1,0 +1,323 @@
+object frmPlatformBaseDetail: TfrmPlatformBaseDetail
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = ' Platform Base Detail'
+  ClientHeight = 317
+  ClientWidth = 373
+  Color = 5980694
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label3: TLabel
+    Left = 21
+    Top = 52
+    Width = 41
+    Height = 16
+    Caption = 'Force :'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 21
+    Top = 98
+    Width = 64
+    Height = 16
+    Caption = 'Longitude :'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 21
+    Top = 120
+    Width = 62
+    Height = 16
+    Caption = 'Latitude   :'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 136
+    Top = 52
+    Width = 47
+    Height = 16
+    Caption = 'Radius :'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 261
+    Top = 52
+    Width = 41
+    Height = 16
+    Caption = 'Type  :'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label11: TLabel
+    Left = 18
+    Top = 158
+    Width = 69
+    Height = 16
+    Caption = 'Fuel          :'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblIdentifier: TLabel
+    Left = 15
+    Top = 16
+    Width = 344
+    Height = 18
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Base'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblForce: TLabel
+    Left = 69
+    Top = 52
+    Width = 15
+    Height = 16
+    Caption = '---'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblRadius: TLabel
+    Left = 191
+    Top = 52
+    Width = 15
+    Height = 16
+    Caption = '---'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblType: TLabel
+    Left = 317
+    Top = 52
+    Width = 15
+    Height = 16
+    Caption = '---'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblFuel: TLabel
+    Left = 111
+    Top = 158
+    Width = 15
+    Height = 16
+    Caption = '---'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblLongitude: TLabel
+    Left = 89
+    Top = 98
+    Width = 15
+    Height = 16
+    Caption = '---'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblLatitude: TLabel
+    Left = 89
+    Top = 120
+    Width = 15
+    Height = 16
+    Caption = '---'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 18
+    Top = 178
+    Width = 67
+    Height = 16
+    Caption = 'Lubricants :'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblLubricants: TLabel
+    Left = 111
+    Top = 178
+    Width = 15
+    Height = 16
+    Caption = '---'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label10: TLabel
+    Left = 18
+    Top = 198
+    Width = 68
+    Height = 16
+    Caption = 'Water       :'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblWater: TLabel
+    Left = 111
+    Top = 198
+    Width = 15
+    Height = 16
+    Caption = '---'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label13: TLabel
+    Left = 18
+    Top = 218
+    Width = 69
+    Height = 16
+    Caption = 'Food         :'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblFood: TLabel
+    Left = 111
+    Top = 218
+    Width = 15
+    Height = 16
+    Caption = '---'
+    Color = 5980694
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object btnClose: TButton
+    Tag = 10
+    Left = 285
+    Top = 274
+    Width = 80
+    Height = 30
+    Caption = 'Close'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnClick = btnCloseClick
+  end
+end

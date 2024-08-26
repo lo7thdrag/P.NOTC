@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.uBaseSimObjects" Type="System.String" Value="uBaseSimObjects" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.uBaseSimCenter" Type="System.String" Value="uBaseSimCenter" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.u2DMover" Type="System.String" Value="u2DMover" Category="General" IsBrowsable="False" />
+</TgConfig>

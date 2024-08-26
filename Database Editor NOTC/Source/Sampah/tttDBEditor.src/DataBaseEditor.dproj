@@ -1,0 +1,1758 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{429368A6-18A3-4788-8168-218A9F92DC26}</ProjectGuid>
+        <MainSource>DataBaseEditor.dpr</MainSource>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <ProjectVersion>18.8</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <Base>True</Base>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>38017</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Android64)'!=''">
+        <Cfg_2_Android64>true</Cfg_2_Android64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
+        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX64)'!=''">
+        <Cfg_2_OSX64>true</Cfg_2_OSX64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_UnitSearchPath>D:\TTT\t3.comp;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_DependencyCheckOutputName>..\..\T3.bin\PDBEditor_NOPR.exe</DCC_DependencyCheckOutputName>
+        <DCC_ExeOutput>..\..\T3.bin\</DCC_ExeOutput>
+        <DCC_DcuOutput>..\..\T3.comp\</DCC_DcuOutput>
+        <DCC_UsePackage>vcl;rtl;vclx;vclimg;vclactnband;dbrtl;vcldb;vcldbx;bdertl;vcltouch;xmlrtl;dsnap;dsnapcon;TeeUI;TeeDB;Tee;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_140;Intraweb_100_140;VclSmp;vclie;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DataSnapServer;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;MapX;OverbyteIcsD2010Run;SignalLabGenericBasicPkgD13;SignalLabBasicPkgD13;OpenWirePkgD13;SignalLabAdditionalPkgD13;UserLabBasicPkgD13;InstrumentLabPkgD13;RaizeComponentsVcl;RaizeComponentsVclDb;lmdrtl10rt_100;lmdeldb10rt_100;lmdelpro10rt_100;lmdelcore10rt_100;lmdsyntax10rt_100;lmdide10rt_100;lmdchartdb10rt_100;lmdchart10rt_100;lmdprint10rt_100;lmdrtlx10rt_100;lmdfx10rt_100;lmdstorage10rt_100;lmdscript10rt_100;lmdscriptimp10rt_100;lmddesign10rt_100;lmdbar10rt_100;lmdsearchdb10rt_100;lmdsearch10rt_100;lmdweb10rt_100;lmdtxt10rt_100;lmdtools10rt_100;lmdtxtdb10rt_100;lmdcore10rt_100;lmdsys10rt_100;lmdshell10rt_100;lmdrtfdb10rt_100;lmdrtf10rt_100;lmddocking10rt_100;lmdgrid10rt_100;lmdtoolsdb10rt_100;lmdinspector10rt_100;lmdplugin10rt_100;lmdthemes10rt_100;tmsd2010;tmsexd2010;tmswizd2010;tmsxlsd2010;pkgRadarNav;vcwd2010;ZComponent;ZDbc;ZPlain;ZCore;ZParseSql;jProjvShape;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_Platform>x86</DCC_Platform>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1057</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <SanitizedProjectName>DataBaseEditor</SanitizedProjectName>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;com-google-android-gms.play-services-ads-base.17.2.0.dex.jar;com-google-android-gms.play-services-ads-identifier.16.0.0.dex.jar;com-google-android-gms.play-services-ads-lite.17.2.0.dex.jar;com-google-android-gms.play-services-ads.17.2.0.dex.jar;com-google-android-gms.play-services-analytics-impl.16.0.8.dex.jar;com-google-android-gms.play-services-analytics.16.0.8.dex.jar;com-google-android-gms.play-services-base.16.0.1.dex.jar;com-google-android-gms.play-services-basement.16.2.0.dex.jar;com-google-android-gms.play-services-gass.17.2.0.dex.jar;com-google-android-gms.play-services-identity.16.0.0.dex.jar;com-google-android-gms.play-services-maps.16.1.0.dex.jar;com-google-android-gms.play-services-measurement-base.16.4.0.dex.jar;com-google-android-gms.play-services-measurement-sdk-api.16.4.0.dex.jar;com-google-android-gms.play-services-stats.16.0.1.dex.jar;com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.dex.jar;com-google-android-gms.play-services-tasks.16.0.1.dex.jar;com-google-android-gms.play-services-wallet.16.0.1.dex.jar;com-google-firebase.firebase-analytics.16.4.0.dex.jar;com-google-firebase.firebase-common.16.1.0.dex.jar;com-google-firebase.firebase-iid-interop.16.0.1.dex.jar;com-google-firebase.firebase-iid.17.1.1.dex.jar;com-google-firebase.firebase-measurement-connector.17.0.1.dex.jar;com-google-firebase.firebase-messaging.17.5.0.dex.jar;fmx.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>PDBEditor_NOPR_Icon.ico</Icon_MainIcon>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>PDBEditor_NOPR_Icon.ico</Icon_MainIcon>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\LibTTT\forms\ufDBEditor.pas">
+            <Form>fDBEditor</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\ufScenario.pas">
+            <Form>frmScenario</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uGroupAllocationWindow.pas">
+            <Form>GroupAllocationWindowForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uLinkWindow.pas">
+            <Form>LinkWindowForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uPlatformDeployment.pas">
+            <Form>fPlatformDeploytment</Form>
+        </DCCReference>
+        <DCCReference Include="uSimDBEditor.pas"/>
+        <DCCReference Include="..\LibTTT\uLibSettingTTT.pas"/>
+        <DCCReference Include="..\LibTTT\forms\ufDBSetting.pas">
+            <Form>frmDBSetting</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uDataModuleTTT.pas">
+            <Form>dmTTT</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\SimFramework\LibBaseUtils\uIniFilesProcs.pas"/>
+        <DCCReference Include="..\SimFramework\LibBaseUtils\StringUtils\uCodecBase64.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\tttData.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\newClassASTT.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Vehicle.pas"/>
+        <DCCReference Include="..\SimFramework\LibSims\SimSystem\uSimObjects.pas"/>
+        <DCCReference Include="..\LibTTT\LibVisual\uSimVisuals.pas"/>
+        <DCCReference Include="..\LibTTT\LibVisual\uObjectVisuals.pas"/>
+        <DCCReference Include="..\SimFramework\LibSims\SimsObjects\u2DMover.pas"/>
+        <DCCReference Include="..\SimFramework\LibBaseUtils\CoordSystem\uBaseCoordSystem.pas"/>
+        <DCCReference Include="..\SimFramework\LibBaseUtils\Counter\uSteppers.pas"/>
+        <DCCReference Include="..\SimFramework\LibSims\SimSystem\uBaseSimObjects.pas"/>
+        <DCCReference Include="..\SimFramework\LibSims\SimSystem\uSimContainers.pas"/>
+        <DCCReference Include="..\SimFramework\LibBaseUtils\CoordSystem\uDataTypes.pas"/>
+        <DCCReference Include="..\SimFramework\LibBaseUtils\CoordSystem\uCoordConvertor.pas"/>
+        <DCCReference Include="..\SimFramework\LibBaseUtils\StringUtils\uStringFunc.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Sensor.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Radar.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Sonar.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Weapon.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Countermeasure.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uAvailableScenario.pas">
+            <Form>fAvailableScenario</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uResurceAllocationSelect.pas">
+            <Form>fResorceAllocationSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\ufResouceAllocation.pas">
+            <Form>fResourceAllocSelection</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBScenario.pas"/>
+        <DCCReference Include="..\SimFramework\LibBaseUtils\Counter\uVirtualTime.pas"/>
+        <DCCReference Include="..\SimFramework\LibBaseUtils\Counter\uThreadTimer.pas"/>
+        <DCCReference Include="..\LibTTT\uT3SimManager.pas"/>
+        <DCCReference Include="..\LibTTT\libVisual\uCompassVisual.pas"/>
+        <DCCReference Include="..\LibTTT\uMapXHandler.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uPlatformDeploymentPickList.pas">
+            <Form>PlatformDeploymentPickListForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Geo.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBLink.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBFormation.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBNote_Storage.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Deploy.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBPattern.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBBlind_Zone.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Fitted.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Satellite.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBGame_Defaults.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Bomb.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Gun.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Scripted.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBRainfall.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Cubicle.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Sonobuoy.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uAddParticipant.pas">
+            <Form>AddParticipantForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uEvents.pas">
+            <Form>EventsWindowForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uAddExCompChannel.pas">
+            <Form>AddExCompChannelForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uAddMember.pas">
+            <Form>AddMemberForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBDefault_Var.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBCloud_Effect.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uFEnvironmentSelection.pas">
+            <Form>fEnvironmentsSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uFormationEditor.pas">
+            <Form>fFormationEditor</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uFormationEditorPanel.pas">
+            <Form>fFormationEditorPanel</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uFormationMemberList.pas">
+            <Form>FormationMemberForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uFormatioResourceList.pas">
+            <Form>FormationResourcesForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uGameAreaList.pas">
+            <Form>fGameAreaList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uExerciseArea.pas">
+            <Form>ExerciseAreaForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_GameEnvironment.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_MotionCharacteristics.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uEnvironmentSelect.pas">
+            <Form>fEnvironmentSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uGameDefaults.pas">
+            <Form>fGameDefaults</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uGameDefaultSelect.pas">
+            <Form>fGameDefaultSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMissileSelect.pas">
+            <Form>fMissileSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTorpedoSelect.pas">
+            <Form>fTorpedo</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSonobuoySelect.pas">
+            <Form>fSonobuoySelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMineSelect.pas">
+            <Form>fMine</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSatelliteSelect.pas">
+            <Form>fSatellite</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\uSimManager.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uEnvironment.pas">
+            <Form>EnvironmentForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uGameAreaSelection.pas">
+            <Form>fGameAreaSelection</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uEnvironmentCharacteristicsWindow.pas">
+            <Form>EnvironmentCharacteristicsWindowForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\netTTT\uTCPData_TTT.pas"/>
+        <DCCReference Include="..\SimFramework\LibNets\NetComponent\uPacketBuffer.pas"/>
+        <DCCReference Include="..\SimFramework\LibNets\NetComponent\uPacketRegister.pas"/>
+        <DCCReference Include="..\SimFramework\LibNets\NetComponent\uTCPClient.pas"/>
+        <DCCReference Include="..\SimFramework\LibNets\NetComponent\uTCPDatatype.pas"/>
+        <DCCReference Include="..\SimFramework\LibNets\NetComponent\uTCPServer.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uGeographicalFeatureImport.pas">
+            <Form>GeographicalFeatureImportForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSatellitePlatform.pas">
+            <Form>SatellitePlatformForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSatelliteList.pas">
+            <Form>SatelliteListForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uInputName.pas">
+            <Form>fInputName</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uPISelect.pas">
+            <Form>fPISelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMotionSingleList.pas">
+            <Form>fmotionSingleList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMotion.pas">
+            <Form>MotionHorizontalForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uRadarIntervalList.pas">
+            <Form>RadarIntervalListForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uRadarIntervalSetup.pas">
+            <Form>fRadarIntervalSetup</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uRadarMount.pas">
+            <Form>RadarMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uRadarPickList.pas">
+            <Form>fRadarPickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uLandmassEditor.pas">
+            <Form>fLandmassEditor</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\drawRec.pas">
+            <Form>fEditGameCenter</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uRadarSummary.pas">
+            <Form>fRadar</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uCharacteristicLandmass.pas">
+            <Form>fCharacteristicLandmass</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uVehiclePicklistFilter.pas">
+            <Form>fVehiclePicklistFilter</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uVehicleSelect.pas">
+            <Form>fVehicleSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uVehicleAttributeWindow.pas">
+            <Form>fVehicleAttributeWindow</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uVehicleName.pas">
+            <Form>fVehicleName</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMotionDoubleList.pas">
+            <Form>fMotionDouble</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSensorDoubleList.pas">
+            <Form>fSensor</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uWeaponDoubleList.pas">
+            <Form>fWeaponDoubleList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uESMMount.pas">
+            <Form>ESMMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uESMPickList.pas">
+            <Form>fESMPickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_ESM.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uESMWindow.pas">
+            <Form>fESMWindow</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAssets_SubAreaEnviroDefinition.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uSonobuoySinglePickList.pas">
+            <Form>fSonobuoySingle</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSonobuoyWindow.pas">
+            <Form>fSonobuoyWindow</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSonarList.pas">
+            <Form>fSonarList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSonarMount.pas">
+            <Form>SonarMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uEOPicklist.pas">
+            <Form>fEO</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uElectroOpticalDetectorMount.pas">
+            <Form>ElectroOpticalMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uElectroOpticalDetector.pas">
+            <Form>ElectroOpticalForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMAD.pas">
+            <Form>MADMount</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMADPicklist.pas">
+            <Form>fMADPicklist</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMADWindow.pas">
+            <Form>MADForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\uRotWheel.pas">
+            <Form>uSonar in &apos;..\LibTTT\forms\uSonar.pas&apos; {fSonar</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSonarPicklist.pas">
+            <Form>fSonarPicklist</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSonar.pas">
+            <Form>fSonar</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSonarDefList.pas">
+            <Form>fSonarDefList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSonarDoubleList.pas">
+            <Form>fSonarDoubleList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uWeaponSingleList.pas">
+            <Form>fWeaponSingle</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMissileSummary.pas">
+            <Form>fMissileSummary</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTorpedoSummary.pas">
+            <Form>fTorpedoSummary</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMineSummary.pas">
+            <Form>fMineSummary</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uBombWindow.pas">
+            <Form>fBombWindow</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uScrCapture.pas">
+            <Form>fScrCapture</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\ufCaptureRes.pas">
+            <Form>fCaptureRes</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uGunSummary.pas">
+            <Form>fGunSummary</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\uDetectedObject.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uResourceAllocation.pas">
+            <Form>ResourceAllocationForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uRAList.pas">
+            <Form>fRAList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uVehicleList.pas">
+            <Form>fVehicleList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAssetObject.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uChannelComList.pas">
+            <Form>fChannelComList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uCommunicationsChannels.pas">
+            <Form>CommunicationsChannelsForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uOverlayTemplateEditor.pas">
+            <Form>fmOverlayTemplateEditor</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uOverlayEditor.pas">
+            <Form>OverlayEditorForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uOverlaySelectListForm.pas">
+            <Form>fOverlaySelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uStudentRoleListWindow.pas">
+            <Form>fStudentRoleListWindow</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uStudentRoleList.pas">
+            <Form>fStudentRole</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uEditStudentRoleList.pas">
+            <Form>fEditRoleList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uOtherSingleList.pas">
+            <Form>fOtherSingle</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uCountermeasuresSingleList.pas">
+            <Form>fCountermeasureSingle</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uAcousticDecoy.pas">
+            <Form>fAcousticDecoy</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uAirBubbleDef.pas">
+            <Form>fAirBubble</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uChaffDecoy.pas">
+            <Form>fChaff</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uFloatingDecoy.pas">
+            <Form>fFloatingDecoy</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uDefensiveJammer.pas">
+            <Form>fDefensiveJammer</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTowedJammerDecoyDef.pas">
+            <Form>fTowedjammerDecoy</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uRadarJammer.pas">
+            <Form>fRadarJammer</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uWaypointEditorPanel.pas">
+            <Form>WaypointEditorPanelForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libObjects\uSensor.pas"/>
+        <DCCReference Include="..\LibTTT\libObjects\uWaypoint.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uPictureCentreControl.pas">
+            <Form>fPictureCentreSettings</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTrackHistory.pas">
+            <Form>fTrackHistory</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uPlatformHandle.pas">
+            <Form>frmHandle</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uGroupSelect.pas">
+            <Form>fGroupSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\SimFramework\LibNets\NetComponent\uNetBaseSocket.pas"/>
+        <DCCReference Include="..\SimFramework\LibNets\uBaseNetHandler.pas"/>
+        <DCCReference Include="..\LibTTT\forms\ufProgress.pas">
+            <Form>frmProgress</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\netTTT\uGameData_TTT.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Runtime_Platform_Library.pas"/>
+        <DCCReference Include="..\LibTTT\forms\UfPlatformLibrary.pas">
+            <Form>fPlatformLibraryDoublePickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libNetSession\uT3GroupList.pas"/>
+        <DCCReference Include="..\SimFramework\LibComponent\XMLReader\GmXml.pas"/>
+        <DCCReference Include="..\SimFramework\LibComponent\XMLReader\GmXMLInterface.pas"/>
+        <DCCReference Include="..\SimFramework\LibComponent\XMLReader\xmlInterface.pas">
+            <Form>,
+  uSimMgr_Client in &apos;..\tttSimClient.src\uSimMgr_Client.pas&apos;,
+  uNetHandle_Client in &apos;..\tttSimClient.src\uNetHandle_Client.pas&apos;,
+  uNetUDPnode in &apos;..\SimFramework\LibNets\NetComponent\uNetUDPnode.pas&apos;,
+  uNetHandle_TTT in &apos;..\LibTTT\netTTT\uNetHandle_TTT.pas&apos;</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uGroupMemberSelection.pas">
+            <Form>fGroupMemberSelection</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uRuntimePlatform.pas">
+            <Form>fRuntimePlatform</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libObjects\uGuidance.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uBombDoublePickList.pas">
+            <Form>fBombDoublePickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\UfRadarDoublePickList.pas">
+            <Form>fRadarDoublePickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMADDoublePickList.pas">
+            <Form>fMADDoublePickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uESMDoublePickList.pas">
+            <Form>fESMDoublePickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uEODoublePickList.pas">
+            <Form>fEODoublePickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uIFFDoublePickList.pas">
+            <Form>fIFFDoublePickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uVDDoublePickList.pas">
+            <Form>fVDDoublePickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSonobuoyDoublePickList.pas">
+            <Form>fSonobuoyDoublePickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uGunSelect.pas">
+            <Form>fGunSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uRadarJammerSelect.pas">
+            <Form>fRadarJammerSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uAirBubbleSelect.pas">
+            <Form>fAirBubbleSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uAccousticDecoySelect.pas">
+            <Form>fAccousticDeploySelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uDefensiveJammerSelect.pas">
+            <Form>fDefensiveJammerSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTJDecoySelect.pas">
+            <Form>fTJDecoySelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uFloatingDecoySelect.pas">
+            <Form>fFloatingDecoySelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uChaffSelect.pas">
+            <Form>fChaffSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uIFFMount.pas">
+            <Form>IFFMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMineMount.pas">
+            <Form>MineMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMissileLaunchers.pas">
+            <Form>MissileLaunchersForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uMissileMountForm.pas">
+            <Form>MissileMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTorpedoMounts.pas">
+            <Form>TorpedoMountsForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uGunMount.pas">
+            <Form>GunMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uBombDepthChargeMount.pas">
+            <Form>BombDepthChargeMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTorpedoLauncher.pas">
+            <Form>TorpedoLauncherForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uRadarJammerMount.pas">
+            <Form>RadarJammerMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uAirBubbleMounts.pas">
+            <Form>AirBubblesMounts</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uAccousticDecoyMount.pas">
+            <Form>AccousticDecoy</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSonobuoyMount.pas">
+            <Form>SonobuoyMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTowedJammerMount.pas">
+            <Form>TowedJammerMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uFloatingDecoyMount.pas">
+            <Form>FloatingMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uChaffMount.pas">
+            <Form>ChaffMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uVisualDetectorMount.pas">
+            <Form>VisualDetectorMountForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSNRvsPOD.pas">
+            <Form>fSnrVsPod</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uPredefinedPattern.pas">
+            <Form>fPredefinedPattern</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uBlindZoneAttachment.pas">
+            <Form>BlindZonesAttachmentForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uBlindZoneView.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uChaffAssets.pas">
+            <Form>ChaffAssets</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uChaffLauncher.pas">
+            <Form>fChaffLauncher</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uChooseMap.pas">
+            <Form>ChooseMap</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uENCSelect.pas">
+            <Form>ENCSelect</Form>
+        </DCCReference>
+        <DCCReference Include="uOverlayOther.pas"/>
+        <DCCReference Include="uOverlayRecord.pas">
+            <Form>$R *.res</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Filter.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uLauncherList.pas">
+            <Form>fLauncherList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uUsage.pas">
+            <Form>Usage</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTrainingPattern.pas">
+            <Form>fTrainingPattern</Form>
+        </DCCReference>
+        <DCCReference Include="uDrawOverlay.pas"/>
+        <DCCReference Include="uMainOverlay.pas"/>
+        <DCCReference Include="uRecord.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uEffectsTable.pas">
+            <Form>EffectsTable</Form>
+        </DCCReference>
+        <DCCReference Include="uDBEditSetting.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uProbabilityGraph.pas">
+            <Form>ProbabilityGraph</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uAccousticDecoyProb.pas">
+            <Form>AccousticDecoyProb</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uIFFMode.pas">
+            <Form>IFFMode</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uPredefinedPatternEvents.pas">
+            <Form>EditEvents</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uInfraredDecoy.pas">
+            <Form>fInfraredDecoy</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uReferencePointEditor.pas">
+            <Form>fReferencePointEditor</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uReferencePointNew.pas">
+            <Form>fReferencePointNew</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\uT3Common.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Reference_Point.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uEmbarkedSelect.pas">
+            <Form>fEmbarkedSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uHelicopterLimitations.pas">
+            <Form>frmHelicopterLimitations</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uHelicopter_Land_Launch_Limits.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uRadarCoverage.pas">
+            <Form>RadarCoverage</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uPredefinedSelectListForm.pas">
+            <Form>fPredefinedSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uInfraredDecoyDouble.pas">
+            <Form>fInfraredDecoyPickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uInfraRedmount.pas">
+            <Form>fIRmount</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uRadarIntervalDouble.pas">
+            <Form>fRadarIntervalSelect</Form>
+        </DCCReference>
+        <DCCReference Include="uEnvi.pas">
+            <Form>frmEnvi</Form>
+        </DCCReference>
+        <DCCReference Include="uEditScenario.pas">
+            <Form>frmEditScenario</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uLogisticsList.pas">
+            <Form>frmLogisticsList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Logistics.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uLogistics.pas">
+            <Form>frmLogistics</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTacticalSymbol.pas">
+            <Form>frmTacticalSymbol</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uLogin.pas">
+            <Form>frmLogin</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uUserLogin.pas">
+            <Form>frmUserLogin</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uAdministrator.pas">
+            <Form>frmAdministrator</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_UserLogin.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uPelabuhan.pas">
+            <Form>frmPelabuhan</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uBeach.pas">
+            <Form>frmBeach</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTeluk.pas">
+            <Form>frmTeluk</Form>
+        </DCCReference>
+        <DCCReference Include="uMainDynamicShape.pas"/>
+        <DCCReference Include="uMainStaticShape.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uMLayerSelect.pas">
+            <Form>MLayerSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uSimbolTaktis.pas">
+            <Form>frmSimbolTaktis</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_FontTaktis.pas"/>
+        <DCCReference Include="..\LibTTT\forms\ufmEmbarkLibrary.pas">
+            <Form>fmEmbarkLibraryPickList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\ufmEmbarkPositionInput.pas">
+            <Form>fmEmbarkPositionInput</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Embark_Library.pas"/>
+        <DCCReference Include="..\LibTTT\forms\ufmEmbarkPlatformLibrary.pas">
+            <Form>fmEmbarkPlatformLibrary</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\ufmEmbarkQuantityInput.pas">
+            <Form>fmEmbarkQuantityInput</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\ufmBaseLocation.pas">
+            <Form>fmBaseLocation</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\ufmGroupPersonel.pas">
+            <Form>fmGroupPersonel</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\ufmPersonelQuantityInput.pas">
+            <Form>fmPersonelQuantityInput</Form>
+        </DCCReference>
+        <DCCReference Include="uBrigadePersonel.pas"/>
+        <DCCReference Include="..\LibTTT\libVisual\uVectorVisual.pas"/>
+        <DCCReference Include="uMainStrategi.pas"/>
+        <DCCReference Include="uMainPlottingShape.pas"/>
+        <DCCReference Include="uDrawStrategi.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uPlottingTemplateEditor.pas">
+            <Form>fmPlottingTemplateEditor</Form>
+        </DCCReference>
+        <DCCReference Include="uPlottingRecord.pas"/>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Plotting_Definition.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uPlottingEditor.pas">
+            <Form>fmPlottingEditor</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\ufmPlottingSelectListForm.pas">
+            <Form>fmPlottingSelectListForm</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\ufmPlottingTime.pas">
+            <Form>fmPlottingTime</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uGameReport.pas">
+            <Form>frmGameReport</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_GameReport.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uWaypointWindow.pas">
+            <Form>frmWaypointWindow</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uWaypointWindowEditor.pas">
+            <Form>frmWaypointWindowEditor</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uWaypointSelect.pas">
+            <Form>frmWaypointSelect</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uCapability.pas">
+            <Form>frmCapability</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uCapabilityList.pas">
+            <Form>frmCapabilityList</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libDBScenario\uDBAsset_Capability.pas"/>
+        <DCCReference Include="..\LibTTT\forms\uGameAreaDefinition.pas">
+            <Form>DefinitionArea</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uFormDefinition.pas">
+            <Form>FormDefinition</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uCreateDefinitionArea.pas">
+            <Form>CreateDefinitionArea</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\uTargetEditor.pas">
+            <Form>frmTargetEditor</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\ufmDefaultEmbark.pas">
+            <Form>Form1</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\libGDIP\GDIPAPI.pas"/>
+        <DCCReference Include="..\LibTTT\libGDIP\GdiPlus.pas"/>
+        <DCCReference Include="..\LibTTT\libGDIP\GdiPlusHelpers.pas"/>
+        <DCCReference Include="..\LibTTT\libGDIP\GDIPOBJ.pas"/>
+        <DCCReference Include="..\LibTTT\forms\ufmEmbarkTrackIDInput.pas">
+            <Form>fmEmbarkTrackIDInput</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Weapon\ufrmAvailableMissile.pas">
+            <Form>frmAvailableMissile</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Weapon\ufrmAvailableTorpedo.pas">
+            <Form>frmAvailableTorpedo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Weapon\ufrmAvailableMine.pas">
+            <Form>frmAvailableMine</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Weapon\ufrmAvailableBomb.pas">
+            <Form>frmAvailableBomb</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Weapon\ufrmAvailableGun.pas">
+            <Form>frmAvailableGun</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Sensor\ufrmAvailableRadar.pas">
+            <Form>frmAvailableRadar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Sensor\ufrmAvailableSonar.pas">
+            <Form>frmAvailableSonar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Sensor\ufrmAvailableSonobuoy.pas">
+            <Form>frmAvailableSonobuoy</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Sensor\ufrmAvailableESM.pas">
+            <Form>frmAvailableESM</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Sensor\ufrmAvailableMAD.pas">
+            <Form>frmAvailableMAD</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Platform\ufrmAvailableVehicle.pas">
+            <Form>frmAvailableVehicle</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Platform\ufrmAvailableMotion.pas">
+            <Form>frmAvailableMotion</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Other\ufrmAvailableRuntimePlatformLibrary.pas">
+            <Form>frmAvailableRuntimePlatformLibrary</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Other\ufrmAvailableOverlay.pas">
+            <Form>frmAvailableOverlay</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Other\ufrmAvailableLogistic.pas">
+            <Form>frmAvailableLogistic</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Other\ufrmAvailableTransport.pas">
+            <Form>frmAvailableTransport</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Other\ufrmAvailableBase.pas">
+            <Form>frmAvailableBase</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\LibTTT\forms\Other\ufrmAvailableWaypoint.pas">
+            <Form>frmAvailableWaypoint</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">DataBaseEditor.dpr</Source>
+                </Source>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1057</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k140.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp140.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <ModelSupport>False</ModelSupport>
+            <Platforms>
+                <Platform value="Android64">True</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="OSX64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <Deployment Version="3">
+                <DeployFile LocalName="..\..\T3.bin\DataBaseEditor.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>DataBaseEditor.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidFileProvider">
+                    <Platform Name="Android">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiv7aFile">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV21">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Colors">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon24">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Strings">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024x768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536x2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1668">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1668x2388">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048x1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048x2732">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2224">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2388x1668">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2732x2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768x1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1125">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1136x640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1242">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1242x2688">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1334">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1792">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2208">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2436">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2688x1242">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch750">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch828">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXDebug"/>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>
