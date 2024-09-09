@@ -480,6 +480,13 @@ begin
     if TT3PlatformInstance(pf).Dormant then
       continue;
 
+    { Jk obyek sedang diangkut diabaikan }
+    if pf is TT3Vehicle then
+    begin
+      if TT3Vehicle(pf).StateTransport then
+        Continue;
+    end;
+
     {-- POD modifier for each Bomb category }
     range := CalcRange(TT3PlatformInstance(pf).getPositionX, TT3PlatformInstance(pf).getPositionY, FPosition.X,FPosition.Y);
 

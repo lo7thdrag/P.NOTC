@@ -1564,15 +1564,15 @@ begin
   DecodeDate(Now, Tahun, Bulan, Hari);
   start := EncodeDate(Tahun, Bulan, Hari);
 
-  Stop := StrToFloat(dateTemp);
-  selisih := Stop - start;
-
   if dateTemp = 'U' then
   begin
     Result := snTemp = regTemp;
   end
   else
   begin
+    Stop := StrToFloat(dateTemp);
+    selisih := Stop - start;
+
     if selisih < 0 then
       Result := False
     else

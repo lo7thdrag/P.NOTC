@@ -5357,10 +5357,10 @@ begin
     with TT3TorpedoesOnVehicle(focused_weapon) do
     begin
       case TEdit(sender).Tag of
-        1 : SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoActiveAcoustic), 4, InstanceIndex, InstanceName, value);
+        1 : SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoActiveAcoustic), 4, InstanceIndex, InstanceName, value / C_NauticalMile_To_Yards);
         2 : SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoActiveAcoustic), 5, InstanceIndex, InstanceName, value);
         3 : SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoActiveAcoustic), 6, InstanceIndex, InstanceName, value);
-        4 : SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoActiveAcoustic), 7, InstanceIndex, InstanceName, value);
+        4 : SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoActiveAcoustic), 7, InstanceIndex, InstanceName, value / C_NauticalMile_To_Yards);
       end;
     end;
   end;
@@ -10977,7 +10977,8 @@ begin
         1: {Search Radius}
         begin
           if Boolean(TorpedoDefinition.FDef.Fixed_Circle_Radius) then
-            SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoAirDropped), TEdit(sender).Tag, InstanceIndex, InstanceName,_valueFloat)
+            SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoAirDropped), TEdit(sender).Tag,
+            InstanceIndex, InstanceName,_valueFloat / C_NauticalMile_To_Yards)
           else
           begin
             ShowMessage('Search Radius Can not modified by operator ');
@@ -11184,7 +11185,7 @@ begin
         2: {Search Radius}
         begin
           if Boolean(TorpedoDefinition.FDef.Fixed_Circle_Radius) then
-            SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoActivePassive), TEdit(sender).Tag, InstanceIndex, InstanceName,_valueFloat)
+            SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoActivePassive), TEdit(sender).Tag, InstanceIndex, InstanceName,_valueFloat / C_NauticalMile_To_Yards)
           else
           begin
             ShowMessage('Search Radius Can not modified by operator ');
@@ -11217,7 +11218,7 @@ begin
         5: {Seeker Range On}
         begin
           if Boolean(TorpedoDefinition.FDef.Fixed_Seeker_TurnOn_Range) then
-            SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoActivePassive), TEdit(sender).Tag, InstanceIndex, InstanceName,_valueFloat)
+            SimMgrClient.netSend_CmdTorpedoProperty(ParentPlatformID, Integer(wcTorpedoActivePassive), TEdit(sender).Tag, InstanceIndex, InstanceName,_valueFloat / C_NauticalMile_To_Yards)
           else
           begin
             ShowMessage('Seeker Range Can not modified by operator ');

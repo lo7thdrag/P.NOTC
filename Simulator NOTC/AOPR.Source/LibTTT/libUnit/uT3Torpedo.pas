@@ -1709,12 +1709,12 @@ end;
 
 procedure TT3Torpedo.ActivePassiveMove(const aDeltaMs: double);
 begin
-  if TorpedoDefinition.FDef.Sinuation_Runout = 1 then
-    SinuationMove(aDeltaMs)
-  else
-  begin
+//  if TorpedoDefinition.FDef.Sinuation_Runout = 1 then
+//    SinuationMove(aDeltaMs)
+//  else
+//  begin
     CircleMove(aDeltaMs)
-  end;
+//  end;
 end;
 
 procedure TT3Torpedo.AirDroppedMove(const aDeltaMs: double);
