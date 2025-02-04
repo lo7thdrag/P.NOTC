@@ -2841,10 +2841,10 @@ begin
             end;
     end;
 
-    if RadarDefinition.FDef.Sector_Scan_Capable then
-       pnlScanSector.Visible := True
-    else
-       pnlScanSector.Visible := False;
+//    if RadarDefinition.FDef.Sector_Scan_Capable then
+//       pnlScanSector.Visible := True
+//    else
+//       pnlScanSector.Visible := False;
 
     if ShowRange then
       begin

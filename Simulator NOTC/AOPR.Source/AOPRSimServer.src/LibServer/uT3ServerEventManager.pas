@@ -966,6 +966,12 @@ var
 begin
   inherited;
 
+  if not Assigned(Sender) then
+    Exit;
+
+  if not Assigned(Target) then
+    Exit;
+
   if (Sender is TT3PlatformInstance) and (Target is TT3PlatformInstance) then
   begin
     if Sender is TT3GunShoot then

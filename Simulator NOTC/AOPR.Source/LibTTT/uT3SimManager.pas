@@ -1525,59 +1525,15 @@ end;
 
 function TT3SimManager.GetConsoleIdentification: Boolean;
 var
-  WMIServices : ISWbemServices;
-  Root        : ISWbemObjectSet;
-  Item        : Variant;
+
   snTemp      : string;
   regTemp     : string;
-  Address     : string;
-  dateTemp    : string;
-  stop, start : TDateTime;
-  selisih     : Double;
-  Tahun, Bulan, Hari : Word;
+
 begin
   snTemp :=  '';
   regTemp := '';
 
-  WMIServices := CoSWbemLocator.Create.ConnectServer('.', 'root\cimv2','', '', '', '', 0, nil);
-  Root  := WMIServices.ExecQuery('Select SerialNumber From Win32_DiskDrive','WQL', 0, nil);
-  Item := Root.ItemIndex(0);
-  snTemp:=VarToStr(Item.SerialNumber);
-
-  snTemp := ReplaceStr(snTemp, '_', '');
-  snTemp := ReplaceStr(snTemp, '.', '');
-  snTemp := RightStr(snTemp,8);
-
-  Address := 'Software\CmPack\CmLogin';
-  try
-    try
-      FReg := Tregistry.Create;
-      FReg.OpenKey(Address,False);
-      regTemp := FReg.ReadString('LockID');
-      dateTemp := FReg.ReadString('Date');
-    except on ERegistryException do
-    end;
-  finally
-    FReg.CloseKey;
-  end;
-
-  DecodeDate(Now, Tahun, Bulan, Hari);
-  start := EncodeDate(Tahun, Bulan, Hari);
-
-  if dateTemp = 'U' then
-  begin
-    Result := snTemp = regTemp;
-  end
-  else
-  begin
-    Stop := StrToFloat(dateTemp);
-    selisih := Stop - start;
-
-    if selisih < 0 then
-      Result := False
-    else
-      Result := snTemp = regTemp;
-  end;
+  Result := snTemp = regTemp;
 end;
 
 procedure TT3SimManager.GetFuelConsBySpeed(aVehicle : TT3Vehicle; aSpeed: Double; var

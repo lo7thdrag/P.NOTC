@@ -5304,114 +5304,132 @@ begin
 
     Target := FindT3PlatformByID(aRec^.TargetID);
 
-    if Sender is TT3Torpedo then
+    if Assigned(Sender) then
     begin
-      TT3Torpedo(Sender).FreeChilds;
-      Sender.FreeMe := True;
-      Sender.AbsoluteFree := True;
-
-      if Target is TT3Bomb then
+      if Sender is TT3Torpedo then
       begin
-        TT3Bomb(Target).FreeChilds;
-        Target.FreeMe := True;
-        Target.AbsoluteFree := True;
-      end;
-    end
-    else if Sender is TT3Bomb then
-    begin
-      if Sender is TT3Mine then   //mine turunan dari bomb, tapi butuh perlakuan berbeda
-      begin
-        TT3Mine(Sender).CountMine := TT3Mine(Sender).CountMine - 1;
-        if TT3Mine(Sender).CountMine <= 0 then
-        begin
-          TT3Mine(Sender).FreeChilds;
-          Sender.FreeMe := True;
-          Sender.AbsoluteFree := True;
-        end;
-      end
-      else
-      begin
-        TT3Bomb(Sender).FreeChilds;
+        TT3Torpedo(Sender).FreeChilds;
         Sender.FreeMe := True;
         Sender.AbsoluteFree := True;
-      end;
-    end
-    else if Sender is TT3Missile then
-    begin
-      if Target is TT3Chaff then
-      begin
-        if TT3Missile(Sender).Definition.ECM_Detonation = 0 then //No Detonate to Chaff
-          Exit;
 
-        if TT3Chaff(Target).ChaffCategory = ecgDistraction then
+        if Assigned(Target) then
         begin
-          TT3Missile(Sender).FreeChilds;
-          Sender.FreeMe := True;
-          Sender.AbsoluteFree := True;
-
-          TT3Chaff(Target).FreeChilds;
-          Target.FreeMe := True;
-          Target.AbsoluteFree := True;
+          if Target is TT3Bomb then
+          begin
+            TT3Bomb(Target).FreeChilds;
+            Target.FreeMe := True;
+            Target.AbsoluteFree := True;
+          end;
+        end;
+      end
+      else if Sender is TT3Bomb then
+      begin
+        if Sender is TT3Mine then   //mine turunan dari bomb, tapi butuh perlakuan berbeda
+        begin
+          TT3Mine(Sender).CountMine := TT3Mine(Sender).CountMine - 1;
+          if TT3Mine(Sender).CountMine <= 0 then
+          begin
+            TT3Mine(Sender).FreeChilds;
+            Sender.FreeMe := True;
+            Sender.AbsoluteFree := True;
+          end;
         end
-        else if TT3Chaff(Target).ChaffCategory = ecgSeduction then
+        else
         begin
-          TT3Chaff(Target).FreeChilds;
-          Target.FreeMe := True;
-          Target.AbsoluteFree := True;
+          TT3Bomb(Sender).FreeChilds;
+          Sender.FreeMe := True;
+          Sender.AbsoluteFree := True;
         end;
       end
-      else if Target is TT3InfraredDecoy then
+      else if Sender is TT3Missile then
       begin
-        TT3Missile(Sender).FreeChilds;
-        Sender.FreeMe := True;
-        Sender.AbsoluteFree := True;
+        if Assigned(Target) then
+        begin
+          if Target is TT3Chaff then
+          begin
+            if TT3Missile(Sender).Definition.ECM_Detonation = 0 then //No Detonate to Chaff
+              Exit;
 
-        TT3InfraredDecoy(Target).FreeChilds;
-        Target.FreeMe := True;
-        Target.AbsoluteFree := True;
+            if TT3Chaff(Target).ChaffCategory = ecgDistraction then
+            begin
+              TT3Missile(Sender).FreeChilds;
+              Sender.FreeMe := True;
+              Sender.AbsoluteFree := True;
+
+              TT3Chaff(Target).FreeChilds;
+              Target.FreeMe := True;
+              Target.AbsoluteFree := True;
+            end
+            else if TT3Chaff(Target).ChaffCategory = ecgSeduction then
+            begin
+              TT3Chaff(Target).FreeChilds;
+              Target.FreeMe := True;
+              Target.AbsoluteFree := True;
+            end;
+          end
+          else if Target is TT3InfraredDecoy then
+          begin
+            TT3Missile(Sender).FreeChilds;
+            Sender.FreeMe := True;
+            Sender.AbsoluteFree := True;
+
+            TT3InfraredDecoy(Target).FreeChilds;
+            Target.FreeMe := True;
+            Target.AbsoluteFree := True;
+          end
+          else if Target is TT3FloatingDecoy then
+          begin
+            TT3Missile(Sender).FreeChilds;
+            Sender.FreeMe := True;
+            Sender.AbsoluteFree := True;
+
+            TT3FloatingDecoy(Target).FreeChilds;
+            Target.FreeMe := True;
+            Target.AbsoluteFree := True;
+          end
+          else
+          begin
+            TT3Missile(Sender).FreeChilds;
+            Sender.FreeMe := True;
+            Sender.AbsoluteFree := True;
+          end;
+        end;
+
       end
-      else if Target is TT3FloatingDecoy then
+      else if Sender is TT3GunShoot then
       begin
-        TT3Missile(Sender).FreeChilds;
+        TT3GunShoot(Sender).FreeChilds;
         Sender.FreeMe := True;
         Sender.AbsoluteFree := True;
 
-        TT3FloatingDecoy(Target).FreeChilds;
-        Target.FreeMe := True;
-        Target.AbsoluteFree := True;
+        if Assigned(Target) then
+        begin
+          if Target is TT3Missile then
+          begin
+            TT3Missile(Target).FreeChilds;
+            Target.FreeMe := True;
+            Target.AbsoluteFree := True;
+          end;
+        end;
+
       end
-      else
+      else if Sender is TT3GunOnVehicle then
       begin
-        TT3Missile(Sender).FreeChilds;
-        Sender.FreeMe := True;
-        Sender.AbsoluteFree := True;
-      end;
-    end
-    else if Sender is TT3GunShoot then
-    begin
-      TT3GunShoot(Sender).FreeChilds;
-      Sender.FreeMe := True;
-      Sender.AbsoluteFree := True;
+        if Assigned(Target) then
+        begin
+          if Target is TT3Missile then
+          begin
+            TT3PlatformInstance(Target).reasonDestroy := 21;
+            TT3PlatformInstance(Target).UnitMakeDestroy := TT3PlatformInstance(Sender).InstanceName;
 
-      if Target is TT3Missile then
-      begin
-        TT3Missile(Target).FreeChilds;
-        Target.FreeMe := True;
-        Target.AbsoluteFree := True;
-      end;
-    end
-    else if Sender is TT3GunOnVehicle then
-    begin
-      if Target is TT3Missile then
-      begin
-        TT3PlatformInstance(Target).reasonDestroy := 21;
-        TT3PlatformInstance(Target).UnitMakeDestroy := TT3PlatformInstance(Sender).InstanceName;
-
-        TT3Missile(Target).FreeChilds;
-        Target.FreeMe := True;
-        Target.AbsoluteFree := True;
+            TT3Missile(Target).FreeChilds;
+            Target.FreeMe := True;
+            Target.AbsoluteFree := True;
+          end;
+        end;
       end;
     end;
+
   end;
 
   EventManager.OnWeaponHitByServer(aRec^.SenderID, aRec^.TargetID,

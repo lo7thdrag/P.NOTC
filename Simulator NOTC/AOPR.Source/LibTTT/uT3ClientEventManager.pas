@@ -3946,68 +3946,68 @@ begin
   Target := simMgrClient.FindT3PlatformByID(TargetID);
 
   if Assigned(Sender) then
+  begin
     Sender.reasonDestroy := 22;
 
-  if Assigned(Sender) and Assigned(Target)then
-  begin
-    if TT3PlatformInstance(Sender).UnitMakeDestroy = '' then
-      frmToteDisplay.OnPlatformDestroy(Sender, TT3PlatformInstance(Target).InstanceName)
-    else
-      frmToteDisplay.OnPlatformDestroy(Sender, TT3PlatformInstance(Sender).UnitMakeDestroy);
-  end;
-
-  if Assigned(Target) then
-  begin
-    if TT3PlatformInstance(frmTacticalDisplay.focusedTrack) = Target then
+    if Assigned(Target) then
     begin
-      frmTacticalDisplay.UpdateTabHooked(Target);
+      if TT3PlatformInstance(Sender).UnitMakeDestroy = '' then
+        frmToteDisplay.OnPlatformDestroy(Sender, TT3PlatformInstance(Target).InstanceName)
+      else
+        frmToteDisplay.OnPlatformDestroy(Sender, TT3PlatformInstance(Sender).UnitMakeDestroy);
 
-      if Target is TT3Vehicle then
+      if TT3PlatformInstance(frmTacticalDisplay.focusedTrack) = Target then
       begin
-        simMgrClient.RemoveDetectedTracks(TSimObject(Target));
+        frmTacticalDisplay.UpdateTabHooked(Target);
 
-        frmToteDisplay.UpdateSensorVehicle(TT3Vehicle(Target));
-        frmToteDisplay.UpdateCountermeasureVehicle(TT3Vehicle(Target));
-        frmToteDisplay.UpdateStatusVehicle(TT3Vehicle(Target));
-        frmToteDisplay.UpdateLogisticToteDisplay(TT3Vehicle(Target));
+        if Target is TT3Vehicle then
+        begin
+          simMgrClient.RemoveDetectedTracks(TSimObject(Target));
+
+          frmToteDisplay.UpdateSensorVehicle(TT3Vehicle(Target));
+          frmToteDisplay.UpdateCountermeasureVehicle(TT3Vehicle(Target));
+          frmToteDisplay.UpdateStatusVehicle(TT3Vehicle(Target));
+          frmToteDisplay.UpdateLogisticToteDisplay(TT3Vehicle(Target));
+        end;
       end;
+    end;
+
+     if Sender is TT3Torpedo then
+      strAction := 'Hit by '+ parentName + ' ''' +'s '+ ' torpedo ' + TT3Weapon(Sender).InstanceName
+    else if Sender is TT3Missile then
+      strAction := 'Hit by '+ parentName + ' ''' +'s '+ ' missile ' + TT3Weapon(Sender).InstanceName
+    else if Sender is TT3Bomb then
+    begin
+      if Sender is TT3Mine then
+        strAction := 'Hit By '+ ParentName + ' ''' +'s '+ ' mine ' + TT3Weapon(Sender).InstanceName
+      else
+        strAction := 'Hit by '+ ParentName + ' ''' +'s '+ ' bomb ' + TT3Weapon(Sender).InstanceName
+    end
+    else if Sender is TT3GunOnVehicle then
+      strAction := 'Hit By '+ ParentName + ' ''' +'s '+ ' gun ' + TT3Weapon(Sender).InstanceName;
+
+    if Assigned(Target) then
+    begin
+      {Menampilkan event summary}
+      News := TEventSummary.Create;
+      News.Time := simMgrClient.GameTIME;
+      News.VehicleIdentifier := Target.InstanceName;
+      News.Force := Target.Force_Designation;
+      News.Action := strAction;
+      SimManager.SimEventSummary.Add(News);
+
+
+      News := TEventSummary.Create;
+      News.Time := simMgrClient.GameTIME;
+      News.VehicleIdentifier := Target.InstanceName;
+      News.Force := Target.Force_Designation;
+      News.Action := 'Damage ' + IntToStr(100 - Round(Target.HealthPercent)) + '%';
+      SimManager.SimEventSummary.Add(News);
+
+      OnWriteEventSummary;
     end;
   end;
 
-   if Sender is TT3Torpedo then
-    strAction := 'Hit by '+ parentName + ' ''' +'s '+ ' torpedo ' + TT3Weapon(Sender).InstanceName
-  else if Sender is TT3Missile then
-    strAction := 'Hit by '+ parentName + ' ''' +'s '+ ' missile ' + TT3Weapon(Sender).InstanceName
-  else if Sender is TT3Bomb then
-  begin
-    if Sender is TT3Mine then
-      strAction := 'Hit By '+ ParentName + ' ''' +'s '+ ' mine ' + TT3Weapon(Sender).InstanceName
-    else
-      strAction := 'Hit by '+ ParentName + ' ''' +'s '+ ' bomb ' + TT3Weapon(Sender).InstanceName
-  end
-  else if Sender is TT3GunOnVehicle then
-    strAction := 'Hit By '+ ParentName + ' ''' +'s '+ ' gun ' + TT3Weapon(Sender).InstanceName;
-
-  if Assigned(Target) then
-  begin
-    {Menampilkan event summary}
-    News := TEventSummary.Create;
-    News.Time := simMgrClient.GameTIME;
-    News.VehicleIdentifier := Target.InstanceName;
-    News.Force := Target.Force_Designation;
-    News.Action := strAction;
-    SimManager.SimEventSummary.Add(News);
-
-
-    News := TEventSummary.Create;
-    News.Time := simMgrClient.GameTIME;
-    News.VehicleIdentifier := Target.InstanceName;
-    News.Force := Target.Force_Designation;
-    News.Action := 'Damage ' + IntToStr(100 - Round(Target.HealthPercent)) + '%';
-    SimManager.SimEventSummary.Add(News);
-
-    OnWriteEventSummary;
-  end;
 end;
 
 procedure TT3ClientEventManager.OnWeaponInOut(SenderID: integer; reasondestroy: Byte);

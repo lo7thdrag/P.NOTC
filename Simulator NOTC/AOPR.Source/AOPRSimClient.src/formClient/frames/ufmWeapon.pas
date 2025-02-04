@@ -1110,7 +1110,7 @@ begin
   FAGroupBox[wcHybrid]                                      := grbHybridMissile ;
 
   FAGroupBox[wcTorpedoStraigth]         := grbStraightRunningTorpedos ;
-  FAGroupBox[wcTorpedoActiveAcoustic]   := grbAcousticTorpedo ;
+  FAGroupBox[wcTorpedoActiveAcoustic]   := grbActivePasiveTorpedo ;
   FAGroupBox[wcTorpedoPassiveAcoustic]  := grbActivePasiveTorpedo ;
   FAGroupBox[wcTorpedoWireGuided]       := grbWireGuidedTorpedo;
   FAGroupBox[wcTorpedoWakeHoming]       := grbWakeHomingTorpedos ;
@@ -10230,7 +10230,7 @@ begin
             SalvoSize         := 1;
             TargetCourse      := FormatCourse(TorpedoTarget.Course);
             TargetGroundSpeed := FormatSpeed(TorpedoTarget.Speed);
-            TargetAltitude    := FormatAltitudeTrack(TorpedoTarget.Altitude);
+            TargetAltitude    := FormatRange(TorpedoTarget.Altitude);
             ButtonLaunch      := True;
 
             if simMgrClient.ISInstructor or simMgrClient.ISWasdal then
@@ -11282,157 +11282,126 @@ begin
   result := False;
   _validTarget := False;
 
-  _weaponCapability  := TT3TorpedoesOnVehicle(focused_weapon).TorpedoDefinition.FDef.Primary_Target_Domain;
-
-  {$REGION ' DetectedTrack Section '}
-  if focused_platform is TT3DetectedTrack then
+  if Assigned (focused_platform)then
   begin
-    _targetID         := TT3PlatformInstance(TT3DetectedTrack(focused_platform).TrackObject).InstanceIndex;
-    _targetDomain     := TT3PlatformInstance(TT3DetectedTrack(focused_platform).TrackObject).PlatformDomain;
-    TorpedoTarget     := simMgrClient.FindT3PlatformByID(_targetID);
-    strTargetID       := IntToStr(TT3DetectedTrack(focused_platform).TrackNumber);
-    _nonRealtimeType  := 5;{diisi nilai 5, sebagai penanda bukan nonreal vehicle}
-  end
-  {$ENDREGION}
-
-  {$REGION ' NonRealVehicle Section '}
-  else if focused_platform is TT3NonRealVehicle then
-  begin
-    _targetDomain     := TT3PlatformInstance(focused_platform).PlatformDomain;
-    TorpedoTarget     := TT3PlatformInstance(focused_platform);
-    strTargetID       := IntToStr(TT3DetectedTrack(focused_platform).TrackNumber);
-    _nonRealtimeType  := TT3NonRealVehicle(focused_platform).NRPType;
-  end
-  {$ENDREGION}
-
-  {$REGION ' TT3PlatformInstance Section '}
-  else
-  begin
-    _targetDomain     := TT3PlatformInstance(focused_platform).PlatformDomain;
-    TorpedoTarget     := TT3PlatformInstance(focused_platform);
-    strTargetID       := TT3PlatformInstance(focused_platform).Track_ID;
-    _nonRealtimeType  := 5;
-  end;
-  {$ENDREGION}
-
-  case TT3TorpedoesOnVehicle(focused_weapon).WeaponCategory of
-
-    {$REGION ' Straigth Section '}
-    wcTorpedoStraigth :
+    {$REGION ' DetectedTrack Section '}
+    if focused_platform is TT3DetectedTrack then
     begin
-       if (focused_platform is TT3NonRealVehicle) then
-       begin
-         if (_nonRealtimeType <> nrpPoint)then
-          exit;
-       end
-       else
-       begin
-         case _weaponCapability of
-            {any within capability, surface / subsurface}
-            0 : _validTarget := (_targetDomain = 1) or (_targetDomain = 2);
-            {surface domain}
-            2 : _validTarget := (_targetDomain = 1);
-            {subsurface domain}
-            4 : _validTarget := (_targetDomain = 2);
-         end;
-       end;
+      _targetID         := TT3PlatformInstance(TT3DetectedTrack(focused_platform).TrackObject).InstanceIndex;
+      _targetDomain     := TT3PlatformInstance(TT3DetectedTrack(focused_platform).TrackObject).PlatformDomain;
+      TorpedoTarget     := simMgrClient.FindT3PlatformByID(_targetID);
+      strTargetID       := IntToStr(TT3DetectedTrack(focused_platform).TrackNumber);
+      _nonRealtimeType  := 5;{diisi nilai 5, sebagai penanda bukan nonreal vehicle}
+    end
+    {$ENDREGION}
+
+    {$REGION ' NonRealVehicle Section '}
+    else if focused_platform is TT3NonRealVehicle then
+    begin
+      _targetDomain     := TT3PlatformInstance(focused_platform).PlatformDomain;
+      TorpedoTarget     := TT3PlatformInstance(focused_platform);
+      strTargetID       := IntToStr(TT3DetectedTrack(focused_platform).TrackNumber);
+      _nonRealtimeType  := TT3NonRealVehicle(focused_platform).NRPType;
+    end
+    {$ENDREGION}
+
+    {$REGION ' TT3PlatformInstance Section '}
+    else
+    begin
+      _targetDomain     := TT3PlatformInstance(focused_platform).PlatformDomain;
+      TorpedoTarget     := TT3PlatformInstance(focused_platform);
+      strTargetID       := TT3PlatformInstance(focused_platform).Track_ID;
+      _nonRealtimeType  := 5;
     end;
     {$ENDREGION}
 
-    {$REGION ' Wire Guided Section '}
-    wcTorpedoWireGuided :
+    if Assigned(focused_weapon) then
     begin
-       if (focused_platform is TT3NonRealVehicle)then
-         exit
-       else
-       begin
-         case _weaponCapability of
-            {any within capability, surface / subsurface}
-            0 : _validTarget := (_targetDomain = 1) or (_targetDomain = 2);
-            {surface domain}
-            2 :_validTarget := (_targetDomain = 1);
-            {subsurface domain}
-            4 : _validTarget := (_targetDomain = 2);
-         end;
-       end;
-    end;
-    {$ENDREGION}
+      _weaponCapability  := TT3TorpedoesOnVehicle(focused_weapon).TorpedoDefinition.FDef.Primary_Target_Domain;
 
-    {$REGION ' Wake Homming Section '}
-    wcTorpedoWakeHoming :
-    begin
-      if (focused_platform is TT3NonRealVehicle)then
-      begin
-         if (_nonRealtimeType <> nrpPoint)then
-          exit;
-      end
-      else
-      begin
-        case _weaponCapability of
-          {any within capability, surface / subsurface}
-          0 : _validTarget := (_targetDomain = 1) or (_targetDomain = 2);
-          {surface domain}
-          2 :_validTarget := (_targetDomain = 1);
-          {subsurface domain}
-          4 : _validTarget := (_targetDomain = 2);
+      case TT3TorpedoesOnVehicle(focused_weapon).WeaponCategory of
+
+        {$REGION ' Straigth, Wire Guided, Wake Homming Section '}
+        wcTorpedoStraigth, wcTorpedoWireGuided, wcTorpedoWakeHoming :
+        begin
+          if (focused_platform is TT3NonRealVehicle) then
+          begin
+            if (_nonRealtimeType <> nrpPoint)then
+              exit;
+          end
+          else
+          begin
+            case _weaponCapability of
+              {any within capability, surface / subsurface}
+              0 : _validTarget := (_targetDomain = 1) or (_targetDomain = 2);
+              {surface domain}
+              2 : _validTarget := (_targetDomain = 1);
+              {subsurface domain}
+              4 : _validTarget := (_targetDomain = 2);
+            end;
+          end;
         end;
+        {$ENDREGION}
+
+        {$REGION ' Air Drop Section '}
+        wcTorpedoAirDropped :
+        begin
+          if (focused_platform is TT3NonRealVehicle)then
+            _validTarget := True
+          else
+          begin
+            case _weaponCapability of
+              {any within capability, surface / subsurface}
+              0 : _validTarget := (_targetDomain = 1) or (_targetDomain = 2);
+              {surface domain}
+              2 :_validTarget := (_targetDomain = 1);
+              {subsurface domain}
+              4 : _validTarget := (_targetDomain = 2);
+            end;
+          end;
+        end;
+        {$ENDREGION}
+
+        {$REGION ' Yang lain Section '}
+
+        {Passive Guided Torpedo}
+        wcTorpedoPassiveAcoustic :
+        begin
+          if (focused_platform is TT3NonRealVehicle) then
+            exit
+          else
+          begin
+            case _weaponCapability of
+              {any within capability, surface / subsurface}
+              0 : _validTarget := (_targetDomain = 1) or (_targetDomain = 2);
+              {surface domain}
+              2 :_validTarget := (_targetDomain = 1);
+              {subsurface domain}
+              4 : _validTarget := (_targetDomain = 2);
+            end;
+          end;
+        end;
+
+        {Active Passive Torpedo}
+        wcTorpedoActivePassive :
+        begin
+          if (focused_platform is TT3NonRealVehicle) and (not ((_nonRealtimeType = nrpPoint) or (_nonRealtimeType = nrpBearing)))then
+            exit
+          else
+          begin
+            case _weaponCapability of
+              {any within capability, surface / subsurface}
+              0 : _validTarget := (_targetDomain = 1) or (_targetDomain = 2);
+              {surface domain}
+              2 :_validTarget := (_targetDomain = 1);
+              {subsurface domain}
+              4 : _validTarget := (_targetDomain = 2);
+            end;
+          end;
+        end;
+        {$ENDREGION}
       end;
     end;
-    {$ENDREGION}
-
-    {$REGION ' Air Drop Section '}
-    wcTorpedoAirDropped :
-    begin
-      if (focused_platform is TT3NonRealVehicle)then
-        _validTarget := True
-      else
-      begin
-        case _weaponCapability of
-          {any within capability, surface / subsurface}
-          0 : _validTarget := (_targetDomain = 1) or (_targetDomain = 2);
-          {surface domain}
-          2 :_validTarget := (_targetDomain = 1);
-          {subsurface domain}
-          4 : _validTarget := (_targetDomain = 2);
-        end;
-      end;
-    end;
-    {$ENDREGION}
-
-    {$REGION 'Yang lain Section '}
-
-    {Passive Guided Torpedo}
-    wcTorpedoPassiveAcoustic : begin
-           if (focused_platform is TT3NonRealVehicle) then
-             exit
-           else begin
-             case _weaponCapability of
-                {any within capability, surface / subsurface}
-                0 : _validTarget := (_targetDomain = 1) or (_targetDomain = 2);
-                {surface domain}
-                2 :_validTarget := (_targetDomain = 1);
-                {subsurface domain}
-                4 : _validTarget := (_targetDomain = 2);
-             end;
-           end;
-         end;
-
-    {Active Passive Torpedo}
-    wcTorpedoActivePassive : begin
-           if (focused_platform is TT3NonRealVehicle) and (not ((_nonRealtimeType = nrpPoint) or (_nonRealtimeType = nrpBearing)))then
-             exit
-           else begin
-             case _weaponCapability of
-                {any within capability, surface / subsurface}
-                0 : _validTarget := (_targetDomain = 1) or (_targetDomain = 2);
-                {surface domain}
-                2 :_validTarget := (_targetDomain = 1);
-                {subsurface domain}
-                4 : _validTarget := (_targetDomain = 2);
-             end;
-           end;
-         end;
-         {$ENDREGION}
   end;
 
   result := _validTarget;

@@ -964,47 +964,52 @@ begin
   begin
     pf := FTargetPlatforms.getObject(i);
     inc(i);
-    result := nil;
-    isHit  := false;
 
-    { Jk self diabaikan }
-    if pf = self then continue;
-
-    { Jk obyek werk diabaikan }
-    if TT3PlatformInstance(pf).Dormant then continue;
-
-    { Jk platform bukan target yg benar }
-    if not TargetCheck(pf) then continue;
-
-    if IsInsideCircle(FPosition.X,FPosition.Y,TT3PlatformInstance(pf).getPositionX,
-       TT3PlatformInstance(pf).getPositionY,5, FPosition.Z,TT3PlatformInstance(pf).getPositionZ,1) then
+    if Assigned(pf) then
     begin
-      { avoiding hit carrier platform at first launch }
-      range := CalcRange(FLaunchPosition.X,FLaunchPosition.Y,FPosition.X,FPosition.Y) * C_NauticalMile_To_Metre;
-      if (range <= 50) and (pf = Owner) then continue;
+      result := nil;
+      isHit  := false;
 
-      {Syarat tambahan tiap torpedo}
-      case FWeaponCategory of
-        wcTorpedoActivePassive, wcTorpedoWakeHoming, wcTorpedoActiveAcoustic, wcTorpedoPassiveAcoustic, wcTorpedoWireGuided, wcTorpedoAirDropped :
+      { Jk self diabaikan }
+      if pf = self then continue;
+
+      { Jk obyek werk diabaikan }
+      if TT3PlatformInstance(pf).Dormant then continue;
+
+      { Jk platform bukan target yg benar }
+      if not TargetCheck(pf) then continue;
+
+      if IsInsideCircle(FPosition.X,FPosition.Y,TT3PlatformInstance(pf).getPositionX,
+         TT3PlatformInstance(pf).getPositionY,5, FPosition.Z,TT3PlatformInstance(pf).getPositionZ,1) then
+      begin
+        { avoiding hit carrier platform at first launch }
+        range := CalcRange(FLaunchPosition.X,FLaunchPosition.Y,FPosition.X,FPosition.Y) * C_NauticalMile_To_Metre;
+        if (range <= 50) and (pf = Owner) then continue;
+
+        {Syarat tambahan tiap torpedo}
+        case FWeaponCategory of
+          wcTorpedoActivePassive, wcTorpedoWakeHoming, wcTorpedoActiveAcoustic, wcTorpedoPassiveAcoustic, wcTorpedoWireGuided, wcTorpedoAirDropped :
+          begin
+            if (not Assigned(FLockTarget)) and
+            (not IsInsideCircle(FPosition.X,FPosition.Y,TT3PlatformInstance(pf).getPositionX, TT3PlatformInstance(pf).getPositionY,
+               1, FPosition.Z,TT3PlatformInstance(pf).getPositionZ,1)) then
+              Continue;
+          end;
+        end;
+
+        if (pf is TT3Vehicle) or (pf is TT3Weapon) then isHit := true;
+
+        if isHit then
         begin
-          if (not Assigned(FLockTarget)) and
-          (not IsInsideCircle(FPosition.X,FPosition.Y,TT3PlatformInstance(pf).getPositionX, TT3PlatformInstance(pf).getPositionY,
-             1, FPosition.Z,TT3PlatformInstance(pf).getPositionZ,1)) then
-            Continue;
+          result := pf;
+          setPositionX(TT3PlatformInstance(pf).getPositionX);
+          setPositionY(TT3PlatformInstance(pf).getPositionY);
+          setPositionZ(TT3PlatformInstance(pf).getPositionZ);
+          exit;
         end;
       end;
-
-      if (pf is TT3Vehicle) or (pf is TT3Weapon) then isHit := true;
-
-      if isHit then
-      begin
-        result := pf;
-        setPositionX(TT3PlatformInstance(pf).getPositionX);
-        setPositionY(TT3PlatformInstance(pf).getPositionY);
-        setPositionZ(TT3PlatformInstance(pf).getPositionZ);
-        exit;
-      end;
     end;
+
   end;
 end;
 {$ENDIF}
@@ -1202,53 +1207,53 @@ var
   RangeToRunOut, RangeToAimp, RealDistance,
   heading_now, CircleDirection : double;
 begin
-  CircleDirection := -10;
+//  CircleDirection := -10;
+//
+//  {Cek apakah torpedo RunOut}
+//  if RunOutMode = 1 then
+//    RangeToRunOut := SeekerRange/ C_NauticalMile_To_Yards
+//  else
+//    RangeToRunOut := 0;
+//
+//  {jika pernah lock target dan lepas}
+//  if ApgLostTarget then
+//    RangeToRunOut := SearchRadius / C_NauticalMile_To_Yards;
+//
+//  RealDistance := CalcRange(PosX, PosY, FLaunchPosition.X, FLaunchPosition.Y);
 
-  {Cek apakah torpedo RunOut}
-  if RunOutMode = 1 then
-    RangeToRunOut := SeekerRange/ C_NauticalMile_To_Yards
-  else
-    RangeToRunOut := 0;
-
-  {jika pernah lock target dan lepas}
-  if ApgLostTarget then
-    RangeToRunOut := SearchRadius / C_NauticalMile_To_Yards;
-
-  RealDistance := CalcRange(PosX, PosY, FLaunchPosition.X, FLaunchPosition.Y);
-
-  if Circle_state = cstateStraight then
-  begin
-    if RealDistance > RangeToRunOut then
-    begin
-      RangeToAimp := SearchRadius / C_NauticalMile_To_Yards;
-      RangeBearingToCoord(RangeToAimp, Course, mx, my);
-      Aimp.X := PosX + mx;
-      Aimp.Y := PosY + my;
-
-      Circle_state    := cstateCircle;
-
-      {heading diset muter ke kiri dulu}
-      FOrderedHeading := Course + 20;
-      if FOrderedHeading > 360 then
-        FOrderedHeading := FOrderedHeading - 360;
-    end;
-  end
-  else
-  begin
+//  if Circle_state = cstateStraight then
+//  begin
+//    if RealDistance > RangeToRunOut then
+//    begin
+//      RangeToAimp := SearchRadius / C_NauticalMile_To_Yards;
+//      RangeBearingToCoord(RangeToAimp, Course, mx, my);
+//      Aimp.X := PosX + mx;
+//      Aimp.Y := PosY + my;
+//
+//      Circle_state    := cstateCircle;
+//
+//      {heading diset muter ke kiri dulu}
+//      FOrderedHeading := Course + 20;
+//      if FOrderedHeading > 360 then
+//        FOrderedHeading := FOrderedHeading - 360;
+//    end;
+//  end
+//  else
+//  begin
     SetOrderedHeading(FOrderedHeading);
 
-    if FOrderedHeadingAchieved then
-    begin
-      heading_now := CalcBearing(Aimp.X, Aimp.Y, PosX, PosY) + CircleDirection;
-
-      if heading_now > 360 then
-        heading_now := heading_now - 360
-      else if heading_now < 0 then
-        heading_now := heading_now + 360;
-
-      FOrderedHeading := heading_now;
-      LastHeading     := FOrderedHeading;
-    end;
+//    if FOrderedHeadingAchieved then
+//    begin
+//      heading_now := CalcBearing(Aimp.X, Aimp.Y, PosX, PosY) + CircleDirection;
+//
+//      if heading_now > 360 then
+//        heading_now := heading_now - 360
+//      else if heading_now < 0 then
+//        heading_now := heading_now + 360;
+//
+//      FOrderedHeading := heading_now;
+//      LastHeading     := FOrderedHeading;
+//    end;
 
     {pergerakan torpedo diset naik turun sesuai batas atas n batas bawah}
     if Altitude >= SearchDepth then
@@ -1256,7 +1261,7 @@ begin
     else
       if Altitude <= SafetyCeiling then
         SetOrderedAltitude(SearchDepth);
-  end;
+//  end;
 end;
 
 constructor TT3Torpedo.Create;
@@ -1779,82 +1784,86 @@ begin
     pf := FTargetPlatforms.getObject(i);
     inc(i);
 
-    {jk target sdg direposisi lompati}
-    if TT3PlatformInstance(pf).IsRepositioning = True then continue;
+    if Assigned(pf) then
+    begin
+      {jk target sdg direposisi lompati}
+      if TT3PlatformInstance(pf).IsRepositioning = True then continue;
 
-    {jk target parentnya lompati}
-    if pf = Owner then continue;
+      {jk target parentnya lompati}
+      if pf = Owner then continue;
 
-    {jk target torpedo itu sendiri lompati}
-    if pf = Self then continue;
+      {jk target torpedo itu sendiri lompati}
+      if pf = Self then continue;
 
-    {jk target bukan vehicle/airbubble lompati}
-    if not ((pf is TT3Vehicle) or (pf is TT3AirBubble)) then continue;
+      {jk target bukan vehicle/airbubble lompati}
+      if not ((pf is TT3Vehicle) or (pf is TT3AirBubble)) then continue;
 
-    {jk target dormant lompati}
-    if TT3PlatformInstance(pf).Dormant then continue;
+      {jk target dormant lompati}
+      if TT3PlatformInstance(pf).Dormant then continue;
 
-    {jk target tdk memenuhi syarat lompati}
-    if not TargetCheck(pf) then continue;
+      {jk target tdk memenuhi syarat lompati}
+      if not TargetCheck(pf) then continue;
 
-    { range check : if lateral range to target < seeker detection range, then target within range envelope}
-    range := CalcRange(FPosition.X, FPosition.Y, TT3PlatformInstance(pf).getPositionX, TT3PlatformInstance(pf).getPositionY);
-    if range > TorpedoDefinition.FDef.Term_Guide_Range then
-      continue;
+      { range check : if lateral range to target < seeker detection range, then target within range envelope}
+      range := CalcRange(FPosition.X, FPosition.Y, TT3PlatformInstance(pf).getPositionX, TT3PlatformInstance(pf).getPositionY);
+      if range > TorpedoDefinition.FDef.Term_Guide_Range then
+        continue;
 
-    { elevation check : target is within the vertical envelope of torpedo seeker}
-    pitch_angle  := FMover.VerticalSpeed / ( FMover.Speed * 101.268591 ); // feet per minutes
-    alt_envelope := pitch_angle * range + Altitude;
-    elev_alt_limit := Tan(C_DegToRad * TorpedoDefinition.FDef.Term_Guide_Elevation) * (range * C_NauticalMile_To_Metre);
+      { elevation check : target is within the vertical envelope of torpedo seeker}
+      pitch_angle  := FMover.VerticalSpeed / ( FMover.Speed * 101.268591 ); // feet per minutes
+      alt_envelope := pitch_angle * range + Altitude;
+      elev_alt_limit := Tan(C_DegToRad * TorpedoDefinition.FDef.Term_Guide_Elevation) * (range * C_NauticalMile_To_Metre);
 
-    min_tgt_alt := alt_envelope - elev_alt_limit;
-    max_tgt_alt := alt_envelope + elev_alt_limit;
+      min_tgt_alt := alt_envelope - elev_alt_limit;
+      max_tgt_alt := alt_envelope + elev_alt_limit;
 
-    if min_tgt_alt < 0 then
-      min_tgt_alt := 0;
+      if min_tgt_alt < 0 then
+        min_tgt_alt := 0;
 
-    if not ((TT3PlatformInstance(pf).Altitude >= min_tgt_alt) and (TT3PlatformInstance(pf).Altitude <= max_tgt_alt)) then
-       continue;
+      if not ((TT3PlatformInstance(pf).Altitude >= min_tgt_alt) and (TT3PlatformInstance(pf).Altitude <= max_tgt_alt)) then
+         continue;
 
-    { azimuth check : target will chcek if it is within horizontal azimuth envelope }
-    min_tgt_azi := Course - TorpedoDefinition.FDef.Term_Guide_Azimuth;
-    if min_tgt_azi < 0 then
-      min_tgt_azi := 360 + min_tgt_azi;
+      { azimuth check : target will chcek if it is within horizontal azimuth envelope }
+      min_tgt_azi := Course - TorpedoDefinition.FDef.Term_Guide_Azimuth;
+      if min_tgt_azi < 0 then
+        min_tgt_azi := 360 + min_tgt_azi;
 
-    max_tgt_azi := Course + TorpedoDefinition.FDef.Term_Guide_Azimuth;
-    if max_tgt_azi < min_tgt_azi then
-      max_tgt_azi := max_tgt_azi + 360;
+      max_tgt_azi := Course + TorpedoDefinition.FDef.Term_Guide_Azimuth;
+      if max_tgt_azi < min_tgt_azi then
+        max_tgt_azi := max_tgt_azi + 360;
 
-    bearing := CalcBearing(FPosition.X, FPosition.Y, TT3PlatformInstance(pf).getPositionX, TT3PlatformInstance(pf).getPositionY);
-    if (max_tgt_azi > 360) and ((bearing > 0) and (bearing < min_tgt_azi)) then
-      bearing := bearing + 360;
+      bearing := CalcBearing(FPosition.X, FPosition.Y, TT3PlatformInstance(pf).getPositionX, TT3PlatformInstance(pf).getPositionY);
+      if (max_tgt_azi > 360) and ((bearing > 0) and (bearing < min_tgt_azi)) then
+        bearing := bearing + 360;
 
-    validAzimuth := (min_tgt_azi <= bearing) and (bearing  <= max_tgt_azi);
+      validAzimuth := (min_tgt_azi <= bearing) and (bearing  <= max_tgt_azi);
 
-    if not validAzimuth then continue;
+      if not validAzimuth then continue;
 
-    {Syarat tambahan tiap torpedo}
-    case FWeaponCategory of
-      wcTorpedoStraigth : {SR tdk bisa search target}
-      begin
-        if not isSRTargetCheck(pf) then
-          Continue;
+      {Syarat tambahan tiap torpedo}
+      case FWeaponCategory of
+        wcTorpedoStraigth : {SR tdk bisa search target}
+        begin
+          if not isSRTargetCheck(pf) then
+            Continue;
+        end;
+        wcTorpedoActivePassive, wcTorpedoWireGuided, wcTorpedoActiveAcoustic, wcTorpedoAirDropped, wcTorpedoPassiveAcoustic :{APG mencari target terdekat}
+        begin
+          if not isAPGTargetCheck(pf) then
+            Continue;
+        end;
+        wcTorpedoWakeHoming: {WH mencari target yg pertama kali terdeteksi}
+        begin
+          if not isWHTargetCheck(pf) then
+            Continue;
+        end;
       end;
-      wcTorpedoActivePassive, wcTorpedoWireGuided, wcTorpedoActiveAcoustic, wcTorpedoAirDropped, wcTorpedoPassiveAcoustic :{APG mencari target terdekat}
-      begin
-        if not isAPGTargetCheck(pf) then
-          Continue;
-      end;
-      wcTorpedoWakeHoming: {WH mencari target yg pertama kali terdeteksi}
-      begin
-        if not isWHTargetCheck(pf) then
-          Continue;
-      end;
+
+      { if all constraint passed, then set this to target }
+      target        := pf;
+      FEngageTarget := true;
     end;
 
-    { if all constraint passed, then set this to target }
-    target        := pf;
-    FEngageTarget := true;
   end;
 
   if Assigned(target) then
@@ -2744,24 +2753,25 @@ begin
     end;
   end;
 
+  {Feature wire break tidak di pake}
   {mengecek kabel putus atau tidak}
-  if (isWireBreak(round(TT3PlatformInstance(Owner).Heading))) and (not WireBreak) then
-  begin
-    Circle_state := cstateStraight;
-    IsInittialGuidance := False;
-    WireBreak := True;
-    if SearchRadius = 0 then
-      SearchRadius := 1000;
-
-    FLaunchPosition.X := FPosition.X;
-    FLaunchPosition.Y := FPosition.Y;
-    if Assigned(OnLogEventStr) then
-      OnLogEventStr('TT3Torpedo.WireGuidedMove', 'kabel putus');
-  end;
+//  if (isWireBreak(round(TT3PlatformInstance(Owner).Heading))) and (not WireBreak) then
+//  begin
+//    Circle_state := cstateStraight;
+//    IsInittialGuidance := False;
+//    WireBreak := True;
+//    if SearchRadius = 0 then
+//      SearchRadius := 1000;
+//
+//    FLaunchPosition.X := FPosition.X;
+//    FLaunchPosition.Y := FPosition.Y;
+//    if Assigned(OnLogEventStr) then
+//      OnLogEventStr('TT3Torpedo.WireGuidedMove', 'kabel putus');
+//  end;
 
   {pergerakan setelah kabel putus}
-  if WireBreak then
-    CircleMove(aDeltaMs);
+//  if WireBreak then
+//    CircleMove(aDeltaMs);
 end;
 
 function TT3Torpedo.GetSnapshotData : _SS_TT3Torpedo ;

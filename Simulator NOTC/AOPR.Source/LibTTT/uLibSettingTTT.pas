@@ -263,8 +263,7 @@ const
 //==============================================================================
 function getFileSetting: string;
 begin
-//  result := ChangeFileExt(ParamStr(0), '.ini');
-  result := ExtractFilePath(ParamStr(0)) + 'Setting.ini';
+  result := ExtractFilePath(ParamStr(0)) + 'ATWOSetting.ini';
 end;
 //==============================================================================
 
@@ -548,16 +547,12 @@ begin
 
   with imgSet do
   begin
-    ImgPath := IncludeTrailingBackslash(s + IniFReadstring(IniF, c_symbol,
-      'imgpath', '.\data\bitmap\'));
-    BmpPath := IncludeTrailingBackslash(s + IniFReadstring(IniF, c_symbol,
-      'bmpPath', '.\data\TacticalSymbol\'));
-    DefaultSymbol := IniFReadstring(IniF, c_symbol, 'defsymbol',
-      'SurfacePending.bmp' );
-    MissileSeekerVisible := Boolean(INIFReadInteger(IniF, c_symbol,
-      'Missile_Seeker_Visible', 0));
-    FontSize := INIFReadInteger(IniF, c_symbol,
-      'FontSize', 24);
+    ImgPath := IncludeTrailingBackslash(s + IniFReadstring(IniF, c_symbol,'imgpath', '.\data\bitmap\'));
+    BmpPath := IncludeTrailingBackslash(s + IniFReadstring(IniF, c_symbol,'bmpPath', '.\data\TacticalSymbol\'));
+//    WdlImgPath := IniFReadstring(inif, c_symbol, 'WdlImgPath','\data\Skin\');
+    DefaultSymbol := IniFReadstring(IniF, c_symbol, 'defsymbol', 'SurfacePending.bmp' );
+    MissileSeekerVisible := Boolean(INIFReadInteger(IniF, c_symbol,'Missile_Seeker_Visible', 0));
+    FontSize := INIFReadInteger(IniF, c_symbol,'FontSize', 24);
   end;
 
   Result := True;

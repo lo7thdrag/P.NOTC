@@ -22,7 +22,7 @@ type
 
     FOnChangePosition: TOnChangePosition;
     FOnFuelEmpty: TOnFuelEmpty;
-//    FInstanceIndex: integer;
+    FInstanceIndex: integer;
 
     procedure SetOnLogEventStr(const Value: TLogStrProc);
     procedure SetOnFreeMe(const Value: TOnPlatformFreeMe);

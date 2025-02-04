@@ -467,52 +467,55 @@ begin
     pf := FTargetPlatforms.getObject(i);
     inc(i);
 
-    TT3PlatformInstance(pf).BombHitFlag := False;
-
-    { Jk self diabaikan }
-    if (pf = self)then
-      continue;
-
-    { Jk platform bukan target yg benar }
-    if not TargetCheck(pf) then continue;
-
-    { Jk obyek werk diabaikan }
-    if TT3PlatformInstance(pf).Dormant then
-      continue;
-
-    { Jk obyek sedang diangkut diabaikan }
-    if pf is TT3Vehicle then
+    if Assigned(pf) then
     begin
-      if TT3Vehicle(pf).StateTransport then
-        Continue;
-    end;
+      TT3PlatformInstance(pf).BombHitFlag := False;
 
-    {-- POD modifier for each Bomb category }
-    range := CalcRange(TT3PlatformInstance(pf).getPositionX, TT3PlatformInstance(pf).getPositionY, FPosition.X,FPosition.Y);
+      { Jk self diabaikan }
+      if (pf = self)then
+        continue;
 
-//    if (range > FMaxRange) or (range < FMinRange)  then
-//      continue;
+      { Jk platform bukan target yg benar }
+      if not TargetCheck(pf) then continue;
 
-    //dibikin range ledakan seluas 500 meter, sedangkan range min max adalah range jangkauan launch bomb
-//    if range > (500 * C_Meter_To_NauticalMile) then
-//        Continue;
+      { Jk obyek werk diabaikan }
+      if TT3PlatformInstance(pf).Dormant then
+        continue;
 
-    //dibikin range ledakan setinggi 10 meter
-    ketinggian := Abs(TT3PlatformInstance(pf).getPositionZ - FPosition.Z);
-    if (ketinggian > 20) then
-      continue;
-
-    pod   := getPOH(range);
-    r     := 0;
-    {-----------------------------------------}
-
-    if (pod > r)then
-    begin
-      if (pf is TT3Vehicle) or (pf is TT3Weapon)then
+      { Jk obyek sedang diangkut diabaikan }
+      if pf is TT3Vehicle then
       begin
-        TT3PlatformInstance(pf).BombHitFlag := True;
-        TT3PlatformInstance(pf).BombDamage := pod;
-        CountTarget := CountTarget + 1;
+        if TT3Vehicle(pf).StateTransport then
+          Continue;
+      end;
+
+      {-- POD modifier for each Bomb category }
+      range := CalcRange(TT3PlatformInstance(pf).getPositionX, TT3PlatformInstance(pf).getPositionY, FPosition.X,FPosition.Y);
+
+  //    if (range > FMaxRange) or (range < FMinRange)  then
+  //      continue;
+
+      //dibikin range ledakan seluas 500 meter, sedangkan range min max adalah range jangkauan launch bomb
+  //    if range > (500 * C_Meter_To_NauticalMile) then
+  //        Continue;
+
+      //dibikin range ledakan setinggi 10 meter
+      ketinggian := Abs(TT3PlatformInstance(pf).getPositionZ - FPosition.Z);
+      if (ketinggian > 20) then
+        continue;
+
+      pod   := getPOH(range);
+      r     := 0;
+      {-----------------------------------------}
+
+      if (pod > r)then
+      begin
+        if (pf is TT3Vehicle) or (pf is TT3Weapon)then
+        begin
+          TT3PlatformInstance(pf).BombHitFlag := True;
+          TT3PlatformInstance(pf).BombDamage := pod;
+          CountTarget := CountTarget + 1;
+        end;
       end;
     end;
   end;
