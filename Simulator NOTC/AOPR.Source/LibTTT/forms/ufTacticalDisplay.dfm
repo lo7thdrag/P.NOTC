@@ -1837,128 +1837,6 @@ object frmTacticalDisplay: TfrmTacticalDisplay
           end
         end
       end
-      object pnlFireControl: TPanel
-        Left = 0
-        Top = 26
-        Width = 339
-        Height = 2000
-        Color = 4012086
-        ParentBackground = False
-        TabOrder = 11
-        inline fmFireControl1: TfmFireControl
-          Left = 1
-          Top = 1
-          Width = 337
-          Height = 1998
-          Align = alClient
-          Color = 15131105
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentBackground = False
-          ParentColor = False
-          ParentFont = False
-          TabOrder = 0
-          ExplicitLeft = 1
-          ExplicitTop = 1
-          ExplicitWidth = 337
-          ExplicitHeight = 1998
-          inherited PanelFCChoices: TPanel
-            Width = 337
-            Height = 82
-            ExplicitWidth = 337
-            ExplicitHeight = 82
-            inherited lstAssetsChoices: TListView
-              Width = 333
-              Height = 87
-              ExplicitWidth = 333
-              ExplicitHeight = 87
-            end
-          end
-          inherited PaneFCSpace: TPanel
-            Top = 82
-            Width = 337
-            ExplicitTop = 82
-            ExplicitWidth = 337
-          end
-          inherited PanelALL: TPanel
-            Top = 94
-            Width = 337
-            Height = 1904
-            Align = alNone
-            ExplicitTop = 94
-            ExplicitWidth = 337
-            ExplicitHeight = 1904
-            inherited PanelFC: TPanel
-              Width = 337
-              Height = 1904
-              Align = alNone
-              ExplicitWidth = 337
-              ExplicitHeight = 1904
-              inherited ScrollBox3: TScrollBox
-                Width = 337
-                Height = 1904
-                HorzScrollBar.Color = clHotLight
-                HorzScrollBar.ParentColor = False
-                HorzScrollBar.Size = 2
-                ExplicitWidth = 337
-                ExplicitHeight = 1904
-                inherited grbFireControl: TGroupBox
-                  Width = 337
-                  Height = 1904
-                  ExplicitWidth = 337
-                  ExplicitHeight = 1904
-                  inherited btnSearchFireControlAssetsTarget: TSpeedButton
-                    Tag = 4
-                    Spacing = 0
-                    OnClick = fmFireControl1btnSearchFireControlAssetsTargetClick
-                  end
-                  inherited sbFireControlAssetsBlindZonesHide: TSpeedButton
-                    OnClick = btnFireControlOnClick
-                  end
-                  inherited sbFireControlAssetsBlindZonesShow: TSpeedButton
-                    OnClick = btnFireControlOnClick
-                  end
-                  inherited sbFireControlAssetsDisplayHide: TSpeedButton
-                    OnClick = btnFireControlOnClick
-                  end
-                  inherited sbFireControlAssetsDisplayShow: TSpeedButton
-                    OnClick = btnFireControlOnClick
-                  end
-                  inherited sbFireControlAssetsModeOff: TSpeedButton
-                    OnClick = btnFireControlOnClick
-                  end
-                  inherited sbFireControlAssetsModeSearch: TSpeedButton
-                    OnClick = btnFireControlOnClick
-                  end
-                  inherited sbFireControlAssetsModeTrackOnly: TSpeedButton
-                    OnClick = btnFireControlOnClick
-                  end
-                  inherited btnFireControlAssetsTargetAssign: TButton
-                    OnClick = btnFireControlOnClick
-                  end
-                  inherited btnFireControlAssetsTargetBreak: TButton
-                    OnClick = btnFireControlOnClick
-                  end
-                  inherited btnFireControlAssetsTargetBreakAll: TButton
-                    OnClick = btnFireControlOnClick
-                  end
-                  inherited lstFireControlAssetsAssignedTracks: TListView
-                    Width = 108
-                    Height = 108
-                    Font.Color = clWhite
-                    ParentFont = False
-                    ExplicitWidth = 108
-                    ExplicitHeight = 108
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
       object pnlPlatformGuidance: TPanel
         Left = 0
         Top = 26
@@ -2862,32 +2740,6 @@ object frmTacticalDisplay: TfrmTacticalDisplay
                   end
                 end
               end
-              inherited grbActivePasiveTorpedo: TGroupBox
-                Width = 337
-                Height = 1973
-                ExplicitWidth = 337
-                ExplicitHeight = 1973
-                inherited ScrollBox3: TScrollBox
-                  Width = 333
-                  Height = 1953
-                  ExplicitWidth = 333
-                  ExplicitHeight = 1953
-                  inherited bvl4: TBevel
-                    Top = 261
-                    Height = 3
-                    ExplicitTop = 261
-                    ExplicitHeight = 3
-                  end
-                  inherited lbl3: TLabel
-                    Left = 117
-                    ExplicitLeft = 117
-                  end
-                  inherited lblAPGQuantity: TLabel
-                    Left = 180
-                    ExplicitLeft = 180
-                  end
-                end
-              end
               inherited grbHybridMissile: TGroupBox
                 Width = 337
                 Height = 1973
@@ -2969,7 +2821,7 @@ object frmTacticalDisplay: TfrmTacticalDisplay
                   end
                 end
               end
-              inherited grbAirDroppedTorpedo: TGroupBox [6]
+              inherited grbAirDroppedTorpedo: TGroupBox [5]
                 Width = 337
                 Height = 1973
                 ExplicitWidth = 337
@@ -3012,7 +2864,7 @@ object frmTacticalDisplay: TfrmTacticalDisplay
                   end
                 end
               end
-              inherited grbMines: TGroupBox [7]
+              inherited grbMines: TGroupBox [6]
                 Width = 337
                 Height = 1973
                 ExplicitWidth = 337
@@ -3050,7 +2902,7 @@ object frmTacticalDisplay: TfrmTacticalDisplay
                   OnKeyPress = nil
                 end
               end
-              inherited grbSurfaceToSurfaceMissile: TGroupBox [8]
+              inherited grbSurfaceToSurfaceMissile: TGroupBox [7]
                 Width = 337
                 Height = 1973
                 ExplicitWidth = 337
@@ -3273,7 +3125,7 @@ object frmTacticalDisplay: TfrmTacticalDisplay
                   end
                 end
               end
-              inherited grbWireGuidedTorpedo: TGroupBox [9]
+              inherited grbWireGuidedTorpedo: TGroupBox [8]
                 Width = 337
                 Height = 1973
                 ExplicitWidth = 337
@@ -3327,7 +3179,7 @@ object frmTacticalDisplay: TfrmTacticalDisplay
                   end
                 end
               end
-              inherited grbWakeHomingTorpedos: TGroupBox [10]
+              inherited grbWakeHomingTorpedos: TGroupBox [9]
                 Width = 337
                 Height = 1973
                 ExplicitWidth = 337
@@ -3342,7 +3194,7 @@ object frmTacticalDisplay: TfrmTacticalDisplay
                   end
                 end
               end
-              inherited grbSurfaceToAirMissile: TGroupBox [11]
+              inherited grbSurfaceToAirMissile: TGroupBox [10]
                 Width = 337
                 Height = 1973
                 ExplicitWidth = 337
@@ -3433,13 +3285,13 @@ object frmTacticalDisplay: TfrmTacticalDisplay
                   end
                 end
               end
-              inherited grbGunEngagementAutomaticManualMode: TGroupBox [12]
+              inherited grbGunEngagementAutomaticManualMode: TGroupBox [11]
                 Width = 337
                 Height = 1973
                 ExplicitWidth = 337
                 ExplicitHeight = 1973
               end
-              inherited grbAirDroppedVECTAC: TGroupBox [13]
+              inherited grbAirDroppedVECTAC: TGroupBox [12]
                 Width = 337
                 Height = 1973
                 ExplicitWidth = 337
@@ -3490,28 +3342,6 @@ object frmTacticalDisplay: TfrmTacticalDisplay
                   end
                 end
               end
-              inherited grbGunEngagementChaffMode: TGroupBox [14]
-                Width = 337
-                Height = 1973
-                ExplicitWidth = 337
-                ExplicitHeight = 1973
-                inherited ScrollBox9: TScrollBox
-                  Width = 333
-                  Height = 1953
-                  ExplicitWidth = 333
-                  ExplicitHeight = 1953
-                  inherited Label472: TLabel
-                    Top = 259
-                    ExplicitTop = 259
-                  end
-                end
-              end
-              inherited grbGunEngagementCIWS: TGroupBox [15]
-                Width = 337
-                Height = 1973
-                ExplicitWidth = 337
-                ExplicitHeight = 1973
-              end
               inherited grbBombDepthCharge: TGroupBox
                 Width = 337
                 Height = 1973
@@ -3560,10 +3390,56 @@ object frmTacticalDisplay: TfrmTacticalDisplay
                 inherited edtBombDepth: TEdit
                   Left = 101
                   Top = 117
-                  Height = 21
                   ExplicitLeft = 101
                   ExplicitTop = 117
-                  ExplicitHeight = 21
+                end
+              end
+              inherited grbGunEngagementChaffMode: TGroupBox [14]
+                Width = 337
+                Height = 1973
+                ExplicitWidth = 337
+                ExplicitHeight = 1973
+                inherited ScrollBox9: TScrollBox
+                  Width = 333
+                  Height = 1953
+                  ExplicitWidth = 333
+                  ExplicitHeight = 1953
+                  inherited Label472: TLabel
+                    Top = 259
+                    ExplicitTop = 259
+                  end
+                end
+              end
+              inherited grbGunEngagementCIWS: TGroupBox [15]
+                Width = 337
+                Height = 1973
+                ExplicitWidth = 337
+                ExplicitHeight = 1973
+              end
+              inherited grbActivePasiveTorpedo: TGroupBox
+                Width = 337
+                Height = 1973
+                ExplicitWidth = 337
+                ExplicitHeight = 1973
+                inherited ScrollBox3: TScrollBox
+                  Width = 333
+                  Height = 1953
+                  ExplicitWidth = 333
+                  ExplicitHeight = 1953
+                  inherited bvl4: TBevel
+                    Top = 261
+                    Height = 3
+                    ExplicitTop = 261
+                    ExplicitHeight = 3
+                  end
+                  inherited lbl3: TLabel
+                    Left = 117
+                    ExplicitLeft = 117
+                  end
+                  inherited lblAPGQuantity: TLabel
+                    Left = 180
+                    ExplicitLeft = 180
+                  end
                 end
               end
             end
@@ -3619,6 +3495,132 @@ object frmTacticalDisplay: TfrmTacticalDisplay
           inherited TmrAPG: TTimer
             Left = 272
             Top = 520
+          end
+        end
+      end
+      object pnlFireControl: TPanel
+        Left = 0
+        Top = 26
+        Width = 339
+        Height = 2000
+        Color = 4012086
+        ParentBackground = False
+        TabOrder = 11
+        inline fmFireControl1: TfmFireControl
+          Left = 1
+          Top = 1
+          Width = 337
+          Height = 1998
+          Align = alClient
+          Color = 15131105
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentBackground = False
+          ParentColor = False
+          ParentFont = False
+          TabOrder = 0
+          ExplicitLeft = 1
+          ExplicitTop = 1
+          ExplicitWidth = 337
+          ExplicitHeight = 1998
+          inherited PanelFCChoices: TPanel
+            Width = 337
+            Height = 82
+            ExplicitWidth = 337
+            ExplicitHeight = 82
+            inherited lstAssetsChoices: TListView
+              Width = 333
+              Height = 87
+              ExplicitWidth = 333
+              ExplicitHeight = 87
+            end
+          end
+          inherited PaneFCSpace: TPanel
+            Top = 82
+            Width = 337
+            ExplicitTop = 82
+            ExplicitWidth = 337
+          end
+          inherited PanelALL: TPanel
+            Top = 94
+            Width = 337
+            Height = 1904
+            Align = alNone
+            ExplicitTop = 94
+            ExplicitWidth = 337
+            ExplicitHeight = 1904
+            inherited PanelFC: TPanel
+              Width = 337
+              Height = 1904
+              Align = alNone
+              ExplicitWidth = 337
+              ExplicitHeight = 1904
+              inherited ScrollBox3: TScrollBox
+                Width = 337
+                Height = 1904
+                HorzScrollBar.Color = clHotLight
+                HorzScrollBar.ParentColor = False
+                HorzScrollBar.Size = 2
+                ExplicitWidth = 337
+                ExplicitHeight = 1904
+                inherited grbFireControl: TGroupBox
+                  Width = 337
+                  Height = 1904
+                  ExplicitWidth = 337
+                  ExplicitHeight = 1904
+                  inherited btnSearchFireControlAssetsTarget: TSpeedButton
+                    Tag = 4
+                    Spacing = 0
+                    OnClick = fmFireControl1btnSearchFireControlAssetsTargetClick
+                  end
+                  inherited sbFireControlAssetsBlindZonesHide: TSpeedButton
+                    OnClick = btnFireControlOnClick
+                  end
+                  inherited sbFireControlAssetsBlindZonesShow: TSpeedButton
+                    OnClick = btnFireControlOnClick
+                  end
+                  inherited sbFireControlAssetsDisplayHide: TSpeedButton
+                    OnClick = btnFireControlOnClick
+                  end
+                  inherited sbFireControlAssetsDisplayShow: TSpeedButton
+                    OnClick = btnFireControlOnClick
+                  end
+                  inherited sbFireControlAssetsModeOff: TSpeedButton
+                    OnClick = btnFireControlOnClick
+                  end
+                  inherited sbFireControlAssetsModeSearch: TSpeedButton
+                    OnClick = btnFireControlOnClick
+                  end
+                  inherited sbFireControlAssetsModeTrackOnly: TSpeedButton
+                    OnClick = btnFireControlOnClick
+                  end
+                  inherited btnFireControlAssetsTargetAssign: TButton
+                    OnClick = btnFireControlOnClick
+                  end
+                  inherited btnFireControlAssetsTargetBreak: TButton
+                    OnClick = btnFireControlOnClick
+                  end
+                  inherited btnFireControlAssetsTargetBreakAll: TButton
+                    OnClick = btnFireControlOnClick
+                  end
+                  inherited lstFireControlAssetsAssignedTracks: TListView
+                    Left = 26
+                    Top = 184
+                    Width = 108
+                    Height = 108
+                    Font.Color = clBlack
+                    ParentFont = False
+                    ExplicitLeft = 26
+                    ExplicitTop = 184
+                    ExplicitWidth = 108
+                    ExplicitHeight = 108
+                  end
+                end
+              end
+            end
           end
         end
       end
