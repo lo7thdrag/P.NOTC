@@ -334,6 +334,7 @@ var
   i, j : Integer;
   lPi : TList;
   gInfo, newGInfo, gInfoVBS, gInfoWasdal : TGroupInfo;
+
   pInfo : TDeployedPlatformInfo;
   fNode, node, fNodeVBS, nodeVBS, nodeWasdal : TTreeNode;
 
@@ -425,7 +426,6 @@ var i, j: integer;
     s, cub: string;
     mn : TMenuItem;
     cInfo: TCubInfo;
-
 begin
   ss := sender as TStringList;
 
