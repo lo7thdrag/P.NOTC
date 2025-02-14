@@ -25,6 +25,7 @@ type
     UserDBEditor          : string;
     PasswordDBEditor      : string;
     MapDefGame            : string;   //D:\MAP\DEF_GAME
+    RootRecordPath        : string;
   end;
 
   function LoadFF_AppDBSetting(const fName: string; var dbEditSett: TDBEditorSetting): boolean;
@@ -81,6 +82,7 @@ begin
     MapDefView            := INIFReadString(IniF, c_appsetting, 'MapDefView', '');
     MapGSTGame            := INIFReadString(IniF, c_appsetting, 'MapGSTGame', '');
     MapDefGame            := INIFReadString(IniF, c_appsetting, 'MapDefGame', '');
+    RootRecordPath        := INIFReadString(IniF, c_appsetting, 'rootrecordpath', 'C:\T3RecordPath');
   end;
   finally
     IniF.DisposeOf

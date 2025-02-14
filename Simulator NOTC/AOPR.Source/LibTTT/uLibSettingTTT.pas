@@ -263,7 +263,7 @@ const
 //==============================================================================
 function getFileSetting: string;
 begin
-  result := ExtractFilePath(ParamStr(0)) + 'ATWOSetting.ini';
+  result := ExtractFilePath(ParamStr(0)) + 'Setting.ini';
 end;
 //==============================================================================
 

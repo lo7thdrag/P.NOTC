@@ -37,6 +37,37 @@ type
     FData : TRecScenario_Definition;
   end;
 
+  TReplay_Definition = class
+  public
+    FData : TRecReplay_Definition;
+  end;
+
+  TRecFileHeader = record
+    PrimaryID   : string[12];
+    SecondaryID : string[12];
+    Version  : integer;
+    Revision : integer;
+  end;
+
+  TSnapshotUtilsHeader = packed record
+    Stream: record
+      ScenarioID : Integer ;
+      TimeInfo   : TDateTime;
+      Version    : Byte;
+      Options    : Byte;
+    end;
+    TypeVersion: Word;
+  end;
+
+  TSnapshot_Defination = class
+    FDisplayName : string ;
+    FFullName    : string ;
+    FDateTime    : TDateTime;
+    HInfo        : TSnapshotUtilsHeader;
+  public
+    FData : TRecSnapshot_Definition;
+  end;
+
   TGame_Area_Definition = class
   public
     FData  : TRecGame_Area_Definition;

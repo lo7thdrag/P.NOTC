@@ -19,20 +19,10 @@ type
 
   TfrmExercise = class(TForm)
     ImgBackground: TImage;
-    lstScenario: TListBox;
     pnlMap: TPanel;
     Map1: TMap;
-    btnNew: TImage;
-    btnEdit: TImage;
-    btnDelete: TImage;
-    ImgBackList: TImage;
     ImgBtnBack: TImage;
-    Label1: TLabel;
     Label2: TLabel;
-    GroupBox2: TGroupBox;
-    lbScenarioName: TLabel;
-    Label8: TLabel;
-    Label9: TLabel;
     pnlCursorPosition: TPanel;
     grpCursorPosition: TGroupBox;
     Label59: TLabel;
@@ -55,12 +45,6 @@ type
     lblGameCenterLong: TLabel;
     Label77: TLabel;
     Label78: TLabel;
-    Label65: TLabel;
-    lbGameArea: TLabel;
-    dtpDate: TDateTimePicker;
-    dtpDDay: TDateTimePicker;
-    dtpTime: TDateTimePicker;
-    dtpJamJ: TDateTimePicker;
     ProgressBar1: TProgressBar;
     btnIncrease: TImage;
     Image7: TImage;
@@ -68,7 +52,29 @@ type
     btnDecrease: TImage;
     btnMove: TImage;
     Label3: TLabel;
+    lblscenariolist: TLabel;
+    pnlScenarioList: TPanel;
+    PageControl1: TPageControl;
+    tsScenario: TTabSheet;
+    lstScenario: TListBox;
+    tsReplay: TTabSheet;
+    lstReplay: TListBox;
+    tsSnapshot: TTabSheet;
+    lstSnapshot: TListBox;
+    btnNew: TImage;
     btncopy: TImage;
+    btnEdit: TImage;
+    btnDelete: TImage;
+    pnlScenarioData: TPanel;
+    lbScenarioName: TLabel;
+    Label65: TLabel;
+    lbGameArea: TLabel;
+    Label8: TLabel;
+    dtpDate: TDateTimePicker;
+    dtpTime: TDateTimePicker;
+    Label9: TLabel;
+    dtpDDay: TDateTimePicker;
+    dtpJamJ: TDateTimePicker;
 
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -94,19 +100,27 @@ type
 
     procedure UpdateCursorPositionData(const X, Y: Integer);
     procedure btncopyClick(Sender: TObject);
+    procedure PageControl1Change(Sender: TObject);
+    procedure lstReplayClick(Sender: TObject);
+    procedure lstSnapshotClick(Sender: TObject);
 
   private
+    FTabId : Integer;
     FStartTime, FDDayTime: TDateTime;
     FCanvas: TCanvas;
     FConverter: TCoordConverter;
     FLyrDraw: CMapXLayer;
     FUpdateList: Boolean;
     FScenarioList: TList;
+    FReplayList: TList;
+    FSnapshotList : TList;
     FIdTranslateList: TList;
     FOldEnvironmentIndex: Integer;
     FOldAssetDeploymentndex: Integer;
     FOldResourceAllocationIndex: Integer;
     FSelectedScenario: TScenario_Definition;
+    FSelectedReplay: TReplay_Definition;
+    FSelectedSnapshot: TSnapshot_Defination;
     FSelectedAssetDeployment: TAsset_Deployment;
     FSelectedResourceAllocation: TResource_Allocation;
     FSelectedEnvironment: TGame_Environment_Definition;
@@ -122,8 +136,14 @@ type
     procedure CopyCubicleGroup(const aNewDeploymentIndex: Integer);
     procedure CopyPlatformActivation(const aNewDeploymentIndex: Integer);
     procedure UpdateScenarioList;
-    procedure UpdateScenarioData;
+    procedure UpdateReplayList;
+    procedure UpdateSnapshotList;
+    procedure UpdateScenarioData(tipe : integer);
     procedure UpdateGameCenter;
+
+    procedure GetFilename(const Path: string; aList: TList);
+  protected
+    procedure ActionChange(Sender: TObject; CheckDefaults: Boolean); override;
 
   public
   end;
@@ -145,6 +165,9 @@ var
   currentDateTime: TDateTime;
 begin
   FScenarioList := TList.Create;
+  FReplayList := TList.Create;
+  FSnapshotList := TList.Create;
+
   FSelectedAssetDeployment := TAsset_Deployment.Create;
   FSelectedResourceAllocation := TResource_Allocation.Create;
   FSelectedEnvironment := TGame_Environment_Definition.Create;
@@ -443,6 +466,9 @@ end;
 procedure TfrmExercise.FormDestroy(Sender: TObject);
 begin
   FreeItemsAndFreeList(FScenarioList);
+  FreeItemsAndFreeList(FReplayList);
+  FreeItemsAndFreeList(FSnapshotList);
+
   FSelectedAssetDeployment.Free;
   FSelectedResourceAllocation.Free;
   FSelectedEnvironment.Free;
@@ -456,6 +482,9 @@ begin
   DoubleBuffered := False;
   pnlMap.Visible := True;
 
+  tsScenario.Show;
+  FTabId := 0;
+
   LoadMap(vAppDBSetting.Pattern);
 
   FConverter.FMap := Map1;
@@ -464,6 +493,26 @@ begin
   cbbScaleChange(cbbScale);
 
   UpdateScenarioList;
+  UpdateReplayList;
+  UpdateSnapshotList;
+end;
+
+procedure TfrmExercise.GetFilename(const Path: string; aList: TList);
+var
+  sr : TSearchRec;
+  snInfo : TSnapshot_Defination ;
+
+begin
+ if aList = nil then
+  exit ;
+
+  if FindFirst(Path + '\*' + '.dsnap', faAnyFile, SR) = 0 then
+  repeat
+    snInfo := TSnapshot_Defination.Create;
+    snInfo.FData.Snapshot_Name := SR.Name;
+    aList.Add(snInfo);
+  until FindNext(SR) <> 0;
+  FindClose(SR);
 end;
 
 procedure TfrmExercise.btnMouseLeave(Sender: TObject);
@@ -474,6 +523,12 @@ end;
 procedure TfrmExercise.btnMouseEnter(Sender: TObject);
 begin
 //
+end;
+
+procedure TfrmExercise.ActionChange(Sender: TObject; CheckDefaults: Boolean);
+begin
+  inherited;
+
 end;
 
 procedure TfrmExercise.btnCloseClick(Sender: TObject);
@@ -629,50 +684,105 @@ procedure TfrmExercise.btnDeleteClick(Sender: TObject);
 var
   warning: Integer;
 begin
-  if lstScenario.ItemIndex = -1 then
-  begin
-    ShowMessage('Select Scenario !');
-    Exit;
+  case FTabId of
+    0:
+    begin
+      {$REGION ' Scenario Section '}
+      if lstScenario.ItemIndex = -1 then
+      begin
+        ShowMessage('Select Scenario !');
+        Exit;
+      end;
+
+      warning := MessageDlg('Are you sure to delete this Scenario ?', mtConfirmation, mbOKCancel, 0);
+
+      if warning = mrOK then
+      begin
+        with FSelectedAssetDeployment.FData do
+        begin
+          dmTTT.DeletePlatformActivation(1, Deployment_Index);
+
+          dmTTT.DeleteCubicleGroupAssignment(1, Deployment_Index);
+          dmTTT.DeleteCubicleGroupChannelAssignment(1, Deployment_Index);
+          dmTTT.DeleteCubicleGroup(1, Deployment_Index);
+        end;
+
+        with FSelectedScenario.FData do
+          dmTTT.DeleteScenarioDef(Scenario_Index);
+
+        with FSelectedResourceAllocation.FData do
+        begin
+          dmTTT.DeletePlatformInstance(1, Resource_Alloc_Index);
+          dmTTT.DeleteResourceBaseMapping(1, Resource_Alloc_Index, 0, 0);
+          dmTTT.DeleteResourceOverlayMapping(1, Resource_Alloc_Index);
+
+          dmTTT.DeleteResourceRPLMapping(1, Resource_Alloc_Index, 0);
+          dmTTT.DeleteResourceWaypointMapping(1, Resource_Alloc_Index, 0);
+
+          dmTTT.DeleteResourceAllocationDef(Resource_Alloc_Index);
+        end;
+
+        with FSelectedEnvironment.FData do
+        begin
+          dmTTT.DeleteGlobalConvergenceZone(Game_Enviro_Index);
+
+          dmTTT.DeleteEnvironmentDef(Game_Enviro_Index)
+        end;
+        ShowMessage('Data has been deleted');
+        UpdateScenarioList;
+        LoadMap(vAppDBSetting.Pattern);
+    //    LoadMap('D:\Map\mapsource\IndonesiaBackground\Indonesia.gst');
+      end;
+      {$ENDREGION}
+    end;
+    1:
+    begin
+      {$REGION ' Replay Section '}
+      if lstReplay.ItemIndex = -1 then
+      begin
+        ShowMessage('Select Replay !');
+        Exit;
+      end;
+
+      warning := MessageDlg('Are you sure to delete this Replay ?', mtConfirmation, mbOKCancel, 0);
+
+      if warning = mrOK then
+      begin
+        with FSelectedReplay.FData do
+        begin
+          dmTTT.DeleteReplayDef(Record_Index);
+        end;
+        ShowMessage('Data has been deleted');
+        UpdateReplayList;
+        LoadMap(vAppDBSetting.Pattern);
+      end;
+      {$ENDREGION}
+    end;
+    2:
+    begin
+      {$REGION ' Snapshot Section '}
+      if lstSnapshot.ItemIndex = -1 then
+      begin
+        ShowMessage('Select Snapshot !');
+        Exit;
+      end;
+
+      warning := MessageDlg('Are you sure to delete this Snapshot ?', mtConfirmation, mbOKCancel, 0);
+
+      if warning = mrOK then
+      begin
+        with FSelectedSnapshot.FData do
+        begin
+          DeleteFile(vAppDBSetting.RootRecordPath + '\' + FSelectedSnapshot.FData.Snapshot_Name);
+        end;
+        ShowMessage('Data has been deleted');
+        UpdateSnapshotList;
+        LoadMap(vAppDBSetting.Pattern);
+      end;
+      {$ENDREGION}
+    end;
   end;
 
-  warning := MessageDlg('Are you sure to delete this Scenario ?', mtConfirmation, mbOKCancel, 0);
-
-  if warning = mrOK then
-  begin
-    with FSelectedAssetDeployment.FData do
-    begin
-      dmTTT.DeletePlatformActivation(1, Deployment_Index);
-
-      dmTTT.DeleteCubicleGroupAssignment(1, Deployment_Index);
-      dmTTT.DeleteCubicleGroupChannelAssignment(1, Deployment_Index);
-      dmTTT.DeleteCubicleGroup(1, Deployment_Index);
-    end;
-
-    with FSelectedScenario.FData do
-      dmTTT.DeleteScenarioDef(Scenario_Index);
-
-    with FSelectedResourceAllocation.FData do
-    begin
-      dmTTT.DeletePlatformInstance(1, Resource_Alloc_Index);
-      dmTTT.DeleteResourceBaseMapping(1, Resource_Alloc_Index, 0, 0);
-      dmTTT.DeleteResourceOverlayMapping(1, Resource_Alloc_Index);
-
-      dmTTT.DeleteResourceRPLMapping(1, Resource_Alloc_Index, 0);
-      dmTTT.DeleteResourceWaypointMapping(1, Resource_Alloc_Index, 0);
-
-      dmTTT.DeleteResourceAllocationDef(Resource_Alloc_Index);
-    end;
-
-    with FSelectedEnvironment.FData do
-    begin
-      dmTTT.DeleteGlobalConvergenceZone(Game_Enviro_Index);
-
-      dmTTT.DeleteEnvironmentDef(Game_Enviro_Index)
-    end;
-
-    UpdateScenarioList;
-    LoadMap('D:\Map\mapsource\IndonesiaBackground\Indonesia.gst');
-  end;
 end;
 
 procedure TfrmExercise.CopyOverlay(const aNewResourceAllocationIndex: Integer);
@@ -734,7 +844,7 @@ begin
   with FSelectedEnvironment.FData do
     dmTTT.GetGameAreaDef(Game_Area_Index, FSelectedGameArea);
 
-  UpdateScenarioData;
+  UpdateScenarioData(1);
   UpdateGameCenter;
 end;
 
@@ -776,7 +886,12 @@ begin
 
   with FSelectedGameArea.FData do
   begin
-    LoadMap(vAppDBSetting.MapGSTGame + '\' + Game_Area_Identifier + '\' + Game_Area_Identifier + '.gst');
+    try
+      LoadMap(vAppDBSetting.MapGSTGame + '\' + Game_Area_Identifier + '\' + Game_Area_Identifier + '.gst');
+    except
+      ShowMessage('File map Game Area ' +Game_Area_Identifier + ' not found');
+      LoadMap(vAppDBSetting.Pattern);
+    end;
 
     Map1.CenterX := Game_Centre_Long;
     Map1.CenterY := Game_Centre_Lat;
@@ -795,22 +910,39 @@ begin
   ProgressBar1.Visible := False;
 end;
 
-procedure TfrmExercise.UpdateScenarioData;
+procedure TfrmExercise.UpdateScenarioData(tipe : integer);
 begin
-  lbScenarioName.Caption := FSelectedScenario.FData.Scenario_Identifier;
-  lbGameArea.Caption := FSelectedGameArea.FData.Game_Area_Identifier;
+  case tipe of
+    0 :
+    begin
+      lbScenarioName.Caption := '';
+      lbGameArea.Caption := '';
 
-  with FSelectedResourceAllocation do
-  begin
-    FStartTime := FData.Game_Start_Time;
-    FDDayTime := FData.D_Day;
+      dtpDate.Date := now;
+      dtpTime.Time := now;
 
-    dtpDate.Date := FStartTime;
-    dtpTime.Time := FStartTime;
+      dtpDDay.Date := now;
+      dtpJamJ.Time := now;
+    end;
+    1:
+    begin
+      lbScenarioName.Caption := FSelectedScenario.FData.Scenario_Identifier;
+      lbGameArea.Caption := FSelectedGameArea.FData.Game_Area_Identifier;
 
-    dtpDDay.Date := FDDayTime;
-    dtpJamJ.Time := FDDayTime;
+      with FSelectedResourceAllocation do
+      begin
+        FStartTime := FData.Game_Start_Time;
+        FDDayTime := FData.D_Day;
+
+        dtpDate.Date := FStartTime;
+        dtpTime.Time := FStartTime;
+
+        dtpDDay.Date := FDDayTime;
+        dtpJamJ.Time := FDDayTime;
+      end;
+    end;
   end;
+
 end;
 
 procedure TfrmExercise.UpdateScenarioList;
@@ -826,6 +958,39 @@ begin
   begin
     scenario := FScenarioList.Items[i];
     lstScenario.Items.AddObject(scenario.FData.Scenario_Identifier, scenario);
+  end;
+end;
+
+procedure TfrmExercise.UpdateReplayList;
+var
+  i: Integer;
+  replayTemp: TReplay_Definition;
+begin
+  dmTTT.GetAllReplayDef(FReplayList);
+
+  lstReplay.Clear;
+
+  for i := 0 to FReplayList.Count - 1 do
+  begin
+    replayTemp := FReplayList.Items[i];
+    lstReplay.Items.AddObject(replayTemp.FData.Scenario_Identifier + ' - ' +replayTemp.FData.Record_Name, replayTemp);
+  end;
+end;
+
+procedure TfrmExercise.UpdateSnapshotList;
+var
+  i : Integer;
+  snapshotTemp : TSnapshot_Defination;
+begin
+  lstSnapshot.Clear;
+
+  FSnapshotList.Clear;
+  GetFilename(vAppDBSetting.RootRecordPath, FSnapshotList);
+
+  for i := 0 to FSnapshotList.Count - 1 do
+  begin
+    snapshotTemp := FSnapshotList.Items[i];
+    lstSnapshot.Items.AddObject(snapshotTemp.FData.Snapshot_Name, snapshotTemp);
   end;
 end;
 
@@ -872,6 +1037,22 @@ begin
   Map1.BackColor := clSkyBlue;
 end;
 
+procedure TfrmExercise.lstReplayClick(Sender: TObject);
+begin
+  if lstReplay.ItemIndex = -1 then
+    Exit;
+
+  FSelectedReplay := TReplay_Definition(lstReplay.Items.Objects[lstReplay.ItemIndex]);
+end;
+
+procedure TfrmExercise.lstSnapshotClick(Sender: TObject);
+begin
+  if lstSnapshot.ItemIndex = -1 then
+    Exit;
+
+  FSelectedSnapshot := TSnapshot_Defination(lstSnapshot.Items.Objects[lstSnapshot.ItemIndex]);
+end;
+
 procedure TfrmExercise.Map1MapViewChanged(Sender: TObject);
 var
   tempZoom: double;
@@ -897,6 +1078,33 @@ end;
 procedure TfrmExercise.Map1MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
 begin
   UpdateCursorPositionData(X, Y);
+end;
+
+procedure TfrmExercise.PageControl1Change(Sender: TObject);
+begin
+  if tsScenario.Showing then
+  begin
+    FTabId := 0;
+    lblscenariolist.Caption := 'Scenario List :';
+  end
+  else if tsReplay.Showing then
+  begin
+    FTabId := 1;
+    lblscenariolist.Caption := 'Replay List :';
+    UpdateScenarioData(0);
+    UpdateReplayList;
+  end
+  else if tsSnapshot.Showing then
+  begin
+    FTabId := 2;
+    lblscenariolist.Caption := 'Snapshoot List :';
+    UpdateScenarioData(0);
+    UpdateSnapshotList;
+  end;
+
+  btnNew.Visible := tsScenario.Showing;
+  btncopy.Visible := tsScenario.Showing;
+  btnEdit.Visible := tsScenario.Showing;
 end;
 
 {$ENDREGION}

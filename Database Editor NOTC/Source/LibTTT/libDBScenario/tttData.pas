@@ -2573,6 +2573,20 @@ end;
     Scenario_Code          : integer;
   end;
 
+  TRecReplay_Definition =  record
+    Record_Index        : integer;
+    Record_Name         : string[60];
+    Scenario_Index      : integer;
+    Scenario_Identifier : string[60];
+  end;
+
+  TRecSnapshot_Definition =  record
+//    Record_Index        : integer;
+    Snapshot_Name         : string[60];
+//    Scenario_Index      : integer;
+//    Scenario_Identifier : string[60];
+  end;
+
   ///=====================================================
   TRecWaypoint_Data = record
     Waypoint_Index           : integer;

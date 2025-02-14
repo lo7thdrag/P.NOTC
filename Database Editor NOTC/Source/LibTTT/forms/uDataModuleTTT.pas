@@ -47,6 +47,9 @@ type
     function UpdateScenarioDef(var aRec: TRecScenario_Definition): Boolean;
     function DeleteScenarioDef(const aScenarioID: Integer): Boolean;
 
+    function GetAllReplayDef(var aList: TList): Integer;
+    function DeleteReplayDef(const aReplayID: Integer): Boolean;
+
     //=Asset Deployment
     function GetAssetDeployment(const aScenarioID: Integer; var aResult: TAsset_Deployment): Boolean;
     function InsertAssetDeployment( var aRec: TRecAsset_Deployment_Definition): Boolean;
@@ -2327,6 +2330,85 @@ begin
     Open;
 
     Result := RecordCount = 0;
+  end;
+end;
+
+function TdmTTT.GetAllReplayDef(var aList: TList): Integer;
+var
+  i : Integer;
+  rec : TReplay_Definition;
+begin
+  Result := -1;
+
+  if not ZConn.Connected then
+    Exit;
+
+  with ZQ do
+  begin
+    Close;
+    SQL.Clear;
+    SQL.Add('SELECT r.*, s.* ');
+    SQL.Add('FROM Record r inner join Scenario_Definition s ');
+    SQL.Add('ON r.Scenario_Index = s.Scenario_Index ');
+    Open;
+
+    Result := RecordCount;
+
+    if Assigned(aList) then
+    begin
+      for i := 0 to aList.Count - 1 do
+      begin
+        rec := aList.Items[i];
+        rec.Free;
+      end;
+
+      aList.Clear;
+    end
+    else
+      aList := TList.Create;
+
+    if not IsEmpty then
+    begin
+      First;
+
+      while not Eof do
+      begin
+        rec := TReplay_Definition.Create;
+
+        with rec.FData do
+        begin
+          Record_Index := FieldByName('Record_Index').AsInteger;
+          Record_Name := FieldByName('Record_Name').AsString;
+          Scenario_Index := FieldByName('Scenario_Index').AsInteger;
+          Scenario_Identifier := FieldByName('Scenario_Identifier').AsString;
+        end;
+
+        aList.Add(rec);
+        Next;
+      end;
+    end;
+  end;
+end;
+
+function TdmTTT.DeleteReplayDef(const aReplayID: Integer): Boolean;
+begin
+  Result := False;
+
+  if not ZConn.Connected then
+    Exit;
+
+  with ZQ do
+  begin
+    Close;
+    SQL.Clear;
+    SQL.Add('DELETE FROM Record_Data');
+    SQL.Add('WHERE Record_Index = ' + IntToStr(aReplayID));
+    ExecSQL;
+
+    SQL.Clear;
+    SQL.Add('DELETE FROM Record');
+    SQL.Add('WHERE Record_Index = ' + IntToStr(aReplayID));
+    ExecSQL;
   end;
 end;
 
@@ -45878,6 +45960,8 @@ begin
       ExecSQL;
    end;
 end;
+
+
 //-------------------------------------------------------------------
 
 function TdmTTT.DeleteAllReference_Point(const ra_id: string): integer;
