@@ -42,28 +42,28 @@ type
     FData : TRecReplay_Definition;
   end;
 
-  TRecFileHeader = record
-    PrimaryID   : string[12];
-    SecondaryID : string[12];
-    Version  : integer;
-    Revision : integer;
-  end;
+//  TRecFileHeader = record
+//    PrimaryID   : string[12];
+//    SecondaryID : string[12];
+//    Version  : integer;
+//    Revision : integer;
+//  end;
 
-  TSnapshotUtilsHeader = packed record
-    Stream: record
-      ScenarioID : Integer ;
-      TimeInfo   : TDateTime;
-      Version    : Byte;
-      Options    : Byte;
-    end;
-    TypeVersion: Word;
-  end;
+//  TSnapshotUtilsHeader = packed record
+//    Stream: record
+//      ScenarioID : Integer ;
+//      TimeInfo   : TDateTime;
+//      Version    : Byte;
+//      Options    : Byte;
+//    end;
+//    TypeVersion: Word;
+//  end;
 
   TSnapshot_Defination = class
-    FDisplayName : string ;
-    FFullName    : string ;
-    FDateTime    : TDateTime;
-    HInfo        : TSnapshotUtilsHeader;
+//    FDisplayName : string ;
+//    FFullName    : string ;
+//    FDateTime    : TDateTime;
+//    HInfo        : TSnapshotUtilsHeader;
   public
     FData : TRecSnapshot_Definition;
   end;

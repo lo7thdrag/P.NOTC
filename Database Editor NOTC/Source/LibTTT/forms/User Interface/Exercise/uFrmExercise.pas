@@ -110,6 +110,7 @@ type
     FCanvas: TCanvas;
     FConverter: TCoordConverter;
     FLyrDraw: CMapXLayer;
+
     FUpdateList: Boolean;
     FScenarioList: TList;
     FReplayList: TList;
@@ -127,6 +128,7 @@ type
     FSelectedGameArea: TGame_Area_Definition;
 
     function TranslatePlatformID(aOldPlatformIndex: Integer): Integer;
+
     procedure CopyScenario;
     procedure CopyPlatform(const aNewResourceAllocationIndex, aNewDeploymentIndex: Integer);
     procedure CopyBase(const aNewResourceAllocationIndex: Integer);
@@ -142,10 +144,9 @@ type
     procedure UpdateGameCenter;
 
     procedure GetFilename(const Path: string; aList: TList);
-  protected
-    procedure ActionChange(Sender: TObject; CheckDefaults: Boolean); override;
 
   public
+
   end;
 
 var
@@ -182,6 +183,142 @@ begin
   FConverter := TCoordConverter.Create;
 
   FIdTranslateList := TList.Create;
+end;
+
+procedure TfrmExercise.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FScenarioList);
+  FreeItemsAndFreeList(FReplayList);
+  FreeItemsAndFreeList(FSnapshotList);
+
+  FSelectedAssetDeployment.Free;
+  FSelectedResourceAllocation.Free;
+  FSelectedEnvironment.Free;
+  FSelectedGameArea.Free;
+
+  FConverter.Free;
+end;
+
+procedure TfrmExercise.FormShow(Sender: TObject);
+begin
+  DoubleBuffered := False;
+  pnlMap.Visible := True;
+
+  tsScenario.Show;
+  FTabId := 0;
+
+  LoadMap(vAppDBSetting.Pattern);
+
+  FConverter.FMap := Map1;
+
+  cbbScale.ItemIndex := cbbScale.Items.Count - 1;
+  cbbScaleChange(cbbScale);
+
+  UpdateScenarioList;
+  UpdateReplayList;
+  UpdateSnapshotList;
+end;
+
+procedure TfrmExercise.btnMouseLeave(Sender: TObject);
+begin
+//
+end;
+
+procedure TfrmExercise.btnMouseEnter(Sender: TObject);
+begin
+//
+end;
+
+procedure TfrmExercise.btnCloseClick(Sender: TObject);
+begin
+  close;
+end;
+
+{$ENDREGION}
+
+{$Region ' Button Handle '}
+
+procedure TfrmExercise.btnNewClick(Sender: TObject);
+begin
+
+  frmSummaryScenario := TfrmSummaryScenario.Create(Self);
+  try
+    with frmSummaryScenario do
+    begin
+      SelectedScenario := TScenario_Definition.Create;
+      SelectedResourceAllocation := TResource_Allocation.Create;
+      SelectedEnvironment := TGame_Environment_Definition.Create;
+      SelectedGameArea := TGame_Area_Definition.Create;
+      SelectedAssetDeployment := TAsset_Deployment.Create;
+      ShowModal;
+    end;
+  finally
+    frmSummaryScenario.Free;
+  end;
+
+  UpdateScenarioList;
+end;
+
+procedure TfrmExercise.cbbScaleChange(Sender: TObject);
+var
+  z: Double;
+  s: string;
+begin
+  Map1.OnMapViewChanged := nil;
+
+  if cbbScale.ItemIndex < 0 then
+    Exit;
+
+  if (cbbScale.ItemIndex <= 16) then
+  begin
+    s := cbbScale.Items[cbbScale.ItemIndex];
+    try
+      z := StrToFloat(s);
+      Map1.ZoomTo(z, Map1.CenterX, Map1.CenterY);
+    finally
+
+    end;
+  end
+  else
+    cbbScale.ItemIndex := cbbScale.ItemIndex - 1;
+
+  Map1.OnMapViewChanged := Map1MapViewChanged;
+end;
+
+procedure TfrmExercise.CopyBase(const aNewResourceAllocationIndex: Integer);
+var
+  i, j: Integer;
+  tempList: TList;
+  baseTemp: TResource_Base_Mapping;
+begin
+  tempList := TList.Create;
+
+  dmTTT.GetResourceBaseMapping(FOldResourceAllocationIndex, 3, tempList);
+  for i := 0 to tempList.Count - 1 do
+  begin
+    baseTemp := tempList.Items[i];
+
+    with baseTemp do
+    begin
+      FData.Resource_Alloc_Index := aNewResourceAllocationIndex;
+      dmTTT.InsertResourceBaseMapping(baseTemp);
+    end;
+  end;
+  tempList.Clear;
+
+  dmTTT.GetResourceBaseMapping(FOldResourceAllocationIndex, 1, tempList);
+  for j := 0 to tempList.Count - 1 do
+  begin
+    baseTemp := tempList.Items[j];
+
+    with baseTemp do
+    begin
+      FData.Resource_Alloc_Index := aNewResourceAllocationIndex;
+      dmTTT.InsertResourceBaseMapping(baseTemp);
+    end;
+  end;
+
+  tempList.Free;
 end;
 
 procedure TfrmExercise.CopyPlatform(const aNewResourceAllocationIndex, aNewDeploymentIndex: Integer);
@@ -463,40 +600,6 @@ begin
   tempList.Free;
 end;
 
-procedure TfrmExercise.FormDestroy(Sender: TObject);
-begin
-  FreeItemsAndFreeList(FScenarioList);
-  FreeItemsAndFreeList(FReplayList);
-  FreeItemsAndFreeList(FSnapshotList);
-
-  FSelectedAssetDeployment.Free;
-  FSelectedResourceAllocation.Free;
-  FSelectedEnvironment.Free;
-  FSelectedGameArea.Free;
-
-  FConverter.Free;
-end;
-
-procedure TfrmExercise.FormShow(Sender: TObject);
-begin
-  DoubleBuffered := False;
-  pnlMap.Visible := True;
-
-  tsScenario.Show;
-  FTabId := 0;
-
-  LoadMap(vAppDBSetting.Pattern);
-
-  FConverter.FMap := Map1;
-
-  cbbScale.ItemIndex := cbbScale.Items.Count - 1;
-  cbbScaleChange(cbbScale);
-
-  UpdateScenarioList;
-  UpdateReplayList;
-  UpdateSnapshotList;
-end;
-
 procedure TfrmExercise.GetFilename(const Path: string; aList: TList);
 var
   sr : TSearchRec;
@@ -513,114 +616,6 @@ begin
     aList.Add(snInfo);
   until FindNext(SR) <> 0;
   FindClose(SR);
-end;
-
-procedure TfrmExercise.btnMouseLeave(Sender: TObject);
-begin
-//
-end;
-
-procedure TfrmExercise.btnMouseEnter(Sender: TObject);
-begin
-//
-end;
-
-procedure TfrmExercise.ActionChange(Sender: TObject; CheckDefaults: Boolean);
-begin
-  inherited;
-
-end;
-
-procedure TfrmExercise.btnCloseClick(Sender: TObject);
-begin
-  close;
-end;
-
-{$ENDREGION}
-
-{$Region ' Button Handle '}
-
-procedure TfrmExercise.btnNewClick(Sender: TObject);
-begin
-
-  frmSummaryScenario := TfrmSummaryScenario.Create(Self);
-  try
-    with frmSummaryScenario do
-    begin
-      SelectedScenario := TScenario_Definition.Create;
-      SelectedResourceAllocation := TResource_Allocation.Create;
-      SelectedEnvironment := TGame_Environment_Definition.Create;
-      SelectedGameArea := TGame_Area_Definition.Create;
-      SelectedAssetDeployment := TAsset_Deployment.Create;
-      ShowModal;
-    end;
-  finally
-    frmSummaryScenario.Free;
-  end;
-
-  UpdateScenarioList;
-end;
-
-procedure TfrmExercise.cbbScaleChange(Sender: TObject);
-var
-  z: Double;
-  s: string;
-begin
-  Map1.OnMapViewChanged := nil;
-
-  if cbbScale.ItemIndex < 0 then
-    Exit;
-
-  if (cbbScale.ItemIndex <= 16) then
-  begin
-    s := cbbScale.Items[cbbScale.ItemIndex];
-    try
-      z := StrToFloat(s);
-      Map1.ZoomTo(z, Map1.CenterX, Map1.CenterY);
-    finally
-
-    end;
-  end
-  else
-    cbbScale.ItemIndex := cbbScale.ItemIndex - 1;
-
-  Map1.OnMapViewChanged := Map1MapViewChanged;
-end;
-
-procedure TfrmExercise.CopyBase(const aNewResourceAllocationIndex: Integer);
-var
-  i, j: Integer;
-  tempList: TList;
-  baseTemp: TResource_Base_Mapping;
-begin
-  tempList := TList.Create;
-
-  dmTTT.GetResourceBaseMapping(FOldResourceAllocationIndex, 3, tempList);
-  for i := 0 to tempList.Count - 1 do
-  begin
-    baseTemp := tempList.Items[i];
-
-    with baseTemp do
-    begin
-      FData.Resource_Alloc_Index := aNewResourceAllocationIndex;
-      dmTTT.InsertResourceBaseMapping(baseTemp);
-    end;
-  end;
-  tempList.Clear;
-
-  dmTTT.GetResourceBaseMapping(FOldResourceAllocationIndex, 1, tempList);
-  for j := 0 to tempList.Count - 1 do
-  begin
-    baseTemp := tempList.Items[j];
-
-    with baseTemp do
-    begin
-      FData.Resource_Alloc_Index := aNewResourceAllocationIndex;
-      dmTTT.InsertResourceBaseMapping(baseTemp);
-    end;
-  end;
-
-  tempList.Free;
 end;
 
 procedure TfrmExercise.btnEditClick(Sender: TObject);
