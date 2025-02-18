@@ -1837,314 +1837,6 @@ object frmTacticalDisplay: TfrmTacticalDisplay
           end
         end
       end
-      object pnlPlatformGuidance: TPanel
-        Left = 0
-        Top = 26
-        Width = 339
-        Height = 2000
-        Color = 4012086
-        ParentBackground = False
-        TabOrder = 10
-        inline fmPlatformGuidance1: TfmPlatformGuidance
-          Left = 1
-          Top = 1
-          Width = 337
-          Height = 1998
-          Align = alClient
-          Color = clMedGray
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentBackground = False
-          ParentColor = False
-          ParentFont = False
-          TabOrder = 0
-          ExplicitLeft = 1
-          ExplicitTop = 1
-          ExplicitWidth = 337
-          ExplicitHeight = 1998
-          inherited PanelGuidanceControlChoices: TPanel
-            Width = 337
-            ExplicitWidth = 337
-            inherited SpeedButton2: TSpeedButton
-              OnClick = fmPlatformGuidance1SpeedButton2Click
-            end
-          end
-          inherited PanelPlatformGuidance: TPanel
-            Width = 337
-            Height = 1957
-            ExplicitWidth = 337
-            ExplicitHeight = 1957
-            inherited grbEngagement: TGroupBox [0]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-              inherited sbEngageTrackToEngage: TSpeedButton
-                OnClick = fmPlatformGuidance1sbEngageTrackToEngageClick
-              end
-              inherited pnlDepthEngagement: TPanel
-                inherited Edit2: TEdit
-                  Height = 21
-                  ExplicitHeight = 21
-                end
-              end
-              inherited pnlAltitudeEngagement: TPanel
-                inherited edtAltitudeEngagement: TEdit
-                  Height = 21
-                  ExplicitHeight = 21
-                end
-              end
-            end
-            inherited grbEvasion: TGroupBox [1]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-              inherited sbTrackToEvade: TSpeedButton
-                OnClick = fmPlatformGuidance1sbTrackToEvadeClick
-              end
-            end
-            inherited grbHelm: TGroupBox [2]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-              inherited Label129: TLabel
-                Width = 46
-                Caption = 'degrees'
-                ExplicitWidth = 46
-              end
-              inherited Panel2: TPanel [32]
-              end
-              inherited Panel1: TPanel [33]
-              end
-              inherited edtHelmOrderedGroundSpeed: TEdit [34]
-              end
-            end
-            inherited grbOutrun: TGroupBox [3]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-              inherited sbTrackToOutrun: TSpeedButton
-                OnClick = fmPlatformGuidance1sbTrackToOutrunClick
-              end
-            end
-            inherited grbReturnToBase: TGroupBox [4]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-            end
-            inherited grbShadow: TGroupBox [5]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-            end
-            inherited grbSinuation: TGroupBox [6]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-            end
-            inherited grbZigZag: TGroupBox [7]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-            end
-            inherited grpCircle: TGroupBox [8]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-              inherited ScrollBox1: TScrollBox
-                Width = 333
-                Height = 1937
-                ExplicitWidth = 333
-                ExplicitHeight = 1937
-                inherited btnCircleMode: TSpeedButton
-                  Top = 14
-                  OnClick = fmPlatformGuidance1btnCircleModeClick
-                  ExplicitTop = 14
-                end
-                inherited edtCircleRadius: TEdit
-                  Top = 145
-                  ExplicitTop = 145
-                end
-                inherited pnlTrack: TPanel [22]
-                  inherited sbCircleOnTrackTrack: TSpeedButton
-                    OnClick = fmPlatformGuidance1sbCircleOnTrackTrackClick
-                  end
-                end
-                inherited pnlPosition: TPanel
-                  inherited sbCircleOnPositionPosition: TSpeedButton
-                    Height = 27
-                    OnClick = fmPlatformGuidance1sbCircleOnPositionPositionClick
-                    ExplicitHeight = 27
-                  end
-                end
-                inherited StaticText7: TStaticText [24]
-                end
-              end
-            end
-            inherited grpPersonelGuidance: TGroupBox [9]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-              inherited whHeadingPersonel: TVrWheel
-                OnChange = fmPlatformGuidance1whHeadingPersonelChange
-              end
-              inherited sbPersonalGuidanceMode: TSpeedButton
-                OnClick = fmPlatformGuidance1sbPersonalGuidanceModeClick
-              end
-              inherited edtPersonelGuidanceOrderedHeading: TEdit
-                OnKeyPress = fmPlatformGuidance1edtPersonelGuidanceOrderedHeadingKeyPress
-              end
-            end
-            inherited grpStation: TGroupBox [10]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-              inherited sbOnTrackAnchorMode: TSpeedButton
-                OnClick = fmPlatformGuidance1sbOnTrackAnchorModeClick
-              end
-              inherited pnlStationPosition: TPanel
-                inherited btnStationAnchorPosition: TSpeedButton
-                  OnClick = fmPlatformGuidance1btnStationAnchorPositionClick
-                end
-              end
-              inherited pnlStationTrack: TPanel
-                inherited sbOnTrackAnchorTrack: TSpeedButton
-                  OnClick = fmPlatformGuidance1sbOnTrackAnchorTrackClick
-                end
-              end
-            end
-            inherited grbFormation: TGroupBox [11]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-            end
-            inherited gbWaypoint: TGroupBox [12]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-              inherited btnWaypoint: TButton
-                Top = 187
-                OnClick = fmPlatformGuidance1btnWaypointClick
-                ExplicitTop = 187
-              end
-            end
-            inherited grbStraightLine: TGroupBox [13]
-              Width = 335
-              Height = 1955
-              ExplicitWidth = 335
-              ExplicitHeight = 1955
-              inherited ScrollBox5: TScrollBox
-                Width = 333
-                Height = 1937
-                ExplicitWidth = 333
-                ExplicitHeight = 1937
-                inherited whHeading: TVrWheel
-                  OnChange = fmPlatformGuidance1whHeadingChange
-                end
-                inherited Label128: TLabel
-                  Top = 152
-                  ExplicitTop = 152
-                end
-                inherited Label125: TLabel
-                  Top = 193
-                  ExplicitTop = 193
-                end
-                inherited Label124: TLabel
-                  Top = 172
-                  ExplicitTop = 172
-                end
-                inherited Label122: TLabel
-                  Top = 108
-                  ExplicitTop = 108
-                end
-                inherited edtStraightLineOrderedGroundSpeed: TEdit
-                  OnKeyPress = fmPlatformGuidance1edtStraightLineOrderedGroundSpeedKeyPress
-                end
-                inherited edtStraightLineOrderedHeading: TEdit
-                  OnKeyPress = fmPlatformGuidance1edtStraightLineOrderedHeadingKeyPress
-                end
-                inherited panDepth: TPanel
-                  inherited lbl4: TLabel
-                    Top = 26
-                    ExplicitTop = 26
-                  end
-                end
-                inherited panAltitude: TPanel
-                  inherited edOrderAltitude: TEdit
-                    OnKeyPress = fmPlatformGuidance1edOrderAltitudeKeyPress
-                  end
-                end
-              end
-            end
-          end
-          inherited pmGuidance: TPopupMenu
-            inherited mnStraightLine1: TMenuItem
-              OnClick = fmPlatformGuidance1mnStraightLine1Click
-            end
-            inherited mnHelm1: TMenuItem
-              Visible = False
-            end
-            inherited mnCircle: TMenuItem
-              Visible = False
-            end
-            inherited mnStation: TMenuItem
-              Visible = False
-            end
-            inherited mnZigzag1: TMenuItem
-              Visible = False
-              inherited Short1: TMenuItem
-                OnClick = fmPlatformGuidance1Short1Click
-              end
-              inherited Long1: TMenuItem
-                OnClick = fmPlatformGuidance1Long1Click
-              end
-              inherited VeryLong1: TMenuItem
-                OnClick = fmPlatformGuidance1VeryLong1Click
-              end
-            end
-            inherited mnSinuation1: TMenuItem
-              Visible = False
-            end
-            inherited mnFormation2: TMenuItem
-              Visible = False
-            end
-            inherited mnEvasion1: TMenuItem
-              Visible = False
-            end
-            inherited mnOutrun1: TMenuItem
-              Visible = False
-              OnClick = fmPlatformGuidance1mnOutrun1Click
-            end
-            inherited mnEngagement1: TMenuItem
-              Visible = False
-            end
-            inherited mnShadow1: TMenuItem
-              Visible = False
-            end
-            inherited mnReturntoBase1: TMenuItem
-              Visible = False
-            end
-            inherited mnPersonelGudance1: TMenuItem
-              OnClick = fmPlatformGuidance1PersonelGudance1Click
-            end
-          end
-        end
-      end
       object pnlSensor: TPanel
         Left = 0
         Top = 26
@@ -4007,6 +3699,316 @@ object frmTacticalDisplay: TfrmTacticalDisplay
           Caption = ':'
           TabOrder = 2
           Transparent = False
+        end
+      end
+      object pnlPlatformGuidance: TPanel
+        Left = 0
+        Top = 26
+        Width = 339
+        Height = 2000
+        Color = 4012086
+        ParentBackground = False
+        TabOrder = 10
+        inline fmPlatformGuidance1: TfmPlatformGuidance
+          Left = 1
+          Top = 1
+          Width = 337
+          Height = 1998
+          Align = alClient
+          Color = clMedGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentBackground = False
+          ParentColor = False
+          ParentFont = False
+          TabOrder = 0
+          ExplicitLeft = 1
+          ExplicitTop = 1
+          ExplicitWidth = 337
+          ExplicitHeight = 1998
+          inherited PanelGuidanceControlChoices: TPanel
+            Width = 337
+            ExplicitWidth = 337
+            inherited SpeedButton2: TSpeedButton
+              OnClick = fmPlatformGuidance1SpeedButton2Click
+            end
+          end
+          inherited PanelPlatformGuidance: TPanel
+            Width = 337
+            Height = 1957
+            ExplicitWidth = 337
+            ExplicitHeight = 1957
+            inherited gbWaypoint: TGroupBox
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+              inherited btnWaypoint: TButton
+                Left = 197
+                Top = 217
+                OnClick = fmPlatformGuidance1btnWaypointClick
+                ExplicitLeft = 197
+                ExplicitTop = 217
+              end
+            end
+            inherited grbEngagement: TGroupBox
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+              inherited sbEngageTrackToEngage: TSpeedButton
+                OnClick = fmPlatformGuidance1sbEngageTrackToEngageClick
+              end
+              inherited pnlDepthEngagement: TPanel
+                inherited Edit2: TEdit
+                  Height = 21
+                  ExplicitHeight = 21
+                end
+              end
+              inherited pnlAltitudeEngagement: TPanel
+                inherited edtAltitudeEngagement: TEdit
+                  Height = 21
+                  ExplicitHeight = 21
+                end
+              end
+            end
+            inherited grbEvasion: TGroupBox
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+              inherited sbTrackToEvade: TSpeedButton
+                OnClick = fmPlatformGuidance1sbTrackToEvadeClick
+              end
+            end
+            inherited grbHelm: TGroupBox [3]
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+              inherited Label129: TLabel
+                Width = 46
+                Caption = 'degrees'
+                ExplicitWidth = 46
+              end
+              inherited Panel2: TPanel [32]
+              end
+              inherited Panel1: TPanel [33]
+              end
+              inherited edtHelmOrderedGroundSpeed: TEdit [34]
+              end
+            end
+            inherited grbOutrun: TGroupBox [4]
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+              inherited sbTrackToOutrun: TSpeedButton
+                OnClick = fmPlatformGuidance1sbTrackToOutrunClick
+              end
+            end
+            inherited grbReturnToBase: TGroupBox [5]
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+            end
+            inherited grbShadow: TGroupBox [6]
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+            end
+            inherited grbSinuation: TGroupBox [7]
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+            end
+            inherited grbZigZag: TGroupBox [8]
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+            end
+            inherited grpCircle: TGroupBox [9]
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+              inherited ScrollBox1: TScrollBox
+                Width = 333
+                Height = 1937
+                ExplicitWidth = 333
+                ExplicitHeight = 1937
+                inherited btnCircleMode: TSpeedButton
+                  Top = 14
+                  OnClick = fmPlatformGuidance1btnCircleModeClick
+                  ExplicitTop = 14
+                end
+                inherited edtCircleRadius: TEdit
+                  Top = 145
+                  ExplicitTop = 145
+                end
+                inherited pnlTrack: TPanel [22]
+                  inherited sbCircleOnTrackTrack: TSpeedButton
+                    OnClick = fmPlatformGuidance1sbCircleOnTrackTrackClick
+                  end
+                end
+                inherited pnlPosition: TPanel
+                  inherited sbCircleOnPositionPosition: TSpeedButton
+                    Height = 27
+                    OnClick = fmPlatformGuidance1sbCircleOnPositionPositionClick
+                    ExplicitHeight = 27
+                  end
+                end
+                inherited StaticText7: TStaticText [24]
+                end
+              end
+            end
+            inherited grpPersonelGuidance: TGroupBox [10]
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+              inherited whHeadingPersonel: TVrWheel
+                OnChange = fmPlatformGuidance1whHeadingPersonelChange
+              end
+              inherited sbPersonalGuidanceMode: TSpeedButton
+                OnClick = fmPlatformGuidance1sbPersonalGuidanceModeClick
+              end
+              inherited edtPersonelGuidanceOrderedHeading: TEdit
+                OnKeyPress = fmPlatformGuidance1edtPersonelGuidanceOrderedHeadingKeyPress
+              end
+            end
+            inherited grpStation: TGroupBox [11]
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+              inherited sbOnTrackAnchorMode: TSpeedButton
+                OnClick = fmPlatformGuidance1sbOnTrackAnchorModeClick
+              end
+              inherited pnlStationPosition: TPanel
+                inherited btnStationAnchorPosition: TSpeedButton
+                  OnClick = fmPlatformGuidance1btnStationAnchorPositionClick
+                end
+              end
+              inherited pnlStationTrack: TPanel
+                inherited sbOnTrackAnchorTrack: TSpeedButton
+                  OnClick = fmPlatformGuidance1sbOnTrackAnchorTrackClick
+                end
+              end
+            end
+            inherited grbFormation: TGroupBox [12]
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+            end
+            inherited grbStraightLine: TGroupBox [13]
+              Width = 335
+              Height = 1955
+              ExplicitWidth = 335
+              ExplicitHeight = 1955
+              inherited ScrollBox5: TScrollBox
+                Width = 333
+                Height = 1937
+                ExplicitWidth = 333
+                ExplicitHeight = 1937
+                inherited whHeading: TVrWheel
+                  OnChange = fmPlatformGuidance1whHeadingChange
+                end
+                inherited Label128: TLabel
+                  Top = 152
+                  ExplicitTop = 152
+                end
+                inherited Label125: TLabel
+                  Top = 193
+                  ExplicitTop = 193
+                end
+                inherited Label124: TLabel
+                  Top = 172
+                  ExplicitTop = 172
+                end
+                inherited Label122: TLabel
+                  Top = 108
+                  ExplicitTop = 108
+                end
+                inherited edtStraightLineOrderedGroundSpeed: TEdit
+                  OnKeyPress = fmPlatformGuidance1edtStraightLineOrderedGroundSpeedKeyPress
+                end
+                inherited edtStraightLineOrderedHeading: TEdit
+                  OnKeyPress = fmPlatformGuidance1edtStraightLineOrderedHeadingKeyPress
+                end
+                inherited panDepth: TPanel
+                  inherited lbl4: TLabel
+                    Top = 26
+                    ExplicitTop = 26
+                  end
+                end
+                inherited panAltitude: TPanel
+                  inherited edOrderAltitude: TEdit
+                    OnKeyPress = fmPlatformGuidance1edOrderAltitudeKeyPress
+                  end
+                end
+              end
+            end
+          end
+          inherited pmGuidance: TPopupMenu
+            inherited mnStraightLine1: TMenuItem
+              OnClick = fmPlatformGuidance1mnStraightLine1Click
+            end
+            inherited mnHelm1: TMenuItem
+              Visible = False
+            end
+            inherited mnCircle: TMenuItem
+              Visible = False
+            end
+            inherited mnStation: TMenuItem
+              Visible = False
+            end
+            inherited mnZigzag1: TMenuItem
+              Visible = False
+              inherited Short1: TMenuItem
+                OnClick = fmPlatformGuidance1Short1Click
+              end
+              inherited Long1: TMenuItem
+                OnClick = fmPlatformGuidance1Long1Click
+              end
+              inherited VeryLong1: TMenuItem
+                OnClick = fmPlatformGuidance1VeryLong1Click
+              end
+            end
+            inherited mnSinuation1: TMenuItem
+              Visible = False
+            end
+            inherited mnFormation2: TMenuItem
+              Visible = False
+            end
+            inherited mnEvasion1: TMenuItem
+              Visible = False
+            end
+            inherited mnOutrun1: TMenuItem
+              Visible = False
+              OnClick = fmPlatformGuidance1mnOutrun1Click
+            end
+            inherited mnEngagement1: TMenuItem
+              Visible = False
+            end
+            inherited mnShadow1: TMenuItem
+              Visible = False
+            end
+            inherited mnReturntoBase1: TMenuItem
+              Visible = False
+            end
+            inherited mnPersonelGudance1: TMenuItem
+              OnClick = fmPlatformGuidance1PersonelGudance1Click
+            end
+          end
         end
       end
     end

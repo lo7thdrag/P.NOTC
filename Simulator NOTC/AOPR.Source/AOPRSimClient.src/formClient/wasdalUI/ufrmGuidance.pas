@@ -28,6 +28,7 @@ type
     procedure lvTrackControlSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
     procedure ViewMember1Click(Sender: TObject);
+    procedure fmPlatformGuidance1btnWaypointClick(Sender: TObject);
   private
     FOnLaunchEmbarked: TNotifyEvent;
     procedure SetOnLaunchEmbarked(const Value: TNotifyEvent);
@@ -84,6 +85,12 @@ begin
   StrToChar(T3GroupVehicle(lvTrackControl.Selected.Data).GroupName, rec.GroupName);
   rec.aAction := Byte(C_DELETE);
   simMgrClient.netSend_CmdMultiMode(rec);
+end;
+
+procedure TfrmGuidance.fmPlatformGuidance1btnWaypointClick(Sender: TObject);
+begin
+  fmPlatformGuidance1.btnWaypointClick(Sender);
+
 end;
 
 procedure TfrmGuidance.FormActivate(Sender: TObject);

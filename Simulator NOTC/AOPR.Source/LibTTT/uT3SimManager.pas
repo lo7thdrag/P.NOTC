@@ -6032,221 +6032,223 @@ begin
                     //Add Waypoint Event
                     with OwnVehicle do
                     begin
-                      for i := 0 to Devices.Count - 1 do
-                      begin
-                        dev :=  Devices.Items[i];
-
-                        // radar
-                        if dev is TT3Radar then
-                        begin
-                          objEvent  := TScripted_Radar_Event.Create;
-                          with TScripted_Radar_Event(objEvent).FData do
-                          begin
-                            Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
-                            Radar_Index          := TT3Radar(dev).InstanceIndex;
-                            Radar_Control        := 2; //no change
-                          end;
-
-                          wpevent   := TWaypointEventClass.Create;
-                          TWaypointEventClass(wpevent).FType := wetRadar;
-                          TWaypointEventClass(wpevent).FData := objEvent;
-                          TWaypointEventClass(wpevent).FEnable := false;
-                          TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3Radar(dev).InstanceIndex;
-
-                          Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                        end
-                        // sonar
-                        else if dev is TT3Sonar then
-                        begin
-                          objEvent  := TScripted_Sonar_Event.Create;
-                          with TScripted_Sonar_Event(objEvent).FData do
-                          begin
-                            Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
-                            Sonar_Index          := TT3Sonar(dev).InstanceIndex;
-                            Sonar_Control        := 2; //no change
-                          end;
-
-                          wpevent   := TWaypointEventClass.Create;
-                          TWaypointEventClass(wpevent).FType := wetSonar;
-                          TWaypointEventClass(wpevent).FData := objEvent;
-                          TWaypointEventClass(wpevent).FEnable := false;
-                          TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3Sonar(dev).InstanceIndex;
-
-                          Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                        end
-                        // iff
-                        else if dev is TT3IFFSensor then
-                        begin
-                          objEvent  := TScripted_IFF_Event.Create;
-                          with TScripted_IFF_Event(objEvent).FData do
-                          begin
-                            Scripted_Event_Index   := FFocusedBehav.FData.Scripted_Event_Index;
-                            IFF_Instance_Index     := TT3IFFSensor(dev).InstanceIndex;
-
-                            IFF_Interrogator_Control  := 2; //no change
-                            IFF_Transponder_Control   := 2; //no change
-                          end;
-
-                          // wp event untuk transpondernya
-                          wpevent   := TWaypointEventClass.Create;
-                          TWaypointEventClass(wpevent).FType := wetIFFTransponder;
-                          TWaypointEventClass(wpevent).FData := objEvent;
-                          TWaypointEventClass(wpevent).FEnable := false;
-                          TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3IFFSensor(dev).InstanceIndex;
-
-                          Waypoints.Add(behav,TWaypointEventClass(wpevent));
-
-                          // wp event untuk interogatornya
-                          wpevent   := TWaypointEventClass.Create;
-                          TWaypointEventClass(wpevent).FType := wetIFFInterogator;
-                          TWaypointEventClass(wpevent).FData := objEvent;
-                          TWaypointEventClass(wpevent).FEnable := false;
-                          TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3IFFSensor(dev).InstanceIndex;
-
-                          Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                        end;
-                      end;
+                      {$REGION ' Kodingan Lama '}
+//                      for i := 0 to Devices.Count - 1 do
+//                      begin
+//                        dev :=  Devices.Items[i];
+//
+//                        // radar
+//                        if dev is TT3Radar then
+//                        begin
+//                          objEvent  := TScripted_Radar_Event.Create;
+//                          with TScripted_Radar_Event(objEvent).FData do
+//                          begin
+//                            Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
+//                            Radar_Index          := TT3Radar(dev).InstanceIndex;
+//                            Radar_Control        := 2; //no change
+//                          end;
+//
+//                          wpevent   := TWaypointEventClass.Create;
+//                          TWaypointEventClass(wpevent).FType := wetRadar;
+//                          TWaypointEventClass(wpevent).FData := objEvent;
+//                          TWaypointEventClass(wpevent).FEnable := false;
+//                          TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3Radar(dev).InstanceIndex;
+//
+//                          Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                        end
+//                        // sonar
+//                        else if dev is TT3Sonar then
+//                        begin
+//                          objEvent  := TScripted_Sonar_Event.Create;
+//                          with TScripted_Sonar_Event(objEvent).FData do
+//                          begin
+//                            Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
+//                            Sonar_Index          := TT3Sonar(dev).InstanceIndex;
+//                            Sonar_Control        := 2; //no change
+//                          end;
+//
+//                          wpevent   := TWaypointEventClass.Create;
+//                          TWaypointEventClass(wpevent).FType := wetSonar;
+//                          TWaypointEventClass(wpevent).FData := objEvent;
+//                          TWaypointEventClass(wpevent).FEnable := false;
+//                          TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3Sonar(dev).InstanceIndex;
+//
+//                          Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                        end
+//                        // iff
+//                        else if dev is TT3IFFSensor then
+//                        begin
+//                          objEvent  := TScripted_IFF_Event.Create;
+//                          with TScripted_IFF_Event(objEvent).FData do
+//                          begin
+//                            Scripted_Event_Index   := FFocusedBehav.FData.Scripted_Event_Index;
+//                            IFF_Instance_Index     := TT3IFFSensor(dev).InstanceIndex;
+//
+//                            IFF_Interrogator_Control  := 2; //no change
+//                            IFF_Transponder_Control   := 2; //no change
+//                          end;
+//
+//                          // wp event untuk transpondernya
+//                          wpevent   := TWaypointEventClass.Create;
+//                          TWaypointEventClass(wpevent).FType := wetIFFTransponder;
+//                          TWaypointEventClass(wpevent).FData := objEvent;
+//                          TWaypointEventClass(wpevent).FEnable := false;
+//                          TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3IFFSensor(dev).InstanceIndex;
+//
+//                          Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//
+//                          // wp event untuk interogatornya
+//                          wpevent   := TWaypointEventClass.Create;
+//                          TWaypointEventClass(wpevent).FType := wetIFFInterogator;
+//                          TWaypointEventClass(wpevent).FData := objEvent;
+//                          TWaypointEventClass(wpevent).FEnable := false;
+//                          TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3IFFSensor(dev).InstanceIndex;
+//
+//                          Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                        end;
+//                      end;
 
                       //sonobuoy
-                      if getDeviceCount(TT3SonobuoyOnVehicle) > 0 then
-                      begin
-                        objEvent  := TScripted_Sonobuoy_Event.Create;
-                        with TScripted_Sonobuoy_Event(objEvent).FData do
-                        begin
-                          Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
-                          List_Index              := -1;
-                          SonobuoyType            := 0;
-                          SonobuoyMode            := 0; // Passive
-                          SonobuoyDepth           := 35;
-                          SonobuoySpacing         := 0.25;
-                          SonobuoyQuantity        := 1;
-                          DeploySonoUntilNextWp   := False;
-                        end;
-
-                        wpevent   := TWaypointEventClass.Create;
-                        TWaypointEventClass(wpevent).FType := wetSonobuoy;
-                        TWaypointEventClass(wpevent).FData := objEvent;
-                        TWaypointEventClass(wpevent).FEnable := false;
-                        TWaypointEventClass(wpevent).FObjectInstanceIndex := getFirstDeviceID(TT3SonobuoyOnVehicle);
-
-                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                      end;
+//                      if getDeviceCount(TT3SonobuoyOnVehicle) > 0 then
+//                      begin
+//                        objEvent  := TScripted_Sonobuoy_Event.Create;
+//                        with TScripted_Sonobuoy_Event(objEvent).FData do
+//                        begin
+//                          Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
+//                          List_Index              := -1;
+//                          SonobuoyType            := 0;
+//                          SonobuoyMode            := 0; // Passive
+//                          SonobuoyDepth           := 35;
+//                          SonobuoySpacing         := 0.25;
+//                          SonobuoyQuantity        := 1;
+//                          DeploySonoUntilNextWp   := False;
+//                        end;
+//
+//                        wpevent   := TWaypointEventClass.Create;
+//                        TWaypointEventClass(wpevent).FType := wetSonobuoy;
+//                        TWaypointEventClass(wpevent).FData := objEvent;
+//                        TWaypointEventClass(wpevent).FEnable := false;
+//                        TWaypointEventClass(wpevent).FObjectInstanceIndex := getFirstDeviceID(TT3SonobuoyOnVehicle);
+//
+//                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                      end;
 
                       //Check Weapon
                       //5 Weapon / 1 Coordinat Wayoint
-                      for i := 1 to 5 do
-                      begin
-                        objEvent := TScripted_Weapon_Event.Create;
-                        with TScripted_Weapon_Event(objEvent).FData do
-                        begin
-                          Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
-                          List_Index           := -1;
-                          Salvo_Size           := 1;
-                          Target_Index         := 0;
-                          Weapon_Type          := 0;
-                        end;
-
-                        wpevent   := TWaypointEventClass.Create;
-
-                        case i of
-                          1 : TWaypointEventClass(wpevent).FType := wetWeapon1;
-                          2 : TWaypointEventClass(wpevent).FType := wetWeapon2;
-                          3 : TWaypointEventClass(wpevent).FType := wetWeapon3;
-                          4 : TWaypointEventClass(wpevent).FType := wetWeapon4;
-                          5 : TWaypointEventClass(wpevent).FType := wetWeapon5;
-                        end;
-
-                        TWaypointEventClass(wpevent).FData := objEvent;
-                        TWaypointEventClass(wpevent).FEnable := false;
-                        TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
-
-                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                      end;
+//                      for i := 1 to 5 do
+//                      begin
+//                        objEvent := TScripted_Weapon_Event.Create;
+//                        with TScripted_Weapon_Event(objEvent).FData do
+//                        begin
+//                          Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
+//                          List_Index           := -1;
+//                          Salvo_Size           := 1;
+//                          Target_Index         := 0;
+//                          Weapon_Type          := 0;
+//                        end;
+//
+//                        wpevent   := TWaypointEventClass.Create;
+//
+//                        case i of
+//                          1 : TWaypointEventClass(wpevent).FType := wetWeapon1;
+//                          2 : TWaypointEventClass(wpevent).FType := wetWeapon2;
+//                          3 : TWaypointEventClass(wpevent).FType := wetWeapon3;
+//                          4 : TWaypointEventClass(wpevent).FType := wetWeapon4;
+//                          5 : TWaypointEventClass(wpevent).FType := wetWeapon5;
+//                        end;
+//
+//                        TWaypointEventClass(wpevent).FData := objEvent;
+//                        TWaypointEventClass(wpevent).FEnable := false;
+//                        TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
+//
+//                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                      end;
 
                       //mine
-                      if getWeaponCount(TT3MineOnVehicle) > 0 then
-                      begin
-                        objEvent  := TScripted_Mine_Event.Create;
-                        with TScripted_Mine_Event(objEvent).FData do
-                        begin
-                          Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
-                          List_Index              := -1;
-                          MineType                := 0;
-                          MineDepth               := 50;
-                          MineSpacing             := 5.00;
-                          MineQuantity            := 1;
-                          DeployMineUntilNextWp   := False;
-                        end;
-
-                        wpevent   := TWaypointEventClass.Create;
-                        TWaypointEventClass(wpevent).FType := wetMine;
-                        TWaypointEventClass(wpevent).FData := objEvent;
-                        TWaypointEventClass(wpevent).FEnable := false;
-                        TWaypointEventClass(wpevent).FObjectInstanceIndex := getFirstWeaponID(TT3MineOnVehicle);
-
-                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                      end;
+//                      if getWeaponCount(TT3MineOnVehicle) > 0 then
+//                      begin
+//                        objEvent  := TScripted_Mine_Event.Create;
+//                        with TScripted_Mine_Event(objEvent).FData do
+//                        begin
+//                          Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
+//                          List_Index              := -1;
+//                          MineType                := 0;
+//                          MineDepth               := 50;
+//                          MineSpacing             := 5.00;
+//                          MineQuantity            := 1;
+//                          DeployMineUntilNextWp   := False;
+//                        end;
+//
+//                        wpevent   := TWaypointEventClass.Create;
+//                        TWaypointEventClass(wpevent).FType := wetMine;
+//                        TWaypointEventClass(wpevent).FData := objEvent;
+//                        TWaypointEventClass(wpevent).FEnable := false;
+//                        TWaypointEventClass(wpevent).FObjectInstanceIndex := getFirstWeaponID(TT3MineOnVehicle);
+//
+//                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                      end;
 
                       //countermeasure
-                      for i := 0 to Devices.Count - 1 do
-                      begin
-                        dev :=  Devices.Items[i];
+//                      for i := 0 to Devices.Count - 1 do
+//                      begin
+//                        dev :=  Devices.Items[i];
+//
+//                        if dev is TT3RadarNoiseJammerOnVehicle then
+//                        begin
+//                          objEvent  := TScripted_Chaff_Event.Create;
+//                          with TScripted_Chaff_Event(objEvent).FData do
+//                          begin
+//                            Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
+//                            Chaff_Instance_Index    := TT3RadarNoiseJammerOnVehicle(dev).InstanceIndex;
+//                            Countermeasure_Control  := 2; //no change
+//                          end;
+//
+//                          wpevent   := TWaypointEventClass.Create;
+//                          TWaypointEventClass(wpevent).FType := wetCounterMeasure;
+//                          TWaypointEventClass(wpevent).FData := objEvent;
+//                          TWaypointEventClass(wpevent).FEnable := false;
+//                          TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3RadarNoiseJammerOnVehicle(dev).InstanceIndex;
+//
+//                          Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                        end;
+//                      end;
 
-                        if dev is TT3RadarNoiseJammerOnVehicle then
-                        begin
-                          objEvent  := TScripted_Chaff_Event.Create;
-                          with TScripted_Chaff_Event(objEvent).FData do
-                          begin
-                            Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
-                            Chaff_Instance_Index    := TT3RadarNoiseJammerOnVehicle(dev).InstanceIndex;
-                            Countermeasure_Control  := 2; //no change
-                          end;
+//                      if VehicleDefinition.FData.HF_Link_Capable then
+//                      begin
+//                        objEvent  := TScripted_Datalink_Event.Create;
+//                        with TScripted_Datalink_Event(objEvent).FData do
+//                        begin
+//                          Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
+//                          Datalink_Control        := 2; //no change
+//                        end;
+//
+//                        wpevent   := TWaypointEventClass.Create;
+//                        TWaypointEventClass(wpevent).FType := wetComHF;
+//                        TWaypointEventClass(wpevent).FData := objEvent;
+//                        TWaypointEventClass(wpevent).FEnable := false;
+//                        TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
+//
+//                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                      end;
 
-                          wpevent   := TWaypointEventClass.Create;
-                          TWaypointEventClass(wpevent).FType := wetCounterMeasure;
-                          TWaypointEventClass(wpevent).FData := objEvent;
-                          TWaypointEventClass(wpevent).FEnable := false;
-                          TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3RadarNoiseJammerOnVehicle(dev).InstanceIndex;
-
-                          Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                        end;
-                      end;
-
-                      if VehicleDefinition.FData.HF_Link_Capable then
-                      begin
-                        objEvent  := TScripted_Datalink_Event.Create;
-                        with TScripted_Datalink_Event(objEvent).FData do
-                        begin
-                          Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
-                          Datalink_Control        := 2; //no change
-                        end;
-
-                        wpevent   := TWaypointEventClass.Create;
-                        TWaypointEventClass(wpevent).FType := wetComHF;
-                        TWaypointEventClass(wpevent).FData := objEvent;
-                        TWaypointEventClass(wpevent).FEnable := false;
-                        TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
-
-                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                      end;
-
-                      if VehicleDefinition.FData.UHF_Link_Capable then
-                      begin
-                        objEvent  := TScripted_Datalink_Event.Create;
-                        with TScripted_Datalink_Event(objEvent).FData do
-                        begin
-                          Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
-                          Datalink_Control        := 2; //no change
-                        end;
-
-                        wpevent   := TWaypointEventClass.Create;
-                        TWaypointEventClass(wpevent).FType := wetComUHF;
-                        TWaypointEventClass(wpevent).FData := objEvent;
-                        TWaypointEventClass(wpevent).FEnable := false;
-                        TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
-
-                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                      end;
+//                      if VehicleDefinition.FData.UHF_Link_Capable then
+//                      begin
+//                        objEvent  := TScripted_Datalink_Event.Create;
+//                        with TScripted_Datalink_Event(objEvent).FData do
+//                        begin
+//                          Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
+//                          Datalink_Control        := 2; //no change
+//                        end;
+//
+//                        wpevent   := TWaypointEventClass.Create;
+//                        TWaypointEventClass(wpevent).FType := wetComUHF;
+//                        TWaypointEventClass(wpevent).FData := objEvent;
+//                        TWaypointEventClass(wpevent).FEnable := false;
+//                        TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
+//
+//                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                      end;
+                      {$ENDREGION}
                     end;
                   end;
                 end;
@@ -6300,221 +6302,223 @@ begin
                   //Add Waypoint Event
                   with OwnVehicle do
                   begin
-                    for i := 0 to Devices.Count - 1 do
-                    begin
-                      dev :=  Devices.Items[i];
-
-                      // radar
-                      if dev is TT3Radar then
-                      begin
-                        objEvent  := TScripted_Radar_Event.Create;
-                        with TScripted_Radar_Event(objEvent).FData do
-                        begin
-                          Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
-                          Radar_Index          := TT3Radar(dev).InstanceIndex;
-                          Radar_Control        := 2; //no change
-                        end;
-
-                        wpevent   := TWaypointEventClass.Create;
-                        TWaypointEventClass(wpevent).FType := wetRadar;
-                        TWaypointEventClass(wpevent).FData := objEvent;
-                        TWaypointEventClass(wpevent).FEnable := false;
-                        TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3Radar(dev).InstanceIndex;
-
-                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                      end
-                      // sonar
-                      else if dev is TT3Sonar then
-                      begin
-                        objEvent  := TScripted_Sonar_Event.Create;
-                        with TScripted_Sonar_Event(objEvent).FData do
-                        begin
-                          Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
-                          Sonar_Index          := TT3Sonar(dev).InstanceIndex;
-                          Sonar_Control        := 2; //no change
-                        end;
-
-                        wpevent   := TWaypointEventClass.Create;
-                        TWaypointEventClass(wpevent).FType := wetSonar;
-                        TWaypointEventClass(wpevent).FData := objEvent;
-                        TWaypointEventClass(wpevent).FEnable := false;
-                        TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3Sonar(dev).InstanceIndex;
-
-                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                      end
-                      // iff
-                      else if dev is TT3IFFSensor then
-                      begin
-                        objEvent  := TScripted_IFF_Event.Create;
-                        with TScripted_IFF_Event(objEvent).FData do
-                        begin
-                          Scripted_Event_Index   := FFocusedBehav.FData.Scripted_Event_Index;
-                          IFF_Instance_Index     := TT3IFFSensor(dev).InstanceIndex;
-
-                          IFF_Interrogator_Control  := 2; //no change
-                          IFF_Transponder_Control   := 2; //no change
-                        end;
-
-                        // wp event untuk transpondernya
-                        wpevent   := TWaypointEventClass.Create;
-                        TWaypointEventClass(wpevent).FType := wetIFFTransponder;
-                        TWaypointEventClass(wpevent).FData := objEvent;
-                        TWaypointEventClass(wpevent).FEnable := false;
-                        TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3IFFSensor(dev).InstanceIndex;
-
-                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
-
-                        // wp event untuk interogatornya
-                        wpevent   := TWaypointEventClass.Create;
-                        TWaypointEventClass(wpevent).FType := wetIFFInterogator;
-                        TWaypointEventClass(wpevent).FData := objEvent;
-                        TWaypointEventClass(wpevent).FEnable := false;
-                        TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3IFFSensor(dev).InstanceIndex;
-
-                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                      end;
-                    end;
+                    {$REGION ' Kodingan Lama '}
+//                    for i := 0 to Devices.Count - 1 do
+//                    begin
+//                      dev :=  Devices.Items[i];
+//
+//                      // radar
+//                      if dev is TT3Radar then
+//                      begin
+//                        objEvent  := TScripted_Radar_Event.Create;
+//                        with TScripted_Radar_Event(objEvent).FData do
+//                        begin
+//                          Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
+//                          Radar_Index          := TT3Radar(dev).InstanceIndex;
+//                          Radar_Control        := 2; //no change
+//                        end;
+//
+//                        wpevent   := TWaypointEventClass.Create;
+//                        TWaypointEventClass(wpevent).FType := wetRadar;
+//                        TWaypointEventClass(wpevent).FData := objEvent;
+//                        TWaypointEventClass(wpevent).FEnable := false;
+//                        TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3Radar(dev).InstanceIndex;
+//
+//                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                      end
+//                      // sonar
+//                      else if dev is TT3Sonar then
+//                      begin
+//                        objEvent  := TScripted_Sonar_Event.Create;
+//                        with TScripted_Sonar_Event(objEvent).FData do
+//                        begin
+//                          Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
+//                          Sonar_Index          := TT3Sonar(dev).InstanceIndex;
+//                          Sonar_Control        := 2; //no change
+//                        end;
+//
+//                        wpevent   := TWaypointEventClass.Create;
+//                        TWaypointEventClass(wpevent).FType := wetSonar;
+//                        TWaypointEventClass(wpevent).FData := objEvent;
+//                        TWaypointEventClass(wpevent).FEnable := false;
+//                        TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3Sonar(dev).InstanceIndex;
+//
+//                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                      end
+//                      // iff
+//                      else if dev is TT3IFFSensor then
+//                      begin
+//                        objEvent  := TScripted_IFF_Event.Create;
+//                        with TScripted_IFF_Event(objEvent).FData do
+//                        begin
+//                          Scripted_Event_Index   := FFocusedBehav.FData.Scripted_Event_Index;
+//                          IFF_Instance_Index     := TT3IFFSensor(dev).InstanceIndex;
+//
+//                          IFF_Interrogator_Control  := 2; //no change
+//                          IFF_Transponder_Control   := 2; //no change
+//                        end;
+//
+//                        // wp event untuk transpondernya
+//                        wpevent   := TWaypointEventClass.Create;
+//                        TWaypointEventClass(wpevent).FType := wetIFFTransponder;
+//                        TWaypointEventClass(wpevent).FData := objEvent;
+//                        TWaypointEventClass(wpevent).FEnable := false;
+//                        TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3IFFSensor(dev).InstanceIndex;
+//
+//                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//
+//                        // wp event untuk interogatornya
+//                        wpevent   := TWaypointEventClass.Create;
+//                        TWaypointEventClass(wpevent).FType := wetIFFInterogator;
+//                        TWaypointEventClass(wpevent).FData := objEvent;
+//                        TWaypointEventClass(wpevent).FEnable := false;
+//                        TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3IFFSensor(dev).InstanceIndex;
+//
+//                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                      end;
+//                    end;
 
                     //sonobuoy
-                    if getDeviceCount(TT3SonobuoyOnVehicle) > 0 then
-                    begin
-                      objEvent  := TScripted_Sonobuoy_Event.Create;
-                      with TScripted_Sonobuoy_Event(objEvent).FData do
-                      begin
-                        Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
-                        List_Index              := -1;
-                        SonobuoyType            := 0;
-                        SonobuoyMode            := 0; // Passive
-                        SonobuoyDepth           := 35;
-                        SonobuoySpacing         := 0.25;
-                        SonobuoyQuantity        := 1;
-                        DeploySonoUntilNextWp   := False;
-                      end;
-
-                      wpevent   := TWaypointEventClass.Create;
-                      TWaypointEventClass(wpevent).FType := wetSonobuoy;
-                      TWaypointEventClass(wpevent).FData := objEvent;
-                      TWaypointEventClass(wpevent).FEnable := false;
-                      TWaypointEventClass(wpevent).FObjectInstanceIndex := getFirstDeviceID(TT3SonobuoyOnVehicle);
-
-                      Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                    end;
+//                    if getDeviceCount(TT3SonobuoyOnVehicle) > 0 then
+//                    begin
+//                      objEvent  := TScripted_Sonobuoy_Event.Create;
+//                      with TScripted_Sonobuoy_Event(objEvent).FData do
+//                      begin
+//                        Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
+//                        List_Index              := -1;
+//                        SonobuoyType            := 0;
+//                        SonobuoyMode            := 0; // Passive
+//                        SonobuoyDepth           := 35;
+//                        SonobuoySpacing         := 0.25;
+//                        SonobuoyQuantity        := 1;
+//                        DeploySonoUntilNextWp   := False;
+//                      end;
+//
+//                      wpevent   := TWaypointEventClass.Create;
+//                      TWaypointEventClass(wpevent).FType := wetSonobuoy;
+//                      TWaypointEventClass(wpevent).FData := objEvent;
+//                      TWaypointEventClass(wpevent).FEnable := false;
+//                      TWaypointEventClass(wpevent).FObjectInstanceIndex := getFirstDeviceID(TT3SonobuoyOnVehicle);
+//
+//                      Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                    end;
 
                     //Check Weapon
                     //5 Weapon / 1 Coordinat Wayoint
-                    for i := 1 to 5 do
-                    begin
-                      objEvent := TScripted_Weapon_Event.Create;
-                      with TScripted_Weapon_Event(objEvent).FData do
-                      begin
-                        Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
-                        List_Index           := -1;
-                        Salvo_Size           := 1;
-                        Target_Index         := 0;
-                        Weapon_Type          := 0;
-                      end;
-
-                      wpevent   := TWaypointEventClass.Create;
-
-                      case i of
-                        1 : TWaypointEventClass(wpevent).FType := wetWeapon1;
-                        2 : TWaypointEventClass(wpevent).FType := wetWeapon2;
-                        3 : TWaypointEventClass(wpevent).FType := wetWeapon3;
-                        4 : TWaypointEventClass(wpevent).FType := wetWeapon4;
-                        5 : TWaypointEventClass(wpevent).FType := wetWeapon5;
-                      end;
-
-                      TWaypointEventClass(wpevent).FData := objEvent;
-                      TWaypointEventClass(wpevent).FEnable := false;
-                      TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
-
-                      Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                    end;
+//                    for i := 1 to 5 do
+//                    begin
+//                      objEvent := TScripted_Weapon_Event.Create;
+//                      with TScripted_Weapon_Event(objEvent).FData do
+//                      begin
+//                        Scripted_Event_Index := FFocusedBehav.FData.Scripted_Event_Index;
+//                        List_Index           := -1;
+//                        Salvo_Size           := 1;
+//                        Target_Index         := 0;
+//                        Weapon_Type          := 0;
+//                      end;
+//
+//                      wpevent   := TWaypointEventClass.Create;
+//
+//                      case i of
+//                        1 : TWaypointEventClass(wpevent).FType := wetWeapon1;
+//                        2 : TWaypointEventClass(wpevent).FType := wetWeapon2;
+//                        3 : TWaypointEventClass(wpevent).FType := wetWeapon3;
+//                        4 : TWaypointEventClass(wpevent).FType := wetWeapon4;
+//                        5 : TWaypointEventClass(wpevent).FType := wetWeapon5;
+//                      end;
+//
+//                      TWaypointEventClass(wpevent).FData := objEvent;
+//                      TWaypointEventClass(wpevent).FEnable := false;
+//                      TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
+//
+//                      Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                    end;
 
                     //mine
-                    if getWeaponCount(TT3MineOnVehicle) > 0 then
-                    begin
-                      objEvent  := TScripted_Mine_Event.Create;
-                      with TScripted_Mine_Event(objEvent).FData do
-                      begin
-                        Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
-                        List_Index              := -1;
-                        MineType                := 0;
-                        MineDepth               := 50;
-                        MineSpacing             := 5.00;
-                        MineQuantity            := 1;
-                        DeployMineUntilNextWp   := False;
-                      end;
-
-                      wpevent   := TWaypointEventClass.Create;
-                      TWaypointEventClass(wpevent).FType := wetMine;
-                      TWaypointEventClass(wpevent).FData := objEvent;
-                      TWaypointEventClass(wpevent).FEnable := false;
-                      TWaypointEventClass(wpevent).FObjectInstanceIndex := getFirstWeaponID(TT3MineOnVehicle);
-
-                      Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                    end;
+//                    if getWeaponCount(TT3MineOnVehicle) > 0 then
+//                    begin
+//                      objEvent  := TScripted_Mine_Event.Create;
+//                      with TScripted_Mine_Event(objEvent).FData do
+//                      begin
+//                        Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
+//                        List_Index              := -1;
+//                        MineType                := 0;
+//                        MineDepth               := 50;
+//                        MineSpacing             := 5.00;
+//                        MineQuantity            := 1;
+//                        DeployMineUntilNextWp   := False;
+//                      end;
+//
+//                      wpevent   := TWaypointEventClass.Create;
+//                      TWaypointEventClass(wpevent).FType := wetMine;
+//                      TWaypointEventClass(wpevent).FData := objEvent;
+//                      TWaypointEventClass(wpevent).FEnable := false;
+//                      TWaypointEventClass(wpevent).FObjectInstanceIndex := getFirstWeaponID(TT3MineOnVehicle);
+//
+//                      Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                    end;
 
                     //countermeasure
-                    for i := 0 to Devices.Count - 1 do
-                    begin
-                      dev :=  Devices.Items[i];
+//                    for i := 0 to Devices.Count - 1 do
+//                    begin
+//                      dev :=  Devices.Items[i];
+//
+//                      if dev is TT3RadarNoiseJammerOnVehicle then
+//                      begin
+//                        objEvent  := TScripted_Chaff_Event.Create;
+//                        with TScripted_Chaff_Event(objEvent).FData do
+//                        begin
+//                          Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
+//                          Chaff_Instance_Index    := TT3RadarNoiseJammerOnVehicle(dev).InstanceIndex;
+//                          Countermeasure_Control  := 2; //no change
+//                        end;
+//
+//                        wpevent   := TWaypointEventClass.Create;
+//                        TWaypointEventClass(wpevent).FType := wetCounterMeasure;
+//                        TWaypointEventClass(wpevent).FData := objEvent;
+//                        TWaypointEventClass(wpevent).FEnable := false;
+//                        TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3RadarNoiseJammerOnVehicle(dev).InstanceIndex;
+//
+//                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                      end;
+//                    end;
 
-                      if dev is TT3RadarNoiseJammerOnVehicle then
-                      begin
-                        objEvent  := TScripted_Chaff_Event.Create;
-                        with TScripted_Chaff_Event(objEvent).FData do
-                        begin
-                          Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
-                          Chaff_Instance_Index    := TT3RadarNoiseJammerOnVehicle(dev).InstanceIndex;
-                          Countermeasure_Control  := 2; //no change
-                        end;
+//                    if VehicleDefinition.FData.HF_Link_Capable then
+//                    begin
+//                      objEvent  := TScripted_Datalink_Event.Create;
+//                      with TScripted_Datalink_Event(objEvent).FData do
+//                      begin
+//                        Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
+//                        Datalink_Control        := 2; //no change
+//                      end;
+//
+//                      wpevent   := TWaypointEventClass.Create;
+//                      TWaypointEventClass(wpevent).FType := wetComHF;
+//                      TWaypointEventClass(wpevent).FData := objEvent;
+//                      TWaypointEventClass(wpevent).FEnable := false;
+//                      TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
+//
+//                      Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                    end;
 
-                        wpevent   := TWaypointEventClass.Create;
-                        TWaypointEventClass(wpevent).FType := wetCounterMeasure;
-                        TWaypointEventClass(wpevent).FData := objEvent;
-                        TWaypointEventClass(wpevent).FEnable := false;
-                        TWaypointEventClass(wpevent).FObjectInstanceIndex := TT3RadarNoiseJammerOnVehicle(dev).InstanceIndex;
-
-                        Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                      end;
-                    end;
-
-                    if VehicleDefinition.FData.HF_Link_Capable then
-                    begin
-                      objEvent  := TScripted_Datalink_Event.Create;
-                      with TScripted_Datalink_Event(objEvent).FData do
-                      begin
-                        Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
-                        Datalink_Control        := 2; //no change
-                      end;
-
-                      wpevent   := TWaypointEventClass.Create;
-                      TWaypointEventClass(wpevent).FType := wetComHF;
-                      TWaypointEventClass(wpevent).FData := objEvent;
-                      TWaypointEventClass(wpevent).FEnable := false;
-                      TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
-
-                      Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                    end;
-
-                    if VehicleDefinition.FData.UHF_Link_Capable then
-                    begin
-                      objEvent  := TScripted_Datalink_Event.Create;
-                      with TScripted_Datalink_Event(objEvent).FData do
-                      begin
-                        Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
-                        Datalink_Control        := 2; //no change
-                      end;
-
-                      wpevent   := TWaypointEventClass.Create;
-                      TWaypointEventClass(wpevent).FType := wetComUHF;
-                      TWaypointEventClass(wpevent).FData := objEvent;
-                      TWaypointEventClass(wpevent).FEnable := false;
-                      TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
-
-                      Waypoints.Add(behav,TWaypointEventClass(wpevent));
-                    end;
+//                    if VehicleDefinition.FData.UHF_Link_Capable then
+//                    begin
+//                      objEvent  := TScripted_Datalink_Event.Create;
+//                      with TScripted_Datalink_Event(objEvent).FData do
+//                      begin
+//                        Scripted_Event_Index    := FFocusedBehav.FData.Scripted_Event_Index;
+//                        Datalink_Control        := 2; //no change
+//                      end;
+//
+//                      wpevent   := TWaypointEventClass.Create;
+//                      TWaypointEventClass(wpevent).FType := wetComUHF;
+//                      TWaypointEventClass(wpevent).FData := objEvent;
+//                      TWaypointEventClass(wpevent).FEnable := false;
+//                      TWaypointEventClass(wpevent).FObjectInstanceIndex := 0;
+//
+//                      Waypoints.Add(behav,TWaypointEventClass(wpevent));
+//                    end;
+                    {$ENDREGION}
                   end;
                 end;
               end;

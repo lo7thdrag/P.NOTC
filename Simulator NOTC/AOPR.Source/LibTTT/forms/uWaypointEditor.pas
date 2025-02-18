@@ -2172,8 +2172,8 @@ begin
     btnCancel.Caption := 'Close';
   end;
 
-  if simMgrClient.ISInstructor then
-    btnSave.Visible := True;
+//  if simMgrClient.ISInstructor then
+//    btnSave.Visible := True;
 end;
 
 procedure TfrmWaypointEditor.FormDestroy(Sender: TObject);

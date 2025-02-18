@@ -3,7 +3,7 @@ object frmWaypointEditor: TfrmWaypointEditor
   Top = 0
   BorderStyle = bsToolWindow
   Caption = 'Waypoint Editor'
-  ClientHeight = 540
+  ClientHeight = 251
   ClientWidth = 513
   Color = 5980694
   Font.Charset = DEFAULT_CHARSET
@@ -636,8 +636,6 @@ object frmWaypointEditor: TfrmWaypointEditor
       Left = 0
       Top = 0
       Caption = 'Sensor'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label11: TLabel
         Left = 19
         Top = 16
@@ -669,8 +667,6 @@ object frmWaypointEditor: TfrmWaypointEditor
       Left = 0
       Top = 0
       Caption = 'Sonobuoy'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object lblSonoName: TLabel
         Left = 19
         Top = 22
@@ -937,8 +933,6 @@ object frmWaypointEditor: TfrmWaypointEditor
       Left = 0
       Top = 0
       Caption = 'Weapon'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label10: TLabel
         Left = 11
         Top = 24
@@ -1334,8 +1328,6 @@ object frmWaypointEditor: TfrmWaypointEditor
       Left = 0
       Top = 0
       Caption = 'Coutermeasure'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object lblStateCM: TLabel
         Left = 19
         Top = 16
@@ -1366,8 +1358,6 @@ object frmWaypointEditor: TfrmWaypointEditor
       Left = 0
       Top = 0
       Caption = 'Datalink'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object lblDatalinkState: TLabel
         Left = 19
         Top = 16

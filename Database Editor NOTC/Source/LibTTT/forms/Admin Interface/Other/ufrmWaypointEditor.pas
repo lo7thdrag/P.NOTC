@@ -856,6 +856,7 @@ begin
     with TWaypoint_Data(data) do
     begin
       TWaypoint_Data(data).FData.Waypoint_Index := FSelectedWaypoint.FData.Waypoint_Index;
+      TWaypoint_Data(data).FData.Scripted_Event_Index := i + 1;
       dmTTT.InsertWaypointData(i, FData)
     end;
   end;
