@@ -10868,7 +10868,7 @@ begin
   GunSet(pi.Vehicle.Hybrids,TT3HybridOnVehicle,vehicle);
 
   if (vehicle.PlatformDomain <> 2) and (vehicle.PlatformType <> 40) then
-    VectacSet(TT3Vectac,vehicle);
+//    VectacSet(TT3Vectac,vehicle);
 end;
 
 procedure TT3SimManager.GunSet(aList: TList; aClass: TClass;

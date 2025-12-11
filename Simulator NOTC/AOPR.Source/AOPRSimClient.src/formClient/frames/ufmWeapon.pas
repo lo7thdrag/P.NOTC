@@ -1952,29 +1952,23 @@ begin
             exit;
           end;
 
-          {Kalo yg di track Detected track}
-          if focused_platform is TT3DetectedTrack then
+          if focused_platform is TT3NonRealVehicle then
           begin
-            strTargetTrackId := TT3PlatformInstance(TT3DetectedTrack(focused_platform).TrackObject).Track_ID;
-            IntTargetPlatformID := TT3PlatformInstance(TT3DetectedTrack(focused_platform).TrackObject).InstanceIndex;
-
-            target := simMgrClient.FindT3PlatformByID(IntTargetPlatformID);
-          end
-          {Kalo yg di track Non Real Time}
-          else if focused_platform is TT3NonRealVehicle then
-          begin
+            {$REGION ' NonRealVehicle Section '}
             strTargetTrackId := IntToStr(TT3PlatformInstance(focused_platform).InstanceIndex);
             IntTargetPlatformID := TT3PlatformInstance(focused_platform).InstanceIndex;
 
             target := simMgrClient.FindNonRealPlatformByID(IntTargetPlatformID);
+            {$ENDREGION}
           end
-          {Kalo yg di track Platform Instance}
-          else
+          else if focused_platform is TT3Vehicle then
           begin
+            {$REGION ' TT3PlatformInstance Section '}
             strTargetTrackId := TT3PlatformInstance(focused_platform).Track_ID;
             IntTargetPlatformID := TT3PlatformInstance(focused_platform).InstanceIndex;
 
             target := simMgrClient.FindT3PlatformByID(IntTargetPlatformID);
+            {$ENDREGION}
           end;
         end
         else

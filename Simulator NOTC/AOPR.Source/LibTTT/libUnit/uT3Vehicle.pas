@@ -1178,7 +1178,7 @@ begin
   FMoveMode      := 3;
   FFormationMode := 1;
 
-  ShipTacticalInfo1 := C_TacticalInfos[1];
+  ShipTacticalInfo1 := C_TacticalInfos[2];
   ShipTacticalInfo2 := C_TacticalInfos[0];
   ShipTacticalInfo3 := C_TacticalInfos[0];
   FConnect3D := False;
