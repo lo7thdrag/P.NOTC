@@ -357,7 +357,7 @@ object frmWaypointEditor: TfrmWaypointEditor
     ParentFont = False
   end
   object btnCopy: TSpeedButton
-    Left = 46
+    Left = 8
     Top = 202
     Width = 35
     Height = 35
@@ -442,7 +442,7 @@ object frmWaypointEditor: TfrmWaypointEditor
     OnClick = btnCopyClick
   end
   object btnSave: TSpeedButton
-    Left = 8
+    Left = 46
     Top = 202
     Width = 35
     Height = 35
