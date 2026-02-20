@@ -608,6 +608,11 @@ begin
     edtEngagementRangeDimension.Caption := FormatFloat('0', FData.Engagement_Range);
     edtDraftDimension.Caption := FormatFloat('0', FData.Draft);
 
+    cbGangwayFront.Checked := FData.FrontGangway;
+    cbGangwayRear.Checked := FData.RearGangway;
+    cbGangwayPort.Checked := FData.PortGangway;
+    cbGangwayStarboard.Checked := FData.StarBoardGangway;
+
     edtMinSpeedAcousticPhysical.Caption := FormatFloat('0.0', FData.LSpeed_Acoustic_Intens);
     edtBelowCavitationAcousticPhysical.Caption := FormatFloat('0.0', FData.Below_Cav_Acoustic_Intens);
     edtAboveCavitationAcousticPhysical.Caption := FormatFloat('0.0', FData.Above_Cav_Acoustic_Intens);
